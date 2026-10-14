@@ -6,13 +6,14 @@
 """
 from __future__ import annotations
 
+import re
 from itertools import combinations
 
 import networkx as nx
 from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-from common import get_embeddings, load_docs, load_kg, triple_text
+from common import get_embeddings, get_lang, load_docs, load_kg, triple_text
 
 CHUNK_SIZE = 500
 CHUNK_OVERLAP = 50
@@ -85,13 +86,19 @@ def link_entities_detailed(question: str, G: nx.MultiDiGraph | None = None) -> l
     '혁신기업 신생률' 안의 '혁신기업'처럼 더 긴 매칭에 포함된 짧은 매칭은 버린다.
     """
     G = G or get_graph()
+    en = get_lang() == "en"
     found = []
     for node, data in G.nodes(data=True):
         best = None
         for name in [node, *data.get("aliases", [])]:
-            pos = question.find(name)
-            if pos >= 0 and (best is None or len(name) > best["end"] - best["start"]):
-                best = {"node": node, "matched": name, "start": pos, "end": pos + len(name)}
+            if en:  # 영어: 대소문자 무시 + 단어 경계 ('VC' 가 'VCs' 는 잡되 다른 단어 속에서는 안 잡히게)
+                m = re.search(r"(?<![A-Za-z])" + re.escape(name) + r"(?:s|es)?(?![A-Za-z])", question, re.I)
+                pos, end = (m.start(), m.end()) if m else (-1, -1)
+            else:
+                pos = question.find(name)
+                end = pos + len(name)
+            if pos >= 0 and (best is None or end - pos > best["end"] - best["start"]):
+                best = {"node": node, "matched": question[pos:end], "start": pos, "end": end}
         if best:
             found.append(best)
     return [f for f in found
@@ -109,7 +116,8 @@ def shortest_paths(seeds: list[str], G: nx.MultiDiGraph, max_paths: int = 3) -> 
     paths = []
     for a, b in combinations(seeds, 2):
         try:
-            paths += list(nx.all_shortest_paths(U, a, b))[:max_paths]
+            # 최단 경로가 여러 개면 실행마다 순서가 달라질 수 있으므로 정렬 후 고른다 (재현성)
+            paths += sorted(nx.all_shortest_paths(U, a, b))[:max_paths]
         except nx.NetworkXNoPath:
             pass
     return paths
@@ -229,3 +237,9 @@ def interleave(a: list[str], b: list[str], k: int) -> list[str]:
 
 def hybrid_retrieve(question: str, k: int = 3) -> list[str]:
     return interleave(graph_retrieve(question, k=k), vector_retrieve(question, k=k), k)
+
+
+def reset_caches() -> None:
+    """언어·그래프 파일을 바꿨을 때 벡터 저장소와 그래프를 다시 만들도록 비운다."""
+    global _vector_store, _G
+    _vector_store, _G = None, None

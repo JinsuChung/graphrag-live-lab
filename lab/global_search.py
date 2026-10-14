@@ -7,7 +7,8 @@ import networkx as nx
 from langchain_core.prompts import ChatPromptTemplate
 from pydantic import BaseModel, Field
 
-from common import DATA, triple_text
+from common import data_dir, triple_text
+from prompts import ByLang
 
 
 def detect_communities(G: nx.MultiDiGraph, seed: int = 42) -> list[list[str]]:
@@ -23,27 +24,40 @@ def community_text(G: nx.MultiDiGraph, members: list[str]) -> str:
 
 
 class Report(BaseModel):
-    title: str = Field(description="커뮤니티를 대표하는 짧은 제목")
-    summary: str = Field(description="핵심 사실 3~4문장 요약")
-    rating: int = Field(description="이 커뮤니티가 전체 도메인에서 갖는 중요도 0~10")
+    title: str = Field(description="커뮤니티를 대표하는 짧은 제목 / short title")
+    summary: str = Field(description="핵심 사실 3~4문장 요약 / 3-4 sentence summary of key facts")
+    rating: int = Field(description="전체 도메인에서의 중요도 / importance in the domain, 0-10")
 
 
 class Partial(BaseModel):
-    answer: str = Field(description="이 요약만 근거로 한 부분 답변. 관련 없으면 빈 문자열")
-    score: int = Field(description="질문과의 관련도 0~100")
+    answer: str = Field(description="이 요약만 근거로 한 부분 답변, 관련 없으면 빈 문자열 / partial answer from this report only, empty if unrelated")
+    score: int = Field(description="질문과의 관련도 / relevance to the question, 0-100")
 
 
-REPORT_PROMPT = ChatPromptTemplate.from_template(
-    "다음은 지식그래프의 한 커뮤니티(서로 밀접한 엔티티 묶음)입니다. 보고서를 작성하세요.\n\n{text}")
-MAP_PROMPT = ChatPromptTemplate.from_template(
-    "커뮤니티 보고서:\n{report}\n\n질문: {question}\n이 보고서만 근거로 부분 답변과 관련도를 주세요.")
-REDUCE_PROMPT = ChatPromptTemplate.from_template(
-    "다음은 여러 커뮤니티에서 모은 부분 답변입니다(점수 높은 순). 이를 종합해 질문에 답하세요.\n\n"
-    "{partials}\n\n질문: {question}")
+REPORT_PROMPT = ByLang(
+    ko=ChatPromptTemplate.from_template(
+        "다음은 지식그래프의 한 커뮤니티(서로 밀접한 엔티티 묶음)입니다. 보고서를 작성하세요.\n\n{text}"),
+    en=ChatPromptTemplate.from_template(
+        "Below is one community (a tightly connected group of entities) from a knowledge graph. Write a report.\n\n{text}"),
+)
+MAP_PROMPT = ByLang(
+    ko=ChatPromptTemplate.from_template(
+        "커뮤니티 보고서:\n{report}\n\n질문: {question}\n이 보고서만 근거로 부분 답변과 관련도를 주세요."),
+    en=ChatPromptTemplate.from_template(
+        "Community report:\n{report}\n\nQuestion: {question}\nUsing only this report, give a partial answer and a relevance score."),
+)
+REDUCE_PROMPT = ByLang(
+    ko=ChatPromptTemplate.from_template(
+        "다음은 여러 커뮤니티에서 모은 부분 답변입니다(점수 높은 순). 이를 종합해 질문에 답하세요.\n\n"
+        "{partials}\n\n질문: {question}"),
+    en=ChatPromptTemplate.from_template(
+        "Below are partial answers collected from several communities (highest score first). "
+        "Combine them to answer the question.\n\n{partials}\n\nQuestion: {question}"),
+)
 
 
 def precomputed_reports() -> list[dict]:
-    return json.loads((DATA / "community_summaries.json").read_text(encoding="utf-8"))["communities"]
+    return json.loads((data_dir() / "community_summaries.json").read_text(encoding="utf-8"))["communities"]
 
 
 def similarity_scores(question: str, texts: list[str], embeddings) -> list[int]:

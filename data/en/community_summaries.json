@@ -1,0 +1,106 @@
+{
+ "note": "Example community reports for running Global Search without an LLM (Louvain seed=42), written from figures in the report.",
+ "communities": [
+  {
+   "id": 0,
+   "title": "Growth crisis and innovation indicators",
+   "members": [
+    "negative growth in the 2040s",
+    "R&D spending",
+    "STEM talent development",
+    "old SMEs",
+    "firm productivity",
+    "non-innovative firms",
+    "low fertility and rapid aging",
+    "Korean economy",
+    "innovation (concept)",
+    "innovative firms"
+   ],
+   "summary": "Ultra-low fertility and rapid aging could push the economy into negative growth in the 2040s unless innovation lifts productivity. Innovation indicators such as R&D spending (5.2% of GDP, 2nd in the OECD) improved sharply, yet firm productivity growth fell from 6.1% (2001-10) to 0.5% (2011-20). Productivity growth of innovative firms, which account for about 72% of business R&D, dropped from 8.2% to 1.3%.",
+   "rating": 9
+  },
+  {
+   "id": 1,
+   "title": "Policies to foster innovative start-ups",
+   "members": [
+    "more start-up buyouts",
+    "social welfare",
+    "higher entry rate of innovative firms",
+    "innovative start-ups"
+   ],
+   "summary": "Doubling the buyout rate of innovative start-ups raises growth by 0.04 percentage points and welfare by 0.6%; doubling the entry rate of innovative firms raises them by 0.03 points and 1.0%; doing both raises them by 0.07 points and 1.4%. The gains come mainly through creative destruction and entry into new industries via acquisitions.",
+   "rating": 7
+  },
+  {
+   "id": 2,
+   "title": "Large firms and innovation quality",
+   "members": [
+    "basic research",
+    "shrinking share of basic research",
+    "large firms",
+    "patent citations",
+    "stagnant innovation quality"
+   ],
+   "summary": "Large firms account for 88% of innovative firms' R&D and about 95% of Korea's U.S. patent applications, but the quality of their output (citations) has not improved since the mid-2000s (1.4 citations per patent vs. 5.0 in the U.S.). The share of basic research in business R&D fell from 14% (2010) to 11% (2021), and basic research raises quality more in large firms.",
+   "rating": 9
+  },
+  {
+   "id": 3,
+   "title": "SME financing and the venture capital market",
+   "members": [
+    "developing the M&A market",
+    "venture capital",
+    "VC accessibility",
+    "applied research",
+    "young SMEs",
+    "government VC",
+    "secondary market",
+    "patent applications",
+    "difficulty financing innovation"
+   ],
+   "summary": "Young SMEs face growing difficulty financing innovation (lack of external funds rose from 9.9% to 45.4%). Korea ranks 5th in the OECD in VC investment but 24th in VC accessibility, and growth has been led by government VC. VC access raises innovation only where the secondary market (M&A, IPO) is developed; a developed M&A market would raise patent filings by 0.74% and citations by 0.58%.",
+   "rating": 9
+  },
+  {
+   "id": 4,
+   "title": "Effects of private VC by fund type",
+   "members": [
+    "corporate VC",
+    "independent VC",
+    "private VC",
+    "bank VC"
+   ],
+   "summary": "Only private VC investment significantly raises innovation output. By fund sponsor, independent and corporate VC have significant effects, while risk-averse bank VC actually lowers patent filings and citations. The conclusion recommends expanding the role of independent and corporate VC.",
+   "rating": 7
+  },
+  {
+   "id": 5,
+   "title": "Innovative entrepreneurs and \"smart mavericks\"",
+   "members": [
+    "smart mavericks",
+    "decline in new entrants",
+    "negative view of failure",
+    "Korean Education Longitudinal Study 2005",
+    "supportive environment for entrepreneurship",
+    "innovative entrepreneurs",
+    "golden ticket syndrome"
+   ],
+   "summary": "Fewer capable start-ups entered, so the average age of SMEs rose from 1.6 to 12.5 years. In the Korean Education Longitudinal Study, smart mavericks, likely future innovative entrepreneurs, preferred employment to starting a business (3.0%), with golden ticket syndrome and fear of failure (61.0%) cited as reasons. The prescription is an environment that lowers the risk of failure.",
+   "rating": 8
+  },
+  {
+   "id": 6,
+   "title": "Policy scenarios for basic research",
+   "members": [
+    "Akcigit et al. (2021) structural model",
+    "economic growth rate",
+    "public research institutes",
+    "uniform R&D subsidy",
+    "targeted basic-research subsidy",
+    "stronger industry-academia collaboration"
+   ],
+   "summary": "Using the Akcigit et al. (2021) structural model, subsidizing only firms' basic research is most effective (growth +0.22 points, welfare +2.1%) but hard to implement. The practical alternative, more funding for public research institutes plus stronger industry-academia collaboration, comes close (+0.18 points, +1.3%). A uniform subsidy for all R&D yields only +0.20 points and +0.4%.",
+   "rating": 8
+  }
+ ]
+}

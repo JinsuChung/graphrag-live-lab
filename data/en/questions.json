@@ -1,0 +1,142 @@
+[
+ {
+  "id": "q1",
+  "type": "single-hop",
+  "question": "Where does Korea rank among OECD countries on the venture capital accessibility index?",
+  "answer": "24th in the OECD in 2020 (lower tier), even though VC investment itself was 0.16% of GDP, 5th in the OECD.",
+  "evidence": [
+   [
+    "doc11"
+   ]
+  ],
+  "supporting_docs": [
+   "doc11"
+  ]
+ },
+ {
+  "id": "q2",
+  "type": "single-hop",
+  "question": "What share of all innovative firms' R&D spending do large firms account for?",
+  "answer": "About 88% (large firms are 5% of innovative firms and employ 69% of their workers).",
+  "evidence": [
+   [
+    "doc07"
+   ]
+  ],
+  "supporting_docs": [
+   "doc07"
+  ]
+ },
+ {
+  "id": "q3",
+  "type": "multi-hop",
+  "question": "What financing problem do young SMEs face, and where does Korea rank in access to the funding source blamed for it?",
+  "answer": "Growing difficulty financing innovation (lack of external funds rose from 9.9% to 45.4%) → weak venture capital; Korea ranks 24th in the OECD on VC accessibility.",
+  "evidence": [
+   [
+    "doc09"
+   ],
+   [
+    "doc11"
+   ]
+  ],
+  "supporting_docs": [
+   "doc09",
+   "doc11"
+  ]
+ },
+ {
+  "id": "q4",
+  "type": "multi-hop",
+  "question": "Which type of R&D is closely linked to the quality of innovation output, and how much would supporting it together with public research institutes raise economic growth?",
+  "answer": "Basic research → 1.5x subsidies + more funding for public research + stronger industry-academia collaboration raises growth by 0.18 percentage points and welfare by 1.3%.",
+  "evidence": [
+   [
+    "doc12",
+    "doc10"
+   ],
+   [
+    "doc16"
+   ]
+  ],
+  "supporting_docs": [
+   "doc10",
+   "doc12",
+   "doc16"
+  ]
+ },
+ {
+  "id": "q5",
+  "type": "multi-hop",
+  "question": "Which type of private venture capital actually lowered firms' innovation output, and which types does the conclusion recommend expanding?",
+  "answer": "Bank VC lowered patent filings and citations → the conclusion recommends expanding independent and corporate VC.",
+  "evidence": [
+   [
+    "doc14"
+   ],
+   [
+    "doc18"
+   ]
+  ],
+  "supporting_docs": [
+   "doc14",
+   "doc18"
+  ]
+ },
+ {
+  "id": "q6",
+  "type": "multi-hop",
+  "question": "What social phenomenon discourages smart mavericks from starting businesses, and how much would doubling the entry rate of innovative firms improve social welfare?",
+  "answer": "Golden ticket syndrome and a negative view of failure → doubling the entry rate raises growth by 0.03 percentage points and welfare by 1.0%.",
+  "evidence": [
+   [
+    "doc15"
+   ],
+   [
+    "doc17"
+   ]
+  ],
+  "supporting_docs": [
+   "doc15",
+   "doc17"
+  ]
+ },
+ {
+  "id": "q7",
+  "type": "multi-hop",
+  "question": "Why might the Korean economy enter negative growth in the 2040s, and where does Korea rank in U.S. patent applications?",
+  "answer": "Low fertility and rapid aging shrink the labor supply → Korea ranked 4th in U.S. patent applications in 2020.",
+  "evidence": [
+   [
+    "doc02"
+   ],
+   [
+    "doc03",
+    "doc01"
+   ]
+  ],
+  "supporting_docs": [
+   "doc01",
+   "doc02",
+   "doc03"
+  ]
+ },
+ {
+  "id": "q8",
+  "type": "global",
+  "question": "Summarize the three problems with Korean firms' innovation identified in this report and the policy prescription for each.",
+  "answer": "(1) Stagnant innovation quality → strengthen basic research and industry-academia collaboration (2) SMEs' difficulty financing innovation → improve VC and develop the M&A market (3) Fewer innovative entrants → an environment that supports entrepreneurship and STEM talent",
+  "evidence": [
+   [
+    "doc18",
+    "doc01",
+    "doc04"
+   ]
+  ],
+  "supporting_docs": [
+   "doc01",
+   "doc04",
+   "doc18"
+  ]
+ }
+]

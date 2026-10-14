@@ -18,14 +18,26 @@ from contextlib import contextmanager
 
 import numpy as np
 
-from common import doc_by_id, evidence_recall, load_questions
+from common import doc_by_id, evidence_recall, get_lang, load_questions, t
 from extraction import EXTRACT_PROMPT, Extraction, make_extractor, merge, normalize
 from global_search import (MAP_PROMPT, REDUCE_PROMPT, Partial, community_text, detect_communities, precomputed_reports,
                            similarity_scores)
 from prompts import GRAPH_PROMPT, VECTOR_PROMPT, format_docs
 import retrievers as R
 
-GOLD = {q["question"]: q for q in load_questions()}
+
+
+
+def PH_INDEX():
+    return t("인덱싱", "Indexing")
+
+
+def PH_SEARCH():
+    return t("검색", "Retrieval")
+
+
+def PH_GEN():
+    return t("생성", "Generation")
 
 
 class Trace:
@@ -64,16 +76,16 @@ def prompt_segments(text: str, pieces: list[dict]) -> list[dict]:
         if i < 0 or not p["text"]:
             continue
         if i > cursor:
-            spans.append({"kind": "template", "label": "지시문·양식", "text": text[cursor:i]})
+            spans.append({"kind": "template", "label": t("지시문·양식", "instructions"), "text": text[cursor:i]})
         spans.append({**p, "text": text[i:i + len(p["text"])]})
         cursor = i + len(p["text"])
     if cursor < len(text):
-        spans.append({"kind": "template", "label": "지시문·양식", "text": text[cursor:]})
+        spans.append({"kind": "template", "label": t("지시문·양식", "instructions"), "text": text[cursor:]})
     return spans
 
 
 def gold_info(question: str) -> dict | None:
-    q = GOLD.get(question.strip())
+    q = {x["question"]: x for x in load_questions()}.get(question.strip())
     return {"id": q["id"], "docs": q["supporting_docs"], "groups": q["evidence"], "answer": q["answer"]} if q else None
 
 
@@ -84,9 +96,11 @@ def vector_trace(question: str, k: int) -> dict:
     tr = Trace()
     docs = doc_by_id()
 
-    with tr.step("chunk", "벡터 인덱스 (청크 + 임베딩)", "인덱싱",
-                 f"문서 {len(docs)}개를 {R.CHUNK_SIZE}자(겹침 {R.CHUNK_OVERLAP}자) 단위 청크로 자르고, 각 청크를 임베딩 벡터로 "
-                 "바꿔 벡터 저장소에 넣어 둔 상태입니다. 이 과정은 '문서 처리' 모드에서 단계별로 볼 수 있습니다.",
+    with tr.step("chunk", t("벡터 인덱스 (청크 + 임베딩)", "Vector index (chunks + embeddings)"), PH_INDEX(),
+                 t(f"문서 {len(docs)}개를 {R.CHUNK_SIZE}자(겹침 {R.CHUNK_OVERLAP}자) 단위 청크로 자르고, 각 청크를 임베딩 벡터로 "
+                   "바꿔 벡터 저장소에 넣어 둔 상태입니다. 이 과정은 '문서 처리' 모드에서 단계별로 볼 수 있습니다.",
+                   f"The {len(docs)} documents have been split into {R.CHUNK_SIZE}-character chunks ({R.CHUNK_OVERLAP} overlap), "
+                   "embedded, and stored in a vector store. The 'Ingest' mode shows this step by step."),
                  ("lab/retrievers.py", "build_vector_store")) as s:
         store = R.build_vector_store()
         items = list(store.store.values())
@@ -95,16 +109,19 @@ def vector_trace(question: str, k: int) -> dict:
                      "chunks": [{"doc_id": it["metadata"]["doc_id"], "len": len(it["text"]),
                                  "text": it["text"]} for it in items]}
 
-    with tr.step("embed", "질문 임베딩", "검색",
-                 "질문 문장을 같은 임베딩 모델로 벡터로 바꿉니다. 의미가 비슷한 문장일수록 벡터가 가까워집니다.",
+    with tr.step("embed", t("질문 임베딩", "Embed the question"), PH_SEARCH(),
+                 t("질문 문장을 같은 임베딩 모델로 벡터로 바꿉니다. 의미가 비슷한 문장일수록 벡터가 가까워집니다.",
+                   "The question is turned into a vector with the same embedding model. Similar meanings end up close together."),
                  ("lab/retrievers.py", "vector_search_detailed")) as s:
         qv = store.embedding.embed_query(question)
         s["view"] = {"type": "vector", "dim": len(qv), "head": [round(x, 4) for x in qv[:48]],
                      "norm": round(float(np.linalg.norm(qv)), 4)}
 
-    with tr.step("similarity", "코사인 유사도 계산", "검색",
-                 "질문 벡터와 모든 청크 벡터의 코사인 유사도를 계산합니다. 오른쪽 산점도는 고차원 벡터를 2차원으로 "
-                 "줄여(PCA) 그린 것이라 거리가 대략적입니다.",
+    with tr.step("similarity", t("코사인 유사도 계산", "Cosine similarity"), PH_SEARCH(),
+                 t("질문 벡터와 모든 청크 벡터의 코사인 유사도를 계산합니다. 오른쪽 산점도는 고차원 벡터를 2차원으로 "
+                   "줄여(PCA) 그린 것이라 거리가 대략적입니다.",
+                   "Cosine similarity between the question vector and every chunk vector. The scatter plot on the right "
+                   "projects the vectors to 2-D (PCA), so distances are approximate."),
                  ("lab/retrievers.py", "vector_search_detailed")) as s:
         detail = R.vector_search_detailed(question, k)
         vecs = np.array([it["vector"] for it in items])
@@ -118,16 +135,20 @@ def vector_trace(question: str, k: int) -> dict:
                                     "score": score_of[it["text"]]} for it, p in zip(items, proj)],
                         "query": {"x": float(qp[0]), "y": float(qp[1])}, "selected": detail["doc_ids"]}
 
-    with tr.step("topk", f"Top-{k} 문서 선택 → 컨텍스트 청크", "검색",
-                 f"점수 순으로 청크를 훑으며 서로 다른 문서 {k}개가 모일 때까지의 청크 {len(detail['context'])}개를 "
-                 "LLM에 줄 컨텍스트로 고릅니다.",
+    with tr.step("topk", t(f"Top-{k} 문서 선택 → 컨텍스트 청크", f"Top-{k} documents → context chunks"), PH_SEARCH(),
+                 t(f"점수 순으로 청크를 훑으며 서로 다른 문서 {k}개가 모일 때까지의 청크 {len(detail['context'])}개를 "
+                   "LLM에 줄 컨텍스트로 고릅니다.",
+                   f"Walk the chunks by score until {k} distinct documents are covered; those {len(detail['context'])} "
+                   "chunks become the context for the LLM."),
                  ("lab/retrievers.py", "vector_search_detailed")) as s:
         s["view"] = {"type": "docs", "doc_ids": detail["doc_ids"], "gold": gold_info(question),
                      "chunks": detail["context"]}
 
-    with tr.step("prompt", "컨텍스트 주입 → 프롬프트 조립", "생성",
-                 "고른 청크를 프롬프트 템플릿의 {context} 자리에 넣습니다. 색깔 막대는 LLM이 받는 입력에서 "
-                 "지시문·각 청크·질문이 차지하는 비율입니다.",
+    with tr.step("prompt", t("컨텍스트 주입 → 프롬프트 조립", "Inject context → build the prompt"), PH_GEN(),
+                 t("고른 청크를 프롬프트 템플릿의 {context} 자리에 넣습니다. 색깔 막대는 LLM이 받는 입력에서 "
+                   "지시문·각 청크·질문이 차지하는 비율입니다.",
+                   "The chosen chunks fill the {context} slot of the prompt template. The colored bar shows how much of "
+                   "the LLM input is instructions, each chunk, and the question."),
                  ("lab/prompts.py", "VECTOR_PROMPT")) as s:
         from langchain_core.documents import Document
         ctx_docs = [Document(page_content=c["text"], metadata={"doc_id": c["doc_id"]}) for c in detail["context"]]
@@ -135,11 +156,12 @@ def vector_trace(question: str, k: int) -> dict:
         text = prompt_text(pv)
         pieces = [{"kind": "context", "label": d.metadata["doc_id"], "doc_id": d.metadata["doc_id"],
                    "text": f"[{d.metadata['doc_id']}] {d.page_content}"} for d in ctx_docs]
-        pieces.append({"kind": "question", "label": "질문", "text": question})
+        pieces.append({"kind": "question", "label": t("질문", "question"), "text": question})
         s["view"] = {"type": "prompt", "text": text, "chars": len(text), "segments": prompt_segments(text, pieces)}
 
-    with tr.step("answer", "LLM 답변 (스트리밍)", "생성",
-                 "조립한 프롬프트를 LLM에 보내고 답변을 토큰 단위로 받아옵니다.",
+    with tr.step("answer", t("LLM 답변 (스트리밍)", "LLM answer (streaming)"), PH_GEN(),
+                 t("조립한 프롬프트를 LLM에 보내고 답변을 토큰 단위로 받아옵니다.",
+                   "Send the prompt to the LLM and stream the answer token by token."),
                  ("lab/02_vector_rag.py", "chain")) as s:
         s["view"] = {"type": "llm", "messages": prompt_messages(pv)}
 
@@ -154,9 +176,11 @@ def graph_trace(question: str, k: int) -> dict:
     docs = doc_by_id()
     G = R.get_graph()
 
-    with tr.step("kg", "지식그래프 준비 (인덱싱)", "인덱싱",
-                 "문서에서 추출해 둔 지식그래프를 불러옵니다. 이 실습은 원문과 대조해 정리한 참조 그래프 kg.json을 기본으로 쓰고, "
-                 "'그래프 구축' 탭에서 LLM이 실제로 추출하는 과정을 볼 수 있습니다.",
+    with tr.step("kg", t("지식그래프 준비 (인덱싱)", "Knowledge graph (indexing)"), PH_INDEX(),
+                 t("문서에서 추출해 둔 지식그래프를 불러옵니다. 이 실습은 원문과 대조해 정리한 참조 그래프 kg.json을 기본으로 쓰고, "
+                   "'그래프 구축' 탭에서 LLM이 실제로 추출하는 과정을 볼 수 있습니다.",
+                   "Load the knowledge graph extracted from the documents. The lab uses the reference graph kg.json, "
+                   "checked against the source; the 'Build graph' mode shows a live LLM extraction."),
                  ("lab/common.py", "load_kg")) as s:
         types: dict[str, int] = {}
         for _, d in G.nodes(data=True):
@@ -164,19 +188,24 @@ def graph_trace(question: str, k: int) -> dict:
         s["view"] = {"type": "kgstats", "nodes": G.number_of_nodes(), "edges": G.number_of_edges(), "types": types}
         s["graph"] = {"focus": []}
 
-    with tr.step("link", "① 엔티티 연결 (Entity Linking)", "검색",
-                 "질문 속 표현을 그래프 노드와 연결합니다. 여기서는 노드 이름과 별칭의 문자열 매칭을 씁니다. "
-                 "실전에서는 임베딩 유사도나 LLM으로 더 유연하게 찾습니다.",
+    with tr.step("link", t("① 엔티티 연결 (Entity Linking)", "① Entity linking"), PH_SEARCH(),
+                 t("질문 속 표현을 그래프 노드와 연결합니다. 여기서는 노드 이름과 별칭의 문자열 매칭을 씁니다. "
+                   "실전에서는 임베딩 유사도나 LLM으로 더 유연하게 찾습니다.",
+                   "Link phrases in the question to graph nodes. Here we use string matching on node names and aliases "
+                   "(case-insensitive, whole words); real systems add embeddings or an LLM."),
                  ("lab/retrievers.py", "link_entities_detailed")) as s:
         links = R.link_entities_detailed(question, G)
         seeds = [l["node"] for l in links]
         s["view"] = {"type": "linking", "question": question, "links": links}
         s["graph"] = {"seeds": seeds, "focus": seeds}
 
-    with tr.step("path", "② 시드 사이 경로 탐색", "검색",
-                 "찾은 엔티티가 2개 이상이면 둘을 잇는 최단 경로를 찾습니다. 질문에 이름이 나오지 않는 중간 개체가 "
-                 "여기서 드러납니다 (PathRAG 아이디어)." if len(seeds) >= 2 else
-                 "엔티티가 하나뿐이라 경로 탐색을 건너뜁니다. 이런 질문은 단순 그래프 검색이 약한 경우입니다.",
+    with tr.step("path", t("② 시드 사이 경로 탐색", "② Paths between seeds"), PH_SEARCH(),
+                 t("찾은 엔티티가 2개 이상이면 둘을 잇는 최단 경로를 찾습니다. 질문에 이름이 나오지 않는 중간 개체가 "
+                   "여기서 드러납니다 (PathRAG 아이디어).",
+                   "With two or more entities, find the shortest paths between them. Intermediate entities that the "
+                   "question never mentions show up here (the PathRAG idea).") if len(seeds) >= 2 else
+                 t("엔티티가 하나뿐이라 경로 탐색을 건너뜁니다. 이런 질문은 단순 그래프 검색이 약한 경우입니다.",
+                   "Only one entity was found, so path search is skipped. Simple graph retrieval is weak on such questions."),
                  ("lab/retrievers.py", "shortest_paths")) as s:
         paths = R.shortest_paths(seeds, G)
         p_edges = [{"s": u, "t": v, "type": d["type"], "doc": d["doc"]} for u, v, d in R.edges_on_paths(paths, G)]
@@ -184,51 +213,59 @@ def graph_trace(question: str, k: int) -> dict:
         s["view"] = {"type": "paths", "paths": paths, "edges": p_edges, "seeds": seeds}
         s["graph"] = {"seeds": seeds, "focus": sorted({n for p in paths for n in p}) or seeds, "edges": edge_keys}
 
-    with tr.step("expand", "③ 1-hop 이웃 확장", "검색",
-                 "시드 엔티티에 바로 연결된 이웃까지 후보를 넓힙니다. 경로 노드와 합쳐 '관련 서브그래프'가 됩니다.",
+    with tr.step("expand", t("③ 1-hop 이웃 확장", "③ 1-hop expansion"), PH_SEARCH(),
+                 t("시드 엔티티에 바로 연결된 이웃까지 후보를 넓힙니다. 경로 노드와 합쳐 '관련 서브그래프'가 됩니다.",
+                   "Add the direct neighbors of the seed entities. Together with the path nodes they form the relevant subgraph."),
                  ("lab/retrievers.py", "expand_hops")) as s:
         hops = R.expand_hops(seeds, G, hops=1)
         sub = sorted(set(hops) | {n for p in paths for n in p})
         s["view"] = {"type": "expand", "hops": hops, "sub": sub}
         s["graph"] = {"seeds": seeds, "focus": sub, "edges": edge_keys, "near": True}
 
-    with tr.step("ppr", "④ Personalized PageRank", "검색",
-                 "시드에서 출발해 그래프를 무작위로 걷는다고 할 때 각 노드에 머무를 확률입니다. 시드와 구조적으로 "
-                 "가까운 노드일수록 점수가 높습니다 (HippoRAG 아이디어). 노드 크기가 점수를 나타냅니다.",
+    with tr.step("ppr", "④ Personalized PageRank", PH_SEARCH(),
+                 t("시드에서 출발해 그래프를 무작위로 걷는다고 할 때 각 노드에 머무를 확률입니다. 시드와 구조적으로 "
+                   "가까운 노드일수록 점수가 높습니다 (HippoRAG 아이디어). 노드 크기가 점수를 나타냅니다.",
+                   "The probability of being at each node during a random walk that restarts at the seeds. Nodes "
+                   "structurally close to the seeds score higher (the HippoRAG idea). Node size shows the score."),
                  ("lab/retrievers.py", "personalized_pagerank")) as s:
         ppr = R.personalized_pagerank(seeds, G) if seeds else {}
         top = sorted(ppr.items(), key=lambda x: -x[1])[:12]
         s["view"] = {"type": "ppr", "top": [{"node": n, "score": round(v, 4)} for n, v in top]}
         s["graph"] = {"seeds": seeds, "focus": sub, "weights": {n: round(v, 4) for n, v in ppr.items()}}
 
-    with tr.step("rank", "⑤ 원문 문서 순위", "검색",
-                 "경로 위 관계가 나온 문서를 1순위로, 나머지는 서브그래프 관계 양 끝 노드의 PPR 점수 합으로 정렬해 "
-                 "상위 k개 원문을 고릅니다.",
+    with tr.step("rank", t("⑤ 원문 문서 순위", "⑤ Rank source documents"), PH_SEARCH(),
+                 t("서브그래프 관계마다 양 끝 노드의 PPR 점수 합(경로 위 관계는 가산점)을 출처 문서에 더해 "
+                   "상위 k개 원문을 고릅니다.",
+                   "Each relation in the subgraph adds the PPR scores of its two ends (boosted if it lies on a path) to "
+                   "its source document; the top k documents are chosen."),
                  ("lab/retrievers.py", "graph_search_detailed")) as s:
         detail = R.graph_search_detailed(question, k)  # ①~④를 묶어 문서 순위까지 계산하는 실제 검색 함수
         s["view"] = {"type": "docscores", "rows": detail["doc_scores"], "selected": detail["doc_ids"],
                      "gold": gold_info(question)}
         s["graph"] = {"seeds": seeds, "focus": sub, "edges": edge_keys}
 
-    with tr.step("context", "⑥ 컨텍스트 구성", "생성",
-                 "LLM에게 줄 재료는 두 가지입니다. 구조를 요약한 관계 트리플과, 근거가 되는 원문입니다.",
+    with tr.step("context", t("⑥ 컨텍스트 구성", "⑥ Build the context"), PH_GEN(),
+                 t("LLM에게 줄 재료는 두 가지입니다. 구조를 요약한 관계 트리플과, 근거가 되는 원문입니다.",
+                   "The LLM gets two things: relation triples that summarize the structure, and the source text as evidence."),
                  ("lab/04_local_graph_rag.py", "build_context")) as s:
         s["view"] = {"type": "context", "triples": detail["triples"],
                      "docs": {d: docs[d].page_content for d in detail["doc_ids"]}}
 
-    with tr.step("prompt", "프롬프트 조립", "생성", "관계 트리플과 원문을 그래프용 프롬프트 템플릿에 넣습니다.",
+    with tr.step("prompt", t("프롬프트 조립", "Build the prompt"), PH_GEN(),
+                 t("관계 트리플과 원문을 그래프용 프롬프트 템플릿에 넣습니다.", "Triples and source text go into the graph prompt template."),
                  ("lab/prompts.py", "GRAPH_PROMPT")) as s:
-        triples_txt = "\n".join(detail["triples"]) or "(없음)"
+        triples_txt = "\n".join(detail["triples"]) or t("(없음)", "(none)")
         pv = GRAPH_PROMPT.invoke({"triples": triples_txt,
-                                  "docs": "\n\n".join(f"[{d}] {docs[d].page_content}" for d in detail["doc_ids"]) or "(없음)",
+                                  "docs": "\n\n".join(f"[{d}] {docs[d].page_content}" for d in detail["doc_ids"]) or t("(없음)", "(none)"),
                                   "question": question})
         text = prompt_text(pv)
-        pieces = [{"kind": "triples", "label": "관계 트리플", "text": triples_txt}]
+        pieces = [{"kind": "triples", "label": t("관계 트리플", "triples"), "text": triples_txt}]
         pieces += [{"kind": "context", "label": d, "doc_id": d, "text": f"[{d}] {docs[d].page_content}"} for d in detail["doc_ids"]]
-        pieces.append({"kind": "question", "label": "질문", "text": question})
+        pieces.append({"kind": "question", "label": t("질문", "question"), "text": question})
         s["view"] = {"type": "prompt", "text": text, "chars": len(text), "segments": prompt_segments(text, pieces)}
 
-    with tr.step("answer", "LLM 답변 (스트리밍)", "생성", "조립한 프롬프트를 LLM에 보내 답변을 받습니다.",
+    with tr.step("answer", t("LLM 답변 (스트리밍)", "LLM answer (streaming)"), PH_GEN(),
+                 t("조립한 프롬프트를 LLM에 보내 답변을 받습니다.", "Send the prompt to the LLM and stream the answer."),
                  ("lab/04_local_graph_rag.py", "chain")) as s:
         s["view"] = {"type": "llm", "messages": prompt_messages(pv)}
 
@@ -242,28 +279,35 @@ def global_trace(question: str, llm) -> dict:
     tr = Trace()
     G = R.get_graph()
 
-    with tr.step("community", "커뮤니티 탐지 (인덱싱)", "인덱싱",
-                 "서로 촘촘히 연결된 노드 묶음을 찾습니다(Louvain). Microsoft GraphRAG는 이를 계층적으로(Leiden) 수행합니다. "
-                 "그래프 색이 커뮤니티입니다.",
+    with tr.step("community", t("커뮤니티 탐지 (인덱싱)", "Community detection (indexing)"), PH_INDEX(),
+                 t("서로 촘촘히 연결된 노드 묶음을 찾습니다(Louvain). Microsoft GraphRAG는 이를 계층적으로(Leiden) 수행합니다. "
+                   "그래프 색이 커뮤니티입니다.",
+                   "Find tightly connected groups of nodes (Louvain); Microsoft GraphRAG does this hierarchically (Leiden). "
+                   "Colors in the graph are communities."),
                  ("lab/global_search.py", "detect_communities")) as s:
         comms = detect_communities(G)
         s["view"] = {"type": "communities", "communities": comms}
         s["graph"] = {"color": "community", "focus": []}
 
-    with tr.step("reports", "커뮤니티 리포트 (인덱싱)", "인덱싱",
-                 "커뮤니티마다 LLM이 요약 리포트를 미리 써 둡니다. 인덱싱 비용의 큰 몫을 차지합니다. "
-                 "여기서는 미리 만들어 둔 리포트(community_summaries.json)를 씁니다.",
+    with tr.step("reports", t("커뮤니티 리포트 (인덱싱)", "Community reports (indexing)"), PH_INDEX(),
+                 t("커뮤니티마다 LLM이 요약 리포트를 미리 써 둡니다. 인덱싱 비용의 큰 몫을 차지합니다. "
+                   "여기서는 미리 만들어 둔 리포트(community_summaries.json)를 씁니다.",
+                   "An LLM writes a summary report for each community in advance, a large share of indexing cost. "
+                   "Here we use prepared reports (community_summaries.json)."),
                  ("lab/global_search.py", "community_text")) as s:
         reports = precomputed_reports()
         s["view"] = {"type": "reports", "reports": reports,
                      "input_example": community_text(G, reports[0]["members"])}
         s["graph"] = {"color": "community", "focus": []}
 
-    with tr.step("map", "Map: 리포트마다 부분 답변", "검색",
-                 ("각 리포트에 질문을 던져 '부분 답변 + 관련도 점수'를 받습니다 (LLM 호출이 리포트 수만큼 병렬로 일어남)."
+    with tr.step("map", t("Map: 리포트마다 부분 답변", "Map: a partial answer per report"), PH_SEARCH(),
+                 (t("각 리포트에 질문을 던져 '부분 답변 + 관련도 점수'를 받습니다 (LLM 호출이 리포트 수만큼 병렬로 일어남).",
+                    "Ask each report for a partial answer and a relevance score (one parallel LLM call per report).")
                   if llm else
-                  "LLM이 없어서 '질문과 리포트의 임베딩 유사도'로 관련도를 흉내 내고, 리포트 요약을 부분 답변 대신 씁니다. "
-                  "LLM이 있으면 각 리포트에 질문을 던져 부분 답변과 점수를 받습니다."),
+                  t("LLM이 없어서 '질문과 리포트의 임베딩 유사도'로 관련도를 흉내 내고, 리포트 요약을 부분 답변 대신 씁니다. "
+                    "LLM이 있으면 각 리포트에 질문을 던져 부분 답변과 점수를 받습니다.",
+                    "No LLM is set, so relevance is approximated by embedding similarity and each report's summary stands in "
+                    "for its partial answer. With an LLM, each report is asked for a partial answer and score.")),
                  ("lab/global_search.py", "MAP_PROMPT")) as s:
         rows = []
         if llm:
@@ -276,13 +320,13 @@ def global_trace(question: str, llm) -> dict:
                                        R.build_vector_store().embedding)
             for r, sc in zip(reports, scores):
                 rows.append({"id": r["id"], "title": r["title"], "score": sc,
-                             "answer": r["summary"], "by": "임베딩 유사도 상대 점수 (LLM 대체)"})
+                             "answer": r["summary"], "by": t("임베딩 유사도 상대 점수 (LLM 대체)", "relative embedding similarity (LLM stand-in)")})
         rows.sort(key=lambda x: -x["score"])
         s["view"] = {"type": "map", "rows": rows}
         s["graph"] = {"color": "community", "communityScores": {str(r["id"]): r["score"] for r in rows}}
 
-    with tr.step("reduce", "Reduce: 부분 답변 종합 프롬프트", "생성",
-                 "점수가 높은 부분 답변만 모아 최종 답변을 쓰게 합니다.",
+    with tr.step("reduce", t("Reduce: 부분 답변 종합 프롬프트", "Reduce: combine partial answers"), PH_GEN(),
+                 t("점수가 높은 부분 답변만 모아 최종 답변을 쓰게 합니다.", "Only high-scoring partial answers are combined into the final answer."),
                  ("lab/global_search.py", "REDUCE_PROMPT")) as s:
         kept = [r for r in rows if r["score"] > 0 and r["answer"]]
         partial_lines = [f"({r['score']}) {r['answer']}" for r in kept]
@@ -290,10 +334,11 @@ def global_trace(question: str, llm) -> dict:
         text = prompt_text(pv)
         pieces = [{"kind": "context", "label": f"C{r['id']}", "community": r["id"], "text": line}
                   for r, line in zip(kept, partial_lines)]
-        pieces.append({"kind": "question", "label": "질문", "text": question})
+        pieces.append({"kind": "question", "label": t("질문", "question"), "text": question})
         s["view"] = {"type": "prompt", "text": text, "chars": len(text), "segments": prompt_segments(text, pieces)}
 
-    with tr.step("answer", "LLM 답변 (스트리밍)", "생성", "종합 답변을 생성합니다.",
+    with tr.step("answer", t("LLM 답변 (스트리밍)", "LLM answer (streaming)"), PH_GEN(),
+                 t("종합 답변을 생성합니다.", "Generate the combined answer."),
                  ("lab/05_global_graph_rag.py", "reduce_chain")) as s:
         s["view"] = {"type": "llm", "messages": prompt_messages(pv)}
 
@@ -317,8 +362,8 @@ def compare(question: str, k: int) -> dict:
     from langchain_core.documents import Document
     ctx = [Document(page_content=c["text"], metadata={"doc_id": c["doc_id"]}) for c in v_detail["context"]]
     vp = prompt_messages(VECTOR_PROMPT.invoke({"context": format_docs(ctx), "question": question}))
-    gp = prompt_messages(GRAPH_PROMPT.invoke({"triples": "\n".join(g_detail["triples"]) or "(없음)",
-                                          "docs": "\n\n".join(f"[{d}] {docs[d].page_content}" for d in g) or "(없음)",
+    gp = prompt_messages(GRAPH_PROMPT.invoke({"triples": "\n".join(g_detail["triples"]) or t("(없음)", "(none)"),
+                                          "docs": "\n\n".join(f"[{d}] {docs[d].page_content}" for d in g) or t("(없음)", "(none)"),
                                           "question": question}))
     graph = {"seeds": g_detail["seeds"], "focus": g_detail["sub"], "near": True,
              "edges": [f"{e['s']}|{e['t']}|{e['type']}" for e in g_detail["path_edges"]]}
@@ -348,23 +393,29 @@ def extract_trace(doc_id: str | None, text: str | None, llm) -> dict:
     docs = doc_by_id()
     G = R.get_graph()
     src = text.strip() if text and text.strip() else docs[doc_id].page_content
-    label = doc_id if not (text and text.strip()) else "직접 입력"
+    label = doc_id if not (text and text.strip()) else t("직접 입력", "custom text")
 
-    with tr.step("input", "입력 문서", "인덱싱", "그래프로 만들 원문입니다. 실제 시스템에서는 청크 단위로 이 과정을 반복합니다.",
+    with tr.step("input", t("입력 문서", "Input document"), PH_INDEX(),
+                 t("그래프로 만들 원문입니다. 실제 시스템에서는 청크 단위로 이 과정을 반복합니다.",
+                   "The source text to turn into a graph. Real systems repeat this for every chunk."),
                  None) as s:
         s["view"] = {"type": "text", "label": label, "text": src}
 
-    with tr.step("prompt", "추출 프롬프트 + 출력 스키마", "인덱싱",
-                 "LLM에게 '엔티티와 관계를 이 JSON 스키마대로 내놓으라'고 요청합니다. LangChain의 with_structured_output이 "
-                 "Pydantic 모델을 JSON 스키마로 바꿔 모델의 구조화 출력 기능에 넘깁니다.",
+    with tr.step("prompt", t("추출 프롬프트 + 출력 스키마", "Extraction prompt + output schema"), PH_INDEX(),
+                 t("LLM에게 '엔티티와 관계를 이 JSON 스키마대로 내놓으라'고 요청합니다. LangChain의 with_structured_output이 "
+                   "Pydantic 모델을 JSON 스키마로 바꿔 모델의 구조화 출력 기능에 넘깁니다.",
+                   "Ask the LLM to return entities and relations that follow this JSON schema. LangChain's "
+                   "with_structured_output turns the Pydantic model into a JSON schema for the model's structured output."),
                  ("lab/extraction.py", "Extraction")) as s:
         s["view"] = {"type": "prompt", "text": prompt_text(EXTRACT_PROMPT.invoke({"text": src})),
                      "schema": Extraction.model_json_schema()}
 
-    with tr.step("extract", "LLM 추출 결과", "인덱싱",
-                 "모델이 돌려준 구조화된 결과입니다." if llm else
-                 "LLM이 설정되지 않아, 이 문서에 대한 참조 그래프(kg.json)의 해당 부분을 대신 보여 줍니다. "
-                 ".env에 LLM_MODEL을 설정하면 실제 추출 결과가 나옵니다.",
+    with tr.step("extract", t("LLM 추출 결과", "LLM extraction result"), PH_INDEX(),
+                 t("모델이 돌려준 구조화된 결과입니다.", "The structured output returned by the model.") if llm else
+                 t("LLM이 설정되지 않아, 이 문서에 대한 참조 그래프(kg.json)의 해당 부분을 대신 보여 줍니다. "
+                   ".env에 LLM_MODEL을 설정하면 실제 추출 결과가 나옵니다.",
+                   "No LLM is set, so this shows the part of the reference graph (kg.json) for this document. "
+                   "Set LLM_MODEL in .env to see a real extraction."),
                  ("lab/extraction.py", "make_extractor")) as s:
         if llm:
             ex: Extraction = make_extractor(llm).invoke({"text": src})
@@ -378,14 +429,17 @@ def extract_trace(doc_id: str | None, text: str | None, llm) -> dict:
                 "entities": [{"name": n, "type": d["type"], "description": d["description"]} for n, d in ents.items()],
                 "relations": [{"source": u, "type": d["type"], "target": v, "description": d["description"]}
                               for u, v, d in rels]})
-            by = "정답 그래프(kg.json)"
+            by = t("참조 그래프(kg.json)", "reference graph (kg.json)")
         s["view"] = {"type": "extraction", "by": by, **ex.model_dump()}
         s["graph"] = {"mini": {"nodes": [e.name for e in ex.entities],
                                "edges": [{"s": r.source, "t": r.target, "type": r.type} for r in ex.relations]}}
 
-    with tr.step("resolve", "엔티티 해소 (기존 그래프와 병합)", "인덱싱",
-                 "새로 뽑은 엔티티 이름을 정규화(공백·기호 제거, 소문자)해 기존 그래프의 이름·별칭과 비교합니다. "
-                 "같으면 기존 노드에 합치고, 없으면 새 노드로 추가합니다. 엔티티 목록에 없는 이름을 가리키는 관계는 버립니다.",
+    with tr.step("resolve", t("엔티티 해소 (기존 그래프와 병합)", "Entity resolution (merge into the graph)"), PH_INDEX(),
+                 t("새로 뽑은 엔티티 이름을 정규화(공백·기호 제거, 소문자)해 기존 그래프의 이름·별칭과 비교합니다. "
+                   "같으면 기존 노드에 합치고, 없으면 새 노드로 추가합니다. 엔티티 목록에 없는 이름을 가리키는 관계는 버립니다.",
+                   "Normalize the new entity names (drop spaces and symbols, lowercase) and compare them with existing names "
+                   "and aliases. Matches merge into existing nodes; the rest become new nodes. Relations pointing to unknown "
+                   "names are dropped."),
                  ("lab/extraction.py", "merge")) as s:
         index = {}
         for n, d in G.nodes(data=True):
@@ -402,17 +456,18 @@ def extract_trace(doc_id: str | None, text: str | None, llm) -> dict:
 # ---------------------------------------------------------------------------
 # 문서 처리 (PDF → 정제 → 섹션 → 청크 → 임베딩 → 저장)
 # ---------------------------------------------------------------------------
-_PAGES: list[str] | None = None
-_SECTIONS: list[dict] | None = None
+_PDF_CACHE: dict[str, tuple[list[str], list[dict]]] = {}
 
 
 def _pdf():
-    global _PAGES, _SECTIONS
-    if _PAGES is None:
-        from pdf_prep import load_pages, split_sections
-        _PAGES = load_pages()
-        _SECTIONS = split_sections(_PAGES)
-    return _PAGES, _SECTIONS
+    """언어별로 PDF 페이지와 섹션을 한 번만 계산해 둔다."""
+    lang = get_lang()
+    if lang not in _PDF_CACHE:
+        from pdf_prep import download_pdf, load_pages, split_sections
+        download_pdf()
+        pages = load_pages()
+        _PDF_CACHE[lang] = (pages, split_sections(pages))
+    return _PDF_CACHE[lang]
 
 
 def chunk_view(doc_id: str, chunk_size: int, overlap: int) -> dict:
@@ -433,44 +488,59 @@ def chunk_view(doc_id: str, chunk_size: int, overlap: int) -> dict:
 def ingest_trace(page: int, doc_id: str, chunk_size: int, overlap: int) -> dict:
     from collections import Counter
 
-    from pdf_prep import PAGE_OFFSET, PDF_PATH, annotate_page
+    from pdf_prep import annotate, cfg, pdf_path
     tr = Trace()
+    offset = cfg()["offset"]
+    en = get_lang() == "en"
 
-    with tr.step("load", "① PDF 로드", "인덱싱",
-                 "LangChain의 PyPDFLoader가 PDF를 페이지마다 하나의 Document로 읽습니다. 표·차트가 있는 페이지는 "
-                 "숫자와 라벨이 텍스트로 섞여 나옵니다. 막대를 누르면 해당 페이지를 봅니다.",
+    with tr.step("load", t("① PDF 로드", "① Load the PDF"), PH_INDEX(),
+                 t("LangChain의 PyPDFLoader가 PDF를 페이지마다 하나의 Document로 읽습니다. 표·차트가 있는 페이지는 "
+                   "숫자와 라벨이 텍스트로 섞여 나옵니다. 막대를 누르면 해당 페이지를 봅니다.",
+                   "LangChain's PyPDFLoader reads each PDF page as one Document. Pages with charts and tables come out "
+                   "with numbers and labels mixed into the text. Click a bar to view that page."),
                  ("lab/pdf_prep.py", "load_pages")) as s:
         pages, sections = _pdf()
-        s["view"] = {"type": "pages", "file": PDF_PATH.name, "offset": PAGE_OFFSET, "page": page,
+        page = max(0, min(page, len(pages) - 1))
+        s["view"] = {"type": "pages", "file": pdf_path().name, "offset": offset, "page": page,
                      "chars": [len(p) for p in pages], "text": pages[page]}
 
-    with tr.step("clean", "② 정제 (잡음 제거)", "인덱싱",
-                 "규칙으로 차트 숫자·머리글·각주 등을 지웁니다. 취소선이 지운 줄이고, 오른쪽 배지가 지운 이유입니다. "
-                 "규칙이 완벽하지 않다는 점도 함께 보세요.",
-                 ("lab/pdf_prep.py", "annotate_page")) as s:
+    with tr.step("clean", t("② 정제 (잡음 제거)", "② Clean (remove noise)"), PH_INDEX(),
+                 t("국문판은 줄의 한글 글자 수·패턴 규칙으로, 영문판은 글꼴 크기(본문 11pt)로 차트 숫자·머리글·각주 등을 지웁니다. "
+                   "취소선이 지운 줄이고, 오른쪽 배지가 지운 이유입니다.",
+                   "The English edition is cleaned by font size (body text is 11pt; captions, notes and footnotes are smaller); "
+                   "the Korean edition uses character-pattern rules. Struck-through lines were removed; badges give the reason."),
+                 ("lab/pdf_prep.py", "_annotate_en" if en else "_annotate_ko")) as s:
         total = Counter()
-        for p in pages:
-            total.update(a["reason"] or "남김" for a in annotate_page(p))
-        s["view"] = {"type": "cleaning", "page": page, "offset": PAGE_OFFSET,
-                     "lines": annotate_page(pages[page]), "totals": dict(total.most_common())}
+        for pi in range(len(pages)):
+            total.update((a["reason"] or t("남김", "kept")).split(" · ")[0] for a in annotate(pi, pages))
+        s["view"] = {"type": "cleaning", "page": page, "offset": offset,
+                     "lines": annotate(page, pages), "totals": dict(total.most_common())}
 
-    with tr.step("sections", "③ 섹션 분할 (주제별 문서)", "인덱싱",
-                 "보고서의 문단 번호(1~56)와 BOX를 기준으로 주제가 같은 문단을 묶어 문서 19개를 만듭니다. "
-                 "문서마다 출처(문단·쪽)를 메타데이터로 남겨 나중에 근거를 보여 줄 수 있게 합니다.",
+    with tr.step("sections", t("③ 섹션 분할 (주제별 문서)", "③ Split into sections (topic documents)"), PH_INDEX(),
+                 t("보고서의 문단 번호(1~56)와 BOX를 기준으로 주제가 같은 문단을 묶어 문서 19개를 만듭니다. "
+                   "문서마다 출처(문단·쪽)를 메타데이터로 남겨 나중에 근거를 보여 줄 수 있게 합니다.",
+                   "Group paragraphs (numbered 1-56) and boxes by topic into 19 documents. Each keeps its source "
+                   "(paragraphs, pages) so evidence can be shown later."),
                  ("lab/pdf_prep.py", "split_sections")) as s:
         s["view"] = {"type": "sections", "selected": doc_id,
                      "docs": [{"doc_id": d["doc_id"], "title": d["title"], "where": d["where"], "chars": len(d["text"])}
                               for d in sections]}
 
-    with tr.step("chunk", "④ 청크 분할", "인덱싱",
-                 "문서를 검색 단위인 청크로 자릅니다. RecursiveCharacterTextSplitter는 문단 → 줄 → 공백 순으로 자를 곳을 "
-                 "찾습니다. 크기·겹침을 바꾸면 경계가 바로 다시 계산됩니다. 겹침(진한 부분)은 문장이 잘려 의미를 잃는 것을 막습니다.",
+    with tr.step("chunk", t("④ 청크 분할", "④ Chunking"), PH_INDEX(),
+                 t("문서를 검색 단위인 청크로 자릅니다. RecursiveCharacterTextSplitter는 문단 → 줄 → 공백 순으로 자를 곳을 "
+                   "찾습니다. 크기·겹침을 바꾸면 경계가 바로 다시 계산됩니다. 겹침(진한 부분)은 문장이 잘려 의미를 잃는 것을 막습니다.",
+                   "Split documents into chunks, the unit of retrieval. RecursiveCharacterTextSplitter looks for paragraph, "
+                   "then line, then space boundaries. Change the size or overlap and the boundaries are recomputed; "
+                   "overlap (striped) keeps sentences from losing meaning at a cut."),
                  ("lab/retrievers.py", "make_splitter")) as s:
         s["view"] = chunk_view(doc_id, chunk_size, overlap)
 
-    with tr.step("embed", "⑤ 임베딩", "인덱싱",
-                 "청크마다 임베딩 모델이 고정 길이 숫자 벡터를 만듭니다. 아래 히트맵의 한 줄이 청크 하나의 벡터(앞부분)입니다. "
-                 "오른쪽 산점도는 전체 청크를 2차원으로 줄여 문서(색)별로 그린 것으로, 같은 주제의 청크가 가까이 모입니다.",
+    with tr.step("embed", t("⑤ 임베딩", "⑤ Embedding"), PH_INDEX(),
+                 t("청크마다 임베딩 모델이 고정 길이 숫자 벡터를 만듭니다. 아래 히트맵의 한 줄이 청크 하나의 벡터(앞부분)입니다. "
+                   "오른쪽 산점도는 전체 청크를 2차원으로 줄여 문서(색)별로 그린 것으로, 같은 주제의 청크가 가까이 모입니다.",
+                   "The embedding model turns each chunk into a fixed-length vector. Each heatmap row is one chunk's vector "
+                   "(first dimensions). The scatter plot projects all chunks to 2-D, colored by document; chunks on the "
+                   "same topic cluster together."),
                  ("lab/retrievers.py", "build_vector_store")) as s:
         store = R.build_vector_store()
         items = list(store.store.values())
@@ -485,9 +555,12 @@ def ingest_trace(page: int, doc_id: str, chunk_size: int, overlap: int) -> dict:
         s["scatter"] = {"points": [{"doc_id": it["metadata"]["doc_id"], "x": float(p[0]), "y": float(p[1])}
                                    for it, p in zip(items, proj)], "focus": doc_id}
 
-    with tr.step("store", "⑥ 벡터 저장소", "인덱싱",
-                 "청크 원문, 메타데이터, 벡터를 한 레코드로 저장합니다. 질문이 오면 이 저장소에서 가장 가까운 벡터를 찾습니다. "
-                 "실습은 메모리(InMemoryVectorStore)를 쓰고, 실서비스는 Chroma·FAISS·pgvector·Neo4j 벡터 인덱스 등을 씁니다.",
+    with tr.step("store", t("⑥ 벡터 저장소", "⑥ Vector store"), PH_INDEX(),
+                 t("청크 원문, 메타데이터, 벡터를 한 레코드로 저장합니다. 질문이 오면 이 저장소에서 가장 가까운 벡터를 찾습니다. "
+                   "실습은 메모리(InMemoryVectorStore)를 쓰고, 실서비스는 Chroma·FAISS·pgvector·Neo4j 벡터 인덱스 등을 씁니다.",
+                   "Each record holds the chunk text, metadata and vector. Questions are matched against the nearest vectors. "
+                   "The lab keeps them in memory (InMemoryVectorStore); production systems use Chroma, FAISS, pgvector, "
+                   "Neo4j vector indexes and so on."),
                  ("lab/retrievers.py", "build_vector_store")) as s:
         it = mine[0] if mine else items[0]
         s["view"] = {"type": "store", "count": len(items), "dim": len(it["vector"]),

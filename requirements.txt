@@ -9,6 +9,7 @@ langchain-anthropic>=1.0      # Claude 사용 시
 langchain-openai>=1.0         # OpenAI 사용 시 (임베딩 포함)
 langchain-neo4j>=0.5          # 실습 07 (Neo4j)
 networkx>=3.3
+scipy>=1.11                   # PageRank·그래프 배치 계산 (없으면 결과가 미세하게 달라짐)
 python-dotenv>=1.0
 pydantic>=2.7
 numpy>=1.26

@@ -1,0 +1,6337 @@
+{
+ "nodes": [
+  {
+   "id": "Korea",
+   "type": "Country",
+   "description": "South Korea, facing low fertility rate and rapidly aging population, with critical need to enhance productivity",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc02",
+    "doc03",
+    "doc04",
+    "doc07",
+    "doc08",
+    "doc11",
+    "doc15",
+    "doc16"
+   ]
+  },
+  {
+   "id": "Bank Of Korea",
+   "type": "Organization",
+   "description": "Central bank of Korea, published Economic Outlook May 2024",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc02",
+    "doc04",
+    "doc06",
+    "doc07",
+    "doc08",
+    "doc11",
+    "doc12",
+    "doc13",
+    "doc14",
+    "doc15",
+    "doc16",
+    "doc17",
+    "doc18",
+    "doc19"
+   ]
+  },
+  {
+   "id": "Korean Firms",
+   "type": "Organization",
+   "description": "Firms operating in Korea, ranked second globally in R&D expenditure and fourth in U.S. patent applications",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc03",
+    "doc04",
+    "doc10",
+    "doc12"
+   ]
+  },
+  {
+   "id": "Innovative Firms",
+   "type": "Organization",
+   "description": "Firms capable of filing U.S. patents, accounting for approximately 72% of all firm R&D spending (2011-20 average)",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc06",
+    "doc07",
+    "doc18"
+   ]
+  },
+  {
+   "id": "Large Firms",
+   "type": "Organization",
+   "description": "Top 5% of firms by number of employees; led overall increase in R&D spending but experienced stagnant productivity growth",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc07",
+    "doc08",
+    "doc09",
+    "doc12",
+    "doc18"
+   ]
+  },
+  {
+   "id": "Young Smes",
+   "type": "Organization",
+   "description": "Young small and medium-sized enterprises in the bottom 20% by firm age; experienced rapid productivity growth before 2010s but slowed since then",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc07",
+    "doc09"
+   ]
+  },
+  {
+   "id": "Smes",
+   "type": "Organization",
+   "description": "Small and medium enterprises facing challenges in financing innovation due to limited access to venture capital",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc07",
+    "doc08",
+    "doc11",
+    "doc12",
+    "doc18"
+   ]
+  },
+  {
+   "id": "Venture Capital",
+   "type": "Concept",
+   "description": "Financing mechanism for innovation; access decreased in the 2010s with slow secondary market development and insufficient private sector role",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc05",
+    "doc10",
+    "doc11"
+   ]
+  },
+  {
+   "id": "Basic Research",
+   "type": "Concept",
+   "description": "Scientific foundation for pioneering leading technology; closely related to quality of innovation output; share in R&D expenditures declined from 14% in 2010 to 11% in 2021",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc05",
+    "doc10",
+    "doc12",
+    "doc16"
+   ]
+  },
+  {
+   "id": "Applied Research",
+   "type": "Concept",
+   "description": "Effective in increasing the quantity of innovation output but less related to quality compared to basic research",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc05",
+    "doc10",
+    "doc12",
+    "doc16"
+   ]
+  },
+  {
+   "id": "R&D Expenditure",
+   "type": "Concept",
+   "description": "Korea ranked second globally at 4.1% of GDP in 2022; innovative firms account for ~72% of all firm R&D spending",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc07",
+    "doc09",
+    "doc10"
+   ]
+  },
+  {
+   "id": "U.S. Patent Applications",
+   "type": "Concept",
+   "description": "Korea ranked fourth globally with 7.6% of total in 2020; used as indicator of innovation activity",
+   "aliases": [],
+   "docs": [
+    "doc01"
+   ]
+  },
+  {
+   "id": "Firm Productivity Growth",
+   "type": "Concept",
+   "description": "Dropped from average 6.1% (2001-10) to 0.5% (2011-20) for all Korean firms; innovative firms dropped from 8.2% to 1.3%",
+   "aliases": [],
+   "docs": [
+    "doc01"
+   ]
+  },
+  {
+   "id": "Innovation Quality",
+   "type": "Concept",
+   "description": "Measured by patent citations; has not improved since the mid-2000s despite increase in quantity of patent applications",
+   "aliases": [],
+   "docs": [
+    "doc01"
+   ]
+  },
+  {
+   "id": "Innovation Quantity",
+   "type": "Concept",
+   "description": "Measured by number of patent applications; increased significantly, especially among large firms",
+   "aliases": [],
+   "docs": [
+    "doc01"
+   ]
+  },
+  {
+   "id": "Secondary Market",
+   "type": "Concept",
+   "description": "M&A and IPO market; well-developed secondary market is required for venture capital to enhance innovation performance; development was slow in the 2010s",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc13"
+   ]
+  },
+  {
+   "id": "Innovative Entrepreneurs",
+   "type": "Person",
+   "description": "Described as smart mavericks with high cognitive abilities and tendency toward nonconformity; in Korea, they prefer employment over entrepreneurship due to social norms",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc10",
+    "doc11",
+    "doc15",
+    "doc17",
+    "doc18"
+   ]
+  },
+  {
+   "id": "Entrepreneurship Environment",
+   "type": "Concept",
+   "description": "Conditions nurturing innovative entrepreneurs; insufficient in Korea due to prevailing social norms favoring employment",
+   "aliases": [],
+   "docs": [
+    "doc01"
+   ]
+  },
+  {
+   "id": "Economic Growth",
+   "type": "Concept",
+   "description": "Improves by 0.2%p when basic research is strengthened and by 0.1%p when innovative firms are fostered",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc16",
+    "doc17"
+   ]
+  },
+  {
+   "id": "Social Welfare",
+   "type": "Concept",
+   "description": "Improves by 1.3% when basic research is strengthened and by 1.4% when innovative firms are fostered",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc16",
+    "doc17"
+   ]
+  },
+  {
+   "id": "University-Industry R&D Collaboration",
+   "type": "Concept",
+   "description": "A mechanism to strengthen basic research and improve economic growth and social welfare",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04"
+   ]
+  },
+  {
+   "id": "Research Grants",
+   "type": "Concept",
+   "description": "A mechanism to support basic research, contributing to economic growth and social welfare improvements",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04"
+   ]
+  },
+  {
+   "id": "Growth Potential",
+   "type": "Concept",
+   "description": "Korea's long-term economic growth capacity, rapidly eroding due to population decline",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "Population Decline",
+   "type": "Concept",
+   "description": "Korea's total population expected to peak at 51.84 million in 2020, declining to 50.06 million by 2040 and 37.18 million by 2070",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "Low Fertility Rate",
+   "type": "Concept",
+   "description": "Korea's unparalleled lowest-low fertility rate contributing to population decline",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "Super-Aged Society",
+   "type": "Concept",
+   "description": "Korea's demographic status as a super-aged society contributing to growth potential erosion",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "Statistics Korea",
+   "type": "Organization",
+   "description": "Released future population projections in December 2023",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "Cho (2023)",
+   "type": "Publication",
+   "description": "Long-term economic forecast predicting Korea entering negative growth phase in the 2040s",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "Negative Growth Phase",
+   "type": "Concept",
+   "description": "Expected economic phase for Korea in the 2040s due to decline in labor supply",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "Labor Supply",
+   "type": "Concept",
+   "description": "Declining labor supply in Korea due to population decline, contributing to negative growth",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "Innovation",
+   "type": "Concept",
+   "description": "Set of activities that create economic value by accumulating knowledge and realizing new ideas through R&D; main driver of long-term growth",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "Research And Development (R&D)",
+   "type": "Concept",
+   "description": "Core mechanism through which innovation accumulates knowledge and realizes new ideas",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "Technological Progress",
+   "type": "Concept",
+   "description": "Mechanism through which innovation drives long-term growth",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "Creative Destruction",
+   "type": "Concept",
+   "description": "Substitution of existing innovations; mechanism through which innovation drives long-term growth",
+   "aliases": [],
+   "docs": [
+    "doc02",
+    "doc16",
+    "doc17"
+   ]
+  },
+  {
+   "id": "Aghion And Howitt (1992)",
+   "type": "Publication",
+   "description": "Previous study identifying innovation as the main driver of long-term growth through technological progress and creative destruction",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "Firm Productivity",
+   "type": "Concept",
+   "description": "Enhanced directly by innovation through new product development and improved production processes",
+   "aliases": [],
+   "docs": [
+    "doc02",
+    "doc08",
+    "doc16"
+   ]
+  },
+  {
+   "id": "Capital Investment",
+   "type": "Concept",
+   "description": "Expanded as expected returns to technological progress increase, contributing to long-term growth",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "New Industries",
+   "type": "Concept",
+   "description": "Emerge as expected returns to technological progress increase, contributing to long-term growth",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "Global Value Chains",
+   "type": "Concept",
+   "description": "Reorganized through innovation, upgrading the economic structure",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "Human Capital",
+   "type": "Concept",
+   "description": "Quantity and quality boosted by innovation through medical technology, household appliances, and new technologies in education",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "Medical Technology",
+   "type": "Concept",
+   "description": "Advances increase life expectancy, boosting human capital and economic growth",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "Household Appliances",
+   "type": "Concept",
+   "description": "Reduce domestic labor, contributing to human capital enhancement",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "Education Technology",
+   "type": "Concept",
+   "description": "Application of new technologies in education to boost human capital",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "Israel",
+   "type": "Country",
+   "description": "OECD country with the highest R&D expenditure as % of GDP at 6.0%",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "Germany",
+   "type": "Country",
+   "description": "Country ranked below Korea in USPTO patent applications as of 2020",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "United Kingdom",
+   "type": "Country",
+   "description": "Country ranked below Korea in USPTO patent applications as of 2020",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "Oecd",
+   "type": "Organization",
+   "description": "Organisation for Economic Co-operation and Development, used as benchmark for innovation indicators",
+   "aliases": [],
+   "docs": [
+    "doc03",
+    "doc11",
+    "doc19"
+   ]
+  },
+  {
+   "id": "Uspto",
+   "type": "Organization",
+   "description": "U.S. Patent and Trademark Office, widely used to measure innovation performance for global competitiveness",
+   "aliases": [],
+   "docs": [
+    "doc03",
+    "doc08",
+    "doc09",
+    "doc12",
+    "doc13",
+    "doc14"
+   ]
+  },
+  {
+   "id": "Global Innovation Index",
+   "type": "Index",
+   "description": "Major national innovation assessment that comprehensively considers innovation resources, infrastructure, and investment scale",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "Costii",
+   "type": "Index",
+   "description": "Composite Science and Technology Innovation Index, a major national innovation assessment",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "Samsung Electronics",
+   "type": "Organization",
+   "description": "Korean firm ranked first in number of U.S. patent applications as of 2023",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "Lg Electronics",
+   "type": "Organization",
+   "description": "Korean firm ranked second in number of U.S. patent applications as of 2023",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "Hyundai Motor",
+   "type": "Organization",
+   "description": "Korean firm ranked 15th in number of U.S. patent applications as of 2023",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "Sk Hynix",
+   "type": "Organization",
+   "description": "Korean firm ranked 24th in number of U.S. patent applications as of 2023",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "Korean Universities",
+   "type": "Organization",
+   "description": "Universities in Korea that have played a role in advancing innovation activity indicators",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "Korean Government",
+   "type": "Organization",
+   "description": "Government entity in Korea contributing to innovation activity indicators",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "Korean Public Research Institutes",
+   "type": "Organization",
+   "description": "Public research institutes in Korea contributing to innovation activity indicators",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "Korea R&D Expenditure 2022",
+   "type": "Metric",
+   "description": "Korea's R&D expenditure at 5.2% of GDP in 2022, second only to Israel among OECD countries",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "Korea R&D Expenditure 2011",
+   "type": "Metric",
+   "description": "Korea's R&D expenditure at 3.6% of GDP in 2011",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "Korea R&D Expenditure 2001",
+   "type": "Metric",
+   "description": "Korea's R&D expenditure at 2.3% of GDP in 2001",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "Korean Firms R&D Expenditure 2022",
+   "type": "Metric",
+   "description": "Korean firms' R&D expenditures at 4.1% of GDP in 2022, ranking second among OECD member countries",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "Korea R&D Workforce 2022",
+   "type": "Metric",
+   "description": "Korea's R&D workforce at 21.4 per 1,000 employees in 2022",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "Korea R&D Workforce 2001",
+   "type": "Metric",
+   "description": "Korea's R&D workforce at 7.7 per 1,000 employees in 2001",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "Korea Uspto Ranking 2020",
+   "type": "Metric",
+   "description": "Korea ranked fourth in the world in USPTO patent applications as of 2020, ahead of Germany and the United Kingdom",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "Bank Of Korea Economic Outlook May 2024",
+   "type": "Publication",
+   "description": "Source publication: Bank of Korea, Economic Outlook (May 2024), containing in-depth analysis on Korean firms' innovation performance",
+   "aliases": [],
+   "docs": [
+    "doc03",
+    "doc09",
+    "doc10"
+   ]
+  },
+  {
+   "id": "Economic Outlook (May 2024)",
+   "type": "Publication",
+   "description": "Bank of Korea publication from May 2024 containing in-depth analysis on innovation and economic growth",
+   "aliases": [],
+   "docs": [
+    "doc04",
+    "doc11",
+    "doc13",
+    "doc16",
+    "doc17",
+    "doc18",
+    "doc19"
+   ]
+  },
+  {
+   "id": "Innovation And Economic Growth: Review Of Korean Firms' Innovation Performance",
+   "type": "Study",
+   "description": "In-depth analysis examining Korean firms' innovation activities and macroeconomic implications, published in Bank of Korea Economic Outlook May 2024",
+   "aliases": [],
+   "docs": [
+    "doc04",
+    "doc11",
+    "doc17",
+    "doc18"
+   ]
+  },
+  {
+   "id": "Global Financial Crisis (Gfc)",
+   "type": "Event",
+   "description": "Global Financial Crisis that marked a turning point in firm productivity growth slowdown",
+   "aliases": [],
+   "docs": [
+    "doc04"
+   ]
+  },
+  {
+   "id": "Total Factor Productivity (Tfp)",
+   "type": "Concept",
+   "description": "Measure of productivity based on national accounts; experienced slower growth since the GFC across multiple countries",
+   "aliases": [],
+   "docs": [
+    "doc04",
+    "doc06"
+   ]
+  },
+  {
+   "id": "Globalization Stagnation",
+   "type": "Concept",
+   "description": "Stagnation of globalization that strongly affected Korea's export-oriented economy",
+   "aliases": [],
+   "docs": [
+    "doc04"
+   ]
+  },
+  {
+   "id": "Intangible Economy",
+   "type": "Concept",
+   "description": "Economy driven by intangible assets; transitioning to it in response to digitalization has been difficult for Korean firms",
+   "aliases": [],
+   "docs": [
+    "doc04"
+   ]
+  },
+  {
+   "id": "Digitalization",
+   "type": "Concept",
+   "description": "Digital transformation trend that has posed challenges for Korean firms in restructuring and transitioning",
+   "aliases": [],
+   "docs": [
+    "doc04"
+   ]
+  },
+  {
+   "id": "Marginal Firms",
+   "type": "Concept",
+   "description": "Firms that have been difficult to restructure, contributing to the slowdown in firm productivity growth",
+   "aliases": [],
+   "docs": [
+    "doc04"
+   ]
+  },
+  {
+   "id": "Choi Et Al. 2018",
+   "type": "Publication",
+   "description": "Previous study cited as identifying factors contributing to the slowdown in firm productivity growth in Korea",
+   "aliases": [],
+   "docs": [
+    "doc04",
+    "doc06"
+   ]
+  },
+  {
+   "id": "Nam And Song 2020",
+   "type": "Publication",
+   "description": "Previous study cited as identifying factors contributing to the slowdown in firm productivity growth in Korea",
+   "aliases": [],
+   "docs": [
+    "doc04"
+   ]
+  },
+  {
+   "id": "Jung 2021",
+   "type": "Publication",
+   "description": "Previous study cited as identifying factors contributing to the slowdown in firm productivity growth in Korea",
+   "aliases": [],
+   "docs": [
+    "doc04"
+   ]
+  },
+  {
+   "id": "Patent Applications",
+   "type": "Concept",
+   "description": "Quantity measure of innovation output; increased significantly among large firms but quality did not improve",
+   "aliases": [],
+   "docs": [
+    "doc04",
+    "doc12",
+    "doc13",
+    "doc14",
+    "doc18"
+   ]
+  },
+  {
+   "id": "Forward Patent Citations",
+   "type": "Concept",
+   "description": "Measure of innovation quality closely related to productivity; has not improved since the mid-2000s",
+   "aliases": [],
+   "docs": [
+    "doc04"
+   ]
+  },
+  {
+   "id": "M&A Market",
+   "type": "Concept",
+   "description": "Mergers and acquisitions market; if developed to the level of developed countries, could increase patent applications by 0.74% and citations by 0.58%",
+   "aliases": [],
+   "docs": [
+    "doc04",
+    "doc13",
+    "doc18"
+   ]
+  },
+  {
+   "id": "United States",
+   "type": "Country",
+   "description": "Benchmark country for venture capital access and innovative entrepreneurship research",
+   "aliases": [],
+   "docs": [
+    "doc04",
+    "doc08",
+    "doc11",
+    "doc13"
+   ]
+  },
+  {
+   "id": "Social Conditions",
+   "type": "Concept",
+   "description": "Environmental factors in Korea that discourage smart mavericks from becoming innovative entrepreneurs",
+   "aliases": [],
+   "docs": [
+    "doc04"
+   ]
+  },
+  {
+   "id": "General Equilibrium Structural Model",
+   "type": "Concept",
+   "description": "Economic model used to estimate the impact of innovation policies on economic growth and social welfare through policy scenario analysis",
+   "aliases": [],
+   "docs": [
+    "doc04"
+   ]
+  },
+  {
+   "id": "Firm Innovation Activity",
+   "type": "Concept",
+   "description": "A direct determinant of a firm's productivity, categorized into five stages.",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "Decision To Innovate",
+   "type": "Concept",
+   "description": "Stage 1 of innovation activity: the decision to innovate.",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "Investment In Innovation Inputs (R&D)",
+   "type": "Concept",
+   "description": "Stage 2 of innovation activity: investment in innovation inputs such as R&D.",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "Accumulation Of Knowledge Capital Stock",
+   "type": "Concept",
+   "description": "Stage 3 of innovation activity: accumulation of knowledge capital stock.",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "Production Of Innovation Outputs",
+   "type": "Concept",
+   "description": "Stage 4 of innovation activity: production of innovation outputs.",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "Productivity Improvement",
+   "type": "Concept",
+   "description": "Stage 5 of innovation activity: productivity improvement.",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "Incumbents",
+   "type": "Concept",
+   "description": "Entrepreneurs who mainly focus on incremental innovation to avoid losing market share.",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "Innovative Entrants",
+   "type": "Concept",
+   "description": "Entrepreneurs more inclined toward disruptive innovation to launch new products or replace existing ones with new ideas.",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "Incremental Innovation",
+   "type": "Concept",
+   "description": "Innovation focused on improving existing products or processes, mainly pursued by incumbents.",
+   "aliases": [],
+   "docs": [
+    "doc05",
+    "doc12"
+   ]
+  },
+  {
+   "id": "Disruptive Innovation",
+   "type": "Concept",
+   "description": "Innovation aimed at launching new products or replacing existing ones with new ideas, pursued by innovative entrants.",
+   "aliases": [],
+   "docs": [
+    "doc05",
+    "doc07"
+   ]
+  },
+  {
+   "id": "Quantitative Performance",
+   "type": "Concept",
+   "description": "Innovation output measured by the number of patent applications.",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "Qualitative Performance",
+   "type": "Concept",
+   "description": "Innovation output measured by the number of citations patents receive, reflecting importance and impact as leading technology on subsequent innovation.",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "Internal Funds",
+   "type": "Concept",
+   "description": "Internal financial resources firms can use to finance innovation activities.",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "Innovation Input-Output",
+   "type": "Concept",
+   "description": "Factor determining how a firm's R&D leads to both quantitative and qualitative performance.",
+   "aliases": [],
+   "docs": [
+    "doc05",
+    "doc09"
+   ]
+  },
+  {
+   "id": "Innovation Financing",
+   "type": "Concept",
+   "description": "Factor determining how well venture capitalists support corporate innovation.",
+   "aliases": [],
+   "docs": [
+    "doc05",
+    "doc09",
+    "doc17",
+    "doc18"
+   ]
+  },
+  {
+   "id": "Innovator",
+   "type": "Concept",
+   "description": "Factor determining how many firms and entrepreneurs have decided to innovate.",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "Akcigit And Kerr 2018",
+   "type": "Publication",
+   "description": "Academic reference cited in relation to incumbent and innovative entrant entrepreneur types.",
+   "aliases": [],
+   "docs": [
+    "doc05",
+    "doc07",
+    "doc12"
+   ]
+  },
+  {
+   "id": "National Science Foundation",
+   "type": "Organization",
+   "description": "Organization that defines basic research and applied research.",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "Productivity",
+   "type": "Concept",
+   "description": "Outcome influenced by a firm's innovation activity.",
+   "aliases": [],
+   "docs": [
+    "doc05",
+    "doc07"
+   ]
+  },
+  {
+   "id": "Other Firms",
+   "type": "Concept",
+   "description": "Firms without U.S. patent applications, used as a comparison group for productivity analysis.",
+   "aliases": [],
+   "docs": [
+    "doc06"
+   ]
+  },
+  {
+   "id": "Oecd Oslo Manual",
+   "type": "Publication",
+   "description": "OECD manual on compiling innovation statistics, which defines innovative firms as those with at least one innovation performance.",
+   "aliases": [],
+   "docs": [
+    "doc06"
+   ]
+  },
+  {
+   "id": "U.S. Patent And Trademark Office",
+   "type": "Organization",
+   "description": "Source of patent application data used to categorize innovative firms.",
+   "aliases": [],
+   "docs": [
+    "doc06"
+   ]
+  },
+  {
+   "id": "Kopdp",
+   "type": "Dataset",
+   "description": "Firm-level data source used in the analysis, referenced as Lee et al. 2020.",
+   "aliases": [],
+   "docs": [
+    "doc06",
+    "doc12",
+    "doc14"
+   ]
+  },
+  {
+   "id": "Kodata",
+   "type": "Dataset",
+   "description": "Firm-level data source used in the analysis.",
+   "aliases": [],
+   "docs": [
+    "doc06",
+    "doc14"
+   ]
+  },
+  {
+   "id": "Valuesearch",
+   "type": "Dataset",
+   "description": "Firm-level data source used in the analysis.",
+   "aliases": [],
+   "docs": [
+    "doc06",
+    "doc12",
+    "doc14"
+   ]
+  },
+  {
+   "id": "Ackerberg Et Al. (2015)",
+   "type": "Publication",
+   "description": "Widely utilized method in the literature used to estimate Total Factor Productivity (TFP) of firms.",
+   "aliases": [],
+   "docs": [
+    "doc06"
+   ]
+  },
+  {
+   "id": "Global Financial Crisis",
+   "type": "Event",
+   "description": "Economic crisis after which a more pronounced slowdown in productivity growth for innovative firms was observed.",
+   "aliases": [],
+   "docs": [
+    "doc06",
+    "doc08",
+    "doc10",
+    "doc11",
+    "doc18"
+   ]
+  },
+  {
+   "id": "Manufacturing Industry",
+   "type": "Concept",
+   "description": "Sector with a relatively high proportion among innovative firms, identified as a primary driver of economy-wide productivity growth.",
+   "aliases": [],
+   "docs": [
+    "doc06",
+    "doc09"
+   ]
+  },
+  {
+   "id": "Ict Industry",
+   "type": "Concept",
+   "description": "Sector with a relatively high proportion among innovative firms, identified as a primary driver of economy-wide productivity growth.",
+   "aliases": [],
+   "docs": [
+    "doc06"
+   ]
+  },
+  {
+   "id": "Financial Industry",
+   "type": "Concept",
+   "description": "Industry excluded from TFP analysis due to challenges in measuring TFP.",
+   "aliases": [],
+   "docs": [
+    "doc06"
+   ]
+  },
+  {
+   "id": "Real Estate Leasing Industry",
+   "type": "Concept",
+   "description": "Industry excluded from TFP analysis due to challenges in measuring TFP.",
+   "aliases": [],
+   "docs": [
+    "doc06"
+   ]
+  },
+  {
+   "id": "Public Sector",
+   "type": "Concept",
+   "description": "Sector excluded from TFP analysis due to challenges in measuring TFP.",
+   "aliases": [],
+   "docs": [
+    "doc06"
+   ]
+  },
+  {
+   "id": "Oecd 2023",
+   "type": "Publication",
+   "description": "OECD report assessing that productivity growth in the economy has primarily been driven by manufacturing and ICT sectors.",
+   "aliases": [],
+   "docs": [
+    "doc06"
+   ]
+  },
+  {
+   "id": "R&D Expenditures",
+   "type": "Concept",
+   "description": "Corporate research and development spending; innovative firms contribute about 72% of all corporate R&D expenditures.",
+   "aliases": [],
+   "docs": [
+    "doc06"
+   ]
+  },
+  {
+   "id": "Old Smes",
+   "type": "Concept",
+   "description": "SMEs not in the bottom 20% by years in business; represent 27% of innovative firms and 5% of employees and 10% of R&D expenditures",
+   "aliases": [],
+   "docs": [
+    "doc07"
+   ]
+  },
+  {
+   "id": "Innovation Output",
+   "type": "Concept",
+   "description": "Output resulting from innovation activities, examined per category of innovative firms",
+   "aliases": [],
+   "docs": [
+    "doc07"
+   ]
+  },
+  {
+   "id": "Cohen And Klepper 1992",
+   "type": "Publication",
+   "description": "Prior research suggesting larger firms invest more in R&D due to advantages in fixed costs, risk-bearing, and leveraging innovation across product lines",
+   "aliases": [],
+   "docs": [
+    "doc07"
+   ]
+  },
+  {
+   "id": "Acemoglu And Cao 2015",
+   "type": "Publication",
+   "description": "Prior research suggesting younger firms show higher productivity as they pursue disruptive innovations",
+   "aliases": [],
+   "docs": [
+    "doc07"
+   ]
+  },
+  {
+   "id": "Acemoglu Et Al. 2018",
+   "type": "Publication",
+   "description": "Prior research suggesting younger firms show higher productivity as they pursue disruptive innovations",
+   "aliases": [],
+   "docs": [
+    "doc07"
+   ]
+  },
+  {
+   "id": "2010S",
+   "type": "Concept",
+   "description": "Period during which productivity slowdown among innovative firms was more significant and large firm R&D expenditure increased rapidly",
+   "aliases": [],
+   "docs": [
+    "doc07"
+   ]
+  },
+  {
+   "id": "R&D Investments",
+   "type": "Concept",
+   "description": "Research and Development investments made by large firms to drive innovation output",
+   "aliases": [],
+   "docs": [
+    "doc08"
+   ]
+  },
+  {
+   "id": "Patents",
+   "type": "Concept",
+   "description": "Patents applied in the U.S. (USPTO), used as a measure of quantitative innovation performance",
+   "aliases": [],
+   "docs": [
+    "doc08"
+   ]
+  },
+  {
+   "id": "Forward Citations",
+   "type": "Concept",
+   "description": "Citations received by patents within five years of application, used as a qualitative measure of innovation performance",
+   "aliases": [],
+   "docs": [
+    "doc08",
+    "doc12",
+    "doc13"
+   ]
+  },
+  {
+   "id": "Innovation Performance",
+   "type": "Concept",
+   "description": "Measure of a firm's innovation output, both quantitative (number of patents) and qualitative (forward citations)",
+   "aliases": [],
+   "docs": [
+    "doc08",
+    "doc10",
+    "doc11",
+    "doc12",
+    "doc13"
+   ]
+  },
+  {
+   "id": "Tfp",
+   "type": "Concept",
+   "description": "Total Factor Productivity based on GDP, used as a macroeconomic measure related to corporate research activities",
+   "aliases": [],
+   "docs": [
+    "doc08"
+   ]
+  },
+  {
+   "id": "Knowledge Capital Stock",
+   "type": "Concept",
+   "description": "Knowledge capital accumulated by firms with high patent citations, linked to increased firm value",
+   "aliases": [],
+   "docs": [
+    "doc08"
+   ]
+  },
+  {
+   "id": "Netherlands",
+   "type": "Location",
+   "description": "Country with forward citations per patent of 3.7 during 2011-15",
+   "aliases": [],
+   "docs": [
+    "doc08"
+   ]
+  },
+  {
+   "id": "Switzerland",
+   "type": "Location",
+   "description": "Country with forward citations per patent of 2.8 during 2011-15",
+   "aliases": [],
+   "docs": [
+    "doc08"
+   ]
+  },
+  {
+   "id": "Hall Et Al. 2001",
+   "type": "Publication",
+   "description": "Research establishing forward citations per patent as an indicator of innovation quality, showing impact on subsequent innovations",
+   "aliases": [],
+   "docs": [
+    "doc08"
+   ]
+  },
+  {
+   "id": "Hall Et Al. 2005",
+   "type": "Publication",
+   "description": "Empirical study showing that firms with high patent citations increase their knowledge capital stock and firm value",
+   "aliases": [],
+   "docs": [
+    "doc08"
+   ]
+  },
+  {
+   "id": "Akcigit Et Al. 2021",
+   "type": "Publication",
+   "description": "Study estimating macroeconomic impact of corporate research using patent citations as a proxy for firm productivity growth, more closely related to TFP growth rate than patent application numbers",
+   "aliases": [],
+   "docs": [
+    "doc08",
+    "doc12",
+    "doc16"
+   ]
+  },
+  {
+   "id": "Korean Innovation Survey",
+   "type": "Publication",
+   "description": "Survey tracking innovation barriers and performance among Korean firms",
+   "aliases": [],
+   "docs": [
+    "doc09"
+   ]
+  },
+  {
+   "id": "Research And Development Activity Survey",
+   "type": "Publication",
+   "description": "Survey tracking R&D expenditure activity among Korean firms",
+   "aliases": [],
+   "docs": [
+    "doc09"
+   ]
+  },
+  {
+   "id": "Small Firms",
+   "type": "Organization",
+   "description": "Firms with fewer than 300 employees in South Korea",
+   "aliases": [],
+   "docs": [
+    "doc09"
+   ]
+  },
+  {
+   "id": "Lack Of External Funds",
+   "type": "Concept",
+   "description": "Barrier to innovation reported by young SMEs; share increased from 9.9% in 2007 to 45.4% in 2021 in manufacturing, and from 9.8% in 2011 to 44.9% in 2020 in services",
+   "aliases": [],
+   "docs": [
+    "doc09"
+   ]
+  },
+  {
+   "id": "Lack Of Internal Funds",
+   "type": "Concept",
+   "description": "Barrier to innovation reported by young SMEs; share increased from 12.8% in 2007 to 77.6% in 2021 in manufacturing, and from 19.7% in 2011 to 66.8% in 2020 in services",
+   "aliases": [],
+   "docs": [
+    "doc09"
+   ]
+  },
+  {
+   "id": "Patent Production",
+   "type": "Concept",
+   "description": "Filing of patents to the USPTO; share of young SMEs filing within eight years of founding declined below 10% since the 2010s",
+   "aliases": [],
+   "docs": [
+    "doc09"
+   ]
+  },
+  {
+   "id": "New Entrants",
+   "type": "Concept",
+   "description": "Startups with innovative potential entering the market; declining since the 2010s, contributing to productivity stagnation",
+   "aliases": [],
+   "docs": [
+    "doc09"
+   ]
+  },
+  {
+   "id": "Productivity Stagnation",
+   "type": "Concept",
+   "description": "Stagnation of productivity in young SMEs since the 2010s, partly attributed to decline in innovative new entrants",
+   "aliases": [],
+   "docs": [
+    "doc09"
+   ]
+  },
+  {
+   "id": "Average Age Of Smes",
+   "type": "Concept",
+   "description": "Average age of SMEs increased nearly eightfold from 1.6 years in 2001 to 12.5 years in 2020",
+   "aliases": [],
+   "docs": [
+    "doc09"
+   ]
+  },
+  {
+   "id": "Age Gap Between Innovative And Other Firms",
+   "type": "Concept",
+   "description": "Gap widened from 2.6 years in 2001 to 8.3 years in 2020 due to relative decline in entry of new patent-producing firms",
+   "aliases": [],
+   "docs": [
+    "doc09"
+   ]
+  },
+  {
+   "id": "Services Industry",
+   "type": "Concept",
+   "description": "Sector in which young SMEs reported increasing financing barriers to innovation between 2011 and 2020",
+   "aliases": [],
+   "docs": [
+    "doc09"
+   ]
+  },
+  {
+   "id": "Shrinking Share Of Basic Research",
+   "type": "Concept",
+   "description": "A decrease in the share of R&D expenditures on basic research, identified as a cause of stagnation in qualitative innovation performance of Korean firms since the 2010s.",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "Absorptive Capacity",
+   "type": "Concept",
+   "description": "A firm's ability to acquire and utilize knowledge and technology produced by external organizations such as universities.",
+   "aliases": [],
+   "docs": [
+    "doc10",
+    "doc12"
+   ]
+  },
+  {
+   "id": "Global Technological Competition",
+   "type": "Concept",
+   "description": "Intensified international competition in technology that pressured firms to focus on applied research for commercialization.",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "Short-Termism",
+   "type": "Concept",
+   "description": "A focus on short-term results due to deteriorating external conditions, contributing to reduced investment in basic research.",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "Innovation Costs",
+   "type": "Concept",
+   "description": "Rising costs associated with conducting innovation activities, contributing to the shift away from basic research.",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "Positive Externalities",
+   "type": "Concept",
+   "description": "Benefits of basic research that can be utilized by firms that do not directly conduct the research, making its social value higher than its value to individual firms.",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "Large Corporations",
+   "type": "Organization",
+   "description": "Large firms engaged in a wide range of industries that can extensively utilize the results of basic research and are particularly impacted by its decline.",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "Nelson 1959",
+   "type": "Publication",
+   "description": "Study showing that basic research provides the academic foundation for firms to be first movers at the frontier of new technologies.",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "Fabrizio 2009",
+   "type": "Publication",
+   "description": "Study showing that basic research increases a firm's absorptive capacity to acquire external knowledge and technology.",
+   "aliases": [],
+   "docs": [
+    "doc10",
+    "doc12"
+   ]
+  },
+  {
+   "id": "Hicks 1995",
+   "type": "Publication",
+   "description": "Study showing that basic research helps firms attract talented researchers.",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "Mansfield 1980",
+   "type": "Publication",
+   "description": "Empirical study finding that basic research improves the quality of innovation performance and increases firm productivity.",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "Griliches 1986",
+   "type": "Publication",
+   "description": "Empirical study finding that basic research improves the quality of innovation performance and increases firm productivity.",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "Arora Et Al. 2017",
+   "type": "Publication",
+   "description": "Study on changes in R&D composition, explaining why firms reduced the share of basic research.",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "Mezzanotti And Simcoe 2023",
+   "type": "Publication",
+   "description": "Study on changes in R&D composition, explaining why firms reduced the share of basic research.",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "Jones And Summers 2022",
+   "type": "Publication",
+   "description": "Study arguing that the value of basic research is higher than its value to individual firms due to positive externalities.",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "Government-Backed Venture Capital",
+   "type": "Concept",
+   "description": "Venture capital predominantly driven by government support; has led the uptick in VC investment since the mid-2010s in Korea",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "Private Venture Capital",
+   "type": "Concept",
+   "description": "Venture capital from private sector; seen as possessing superior expertise in technology analysis, risk assessment, management, sales strategy transfer, and managerial monitoring",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "Smart Mavericks",
+   "type": "Concept",
+   "description": "Individuals with exceptional cognitive abilities and nonconformist disposition who have potential to become innovative entrepreneurs; their nurturing in Korea may be hindered by educational or social constraints",
+   "aliases": [],
+   "docs": [
+    "doc11",
+    "doc15"
+   ]
+  },
+  {
+   "id": "Jeff Bezos",
+   "type": "Person",
+   "description": "Pioneering entrepreneur and founder of Amazon",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "Larry Page",
+   "type": "Person",
+   "description": "Pioneering entrepreneur and co-founder of Google",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "Sergey Brin",
+   "type": "Person",
+   "description": "Pioneering entrepreneur and co-founder of Google",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "Elon Musk",
+   "type": "Person",
+   "description": "Pioneering entrepreneur and founder of Tesla",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "Amazon",
+   "type": "Organization",
+   "description": "Company founded by Jeff Bezos since the 1990s; now among the top 10 largest U.S. firms by market capitalization",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "Google",
+   "type": "Organization",
+   "description": "Company founded by Larry Page and Sergey Brin since the 1990s; now among the top 10 largest U.S. firms by market capitalization",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "Tesla",
+   "type": "Organization",
+   "description": "Company founded by Elon Musk since the 1990s; now among the top 10 largest U.S. firms by market capitalization",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "Manufacturing Conglomerates",
+   "type": "Organization",
+   "description": "Firms established prior to the 1990s that predominantly hold South Korea's market capitalization",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "Levine And Rubinstein (2017)",
+   "type": "Publication",
+   "description": "Study finding that entrepreneurs leading major U.S. businesses typically demonstrated exceptional cognitive abilities and a nonconformist, maverick disposition",
+   "aliases": [],
+   "docs": [
+    "doc11",
+    "doc15"
+   ]
+  },
+  {
+   "id": "Park Et Al. (2017)",
+   "type": "Publication",
+   "description": "Study noting that private venture capital possesses superior expertise in technology analysis, risk assessment, management, sales strategy transfer, and managerial monitoring compared to government venture capital",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "R&D",
+   "type": "Concept",
+   "description": "Research and development; different types studied for their heterogeneous influence on quantity and quality of innovation performance",
+   "aliases": [],
+   "docs": [
+    "doc11",
+    "doc12"
+   ]
+  },
+  {
+   "id": "Quantity Of Innovation Outputs",
+   "type": "Concept",
+   "description": "Measured by the annual total number of patents applied for by each firm",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "Quality Of Innovation Outputs",
+   "type": "Concept",
+   "description": "Measured by forward citations, generality, and originality of patents",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "Generality",
+   "type": "Concept",
+   "description": "Qualitative indicator of patent innovation performance reflecting breadth of application",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "Originality",
+   "type": "Concept",
+   "description": "Qualitative indicator of patent innovation performance reflecting novelty",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "Knowledge Stock",
+   "type": "Concept",
+   "description": "Stock variable representing knowledge accumulated by firms through basic and applied research; calculated by subtracting 15% depreciation from previous year's stock and adding current year's knowledge production",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "Panel Analysis",
+   "type": "Method",
+   "description": "Empirical method used to analyze how different types of R&D affect quantity and quality of firm innovation performance, covering 1980–2021",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "Openalex",
+   "type": "Organization",
+   "description": "Data source used to construct firm-level data for the analysis",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "Roper & Hewitt-Dundas 2015",
+   "type": "Publication",
+   "description": "Previous study followed in the panel analysis methodology",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "Adams And Clemmons 2008",
+   "type": "Publication",
+   "description": "Study whose methodology is followed for calculating knowledge stock with 15% depreciation rate",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "Munari Et Al. 2022",
+   "type": "Publication",
+   "description": "Study cited for applying a three-year lag to account for time firms take to utilize accumulated knowledge",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "Akcigit And Goldschlag 2023",
+   "type": "Publication",
+   "description": "Study cited regarding market-leading firms' incentive to pursue incremental innovations via applied research",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "Lee Et Al. 2020",
+   "type": "Publication",
+   "description": "Study cited for the construction of large-scale firm-level data from USPTO, OpenAlex, ValueSearch, and KoPDP",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "Venture Capital (Vc)",
+   "type": "Concept",
+   "description": "An important source of financing for young innovative firms that lack tangible assets with collateral value",
+   "aliases": [],
+   "docs": [
+    "doc13"
+   ]
+  },
+  {
+   "id": "Vc Accessibility Index",
+   "type": "Metric",
+   "description": "World Economic Forum indicator measuring how easy it is to obtain VC funding for innovative but risky projects; higher scores indicate better access",
+   "aliases": [],
+   "docs": [
+    "doc13"
+   ]
+  },
+  {
+   "id": "World Economic Forum",
+   "type": "Organization",
+   "description": "International organization that provides the VC Accessibility Index used as an explanatory variable in the analysis",
+   "aliases": [],
+   "docs": [
+    "doc13"
+   ]
+  },
+  {
+   "id": "Ipo Market",
+   "type": "Concept",
+   "description": "Initial public offering market; a type of secondary market for VC exit. Korea ranks 12th in IPO market size, placing it in the upper group",
+   "aliases": [],
+   "docs": [
+    "doc13"
+   ]
+  },
+  {
+   "id": "South Korea",
+   "type": "Country",
+   "description": "Country analyzed in the study; VC accessibility index of 3.4 in 2020, IPO market ranked 12th (upper group), M&A market ranked 17th (lower group)",
+   "aliases": [],
+   "docs": [
+    "doc13",
+    "doc19"
+   ]
+  },
+  {
+   "id": "Top 32 Countries",
+   "type": "Group",
+   "description": "Sample of 32 countries selected based on number of patent applications at USPTO, including South Korea; sample period 1986–2020",
+   "aliases": [],
+   "docs": [
+    "doc13"
+   ]
+  },
+  {
+   "id": "Government Vc",
+   "type": "Concept",
+   "description": "Type of venture capital investor backed by government funding",
+   "aliases": [],
+   "docs": [
+    "doc13",
+    "doc14"
+   ]
+  },
+  {
+   "id": "Private Vc",
+   "type": "Concept",
+   "description": "Type of venture capital investor backed by private funding",
+   "aliases": [],
+   "docs": [
+    "doc13",
+    "doc14",
+    "doc18"
+   ]
+  },
+  {
+   "id": "Schnitzer And Watzinger 2022",
+   "type": "Publication",
+   "description": "Previous study consistent with findings that VC-backed firms produce high-impact innovations with spillover effects on non-VC-backed firms",
+   "aliases": [],
+   "docs": [
+    "doc13"
+   ]
+  },
+  {
+   "id": "Vc-Backed Firms",
+   "type": "Concept",
+   "description": "Firms that receive venture capital investment; often produce high-impact innovations with spillover effects on non-VC-backed firms",
+   "aliases": [],
+   "docs": [
+    "doc13"
+   ]
+  },
+  {
+   "id": "Young Innovative Firms",
+   "type": "Concept",
+   "description": "Firms that tend to have only intangible assets such as new ideas and technologies without enough tangible assets with collateral value",
+   "aliases": [],
+   "docs": [
+    "doc13",
+    "doc17"
+   ]
+  },
+  {
+   "id": "Country-Level Analysis",
+   "type": "Concept",
+   "description": "Empirical analysis conducted to examine the relationship between VC investment and firms' innovation performance in terms of market conditions",
+   "aliases": [],
+   "docs": [
+    "doc13"
+   ]
+  },
+  {
+   "id": "Vc Investment",
+   "type": "Concept",
+   "description": "Venture capital investment analyzed by investor types for impact on firm innovation performance",
+   "aliases": [],
+   "docs": [
+    "doc14",
+    "doc16"
+   ]
+  },
+  {
+   "id": "Independent Vc",
+   "type": "Concept",
+   "description": "Most common form of VC investing in technology companies; main goal is investment gains through IPO or M&A; focuses on managing invested companies using financial techniques and contractual provisions",
+   "aliases": [],
+   "docs": [
+    "doc14",
+    "doc18"
+   ]
+  },
+  {
+   "id": "Corporate Vc",
+   "type": "Concept",
+   "description": "VC contributed by a parent company; main goal is to expand strategic interests such as business diversification and exploring new markets; shares technological know-how and resources with invested company",
+   "aliases": [],
+   "docs": [
+    "doc14",
+    "doc18"
+   ]
+  },
+  {
+   "id": "Bank Vc",
+   "type": "Concept",
+   "description": "VC whose capital is contributed by banks; has advantage of capital mobilization but is relatively risk-averse due to lack of technical expertise, financial regulatory constraints, and conflicts of interest",
+   "aliases": [],
+   "docs": [
+    "doc14"
+   ]
+  },
+  {
+   "id": "Firm Innovation Performance",
+   "type": "Concept",
+   "description": "Measured quantitatively by number of patent applications and qualitatively by number of patent citations",
+   "aliases": [],
+   "docs": [
+    "doc14"
+   ]
+  },
+  {
+   "id": "Patent Citations",
+   "type": "Concept",
+   "description": "Qualitative indicator of firm innovation performance",
+   "aliases": [],
+   "docs": [
+    "doc14"
+   ]
+  },
+  {
+   "id": "Grilli And Murtinu 2014",
+   "type": "Publication",
+   "description": "Previous study finding that government VC investments do not significantly impact firms' patent performance, sales, or employment",
+   "aliases": [],
+   "docs": [
+    "doc14"
+   ]
+  },
+  {
+   "id": "Bertoni And Tykvova 2015",
+   "type": "Publication",
+   "description": "Previous study finding that government VC investments do not significantly impact firms' patent performance, sales, or employment",
+   "aliases": [],
+   "docs": [
+    "doc14"
+   ]
+  },
+  {
+   "id": "Alperovych Et Al. 2015",
+   "type": "Publication",
+   "description": "Previous study finding that government VC investments do not significantly impact firms' patent performance, sales, or employment",
+   "aliases": [],
+   "docs": [
+    "doc14"
+   ]
+  },
+  {
+   "id": "Firm-Level Panel Analysis",
+   "type": "Method",
+   "description": "Analysis methodology used to examine the relationship between VC investment and firm innovation performance; sample period 2005-2021; focuses on innovative firms with patents filed with the USPTO",
+   "aliases": [],
+   "docs": [
+    "doc14"
+   ]
+  },
+  {
+   "id": "Innovative Startups",
+   "type": "Concept",
+   "description": "Startups driven by innovation, whose decline in Korea may be linked to a lack of innovative entrepreneurs",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "National Longitudinal Survey Of Youth (Nlsy)",
+   "type": "Dataset",
+   "description": "US dataset used by Levine and Rubinstein (2017) to study entrepreneurial characteristics",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "Korean Education Longitudinal Study 2005",
+   "type": "Dataset",
+   "description": "Dataset tracking educational and employment status of Korean middle school students (mainly 13-year-olds) every year, examining academic achievement, campus life, family environment, business intention, employment path, and college enrollment",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "Non-Conformity Index",
+   "type": "Concept",
+   "description": "Index calculated from survey of tardiness, dress violations, etc. in middle school, used as a proxy for deviant/heretical temperament",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "Math Achievement Test Score",
+   "type": "Concept",
+   "description": "Middle school math test scores used as a proxy for cognitive ability",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "General Smart Students",
+   "type": "Concept",
+   "description": "Students with high cognitive ability but low Non-Conformity Index; 2.5% have started or want to start a business at age 28",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "General Mavericks",
+   "type": "Concept",
+   "description": "Students with low cognitive ability but high Non-Conformity Index; 5.9% have started or want to start a business at age 28",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "Other Students",
+   "type": "Concept",
+   "description": "Students with low cognitive ability and low Non-Conformity Index",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "Multinomial Logit Model",
+   "type": "Concept",
+   "description": "Statistical model used to estimate the relationship between cognitive ability, heretical temperament, and adult entrepreneurial status and intentions, controlling for individual characteristics",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "Golden Ticket Syndrome",
+   "type": "Concept",
+   "description": "OECD (2022) term describing Korean youth competing fiercely for quality jobs due to a single-opportunity social system where early career performance determines lifetime income and employment stability",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "Oecd (2022)",
+   "type": "Publication",
+   "description": "OECD report describing the golden ticket syndrome phenomenon among Korean youth",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "Trend Monitor Startup Survey (2019)",
+   "type": "Publication",
+   "description": "Survey finding that only 17.7% of respondents say failure is acceptable in their society, and 61.0% have a vague fear of failure",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "Fear Of Failure",
+   "type": "Concept",
+   "description": "Pessimistic perception of failure prevalent in Korea; 61.0% of respondents have a vague fear of failure, holding back potential innovative entrepreneurs",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "Single-Opportunity System",
+   "type": "Concept",
+   "description": "Social structure in Korea where performance in the early stages of one's career determines income level and employment stability throughout one's life",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "Heretical Temperament",
+   "type": "Concept",
+   "description": "Tendency toward non-conformity; positively and significantly associated with greater propensity to start a business",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "Cognitive Ability",
+   "type": "Concept",
+   "description": "Measured by middle school math scores; higher levels are associated with lower entrepreneurial propensity",
+   "aliases": [],
+   "docs": [
+    "doc15",
+    "doc19"
+   ]
+  },
+  {
+   "id": "Klette And Kortum 2004",
+   "type": "Publication",
+   "description": "Literature emphasizing creative destruction as a primary engine of economic growth.",
+   "aliases": [],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "Lentz And Mortensen 2008",
+   "type": "Publication",
+   "description": "Literature emphasizing creative destruction as a primary engine of economic growth.",
+   "aliases": [],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "Endogenous Growth Theory",
+   "type": "Concept",
+   "description": "Economic theory that views innovation as a key driver of long-term productivity growth.",
+   "aliases": [],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "Entrepreneurial Talent",
+   "type": "Concept",
+   "description": "Human capital that, when nurtured, boosts the emergence of new innovative firms.",
+   "aliases": [],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "Public Research Institutions",
+   "type": "Organization",
+   "description": "Institutions such as universities that conduct basic research and can receive direct funding; subject to the ivory tower effect in commercializing research outcomes.",
+   "aliases": [],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "Ivory Tower Effect",
+   "type": "Concept",
+   "description": "The phenomenon where a period of time is required for the commercialization of basic research outcomes from public research institutions.",
+   "aliases": [],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "Scenario 1",
+   "type": "Concept",
+   "description": "Equal support for basic and applied research: subsidy rate for both basic and applied research is uniformly doubled. Results in 0.20 pp increase in economic growth and 0.39% increase in social welfare.",
+   "aliases": [],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "Scenario 2",
+   "type": "Concept",
+   "description": "Selective support for basic research only: subsidy rate for basic research exclusively is tripled. Results in 0.22 pp increase in economic growth and 2.13% increase in social welfare. Most effective scenario.",
+   "aliases": [],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "Scenario 3",
+   "type": "Concept",
+   "description": "Equal support (1.5x) for basic and applied research by firms plus 1.5x increase in direct funding for public research institutions, without enhanced research collaboration. Results in 0.11 pp increase in economic growth and 0.25% increase in social welfare.",
+   "aliases": [],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "Scenario 4",
+   "type": "Concept",
+   "description": "Scenario 3 plus enhanced private-public research collaboration for immediate application of basic research findings. Results in 0.18 pp increase in economic growth and 1.3% increase in social welfare.",
+   "aliases": [],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "France",
+   "type": "Location",
+   "description": "Country that was the original subject of analysis in Akcigit et al. (2021); assumed to have similar basic research status by firm size as Korea due to limited statistical data.",
+   "aliases": [],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "Structural Model",
+   "type": "Concept",
+   "description": "Model used to analyze direct and indirect effects of innovation policies on economic growth and social welfare, more effective than reduced-form models for this purpose.",
+   "aliases": [],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "Scenario 1: Expanding Buyouts Of Young Innovative Firms",
+   "type": "Scenario",
+   "description": "Entails a twice increase in the rate of buyouts of young innovative firms, propelled by enhancements in the functionality of VC and secondary markets such as IPO and M&As",
+   "aliases": [],
+   "docs": [
+    "doc17"
+   ]
+  },
+  {
+   "id": "Scenario 2: Increasing The Birth Rate Of Innovative Firms",
+   "type": "Scenario",
+   "description": "Doubling the rate of new innovative firms by improving innovation financing conditions and increasing the number of innovative entrepreneurs",
+   "aliases": [],
+   "docs": [
+    "doc17"
+   ]
+  },
+  {
+   "id": "Scenario 3: Scenario 1 + Scenario 2",
+   "type": "Scenario",
+   "description": "The rate of management control transactions of innovative firms doubles and the rate of innovative firm births doubles; simultaneous implementation of Scenarios 1 and 2",
+   "aliases": [],
+   "docs": [
+    "doc17"
+   ]
+  },
+  {
+   "id": "Vc And Secondary Markets",
+   "type": "Concept",
+   "description": "Venture capital and secondary markets such as IPO and M&As that support buyouts of young innovative firms",
+   "aliases": [],
+   "docs": [
+    "doc17"
+   ]
+  },
+  {
+   "id": "Figure 4.2",
+   "type": "Artifact",
+   "description": "Figure illustrating the results of the three policy scenarios on economic growth and social welfare",
+   "aliases": [],
+   "docs": [
+    "doc17"
+   ]
+  },
+  {
+   "id": "R&D Investment",
+   "type": "Concept",
+   "description": "Research and development investment by firms; has increased despite slowdown in business productivity growth",
+   "aliases": [],
+   "docs": [
+    "doc18"
+   ]
+  },
+  {
+   "id": "Business Productivity Growth",
+   "type": "Concept",
+   "description": "Growth in productivity of businesses; has slowed since the global financial crisis",
+   "aliases": [],
+   "docs": [
+    "doc18"
+   ]
+  },
+  {
+   "id": "Innovation Performance Quality",
+   "type": "Concept",
+   "description": "Quality of innovation outcomes such as patent citations, generality, and originality; has not improved despite increased R&D investment",
+   "aliases": [],
+   "docs": [
+    "doc18"
+   ]
+  },
+  {
+   "id": "New Innovative Firms",
+   "type": "Organization",
+   "description": "New firms with innovative potential; their entry has decreased significantly since the 2010s",
+   "aliases": [],
+   "docs": [
+    "doc18"
+   ]
+  },
+  {
+   "id": "Basic Research Expenditures",
+   "type": "Concept",
+   "description": "Expenditures on basic research; their share has decreased, contributing to innovation problems",
+   "aliases": [],
+   "docs": [
+    "doc18"
+   ]
+  },
+  {
+   "id": "Vc Firms",
+   "type": "Organization",
+   "description": "Venture capital firms with expertise in evaluating innovative technologies; lack innovation financing capabilities",
+   "aliases": [],
+   "docs": [
+    "doc18"
+   ]
+  },
+  {
+   "id": "Industry-Academia Cooperation",
+   "type": "Concept",
+   "description": "Collaboration between industry and academia to help SMEs absorb and utilize external basic research outcomes",
+   "aliases": [],
+   "docs": [
+    "doc18"
+   ]
+  },
+  {
+   "id": "Innovation Clusters",
+   "type": "Concept",
+   "description": "Clusters that activate innovation and help SMEs utilize external basic research outcomes",
+   "aliases": [],
+   "docs": [
+    "doc18"
+   ]
+  },
+  {
+   "id": "Universities",
+   "type": "Organization",
+   "description": "Academic institutions requiring strengthened support for basic research",
+   "aliases": [],
+   "docs": [
+    "doc18"
+   ]
+  },
+  {
+   "id": "Innovation Ecosystem",
+   "type": "Concept",
+   "description": "The broader ecosystem of innovation supported by private VC through technology transfer, manufacturing infrastructure, and product demand",
+   "aliases": [],
+   "docs": [
+    "doc18"
+   ]
+  },
+  {
+   "id": "Stem Talents",
+   "type": "Concept",
+   "description": "Science, technology, engineering, and mathematics professionals who can lead Korean innovation",
+   "aliases": [],
+   "docs": [
+    "doc18"
+   ]
+  },
+  {
+   "id": "Labor Market Flexibility",
+   "type": "Concept",
+   "description": "Flexibility in the labor market that encourages high-return and high-risk innovative activities",
+   "aliases": [],
+   "docs": [
+    "doc18"
+   ]
+  },
+  {
+   "id": "Multi-Opportunity System",
+   "type": "Concept",
+   "description": "A social structure that reduces the risk of failure and encourages innovative entrepreneurship",
+   "aliases": [],
+   "docs": [
+    "doc18"
+   ]
+  },
+  {
+   "id": "Educational Environment",
+   "type": "Concept",
+   "description": "Educational conditions including STEM experience for youth that promote innovative entrepreneurs and STEM talent",
+   "aliases": [],
+   "docs": [
+    "doc18"
+   ]
+  },
+  {
+   "id": "Box 2: Determinants Of Women'S Preference For Stem Majors",
+   "type": "Study",
+   "description": "Examines factors determining women's preference for STEM majors in college, using a linear probability model with data from the 2013 Korean Educational Longitudinal Study.",
+   "aliases": [],
+   "docs": [
+    "doc19"
+   ]
+  },
+  {
+   "id": "Stem",
+   "type": "Concept",
+   "description": "Science, Technology, Engineering, and Mathematics — essential human capital for innovation.",
+   "aliases": [],
+   "docs": [
+    "doc19"
+   ]
+  },
+  {
+   "id": "Japan",
+   "type": "Country",
+   "description": "Country with the lowest share of women in R&D workforce among OECD countries, ahead of South Korea which ranks second lowest.",
+   "aliases": [],
+   "docs": [
+    "doc19"
+   ]
+  },
+  {
+   "id": "2013 Korean Educational Longitudinal Study",
+   "type": "Dataset",
+   "description": "Tracks and surveys educational and employment status of a cohort of students who were in their 5th year of elementary school in 2013 on an annual basis.",
+   "aliases": [],
+   "docs": [
+    "doc19"
+   ]
+  },
+  {
+   "id": "Linear Probability Model",
+   "type": "Method",
+   "description": "Statistical model used to estimate the determinants of women's preference for STEM majors, with dependent variable being whether high school students want to major in STEM.",
+   "aliases": [],
+   "docs": [
+    "doc19"
+   ]
+  },
+  {
+   "id": "K5 Math Test Scores",
+   "type": "Variable",
+   "description": "5th grade elementary school math test scores used as a proxy for cognitive ability in the model.",
+   "aliases": [],
+   "docs": [
+    "doc19"
+   ]
+  },
+  {
+   "id": "Father'S Stem Occupation",
+   "type": "Variable",
+   "description": "Whether the subject's father worked in a STEM field (science, computer, or engineering professional), used as a proxy for STEM occupational exposure.",
+   "aliases": [],
+   "docs": [
+    "doc19"
+   ]
+  },
+  {
+   "id": "Women'S Preference For Stem Majors",
+   "type": "Concept",
+   "description": "Dependent variable: dummy indicating whether a female respondent intended to major in science or engineering when entering college. 20.9% of women vs 43.1% of men preferred STEM majors.",
+   "aliases": [],
+   "docs": [
+    "doc19"
+   ]
+  },
+  {
+   "id": "Stem Occupational Exposure",
+   "type": "Concept",
+   "description": "Exposure to STEM careers, proxied by father's STEM occupation. Effect on STEM preference is significantly stronger for women than for men.",
+   "aliases": [],
+   "docs": [
+    "doc19"
+   ]
+  },
+  {
+   "id": "Declining Birth Rates",
+   "type": "Concept",
+   "description": "Demographic change contributing to potential shortage of STEM workers, motivating the need to increase female participation in STEM.",
+   "aliases": [],
+   "docs": [
+    "doc19"
+   ]
+  },
+  {
+   "id": "Female Stem Participation",
+   "type": "Concept",
+   "description": "Women accounted for 26.5% of STEM college graduates and 22.2% of R&D workforce in South Korea in 2021. Increasing exposure to STEM careers at school age can positively impact this.",
+   "aliases": [],
+   "docs": [
+    "doc19"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "source": "Bank Of Korea",
+   "type": "ANALYZED",
+   "target": "Korean Firms",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Korean Firms",
+   "type": "INVESTS_IN",
+   "target": "R&D Expenditure",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Korean Firms",
+   "type": "FILES",
+   "target": "U.S. Patent Applications",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Korean Firms",
+   "type": "EXPERIENCES",
+   "target": "Firm Productivity Growth",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Innovative Firms",
+   "type": "EXPERIENCES",
+   "target": "Firm Productivity Growth",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Innovative Firms",
+   "type": "ACCOUNTS_FOR_MAJORITY_OF",
+   "target": "R&D Expenditure",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Innovative Firms",
+   "type": "FILES",
+   "target": "U.S. Patent Applications",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Large Firms",
+   "type": "LED_INCREASE_IN",
+   "target": "R&D Expenditure",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Large Firms",
+   "type": "INCREASED",
+   "target": "Innovation Quantity",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Large Firms",
+   "type": "STAGNATED_IN",
+   "target": "Innovation Quality",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Large Firms",
+   "type": "EXPERIENCES",
+   "target": "Firm Productivity Growth",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Young Smes",
+   "type": "EXPERIENCES",
+   "target": "Firm Productivity Growth",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Young Smes",
+   "type": "CONSTRAINED_BY",
+   "target": "Venture Capital",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Smes",
+   "type": "LIMITED_ACCESS_TO",
+   "target": "Venture Capital",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Venture Capital",
+   "type": "ENHANCES",
+   "target": "Innovation Quality",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Venture Capital",
+   "type": "DEPENDS_ON",
+   "target": "Secondary Market",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Basic Research",
+   "type": "RELATED_TO",
+   "target": "Innovation Quality",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Applied Research",
+   "type": "INCREASES",
+   "target": "Innovation Quantity",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Basic Research",
+   "type": "COMPONENT_OF",
+   "target": "R&D Expenditure",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Applied Research",
+   "type": "COMPONENT_OF",
+   "target": "R&D Expenditure",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Innovation Quality",
+   "type": "RELATED_TO",
+   "target": "Firm Productivity Growth",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Korea",
+   "type": "LACKS",
+   "target": "Entrepreneurship Environment",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Entrepreneurship Environment",
+   "type": "NURTURES",
+   "target": "Innovative Entrepreneurs",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Innovative Entrepreneurs",
+   "type": "PREFERS_EMPLOYMENT_OVER_ENTREPRENEURSHIP_IN",
+   "target": "Korea",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Basic Research",
+   "type": "IMPROVES",
+   "target": "Economic Growth",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Basic Research",
+   "type": "IMPROVES",
+   "target": "Social Welfare",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Innovative Firms",
+   "type": "IMPROVES",
+   "target": "Economic Growth",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Innovative Firms",
+   "type": "IMPROVES",
+   "target": "Social Welfare",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Research Grants",
+   "type": "SUPPORTS",
+   "target": "Basic Research",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "University-Industry R&D Collaboration",
+   "type": "SUPPORTS",
+   "target": "Basic Research",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Korea",
+   "type": "EXPERIENCES",
+   "target": "Firm Productivity Growth",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Korea",
+   "type": "RANKED_SECOND_GLOBALLY_IN",
+   "target": "R&D Expenditure",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Korea",
+   "type": "RANKED_FOURTH_GLOBALLY_IN",
+   "target": "U.S. Patent Applications",
+   "description": "",
+   "doc": "doc01"
+  },
+  {
+   "source": "Korea",
+   "type": "HAS_ERODING",
+   "target": "Growth Potential",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Korea",
+   "type": "CHARACTERIZED_BY",
+   "target": "Low Fertility Rate",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Korea",
+   "type": "CHARACTERIZED_BY",
+   "target": "Super-Aged Society",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Low Fertility Rate",
+   "type": "CAUSES",
+   "target": "Population Decline",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Super-Aged Society",
+   "type": "CAUSES",
+   "target": "Population Decline",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Population Decline",
+   "type": "ERODES",
+   "target": "Growth Potential",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Population Decline",
+   "type": "REDUCES",
+   "target": "Labor Supply",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Labor Supply",
+   "type": "LEADS_TO",
+   "target": "Negative Growth Phase",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Statistics Korea",
+   "type": "PROJECTS",
+   "target": "Population Decline",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Cho (2023)",
+   "type": "FORECASTS",
+   "target": "Negative Growth Phase",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Korea",
+   "type": "EXPECTED_TO_ENTER",
+   "target": "Negative Growth Phase",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Innovation",
+   "type": "COUNTERACTS_WEAKENING_OF",
+   "target": "Growth Potential",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Innovation",
+   "type": "REALIZED_THROUGH",
+   "target": "Research And Development (R&D)",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Innovation",
+   "type": "DRIVES",
+   "target": "Technological Progress",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Innovation",
+   "type": "DRIVES",
+   "target": "Creative Destruction",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Aghion And Howitt (1992)",
+   "type": "IDENTIFIES_AS_GROWTH_DRIVER",
+   "target": "Innovation",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Innovation",
+   "type": "ENHANCES",
+   "target": "Firm Productivity",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Innovation",
+   "type": "EXPANDS",
+   "target": "Capital Investment",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Innovation",
+   "type": "CREATES",
+   "target": "New Industries",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Innovation",
+   "type": "REORGANIZES",
+   "target": "Global Value Chains",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Innovation",
+   "type": "BOOSTS",
+   "target": "Human Capital",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Medical Technology",
+   "type": "ENHANCES",
+   "target": "Human Capital",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Household Appliances",
+   "type": "ENHANCES",
+   "target": "Human Capital",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Education Technology",
+   "type": "ENHANCES",
+   "target": "Human Capital",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Human Capital",
+   "type": "CRUCIAL_FOR",
+   "target": "Korea",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Bank Of Korea",
+   "type": "ANALYZES",
+   "target": "Innovation",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Technological Progress",
+   "type": "INCREASES_RETURNS_TO",
+   "target": "Capital Investment",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Technological Progress",
+   "type": "ENABLES",
+   "target": "New Industries",
+   "description": "",
+   "doc": "doc02"
+  },
+  {
+   "source": "Korea",
+   "type": "HAS_METRIC",
+   "target": "Korea R&D Expenditure 2022",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Korea",
+   "type": "HAS_METRIC",
+   "target": "Korea R&D Expenditure 2011",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Korea",
+   "type": "HAS_METRIC",
+   "target": "Korea R&D Expenditure 2001",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Korea",
+   "type": "HAS_METRIC",
+   "target": "Korea Uspto Ranking 2020",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Korea",
+   "type": "HAS_METRIC",
+   "target": "Korea R&D Workforce 2022",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Korea",
+   "type": "HAS_METRIC",
+   "target": "Korea R&D Workforce 2001",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Korea",
+   "type": "RANKED_IN",
+   "target": "Global Innovation Index",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Korea",
+   "type": "RANKED_IN",
+   "target": "Costii",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Israel",
+   "type": "OUTRANKS",
+   "target": "Korea R&D Expenditure 2022",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Korea Uspto Ranking 2020",
+   "type": "RANKED_ABOVE",
+   "target": "Germany",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Korea Uspto Ranking 2020",
+   "type": "RANKED_ABOVE",
+   "target": "United Kingdom",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Korean Firms",
+   "type": "PART_OF",
+   "target": "Korea",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Korean Universities",
+   "type": "PART_OF",
+   "target": "Korea",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Korean Government",
+   "type": "PART_OF",
+   "target": "Korea",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Korean Public Research Institutes",
+   "type": "PART_OF",
+   "target": "Korea",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Korean Firms",
+   "type": "HAS_METRIC",
+   "target": "Korean Firms R&D Expenditure 2022",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Korean Firms",
+   "type": "CONTRIBUTES_TO",
+   "target": "Korea R&D Workforce 2022",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Samsung Electronics",
+   "type": "BASED_IN",
+   "target": "Korea",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Lg Electronics",
+   "type": "BASED_IN",
+   "target": "Korea",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Hyundai Motor",
+   "type": "BASED_IN",
+   "target": "Korea",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Sk Hynix",
+   "type": "BASED_IN",
+   "target": "Korea",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Samsung Electronics",
+   "type": "PATENT_APPLICANT",
+   "target": "Uspto",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Lg Electronics",
+   "type": "PATENT_APPLICANT",
+   "target": "Uspto",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Hyundai Motor",
+   "type": "PATENT_APPLICANT",
+   "target": "Uspto",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Sk Hynix",
+   "type": "PATENT_APPLICANT",
+   "target": "Uspto",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Korea",
+   "type": "PATENT_APPLICANT",
+   "target": "Uspto",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Bank Of Korea Economic Outlook May 2024",
+   "type": "PUBLISHED_BY",
+   "target": "Korea",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Korea",
+   "type": "MEMBER_OF",
+   "target": "Oecd",
+   "description": "",
+   "doc": "doc03"
+  },
+  {
+   "source": "Bank Of Korea",
+   "type": "PUBLISHED",
+   "target": "Economic Outlook (May 2024)",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Economic Outlook (May 2024)",
+   "type": "CONTAINS",
+   "target": "Innovation And Economic Growth: Review Of Korean Firms' Innovation Performance",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Innovation And Economic Growth: Review Of Korean Firms' Innovation Performance",
+   "type": "ANALYZES",
+   "target": "Korean Firms",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Global Financial Crisis (Gfc)",
+   "type": "CAUSED_SLOWDOWN_IN",
+   "target": "Total Factor Productivity (Tfp)",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Global Financial Crisis (Gfc)",
+   "type": "IMPACTED",
+   "target": "Korean Firms",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Korea",
+   "type": "EXPERIENCED_SLOWDOWN_IN",
+   "target": "Total Factor Productivity (Tfp)",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Korea",
+   "type": "AFFECTED_BY",
+   "target": "Globalization Stagnation",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Korea",
+   "type": "TRANSITIONING_TO",
+   "target": "Intangible Economy",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Digitalization",
+   "type": "DRIVES",
+   "target": "Intangible Economy",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Marginal Firms",
+   "type": "SUBSET_OF",
+   "target": "Korean Firms",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Choi Et Al. 2018",
+   "type": "CITED_BY",
+   "target": "Innovation And Economic Growth: Review Of Korean Firms' Innovation Performance",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Nam And Song 2020",
+   "type": "CITED_BY",
+   "target": "Innovation And Economic Growth: Review Of Korean Firms' Innovation Performance",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Jung 2021",
+   "type": "CITED_BY",
+   "target": "Innovation And Economic Growth: Review Of Korean Firms' Innovation Performance",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Innovative Firms",
+   "type": "SUBSET_OF",
+   "target": "Korean Firms",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Large Firms",
+   "type": "SUBSET_OF",
+   "target": "Innovative Firms",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Young Smes",
+   "type": "SUBSET_OF",
+   "target": "Innovative Firms",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Innovative Firms",
+   "type": "ACCOUNTS_FOR_MAJORITY_OF",
+   "target": "R&D Expenditure",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Large Firms",
+   "type": "LED_INCREASE_IN",
+   "target": "R&D Expenditure",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Large Firms",
+   "type": "INCREASED",
+   "target": "Patent Applications",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Large Firms",
+   "type": "STAGNATED_IN",
+   "target": "Forward Patent Citations",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Korean Firms",
+   "type": "REDUCED_SPENDING_ON",
+   "target": "Basic Research",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Basic Research",
+   "type": "RELATED_TO",
+   "target": "Forward Patent Citations",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Applied Research",
+   "type": "INCREASES",
+   "target": "Patent Applications",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "R&D Expenditure",
+   "type": "INCLUDES",
+   "target": "Basic Research",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "R&D Expenditure",
+   "type": "INCLUDES",
+   "target": "Applied Research",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Young Smes",
+   "type": "RELIES_ON",
+   "target": "Venture Capital",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Venture Capital",
+   "type": "IMPROVES",
+   "target": "Patent Applications",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Venture Capital",
+   "type": "IMPROVES",
+   "target": "Forward Patent Citations",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Secondary Market",
+   "type": "ENABLES_EFFECTIVENESS_OF",
+   "target": "Venture Capital",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "M&A Market",
+   "type": "COMPONENT_OF",
+   "target": "Secondary Market",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Korea",
+   "type": "HAS_UNDERDEVELOPED",
+   "target": "M&A Market",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "United States",
+   "type": "BENCHMARK_FOR",
+   "target": "Venture Capital",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "United States",
+   "type": "RESEARCHED",
+   "target": "Innovative Entrepreneurs",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Social Conditions",
+   "type": "DISCOURAGES",
+   "target": "Innovative Entrepreneurs",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Korea",
+   "type": "HAS",
+   "target": "Social Conditions",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "General Equilibrium Structural Model",
+   "type": "USED_IN",
+   "target": "Innovation And Economic Growth: Review Of Korean Firms' Innovation Performance",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "General Equilibrium Structural Model",
+   "type": "ESTIMATES_IMPACT_ON",
+   "target": "Economic Growth",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "General Equilibrium Structural Model",
+   "type": "ESTIMATES_IMPACT_ON",
+   "target": "Social Welfare",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Research Grants",
+   "type": "SUPPORTS",
+   "target": "Basic Research",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "University-Industry R&D Collaboration",
+   "type": "STRENGTHENS",
+   "target": "Basic Research",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Basic Research",
+   "type": "IMPROVES",
+   "target": "Economic Growth",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Basic Research",
+   "type": "IMPROVES",
+   "target": "Social Welfare",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Venture Capital",
+   "type": "IMPROVES",
+   "target": "Economic Growth",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Venture Capital",
+   "type": "IMPROVES",
+   "target": "Social Welfare",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Innovative Entrepreneurs",
+   "type": "CONTRIBUTES_TO",
+   "target": "Economic Growth",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Innovative Entrepreneurs",
+   "type": "CONTRIBUTES_TO",
+   "target": "Social Welfare",
+   "description": "",
+   "doc": "doc04"
+  },
+  {
+   "source": "Firm Innovation Activity",
+   "type": "DETERMINANT_OF",
+   "target": "Productivity",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Firm Innovation Activity",
+   "type": "HAS_STAGE",
+   "target": "Decision To Innovate",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Firm Innovation Activity",
+   "type": "HAS_STAGE",
+   "target": "Investment In Innovation Inputs (R&D)",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Firm Innovation Activity",
+   "type": "HAS_STAGE",
+   "target": "Accumulation Of Knowledge Capital Stock",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Firm Innovation Activity",
+   "type": "HAS_STAGE",
+   "target": "Production Of Innovation Outputs",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Firm Innovation Activity",
+   "type": "HAS_STAGE",
+   "target": "Productivity Improvement",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Incumbents",
+   "type": "FOCUSES_ON",
+   "target": "Incremental Innovation",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Innovative Entrants",
+   "type": "FOCUSES_ON",
+   "target": "Disruptive Innovation",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Incumbents",
+   "type": "PARTICIPANT_IN",
+   "target": "Firm Innovation Activity",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Innovative Entrants",
+   "type": "PARTICIPANT_IN",
+   "target": "Firm Innovation Activity",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Akcigit And Kerr 2018",
+   "type": "REFERENCES",
+   "target": "Incumbents",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Akcigit And Kerr 2018",
+   "type": "REFERENCES",
+   "target": "Innovative Entrants",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Investment In Innovation Inputs (R&D)",
+   "type": "HAS_COMPONENT",
+   "target": "Basic Research",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Investment In Innovation Inputs (R&D)",
+   "type": "HAS_COMPONENT",
+   "target": "Applied Research",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "National Science Foundation",
+   "type": "DEFINES",
+   "target": "Basic Research",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "National Science Foundation",
+   "type": "DEFINES",
+   "target": "Applied Research",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Production Of Innovation Outputs",
+   "type": "HAS_COMPONENT",
+   "target": "Quantitative Performance",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Production Of Innovation Outputs",
+   "type": "HAS_COMPONENT",
+   "target": "Qualitative Performance",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Venture Capital",
+   "type": "FINANCES",
+   "target": "Firm Innovation Activity",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Internal Funds",
+   "type": "FINANCES",
+   "target": "Firm Innovation Activity",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Firm Innovation Activity",
+   "type": "DETERMINED_BY",
+   "target": "Innovation Input-Output",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Firm Innovation Activity",
+   "type": "DETERMINED_BY",
+   "target": "Innovation Financing",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Firm Innovation Activity",
+   "type": "DETERMINED_BY",
+   "target": "Innovator",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Innovation Input-Output",
+   "type": "RELATES_TO",
+   "target": "Investment In Innovation Inputs (R&D)",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Innovation Input-Output",
+   "type": "RELATES_TO",
+   "target": "Quantitative Performance",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Innovation Input-Output",
+   "type": "RELATES_TO",
+   "target": "Qualitative Performance",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Innovation Financing",
+   "type": "RELATES_TO",
+   "target": "Venture Capital",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Innovator",
+   "type": "INCLUDES",
+   "target": "Incumbents",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Innovator",
+   "type": "INCLUDES",
+   "target": "Innovative Entrants",
+   "description": "",
+   "doc": "doc05"
+  },
+  {
+   "source": "Bank Of Korea",
+   "type": "ANALYZES",
+   "target": "Innovative Firms",
+   "description": "",
+   "doc": "doc06"
+  },
+  {
+   "source": "Oecd Oslo Manual",
+   "type": "DEFINES",
+   "target": "Innovative Firms",
+   "description": "",
+   "doc": "doc06"
+  },
+  {
+   "source": "Innovative Firms",
+   "type": "CATEGORIZED_BY",
+   "target": "U.S. Patent And Trademark Office",
+   "description": "",
+   "doc": "doc06"
+  },
+  {
+   "source": "U.S. Patent And Trademark Office",
+   "type": "DATA_SOURCE_FOR",
+   "target": "Total Factor Productivity (Tfp)",
+   "description": "",
+   "doc": "doc06"
+  },
+  {
+   "source": "Kopdp",
+   "type": "DATA_SOURCE_FOR",
+   "target": "Total Factor Productivity (Tfp)",
+   "description": "",
+   "doc": "doc06"
+  },
+  {
+   "source": "Kodata",
+   "type": "DATA_SOURCE_FOR",
+   "target": "Total Factor Productivity (Tfp)",
+   "description": "",
+   "doc": "doc06"
+  },
+  {
+   "source": "Valuesearch",
+   "type": "DATA_SOURCE_FOR",
+   "target": "Total Factor Productivity (Tfp)",
+   "description": "",
+   "doc": "doc06"
+  },
+  {
+   "source": "Ackerberg Et Al. (2015)",
+   "type": "METHOD_FOR_ESTIMATING",
+   "target": "Total Factor Productivity (Tfp)",
+   "description": "",
+   "doc": "doc06"
+  },
+  {
+   "source": "Choi Et Al. (2018)",
+   "type": "CRITERIA_FOR_EXCLUDING",
+   "target": "Financial Industry",
+   "description": "",
+   "doc": "doc06"
+  },
+  {
+   "source": "Choi Et Al. (2018)",
+   "type": "CRITERIA_FOR_EXCLUDING",
+   "target": "Real Estate Leasing Industry",
+   "description": "",
+   "doc": "doc06"
+  },
+  {
+   "source": "Choi Et Al. (2018)",
+   "type": "CRITERIA_FOR_EXCLUDING",
+   "target": "Public Sector",
+   "description": "",
+   "doc": "doc06"
+  },
+  {
+   "source": "Innovative Firms",
+   "type": "MEASURED_BY",
+   "target": "Total Factor Productivity (Tfp)",
+   "description": "",
+   "doc": "doc06"
+  },
+  {
+   "source": "Other Firms",
+   "type": "MEASURED_BY",
+   "target": "Total Factor Productivity (Tfp)",
+   "description": "",
+   "doc": "doc06"
+  },
+  {
+   "source": "Innovative Firms",
+   "type": "COMPARED_TO",
+   "target": "Other Firms",
+   "description": "",
+   "doc": "doc06"
+  },
+  {
+   "source": "Global Financial Crisis",
+   "type": "CAUSED_PRODUCTIVITY_SLOWDOWN_IN",
+   "target": "Innovative Firms",
+   "description": "",
+   "doc": "doc06"
+  },
+  {
+   "source": "Innovative Firms",
+   "type": "CONTRIBUTES_TO",
+   "target": "R&D Expenditures",
+   "description": "",
+   "doc": "doc06"
+  },
+  {
+   "source": "Innovative Firms",
+   "type": "INCLUDES",
+   "target": "Manufacturing Industry",
+   "description": "",
+   "doc": "doc06"
+  },
+  {
+   "source": "Innovative Firms",
+   "type": "INCLUDES",
+   "target": "Ict Industry",
+   "description": "",
+   "doc": "doc06"
+  },
+  {
+   "source": "Oecd 2023",
+   "type": "IDENTIFIES_AS_PRODUCTIVITY_DRIVER",
+   "target": "Manufacturing Industry",
+   "description": "",
+   "doc": "doc06"
+  },
+  {
+   "source": "Oecd 2023",
+   "type": "IDENTIFIES_AS_PRODUCTIVITY_DRIVER",
+   "target": "Ict Industry",
+   "description": "",
+   "doc": "doc06"
+  },
+  {
+   "source": "Innovative Firms",
+   "type": "CATEGORIZED_INTO",
+   "target": "Large Firms",
+   "description": "",
+   "doc": "doc07"
+  },
+  {
+   "source": "Innovative Firms",
+   "type": "CATEGORIZED_INTO",
+   "target": "Old Smes",
+   "description": "",
+   "doc": "doc07"
+  },
+  {
+   "source": "Innovative Firms",
+   "type": "CATEGORIZED_INTO",
+   "target": "Young Smes",
+   "description": "",
+   "doc": "doc07"
+  },
+  {
+   "source": "Smes",
+   "type": "CATEGORIZED_INTO",
+   "target": "Old Smes",
+   "description": "",
+   "doc": "doc07"
+  },
+  {
+   "source": "Smes",
+   "type": "CATEGORIZED_INTO",
+   "target": "Young Smes",
+   "description": "",
+   "doc": "doc07"
+  },
+  {
+   "source": "Large Firms",
+   "type": "DRIVES_GROWTH_OF",
+   "target": "R&D Expenditure",
+   "description": "",
+   "doc": "doc07"
+  },
+  {
+   "source": "Large Firms",
+   "type": "STAGNATED_IN",
+   "target": "Productivity",
+   "description": "",
+   "doc": "doc07"
+  },
+  {
+   "source": "Young Smes",
+   "type": "EXPERIENCED_SLOWDOWN_IN",
+   "target": "Productivity",
+   "description": "",
+   "doc": "doc07"
+  },
+  {
+   "source": "Young Smes",
+   "type": "PURSUES",
+   "target": "Disruptive Innovation",
+   "description": "",
+   "doc": "doc07"
+  },
+  {
+   "source": "Innovative Firms",
+   "type": "PRODUCES",
+   "target": "Innovation Output",
+   "description": "",
+   "doc": "doc07"
+  },
+  {
+   "source": "Innovative Firms",
+   "type": "LOCATED_IN",
+   "target": "Korea",
+   "description": "",
+   "doc": "doc07"
+  },
+  {
+   "source": "Bank Of Korea",
+   "type": "ANALYZES",
+   "target": "Innovative Firms",
+   "description": "",
+   "doc": "doc07"
+  },
+  {
+   "source": "Cohen And Klepper 1992",
+   "type": "SUPPORTS_HIGHER_R&D_FOR",
+   "target": "Large Firms",
+   "description": "",
+   "doc": "doc07"
+  },
+  {
+   "source": "Akcigit And Kerr 2018",
+   "type": "SUPPORTS_HIGHER_R&D_FOR",
+   "target": "Large Firms",
+   "description": "",
+   "doc": "doc07"
+  },
+  {
+   "source": "Acemoglu And Cao 2015",
+   "type": "SUPPORTS_HIGHER_PRODUCTIVITY_FOR",
+   "target": "Young Smes",
+   "description": "",
+   "doc": "doc07"
+  },
+  {
+   "source": "Acemoglu Et Al. 2018",
+   "type": "SUPPORTS_HIGHER_PRODUCTIVITY_FOR",
+   "target": "Young Smes",
+   "description": "",
+   "doc": "doc07"
+  },
+  {
+   "source": "R&D Expenditure",
+   "type": "INCREASED_RAPIDLY_SINCE",
+   "target": "2010S",
+   "description": "",
+   "doc": "doc07"
+  },
+  {
+   "source": "Productivity",
+   "type": "SLOWED_SINCE",
+   "target": "2010S",
+   "description": "",
+   "doc": "doc07"
+  },
+  {
+   "source": "Large Firms",
+   "type": "INVESTS_IN",
+   "target": "R&D Investments",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Large Firms",
+   "type": "APPLIES_FOR",
+   "target": "Patents",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Large Firms",
+   "type": "DRIVES",
+   "target": "Innovation Performance",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "R&D Investments",
+   "type": "IMPROVES_QUANTITY_OF",
+   "target": "Innovation Performance",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Patents",
+   "type": "FILED_AT",
+   "target": "Uspto",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Patents",
+   "type": "MEASURED_BY",
+   "target": "Forward Citations",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Forward Citations",
+   "type": "QUALITATIVE_MEASURE_OF",
+   "target": "Innovation Performance",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Forward Citations",
+   "type": "DETERMINES",
+   "target": "Firm Productivity",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Innovation Performance",
+   "type": "DETERMINES",
+   "target": "Firm Productivity",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Large Firms",
+   "type": "COMPARED_TO",
+   "target": "Smes",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Korea",
+   "type": "HAS_LOW",
+   "target": "Forward Citations",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Korea",
+   "type": "COMPARED_TO",
+   "target": "United States",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Korea",
+   "type": "COMPARED_TO",
+   "target": "Netherlands",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Korea",
+   "type": "COMPARED_TO",
+   "target": "Switzerland",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Hall Et Al. 2001",
+   "type": "VALIDATES_AS_INDICATOR",
+   "target": "Forward Citations",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Hall Et Al. 2005",
+   "type": "LINKS_PATENT_CITATIONS_TO",
+   "target": "Knowledge Capital Stock",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Knowledge Capital Stock",
+   "type": "INCREASES",
+   "target": "Firm Productivity",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Akcigit Et Al. 2021",
+   "type": "USES_AS_PROXY_FOR_PRODUCTIVITY",
+   "target": "Forward Citations",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Akcigit Et Al. 2021",
+   "type": "RELATES_CITATIONS_TO",
+   "target": "Tfp",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Global Financial Crisis",
+   "type": "SLOWED_GROWTH_OF",
+   "target": "Firm Productivity",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Large Firms",
+   "type": "AFFECTED_BY",
+   "target": "Global Financial Crisis",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Bank Of Korea",
+   "type": "ANALYZES_INNOVATION_IN",
+   "target": "Korea",
+   "description": "",
+   "doc": "doc08"
+  },
+  {
+   "source": "Bank Of Korea Economic Outlook May 2024",
+   "type": "ANALYZES",
+   "target": "Young Smes",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Bank Of Korea Economic Outlook May 2024",
+   "type": "ANALYZES",
+   "target": "Innovation Financing",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Bank Of Korea Economic Outlook May 2024",
+   "type": "ANALYZES",
+   "target": "Innovation Input-Output",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Bank Of Korea Economic Outlook May 2024",
+   "type": "ANALYZES",
+   "target": "New Entrants",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Korean Innovation Survey",
+   "type": "REPORTS",
+   "target": "Lack Of External Funds",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Korean Innovation Survey",
+   "type": "REPORTS",
+   "target": "Lack Of Internal Funds",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Research And Development Activity Survey",
+   "type": "REPORTS",
+   "target": "R&D Expenditure",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Young Smes",
+   "type": "FACES",
+   "target": "Lack Of External Funds",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Young Smes",
+   "type": "FACES",
+   "target": "Lack Of Internal Funds",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Young Smes",
+   "type": "CHALLENGED_BY",
+   "target": "Innovation Financing",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Young Smes",
+   "type": "OPERATES_IN",
+   "target": "Manufacturing Industry",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Young Smes",
+   "type": "OPERATES_IN",
+   "target": "Services Industry",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Young Smes",
+   "type": "ENGAGES_IN",
+   "target": "Patent Production",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Young Smes",
+   "type": "CHARACTERIZED_BY",
+   "target": "Average Age Of Smes",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Young Smes",
+   "type": "EXPERIENCES",
+   "target": "Productivity Stagnation",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Young Smes",
+   "type": "INVESTS_IN",
+   "target": "R&D Expenditure",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Large Firms",
+   "type": "INVESTS_IN",
+   "target": "R&D Expenditure",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Small Firms",
+   "type": "INVESTS_IN",
+   "target": "R&D Expenditure",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Patent Production",
+   "type": "FILED_WITH",
+   "target": "Uspto",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "New Entrants",
+   "type": "CAPABLE_OF",
+   "target": "Patent Production",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "New Entrants",
+   "type": "CONTRIBUTES_TO",
+   "target": "Productivity Stagnation",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "New Entrants",
+   "type": "INFLUENCES",
+   "target": "Age Gap Between Innovative And Other Firms",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Lack Of External Funds",
+   "type": "COMPONENT_OF",
+   "target": "Innovation Financing",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Lack Of Internal Funds",
+   "type": "COMPONENT_OF",
+   "target": "Innovation Financing",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Innovation Financing",
+   "type": "AFFECTS",
+   "target": "R&D Expenditure",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Average Age Of Smes",
+   "type": "RELATED_TO",
+   "target": "Age Gap Between Innovative And Other Firms",
+   "description": "",
+   "doc": "doc09"
+  },
+  {
+   "source": "Bank Of Korea Economic Outlook May 2024",
+   "type": "IDENTIFIES",
+   "target": "Shrinking Share Of Basic Research",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Shrinking Share Of Basic Research",
+   "type": "AFFECTS",
+   "target": "Korean Firms",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Shrinking Share Of Basic Research",
+   "type": "CAUSES_DECLINE_IN",
+   "target": "Innovation Performance",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Korean Firms",
+   "type": "CONDUCTS",
+   "target": "R&D Expenditure",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Korean Firms",
+   "type": "REDUCED_SHARE_OF",
+   "target": "Basic Research",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Korean Firms",
+   "type": "FOCUSED_ON",
+   "target": "Applied Research",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Basic Research",
+   "type": "COMPONENT_OF",
+   "target": "R&D Expenditure",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Basic Research",
+   "type": "IMPROVES",
+   "target": "Innovation Performance",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Basic Research",
+   "type": "INCREASES",
+   "target": "Absorptive Capacity",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Basic Research",
+   "type": "GENERATES",
+   "target": "Positive Externalities",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Global Financial Crisis",
+   "type": "CONTRIBUTED_TO",
+   "target": "Shrinking Share Of Basic Research",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Global Financial Crisis",
+   "type": "INTENSIFIED",
+   "target": "Global Technological Competition",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Global Financial Crisis",
+   "type": "INCREASED",
+   "target": "Short-Termism",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Global Technological Competition",
+   "type": "CONTRIBUTED_TO",
+   "target": "Shrinking Share Of Basic Research",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Short-Termism",
+   "type": "CONTRIBUTED_TO",
+   "target": "Shrinking Share Of Basic Research",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Innovation Costs",
+   "type": "CONTRIBUTED_TO",
+   "target": "Shrinking Share Of Basic Research",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Shrinking Share Of Basic Research",
+   "type": "PARTICULARLY_IMPACTS",
+   "target": "Large Corporations",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Positive Externalities",
+   "type": "BENEFITS",
+   "target": "Large Corporations",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Nelson 1959",
+   "type": "SUPPORTS",
+   "target": "Basic Research",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Fabrizio 2009",
+   "type": "SUPPORTS",
+   "target": "Absorptive Capacity",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Hicks 1995",
+   "type": "SUPPORTS",
+   "target": "Basic Research",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Mansfield 1980",
+   "type": "SUPPORTS",
+   "target": "Innovation Performance",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Griliches 1986",
+   "type": "SUPPORTS",
+   "target": "Innovation Performance",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Arora Et Al. 2017",
+   "type": "EXPLAINS",
+   "target": "Shrinking Share Of Basic Research",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Mezzanotti And Simcoe 2023",
+   "type": "EXPLAINS",
+   "target": "Shrinking Share Of Basic Research",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Jones And Summers 2022",
+   "type": "SUPPORTS",
+   "target": "Positive Externalities",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Shrinking Share Of Basic Research",
+   "type": "RELATED_TO",
+   "target": "Venture Capital",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Shrinking Share Of Basic Research",
+   "type": "RELATED_TO",
+   "target": "Innovative Entrepreneurs",
+   "description": "",
+   "doc": "doc10"
+  },
+  {
+   "source": "Bank Of Korea",
+   "type": "PUBLISHED",
+   "target": "Economic Outlook (May 2024)",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Economic Outlook (May 2024)",
+   "type": "CONTAINS",
+   "target": "Innovation And Economic Growth: Review Of Korean Firms' Innovation Performance",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Innovation And Economic Growth: Review Of Korean Firms' Innovation Performance",
+   "type": "ANALYZES",
+   "target": "Korea",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Innovation And Economic Growth: Review Of Korean Firms' Innovation Performance",
+   "type": "ANALYZES",
+   "target": "Venture Capital",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Innovation And Economic Growth: Review Of Korean Firms' Innovation Performance",
+   "type": "ANALYZES",
+   "target": "Innovative Entrepreneurs",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Innovation And Economic Growth: Review Of Korean Firms' Innovation Performance",
+   "type": "ANALYZES",
+   "target": "R&D",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Korea",
+   "type": "HAS_DIMINISHED_ACCESS_TO",
+   "target": "Venture Capital",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Korea",
+   "type": "MEMBER_OF",
+   "target": "Oecd",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Smes",
+   "type": "RELIES_ON",
+   "target": "Venture Capital",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Global Financial Crisis",
+   "type": "NEGATIVELY_IMPACTED",
+   "target": "Venture Capital",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Venture Capital",
+   "type": "INCLUDES",
+   "target": "Government-Backed Venture Capital",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Venture Capital",
+   "type": "INCLUDES",
+   "target": "Private Venture Capital",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Private Venture Capital",
+   "type": "POSITIVELY_IMPACTS",
+   "target": "Innovation Performance",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Government-Backed Venture Capital",
+   "type": "DOMINATES_IN",
+   "target": "Korea",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Park Et Al. (2017)",
+   "type": "SUPPORTS",
+   "target": "Private Venture Capital",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Levine And Rubinstein (2017)",
+   "type": "DEFINES",
+   "target": "Smart Mavericks",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Smart Mavericks",
+   "type": "POTENTIAL_TO_BECOME",
+   "target": "Innovative Entrepreneurs",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Korea",
+   "type": "LACKS_NURTURING_OF",
+   "target": "Smart Mavericks",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Korea",
+   "type": "DOMINATED_BY",
+   "target": "Manufacturing Conglomerates",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Jeff Bezos",
+   "type": "FOUNDED",
+   "target": "Amazon",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Larry Page",
+   "type": "FOUNDED",
+   "target": "Google",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Sergey Brin",
+   "type": "FOUNDED",
+   "target": "Google",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Elon Musk",
+   "type": "FOUNDED",
+   "target": "Tesla",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Amazon",
+   "type": "BASED_IN",
+   "target": "United States",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Google",
+   "type": "BASED_IN",
+   "target": "United States",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Tesla",
+   "type": "BASED_IN",
+   "target": "United States",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Jeff Bezos",
+   "type": "EXEMPLIFIES",
+   "target": "Innovative Entrepreneurs",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Larry Page",
+   "type": "EXEMPLIFIES",
+   "target": "Innovative Entrepreneurs",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Sergey Brin",
+   "type": "EXEMPLIFIES",
+   "target": "Innovative Entrepreneurs",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Elon Musk",
+   "type": "EXEMPLIFIES",
+   "target": "Innovative Entrepreneurs",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Venture Capital",
+   "type": "IMPACTS",
+   "target": "Innovation Performance",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "R&D",
+   "type": "INFLUENCES",
+   "target": "Innovation Performance",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "Innovative Entrepreneurs",
+   "type": "DRIVES",
+   "target": "Innovation Performance",
+   "description": "",
+   "doc": "doc11"
+  },
+  {
+   "source": "R&D",
+   "type": "CATEGORIZED_INTO",
+   "target": "Basic Research",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "R&D",
+   "type": "CATEGORIZED_INTO",
+   "target": "Applied Research",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Basic Research",
+   "type": "CONTRIBUTES_TO",
+   "target": "Knowledge Stock",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Applied Research",
+   "type": "CONTRIBUTES_TO",
+   "target": "Knowledge Stock",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Knowledge Stock",
+   "type": "INFLUENCES",
+   "target": "Innovation Performance",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Innovation Performance",
+   "type": "MEASURED_BY",
+   "target": "Quantity Of Innovation Outputs",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Innovation Performance",
+   "type": "MEASURED_BY",
+   "target": "Quality Of Innovation Outputs",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Quantity Of Innovation Outputs",
+   "type": "MEASURED_BY",
+   "target": "Patent Applications",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Quality Of Innovation Outputs",
+   "type": "MEASURED_BY",
+   "target": "Forward Citations",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Quality Of Innovation Outputs",
+   "type": "MEASURED_BY",
+   "target": "Generality",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Quality Of Innovation Outputs",
+   "type": "MEASURED_BY",
+   "target": "Originality",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Applied Research",
+   "type": "INCREASES",
+   "target": "Quantity Of Innovation Outputs",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Basic Research",
+   "type": "INCREASES",
+   "target": "Quality Of Innovation Outputs",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Basic Research",
+   "type": "EXPANDS",
+   "target": "Absorptive Capacity",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Applied Research",
+   "type": "DECREASES",
+   "target": "Forward Citations",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Applied Research",
+   "type": "DECREASES",
+   "target": "Originality",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Applied Research",
+   "type": "ASSOCIATED_WITH",
+   "target": "Incremental Innovation",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Basic Research",
+   "type": "SERVES_AS_BASIS_FOR",
+   "target": "Applied Research",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Panel Analysis",
+   "type": "ANALYZES",
+   "target": "Innovation Performance",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Panel Analysis",
+   "type": "APPLIED_TO",
+   "target": "Korean Firms",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Bank Of Korea",
+   "type": "CONDUCTED",
+   "target": "Panel Analysis",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Panel Analysis",
+   "type": "FOLLOWS",
+   "target": "Fabrizio 2009",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Panel Analysis",
+   "type": "FOLLOWS",
+   "target": "Roper & Hewitt-Dundas 2015",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Knowledge Stock",
+   "type": "METHODOLOGY_FROM",
+   "target": "Adams And Clemmons 2008",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Panel Analysis",
+   "type": "REFERENCES",
+   "target": "Munari Et Al. 2022",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Panel Analysis",
+   "type": "REFERENCES",
+   "target": "Akcigit Et Al. 2021",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Panel Analysis",
+   "type": "REFERENCES",
+   "target": "Akcigit And Kerr 2018",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Panel Analysis",
+   "type": "REFERENCES",
+   "target": "Akcigit And Goldschlag 2023",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Panel Analysis",
+   "type": "REFERENCES",
+   "target": "Lee Et Al. 2020",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Panel Analysis",
+   "type": "USES_DATA_FROM",
+   "target": "Uspto",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Panel Analysis",
+   "type": "USES_DATA_FROM",
+   "target": "Openalex",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Panel Analysis",
+   "type": "USES_DATA_FROM",
+   "target": "Valuesearch",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Panel Analysis",
+   "type": "USES_DATA_FROM",
+   "target": "Kopdp",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Large Firms",
+   "type": "EXPLOITS",
+   "target": "Basic Research",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Basic Research",
+   "type": "STRONGER_EFFECT_IN_LARGE_FIRMS",
+   "target": "Quality Of Innovation Outputs",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Smes",
+   "type": "CONSTRAINED_BY_INVESTMENT_IN",
+   "target": "Applied Research",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Applied Research",
+   "type": "DECREASES_IN_SMES",
+   "target": "Patent Applications",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Applied Research",
+   "type": "DECREASES_IN_SMES",
+   "target": "Generality",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Applied Research",
+   "type": "DECREASES_IN_SMES",
+   "target": "Originality",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Korean Firms",
+   "type": "FILES_PATENTS_AT",
+   "target": "Uspto",
+   "description": "",
+   "doc": "doc12"
+  },
+  {
+   "source": "Bank Of Korea",
+   "type": "PUBLISHED",
+   "target": "Economic Outlook (May 2024)",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Economic Outlook (May 2024)",
+   "type": "CONTAINS",
+   "target": "Country-Level Analysis",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "World Economic Forum",
+   "type": "PROVIDES",
+   "target": "Vc Accessibility Index",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Country-Level Analysis",
+   "type": "USES_AS_EXPLANATORY_VARIABLE",
+   "target": "Vc Accessibility Index",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Country-Level Analysis",
+   "type": "USES_AS_DEPENDENT_VARIABLE",
+   "target": "Patent Applications",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Country-Level Analysis",
+   "type": "USES_AS_DEPENDENT_VARIABLE",
+   "target": "Forward Citations",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Country-Level Analysis",
+   "type": "CONDUCTED_ON",
+   "target": "Top 32 Countries",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Top 32 Countries",
+   "type": "SELECTED_BASED_ON_DATA_FROM",
+   "target": "Uspto",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "South Korea",
+   "type": "MEMBER_OF",
+   "target": "Top 32 Countries",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Vc Accessibility Index",
+   "type": "POSITIVELY_ASSOCIATED_WITH",
+   "target": "Innovation Performance",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Patent Applications",
+   "type": "MEASURES",
+   "target": "Innovation Performance",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Forward Citations",
+   "type": "MEASURES",
+   "target": "Innovation Performance",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Venture Capital (Vc)",
+   "type": "FINANCES",
+   "target": "Young Innovative Firms",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Venture Capital (Vc)",
+   "type": "INFLUENCES",
+   "target": "Innovation Performance",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Venture Capital (Vc)",
+   "type": "HAS_TYPE",
+   "target": "Government Vc",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Venture Capital (Vc)",
+   "type": "HAS_TYPE",
+   "target": "Private Vc",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Secondary Market",
+   "type": "ENHANCES_ACCESS_TO",
+   "target": "Venture Capital (Vc)",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Secondary Market",
+   "type": "INCLUDES",
+   "target": "M&A Market",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Secondary Market",
+   "type": "INCLUDES",
+   "target": "Ipo Market",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "South Korea",
+   "type": "RANKED_IN",
+   "target": "Ipo Market",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "South Korea",
+   "type": "RANKED_IN",
+   "target": "M&A Market",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "South Korea",
+   "type": "HAS_SCORE",
+   "target": "Vc Accessibility Index",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "United States",
+   "type": "HAS_HIGHEST_SCORE",
+   "target": "Vc Accessibility Index",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Secondary Market",
+   "type": "MODERATES_IMPACT_ON",
+   "target": "Innovation Performance",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Vc-Backed Firms",
+   "type": "PRODUCES",
+   "target": "Innovation Performance",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Schnitzer And Watzinger 2022",
+   "type": "STUDIES",
+   "target": "Vc-Backed Firms",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Economic Outlook (May 2024)",
+   "type": "CITES",
+   "target": "Schnitzer And Watzinger 2022",
+   "description": "",
+   "doc": "doc13"
+  },
+  {
+   "source": "Bank Of Korea",
+   "type": "CONDUCTED",
+   "target": "Firm-Level Panel Analysis",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Private Vc",
+   "type": "CATEGORIZED_INTO",
+   "target": "Independent Vc",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Private Vc",
+   "type": "CATEGORIZED_INTO",
+   "target": "Corporate Vc",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Private Vc",
+   "type": "CATEGORIZED_INTO",
+   "target": "Bank Vc",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Vc Investment",
+   "type": "INCLUDES",
+   "target": "Private Vc",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Vc Investment",
+   "type": "INCLUDES",
+   "target": "Government Vc",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Private Vc",
+   "type": "SIGNIFICANTLY_ENHANCES",
+   "target": "Firm Innovation Performance",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Government Vc",
+   "type": "DOES_NOT_SIGNIFICANTLY_IMPACT",
+   "target": "Firm Innovation Performance",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Government Vc",
+   "type": "ATTRACTS",
+   "target": "Private Vc",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Independent Vc",
+   "type": "SIGNIFICANTLY_IMPACTS",
+   "target": "Firm Innovation Performance",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Corporate Vc",
+   "type": "SIGNIFICANTLY_IMPACTS",
+   "target": "Firm Innovation Performance",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Bank Vc",
+   "type": "DECREASES",
+   "target": "Patent Applications",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Firm Innovation Performance",
+   "type": "MEASURED_BY",
+   "target": "Patent Applications",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Firm Innovation Performance",
+   "type": "MEASURED_BY",
+   "target": "Patent Citations",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Firm-Level Panel Analysis",
+   "type": "USES_DATA_FROM",
+   "target": "Uspto",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Firm-Level Panel Analysis",
+   "type": "USES_DATA_FROM",
+   "target": "Kopdp",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Firm-Level Panel Analysis",
+   "type": "USES_DATA_FROM",
+   "target": "Kodata",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Firm-Level Panel Analysis",
+   "type": "USES_DATA_FROM",
+   "target": "Valuesearch",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Firm-Level Panel Analysis",
+   "type": "ANALYZES",
+   "target": "Firm Innovation Performance",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Firm-Level Panel Analysis",
+   "type": "ANALYZES",
+   "target": "Vc Investment",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Grilli And Murtinu 2014",
+   "type": "SUPPORTS_FINDINGS_ON",
+   "target": "Government Vc",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Bertoni And Tykvova 2015",
+   "type": "SUPPORTS_FINDINGS_ON",
+   "target": "Government Vc",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Alperovych Et Al. 2015",
+   "type": "SUPPORTS_FINDINGS_ON",
+   "target": "Government Vc",
+   "description": "",
+   "doc": "doc14"
+  },
+  {
+   "source": "Bank Of Korea",
+   "type": "ANALYZES",
+   "target": "Smart Mavericks",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Levine And Rubinstein (2017)",
+   "type": "DEFINES",
+   "target": "Smart Mavericks",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Levine And Rubinstein (2017)",
+   "type": "USES",
+   "target": "National Longitudinal Survey Of Youth (Nlsy)",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Levine And Rubinstein (2017)",
+   "type": "STUDIES",
+   "target": "Innovative Entrepreneurs",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Smart Mavericks",
+   "type": "LIKELY_TO_BECOME",
+   "target": "Innovative Entrepreneurs",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Smart Mavericks",
+   "type": "CHARACTERIZED_BY",
+   "target": "Cognitive Ability",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Smart Mavericks",
+   "type": "CHARACTERIZED_BY",
+   "target": "Heretical Temperament",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Cognitive Ability",
+   "type": "MEASURED_BY",
+   "target": "Math Achievement Test Score",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Heretical Temperament",
+   "type": "MEASURED_BY",
+   "target": "Non-Conformity Index",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Korean Education Longitudinal Study 2005",
+   "type": "USED_TO_IDENTIFY",
+   "target": "Smart Mavericks",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Korean Education Longitudinal Study 2005",
+   "type": "PROVIDES_DATA_FOR",
+   "target": "Multinomial Logit Model",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Multinomial Logit Model",
+   "type": "USES_AS_EXPLANATORY_VARIABLE",
+   "target": "Heretical Temperament",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Multinomial Logit Model",
+   "type": "USES_AS_EXPLANATORY_VARIABLE",
+   "target": "Cognitive Ability",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Heretical Temperament",
+   "type": "POSITIVELY_ASSOCIATED_WITH",
+   "target": "Innovative Entrepreneurs",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Cognitive Ability",
+   "type": "NEGATIVELY_ASSOCIATED_WITH",
+   "target": "Innovative Entrepreneurs",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Smart Mavericks",
+   "type": "COMPARED_TO",
+   "target": "General Smart Students",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Smart Mavericks",
+   "type": "COMPARED_TO",
+   "target": "General Mavericks",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Smart Mavericks",
+   "type": "COMPARED_TO",
+   "target": "Other Students",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Korea",
+   "type": "EXPERIENCES_DECLINE_IN",
+   "target": "Innovative Startups",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Korea",
+   "type": "AFFECTED_BY",
+   "target": "Golden Ticket Syndrome",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Korea",
+   "type": "HAS",
+   "target": "Single-Opportunity System",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Korea",
+   "type": "CHARACTERIZED_BY",
+   "target": "Fear Of Failure",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Oecd (2022)",
+   "type": "DEFINES",
+   "target": "Golden Ticket Syndrome",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Golden Ticket Syndrome",
+   "type": "CAUSED_BY",
+   "target": "Single-Opportunity System",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Trend Monitor Startup Survey (2019)",
+   "type": "MEASURES",
+   "target": "Fear Of Failure",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Fear Of Failure",
+   "type": "INHIBITS",
+   "target": "Smart Mavericks",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Golden Ticket Syndrome",
+   "type": "INHIBITS",
+   "target": "Smart Mavericks",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Innovative Startups",
+   "type": "REQUIRES",
+   "target": "Innovative Entrepreneurs",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Smart Mavericks",
+   "type": "STUDIED_IN",
+   "target": "Korea",
+   "description": "",
+   "doc": "doc15"
+  },
+  {
+   "source": "Bank Of Korea",
+   "type": "PUBLISHED",
+   "target": "Economic Outlook (May 2024)",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Economic Outlook (May 2024)",
+   "type": "REFERENCES",
+   "target": "Akcigit Et Al. (2021)",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Economic Outlook (May 2024)",
+   "type": "REFERENCES",
+   "target": "Klette And Kortum 2004",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Economic Outlook (May 2024)",
+   "type": "REFERENCES",
+   "target": "Lentz And Mortensen 2008",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Akcigit Et Al. (2021)",
+   "type": "BASED_ON",
+   "target": "Endogenous Growth Theory",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Akcigit Et Al. (2021)",
+   "type": "DISTINGUISHES",
+   "target": "Basic Research",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Akcigit Et Al. (2021)",
+   "type": "DISTINGUISHES",
+   "target": "Applied Research",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Akcigit Et Al. (2021)",
+   "type": "ANALYZED",
+   "target": "France",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Akcigit Et Al. (2021)",
+   "type": "APPLIED_TO",
+   "target": "Korea",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Akcigit Et Al. (2021)",
+   "type": "PROVIDES",
+   "target": "Structural Model",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Klette And Kortum 2004",
+   "type": "EMPHASIZES",
+   "target": "Creative Destruction",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Lentz And Mortensen 2008",
+   "type": "EMPHASIZES",
+   "target": "Creative Destruction",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Creative Destruction",
+   "type": "DRIVES",
+   "target": "Economic Growth",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Endogenous Growth Theory",
+   "type": "EXPLAINS",
+   "target": "Economic Growth",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Basic Research",
+   "type": "ENHANCES",
+   "target": "Firm Productivity",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Applied Research",
+   "type": "ENHANCES",
+   "target": "Firm Productivity",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Basic Research",
+   "type": "DIFFERS_FROM",
+   "target": "Applied Research",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Firm Productivity",
+   "type": "CONTRIBUTES_TO",
+   "target": "Economic Growth",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Firm Productivity",
+   "type": "CONTRIBUTES_TO",
+   "target": "Social Welfare",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Vc Investment",
+   "type": "ENHANCES",
+   "target": "Firm Productivity",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Entrepreneurial Talent",
+   "type": "ENHANCES",
+   "target": "Firm Productivity",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Structural Model",
+   "type": "ANALYZES_IMPACT_ON",
+   "target": "Economic Growth",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Structural Model",
+   "type": "ANALYZES_IMPACT_ON",
+   "target": "Social Welfare",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Public Research Institutions",
+   "type": "CONDUCTS",
+   "target": "Basic Research",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Ivory Tower Effect",
+   "type": "ASSOCIATED_WITH",
+   "target": "Public Research Institutions",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Scenario 1",
+   "type": "SUBSIDIZES",
+   "target": "Basic Research",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Scenario 1",
+   "type": "SUBSIDIZES",
+   "target": "Applied Research",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Scenario 1",
+   "type": "IMPACTS",
+   "target": "Economic Growth",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Scenario 1",
+   "type": "IMPACTS",
+   "target": "Social Welfare",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Scenario 2",
+   "type": "SUBSIDIZES",
+   "target": "Basic Research",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Scenario 2",
+   "type": "IMPACTS",
+   "target": "Economic Growth",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Scenario 2",
+   "type": "IMPACTS",
+   "target": "Social Welfare",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Scenario 3",
+   "type": "SUBSIDIZES",
+   "target": "Basic Research",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Scenario 3",
+   "type": "SUBSIDIZES",
+   "target": "Applied Research",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Scenario 3",
+   "type": "FUNDS",
+   "target": "Public Research Institutions",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Scenario 3",
+   "type": "IMPACTS",
+   "target": "Economic Growth",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Scenario 3",
+   "type": "IMPACTS",
+   "target": "Social Welfare",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Scenario 4",
+   "type": "EXTENDS",
+   "target": "Scenario 3",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Scenario 4",
+   "type": "COLLABORATES_WITH",
+   "target": "Public Research Institutions",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Scenario 4",
+   "type": "IMPACTS",
+   "target": "Economic Growth",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Scenario 4",
+   "type": "IMPACTS",
+   "target": "Social Welfare",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Korea",
+   "type": "ASSUMED_SIMILAR_TO",
+   "target": "France",
+   "description": "",
+   "doc": "doc16"
+  },
+  {
+   "source": "Bank Of Korea",
+   "type": "PUBLISHED",
+   "target": "Economic Outlook (May 2024)",
+   "description": "",
+   "doc": "doc17"
+  },
+  {
+   "source": "Economic Outlook (May 2024)",
+   "type": "CONTAINS",
+   "target": "Innovation And Economic Growth: Review Of Korean Firms' Innovation Performance",
+   "description": "",
+   "doc": "doc17"
+  },
+  {
+   "source": "Innovation And Economic Growth: Review Of Korean Firms' Innovation Performance",
+   "type": "ANALYZES",
+   "target": "Scenario 1: Expanding Buyouts Of Young Innovative Firms",
+   "description": "",
+   "doc": "doc17"
+  },
+  {
+   "source": "Innovation And Economic Growth: Review Of Korean Firms' Innovation Performance",
+   "type": "ANALYZES",
+   "target": "Scenario 2: Increasing The Birth Rate Of Innovative Firms",
+   "description": "",
+   "doc": "doc17"
+  },
+  {
+   "source": "Innovation And Economic Growth: Review Of Korean Firms' Innovation Performance",
+   "type": "ANALYZES",
+   "target": "Scenario 3: Scenario 1 + Scenario 2",
+   "description": "",
+   "doc": "doc17"
+  },
+  {
+   "source": "Innovation And Economic Growth: Review Of Korean Firms' Innovation Performance",
+   "type": "CONTAINS",
+   "target": "Figure 4.2",
+   "description": "",
+   "doc": "doc17"
+  },
+  {
+   "source": "Scenario 1: Expanding Buyouts Of Young Innovative Firms",
+   "type": "RELIES_ON",
+   "target": "Vc And Secondary Markets",
+   "description": "",
+   "doc": "doc17"
+  },
+  {
+   "source": "Scenario 1: Expanding Buyouts Of Young Innovative Firms",
+   "type": "TARGETS",
+   "target": "Young Innovative Firms",
+   "description": "",
+   "doc": "doc17"
+  },
+  {
+   "source": "Scenario 2: Increasing The Birth Rate Of Innovative Firms",
+   "type": "RELIES_ON",
+   "target": "Innovation Financing",
+   "description": "",
+   "doc": "doc17"
+  },
+  {
+   "source": "Scenario 2: Increasing The Birth Rate Of Innovative Firms",
+   "type": "RELIES_ON",
+   "target": "Innovative Entrepreneurs",
+   "description": "",
+   "doc": "doc17"
+  },
+  {
+   "source": "Scenario 3: Scenario 1 + Scenario 2",
+   "type": "COMBINES",
+   "target": "Scenario 1: Expanding Buyouts Of Young Innovative Firms",
+   "description": "",
+   "doc": "doc17"
+  },
+  {
+   "source": "Scenario 3: Scenario 1 + Scenario 2",
+   "type": "COMBINES",
+   "target": "Scenario 2: Increasing The Birth Rate Of Innovative Firms",
+   "description": "",
+   "doc": "doc17"
+  },
+  {
+   "source": "Scenario 1: Expanding Buyouts Of Young Innovative Firms",
+   "type": "IMPACTS",
+   "target": "Economic Growth",
+   "description": "",
+   "doc": "doc17"
+  },
+  {
+   "source": "Scenario 1: Expanding Buyouts Of Young Innovative Firms",
+   "type": "IMPACTS",
+   "target": "Social Welfare",
+   "description": "",
+   "doc": "doc17"
+  },
+  {
+   "source": "Scenario 2: Increasing The Birth Rate Of Innovative Firms",
+   "type": "IMPACTS",
+   "target": "Economic Growth",
+   "description": "",
+   "doc": "doc17"
+  },
+  {
+   "source": "Scenario 2: Increasing The Birth Rate Of Innovative Firms",
+   "type": "IMPACTS",
+   "target": "Social Welfare",
+   "description": "",
+   "doc": "doc17"
+  },
+  {
+   "source": "Scenario 3: Scenario 1 + Scenario 2",
+   "type": "IMPACTS",
+   "target": "Economic Growth",
+   "description": "",
+   "doc": "doc17"
+  },
+  {
+   "source": "Scenario 3: Scenario 1 + Scenario 2",
+   "type": "IMPACTS",
+   "target": "Social Welfare",
+   "description": "",
+   "doc": "doc17"
+  },
+  {
+   "source": "Young Innovative Firms",
+   "type": "DRIVES",
+   "target": "Creative Destruction",
+   "description": "",
+   "doc": "doc17"
+  },
+  {
+   "source": "Creative Destruction",
+   "type": "AMPLIFIES",
+   "target": "Economic Growth",
+   "description": "",
+   "doc": "doc17"
+  },
+  {
+   "source": "Bank Of Korea",
+   "type": "PUBLISHED",
+   "target": "Economic Outlook (May 2024)",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Economic Outlook (May 2024)",
+   "type": "CONTAINS",
+   "target": "Innovation And Economic Growth: Review Of Korean Firms' Innovation Performance",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Business Productivity Growth",
+   "type": "SLOWED_AFTER",
+   "target": "Global Financial Crisis",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "R&D Investment",
+   "type": "INFLUENCES",
+   "target": "Business Productivity Growth",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Innovation Performance Quality",
+   "type": "IMPACTS",
+   "target": "Business Productivity Growth",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Innovation Financing",
+   "type": "IMPACTS",
+   "target": "Business Productivity Growth",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "New Innovative Firms",
+   "type": "IMPACTS",
+   "target": "Business Productivity Growth",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Large Firms",
+   "type": "INCREASED",
+   "target": "R&D Investment",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Large Firms",
+   "type": "FAILED_TO_IMPROVE",
+   "target": "Innovation Performance Quality",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Smes",
+   "type": "STRUGGLES_WITH",
+   "target": "Innovation Financing",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Innovative Firms",
+   "type": "ENGAGES_IN",
+   "target": "Patent Applications",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Basic Research Expenditures",
+   "type": "RELATED_TO",
+   "target": "Innovation Performance Quality",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Vc Firms",
+   "type": "PROVIDES",
+   "target": "Innovation Financing",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Vc Firms",
+   "type": "LACKS_CAPABILITY_IN",
+   "target": "Innovation Performance Quality",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Large Firms",
+   "type": "CAN_BENEFIT_FROM",
+   "target": "Basic Research Expenditures",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Smes",
+   "type": "BENEFITS_FROM",
+   "target": "Industry-Academia Cooperation",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Smes",
+   "type": "BENEFITS_FROM",
+   "target": "Innovation Clusters",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Universities",
+   "type": "CONDUCTS",
+   "target": "Basic Research Expenditures",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Industry-Academia Cooperation",
+   "type": "FACILITATES_ACCESS_TO",
+   "target": "Basic Research Expenditures",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "M&A Market",
+   "type": "ENABLES_RECOVERY_FOR",
+   "target": "Vc Firms",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Private Vc",
+   "type": "SUPPORTS",
+   "target": "Innovation Ecosystem",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Independent Vc",
+   "type": "TYPE_OF",
+   "target": "Private Vc",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Corporate Vc",
+   "type": "TYPE_OF",
+   "target": "Private Vc",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Private Vc",
+   "type": "INVESTS_IN",
+   "target": "Smes",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Educational Environment",
+   "type": "FOSTERS",
+   "target": "Innovative Entrepreneurs",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Educational Environment",
+   "type": "CULTIVATES",
+   "target": "Stem Talents",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Labor Market Flexibility",
+   "type": "ENCOURAGES",
+   "target": "Innovative Entrepreneurs",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Multi-Opportunity System",
+   "type": "ENCOURAGES",
+   "target": "Innovative Entrepreneurs",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Stem Talents",
+   "type": "CONTRIBUTES_TO",
+   "target": "Innovation Ecosystem",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Innovative Entrepreneurs",
+   "type": "CONTRIBUTES_TO",
+   "target": "Innovation Ecosystem",
+   "description": "",
+   "doc": "doc18"
+  },
+  {
+   "source": "Bank Of Korea",
+   "type": "PUBLISHED",
+   "target": "Economic Outlook (May 2024)",
+   "description": "",
+   "doc": "doc19"
+  },
+  {
+   "source": "Economic Outlook (May 2024)",
+   "type": "CONTAINS",
+   "target": "Box 2: Determinants Of Women'S Preference For Stem Majors",
+   "description": "",
+   "doc": "doc19"
+  },
+  {
+   "source": "Box 2: Determinants Of Women'S Preference For Stem Majors",
+   "type": "USES",
+   "target": "2013 Korean Educational Longitudinal Study",
+   "description": "",
+   "doc": "doc19"
+  },
+  {
+   "source": "Box 2: Determinants Of Women'S Preference For Stem Majors",
+   "type": "USES",
+   "target": "Linear Probability Model",
+   "description": "",
+   "doc": "doc19"
+  },
+  {
+   "source": "Box 2: Determinants Of Women'S Preference For Stem Majors",
+   "type": "FOCUSES_ON",
+   "target": "South Korea",
+   "description": "",
+   "doc": "doc19"
+  },
+  {
+   "source": "Box 2: Determinants Of Women'S Preference For Stem Majors",
+   "type": "ANALYZES",
+   "target": "Female Stem Participation",
+   "description": "",
+   "doc": "doc19"
+  },
+  {
+   "source": "Linear Probability Model",
+   "type": "ESTIMATES",
+   "target": "Women'S Preference For Stem Majors",
+   "description": "",
+   "doc": "doc19"
+  },
+  {
+   "source": "Linear Probability Model",
+   "type": "USES",
+   "target": "K5 Math Test Scores",
+   "description": "",
+   "doc": "doc19"
+  },
+  {
+   "source": "Linear Probability Model",
+   "type": "USES",
+   "target": "Father'S Stem Occupation",
+   "description": "",
+   "doc": "doc19"
+  },
+  {
+   "source": "K5 Math Test Scores",
+   "type": "PROXY_FOR",
+   "target": "Cognitive Ability",
+   "description": "",
+   "doc": "doc19"
+  },
+  {
+   "source": "Father'S Stem Occupation",
+   "type": "PROXY_FOR",
+   "target": "Stem Occupational Exposure",
+   "description": "",
+   "doc": "doc19"
+  },
+  {
+   "source": "Cognitive Ability",
+   "type": "INFLUENCES",
+   "target": "Women'S Preference For Stem Majors",
+   "description": "",
+   "doc": "doc19"
+  },
+  {
+   "source": "Stem Occupational Exposure",
+   "type": "INFLUENCES",
+   "target": "Women'S Preference For Stem Majors",
+   "description": "",
+   "doc": "doc19"
+  },
+  {
+   "source": "Stem Occupational Exposure",
+   "type": "POSITIVELY_IMPACTS",
+   "target": "Female Stem Participation",
+   "description": "",
+   "doc": "doc19"
+  },
+  {
+   "source": "South Korea",
+   "type": "HAS_LOW",
+   "target": "Female Stem Participation",
+   "description": "",
+   "doc": "doc19"
+  },
+  {
+   "source": "South Korea",
+   "type": "MEMBER_OF",
+   "target": "Oecd",
+   "description": "",
+   "doc": "doc19"
+  },
+  {
+   "source": "Japan",
+   "type": "MEMBER_OF",
+   "target": "Oecd",
+   "description": "",
+   "doc": "doc19"
+  },
+  {
+   "source": "Declining Birth Rates",
+   "type": "MOTIVATES_INCREASE_IN",
+   "target": "Female Stem Participation",
+   "description": "",
+   "doc": "doc19"
+  },
+  {
+   "source": "Female Stem Participation",
+   "type": "RELATED_TO",
+   "target": "Stem",
+   "description": "",
+   "doc": "doc19"
+  },
+  {
+   "source": "Stem",
+   "type": "ESSENTIAL_FOR_INNOVATION_IN",
+   "target": "South Korea",
+   "description": "",
+   "doc": "doc19"
+  }
+ ]
+}

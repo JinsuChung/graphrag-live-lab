@@ -1,0 +1,1040 @@
+{
+ "source": "Bank of Korea, Economic Outlook (May 2024) III. In-depth Analysis, \"Innovation and Economic Growth: Review of Korean Firms' Innovation Performance\"",
+ "nodes": [
+  {
+   "id": "Korean economy",
+   "type": "Economy",
+   "description": "Korea's economy, whose growth potential is weakening due to ultra-low fertility and rapid aging.",
+   "aliases": [
+    "Korea's economy",
+    "Korean economy's"
+   ],
+   "docs": [
+    "doc02"
+   ],
+   "ko": "한국 경제"
+  },
+  {
+   "id": "low fertility and rapid aging",
+   "type": "Trend",
+   "description": "Total population peaked at 51.84 million in 2020 and is projected to fall to 37.18 million by 2070.",
+   "aliases": [
+    "low fertility",
+    "aging population",
+    "super-aged",
+    "population decline"
+   ],
+   "docs": [
+    "doc02"
+   ],
+   "ko": "초저출산·초고령화"
+  },
+  {
+   "id": "negative growth in the 2040s",
+   "type": "Risk",
+   "description": "Without dramatic change, falling labor supply could push the economy into negative growth in the 2040s.",
+   "aliases": [
+    "negative growth",
+    "growth potential"
+   ],
+   "docs": [
+    "doc02"
+   ],
+   "ko": "2040년대 마이너스 성장"
+  },
+  {
+   "id": "innovation (concept)",
+   "type": "Concept",
+   "description": "Accumulating knowledge through R&D and realizing new ideas to create economic value; the main driver of long-run growth.",
+   "aliases": [
+    "creative destruction"
+   ],
+   "docs": [
+    "doc02",
+    "doc05"
+   ],
+   "ko": "혁신(개념)"
+  },
+  {
+   "id": "firm productivity",
+   "type": "Indicator",
+   "description": "Firm TFP growth fell from 6.1% a year in 2001-10 to 0.5% in 2011-20.",
+   "aliases": [
+    "productivity",
+    "TFP",
+    "total factor productivity"
+   ],
+   "docs": [
+    "doc01",
+    "doc04"
+   ],
+   "ko": "기업 생산성"
+  },
+  {
+   "id": "R&D spending",
+   "type": "Indicator",
+   "description": "5.2% of GDP in 2022 (2nd in the OECD); business R&D is 4.1% of GDP (2nd), 79% of the national total.",
+   "aliases": [
+    "R&D expenditure",
+    "R&D"
+   ],
+   "docs": [
+    "doc03"
+   ],
+   "ko": "R&D 지출"
+  },
+  {
+   "id": "patent applications",
+   "type": "Indicator",
+   "description": "Quantity of innovation output. Korea ranked 4th in U.S. patent applications in 2020 (7.6% share).",
+   "aliases": [
+    "patent filings",
+    "U.S. patent applications",
+    "U.S. patents",
+    "quantity of innovation output"
+   ],
+   "docs": [
+    "doc03",
+    "doc05"
+   ],
+   "ko": "특허출원건수"
+  },
+  {
+   "id": "patent citations",
+   "type": "Indicator",
+   "description": "Quality of innovation output. Korean patents averaged 1.4 citations (2011-15) vs. 5.0 for the U.S.",
+   "aliases": [
+    "citations",
+    "quality of innovation output",
+    "innovation quality"
+   ],
+   "docs": [
+    "doc05",
+    "doc08"
+   ],
+   "ko": "특허피인용건수"
+  },
+  {
+   "id": "innovative firms",
+   "type": "FirmGroup",
+   "description": "Firms holding U.S. patents: 6% of firms, 28% of employees, ~72% of business R&D; productivity growth fell from 8.2% to 1.3%.",
+   "aliases": [
+    "innovative firm"
+   ],
+   "docs": [
+    "doc06"
+   ],
+   "ko": "혁신기업"
+  },
+  {
+   "id": "non-innovative firms",
+   "type": "FirmGroup",
+   "description": "Firms without U.S. patents.",
+   "aliases": [
+    "other firms"
+   ],
+   "docs": [
+    "doc06"
+   ],
+   "ko": "일반기업"
+  },
+  {
+   "id": "large firms",
+   "type": "FirmGroup",
+   "description": "Top 5% of innovative firms by employees; 69% of their employees and 88% of their R&D spending.",
+   "aliases": [
+    "large firm",
+    "large corporations"
+   ],
+   "docs": [
+    "doc07",
+    "doc08"
+   ],
+   "ko": "대기업"
+  },
+  {
+   "id": "old SMEs",
+   "type": "FirmGroup",
+   "description": "Innovative SMEs in the top 80% by firm age; 76% of firms, 10% of R&D.",
+   "aliases": [
+    "older SMEs",
+    "old SME"
+   ],
+   "docs": [
+    "doc07"
+   ],
+   "ko": "고업력 중소기업"
+  },
+  {
+   "id": "young SMEs",
+   "type": "FirmGroup",
+   "description": "Innovative SMEs in the bottom 20% by firm age; fast productivity growth before the 2010s, much slower since.",
+   "aliases": [
+    "young SME",
+    "young small and medium"
+   ],
+   "docs": [
+    "doc07",
+    "doc09"
+   ],
+   "ko": "저업력 중소기업"
+  },
+  {
+   "id": "innovative start-ups",
+   "type": "FirmGroup",
+   "description": "New firms with innovation capability; the share filing U.S. patents within 8 years of founding fell below 10% in the 2010s.",
+   "aliases": [
+    "start-ups",
+    "startups",
+    "new entrants",
+    "innovative entrants"
+   ],
+   "docs": [
+    "doc09",
+    "doc17"
+   ],
+   "ko": "혁신신생기업"
+  },
+  {
+   "id": "difficulty financing innovation",
+   "type": "Problem",
+   "description": "Among young SMEs, manufacturers citing a lack of external funds rose from 9.9% (2007) to 45.4% (2021).",
+   "aliases": [
+    "financing difficulties",
+    "financing for innovation",
+    "innovation financing"
+   ],
+   "docs": [
+    "doc09"
+   ],
+   "ko": "혁신자금조달 어려움"
+  },
+  {
+   "id": "decline in new entrants",
+   "type": "Problem",
+   "description": "Fewer capable start-ups entered; average SME age rose from 1.6 years (2001) to 12.5 years (2020).",
+   "aliases": [
+    "fewer new entrants",
+    "aging of SMEs"
+   ],
+   "docs": [
+    "doc09"
+   ],
+   "ko": "신생기업 진입 감소"
+  },
+  {
+   "id": "stagnant innovation quality",
+   "type": "Problem",
+   "description": "Large firms' patent citations fell in the mid-2000s and have not recovered.",
+   "aliases": [
+    "quality has not improved",
+    "stagnant quality"
+   ],
+   "docs": [
+    "doc08"
+   ],
+   "ko": "혁신실적의 질 정체"
+  },
+  {
+   "id": "basic research",
+   "type": "ResearchType",
+   "description": "Research without a specific application in mind; closely tied to innovation quality (citations, generality, originality).",
+   "aliases": [],
+   "docs": [
+    "doc05",
+    "doc10",
+    "doc12"
+   ],
+   "ko": "기초연구"
+  },
+  {
+   "id": "applied research",
+   "type": "ResearchType",
+   "description": "Research aimed at specific needs; effective at raising the quantity of innovation output.",
+   "aliases": [],
+   "docs": [
+    "doc05",
+    "doc12"
+   ],
+   "ko": "응용연구"
+  },
+  {
+   "id": "shrinking share of basic research",
+   "type": "Problem",
+   "description": "Basic research's share of business R&D fell from 14% (2010) to 11% (2021).",
+   "aliases": [
+    "share of basic research",
+    "basic research share"
+   ],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc10"
+   ],
+   "ko": "기초연구 지출비중 축소"
+  },
+  {
+   "id": "venture capital",
+   "type": "Finance",
+   "description": "A key funding source for innovative start-ups; 2020 investment was 0.16% of GDP, 5th in the OECD.",
+   "aliases": [
+    "VC",
+    "venture capitalists"
+   ],
+   "docs": [
+    "doc11",
+    "doc13"
+   ],
+   "ko": "벤처캐피탈"
+  },
+  {
+   "id": "VC accessibility",
+   "type": "Indicator",
+   "description": "World Economic Forum index. Korea scored 3.4 in 2020, ranking 24th in the OECD; the U.S. led with 5.2.",
+   "aliases": [
+    "venture capital accessibility",
+    "access to venture capital",
+    "VC access",
+    "accessibility of VC",
+    "venture capital availability",
+    "accessibility",
+    "access"
+   ],
+   "docs": [
+    "doc11",
+    "doc13"
+   ],
+   "ko": "벤처캐피탈 접근성"
+  },
+  {
+   "id": "secondary market",
+   "type": "Market",
+   "description": "Markets for exiting investments (M&A, IPO). VC access raises innovation only where these are well developed.",
+   "aliases": [
+    "M&A",
+    "IPO",
+    "exit market"
+   ],
+   "docs": [
+    "doc13"
+   ],
+   "ko": "투자회수시장"
+  },
+  {
+   "id": "private VC",
+   "type": "Finance",
+   "description": "The more private VC investment a firm receives, the more its innovation quantity and quality rise.",
+   "aliases": [
+    "private venture capital"
+   ],
+   "docs": [
+    "doc14"
+   ],
+   "ko": "민간 벤처캐피탈"
+  },
+  {
+   "id": "government VC",
+   "type": "Finance",
+   "description": "Led the rise in VC investment since the mid-2010s, but its effect on innovation was not significant.",
+   "aliases": [
+    "government venture capital",
+    "fund of funds",
+    "policy funds"
+   ],
+   "docs": [
+    "doc11",
+    "doc14"
+   ],
+   "ko": "정부 벤처캐피탈"
+  },
+  {
+   "id": "independent VC",
+   "type": "Finance",
+   "description": "Funded by expert individuals or institutions; significantly raises innovation output.",
+   "aliases": [
+    "independent venture capital"
+   ],
+   "docs": [
+    "doc14",
+    "doc18"
+   ],
+   "ko": "독립 벤처캐피탈"
+  },
+  {
+   "id": "corporate VC",
+   "type": "Finance",
+   "description": "Funded by a parent company; significantly raises innovation output.",
+   "aliases": [
+    "corporate venture capital",
+    "CVC"
+   ],
+   "docs": [
+    "doc14",
+    "doc18"
+   ],
+   "ko": "기업 벤처캐피탈"
+  },
+  {
+   "id": "bank VC",
+   "type": "Finance",
+   "description": "Funded by banks; risk-averse, and actually lowers patent applications and citations.",
+   "aliases": [
+    "bank-based VC",
+    "bank venture capital"
+   ],
+   "docs": [
+    "doc14"
+   ],
+   "ko": "은행 벤처캐피탈"
+  },
+  {
+   "id": "innovative entrepreneurs",
+   "type": "Actor",
+   "description": "Founders who pursue disruptive innovation with new ideas; conditions to nurture them are lacking in Korea.",
+   "aliases": [
+    "entrepreneurs",
+    "entrepreneur",
+    "start a business"
+   ],
+   "docs": [
+    "doc05",
+    "doc11",
+    "doc15"
+   ],
+   "ko": "혁신창업가"
+  },
+  {
+   "id": "smart mavericks",
+   "type": "Actor",
+   "description": "Cognitively able, rule-averse adolescents (1.6% of the sample); in Korea they prefer employment to starting businesses.",
+   "aliases": [
+    "smart maverick",
+    "mavericks"
+   ],
+   "docs": [
+    "doc15"
+   ],
+   "ko": "똑똑한 이단아"
+  },
+  {
+   "id": "golden ticket syndrome",
+   "type": "Phenomenon",
+   "description": "OECD term for young Koreans competing intensely for jobs in professions, large firms and the public sector.",
+   "aliases": [
+    "golden ticket"
+   ],
+   "docs": [
+    "doc15"
+   ],
+   "ko": "황금티켓증후군"
+  },
+  {
+   "id": "negative view of failure",
+   "type": "Phenomenon",
+   "description": "Only 17.7% agree society accepts failure; 61.0% report a vague fear of failure.",
+   "aliases": [
+    "fear of failure",
+    "failure"
+   ],
+   "docs": [
+    "doc15",
+    "doc18"
+   ],
+   "ko": "실패에 대한 부정적 인식"
+  },
+  {
+   "id": "public research institutes",
+   "type": "Organization",
+   "description": "Universities and public labs; their basic research takes time to commercialize (ivory tower effect).",
+   "aliases": [
+    "universities",
+    "public research",
+    "industry-academia"
+   ],
+   "docs": [
+    "doc16",
+    "doc18"
+   ],
+   "ko": "공공연구기관"
+  },
+  {
+   "id": "targeted basic-research subsidy",
+   "type": "Policy",
+   "description": "Tripling subsidies for firms' basic research only: growth +0.22%p, welfare +2.1%; hard to implement in practice.",
+   "aliases": [
+    "selective support",
+    "selectively supporting"
+   ],
+   "docs": [
+    "doc16"
+   ],
+   "ko": "기초연구 선별 지원"
+  },
+  {
+   "id": "uniform R&D subsidy",
+   "type": "Policy",
+   "description": "Doubling subsidies for both basic and applied research: growth +0.20%p, welfare +0.4%.",
+   "aliases": [
+    "uniform support",
+    "same subsidy"
+   ],
+   "docs": [
+    "doc16"
+   ],
+   "ko": "기초·응용연구 동일 지원"
+  },
+  {
+   "id": "stronger industry-academia collaboration",
+   "type": "Policy",
+   "description": "1.5x subsidies + 1.5x funding for public research + firm-institute collaboration: growth +0.18%p, welfare +1.3%.",
+   "aliases": [
+    "research collaboration",
+    "collaboration between firms and public research"
+   ],
+   "docs": [
+    "doc16",
+    "doc18"
+   ],
+   "ko": "산학 연구협력 강화"
+  },
+  {
+   "id": "more start-up buyouts",
+   "type": "Policy",
+   "description": "Doubling the buyout rate of innovative start-ups: growth +0.04%p, welfare +0.6%.",
+   "aliases": [
+    "buyout",
+    "buyouts"
+   ],
+   "docs": [
+    "doc17"
+   ],
+   "ko": "경영권 거래 확대"
+  },
+  {
+   "id": "higher entry rate of innovative firms",
+   "type": "Policy",
+   "description": "Doubling the entry rate of innovative firms: growth +0.03%p, welfare +1.0%; +0.07%p and +1.4% combined with buyouts.",
+   "aliases": [
+    "entry rate"
+   ],
+   "docs": [
+    "doc17"
+   ],
+   "ko": "혁신기업 신생률 확대"
+  },
+  {
+   "id": "developing the M&A market",
+   "type": "Policy",
+   "description": "With a developed M&A market and U.S.-level VC access, patent applications +0.74% and citations +0.58%.",
+   "aliases": [
+    "M&A market"
+   ],
+   "docs": [
+    "doc13",
+    "doc18"
+   ],
+   "ko": "M&A 시장 활성화"
+  },
+  {
+   "id": "supportive environment for entrepreneurship",
+   "type": "Policy",
+   "description": "Reduce the risk of failure via a multiple-opportunity social structure and more flexible labor markets.",
+   "aliases": [
+    "entrepreneurship environment",
+    "encourage start-up challenges"
+   ],
+   "docs": [
+    "doc18"
+   ],
+   "ko": "혁신창업 환경 조성"
+  },
+  {
+   "id": "STEM talent development",
+   "type": "Policy",
+   "description": "Expand adolescents' exposure to STEM jobs; women are only 26.5% of STEM graduates, low in the OECD.",
+   "aliases": [
+    "STEM",
+    "women"
+   ],
+   "docs": [
+    "doc18",
+    "doc19"
+   ],
+   "ko": "STEM 인재 양성"
+  },
+  {
+   "id": "economic growth rate",
+   "type": "Outcome",
+   "description": "Outcome measure in the scenario analysis.",
+   "aliases": [
+    "growth rate"
+   ],
+   "docs": [
+    "doc16",
+    "doc17"
+   ],
+   "ko": "경제성장률"
+  },
+  {
+   "id": "social welfare",
+   "type": "Outcome",
+   "description": "Outcome measure in the scenario analysis.",
+   "aliases": [
+    "welfare"
+   ],
+   "docs": [
+    "doc16",
+    "doc17"
+   ],
+   "ko": "사회후생"
+  },
+  {
+   "id": "Akcigit et al. (2021) structural model",
+   "type": "Method",
+   "description": "Endogenous growth model with basic/applied research and creative destruction, used for policy scenarios.",
+   "aliases": [
+    "structural model",
+    "scenario analysis"
+   ],
+   "docs": [
+    "doc16"
+   ],
+   "ko": "Akcigit et al.(2021) 구조모형"
+  },
+  {
+   "id": "Korean Education Longitudinal Study 2005",
+   "type": "Dataset",
+   "description": "Tracks students who were in 7th grade in 2005; used to identify smart mavericks.",
+   "aliases": [
+    "KELS 2005",
+    "longitudinal study"
+   ],
+   "docs": [
+    "doc15"
+   ],
+   "ko": "한국교육종단연구2005"
+  }
+ ],
+ "edges": [
+  {
+   "source": "low fertility and rapid aging",
+   "type": "CAUSES",
+   "target": "negative growth in the 2040s",
+   "description": "low labor supply weakens growth potential",
+   "doc": "doc02"
+  },
+  {
+   "source": "negative growth in the 2040s",
+   "type": "THREATENS",
+   "target": "Korean economy",
+   "description": "without dramatic change",
+   "doc": "doc02"
+  },
+  {
+   "source": "innovation (concept)",
+   "type": "DRIVES",
+   "target": "firm productivity",
+   "description": "raises productivity via new products and processes; main driver of long-run growth",
+   "doc": "doc02"
+  },
+  {
+   "source": "innovation (concept)",
+   "type": "COUNTERS",
+   "target": "negative growth in the 2040s",
+   "description": "innovation is needed to counter weakening growth potential",
+   "doc": "doc02"
+  },
+  {
+   "source": "R&D spending",
+   "type": "INCREASED_IN",
+   "target": "Korean economy",
+   "description": "2.3% of GDP (2001) → 5.2% (2022), 2nd in the OECD",
+   "doc": "doc03"
+  },
+  {
+   "source": "patent applications",
+   "type": "RANKED_IN",
+   "target": "Korean economy",
+   "description": "4th in U.S. patent applications in 2020",
+   "doc": "doc03"
+  },
+  {
+   "source": "firm productivity",
+   "type": "SLOWED_IN",
+   "target": "Korean economy",
+   "description": "6.1% (2001-10) → 0.5% (2011-20) a year",
+   "doc": "doc01"
+  },
+  {
+   "source": "innovative firms",
+   "type": "HAS_INDICATOR",
+   "target": "firm productivity",
+   "description": "innovative firms' productivity growth fell from 8.2% to 1.3%",
+   "doc": "doc06"
+  },
+  {
+   "source": "innovative firms",
+   "type": "ACCOUNTS_FOR",
+   "target": "R&D spending",
+   "description": "~72% of all business R&D",
+   "doc": "doc06"
+  },
+  {
+   "source": "innovative firms",
+   "type": "COMPARED_WITH",
+   "target": "non-innovative firms",
+   "description": "innovative firms slowed more in the 2010s",
+   "doc": "doc06"
+  },
+  {
+   "source": "large firms",
+   "type": "SUBGROUP_OF",
+   "target": "innovative firms",
+   "description": "top 5% by employees",
+   "doc": "doc07"
+  },
+  {
+   "source": "old SMEs",
+   "type": "SUBGROUP_OF",
+   "target": "innovative firms",
+   "description": "top 80% of SMEs by age",
+   "doc": "doc07"
+  },
+  {
+   "source": "young SMEs",
+   "type": "SUBGROUP_OF",
+   "target": "innovative firms",
+   "description": "bottom 20% of SMEs by age",
+   "doc": "doc07"
+  },
+  {
+   "source": "large firms",
+   "type": "ACCOUNTS_FOR",
+   "target": "R&D spending",
+   "description": "88% of innovative firms' R&D",
+   "doc": "doc07"
+  },
+  {
+   "source": "large firms",
+   "type": "ACCOUNTS_FOR",
+   "target": "patent applications",
+   "description": "~95% of Korea's U.S. patent applications",
+   "doc": "doc08"
+  },
+  {
+   "source": "large firms",
+   "type": "SUFFERS",
+   "target": "stagnant innovation quality",
+   "description": "quantity rose but quality (citations) did not",
+   "doc": "doc08"
+  },
+  {
+   "source": "stagnant innovation quality",
+   "type": "MEASURED_BY",
+   "target": "patent citations",
+   "description": "1.4 citations per patent vs. 5.0 in the U.S.",
+   "doc": "doc08"
+  },
+  {
+   "source": "patent citations",
+   "type": "RELATED_TO",
+   "target": "firm productivity",
+   "description": "citations, not filings, track productivity growth",
+   "doc": "doc08"
+  },
+  {
+   "source": "young SMEs",
+   "type": "SUFFERS",
+   "target": "difficulty financing innovation",
+   "description": "lack of external and internal funds surged",
+   "doc": "doc09"
+  },
+  {
+   "source": "young SMEs",
+   "type": "SUFFERS",
+   "target": "decline in new entrants",
+   "description": "average age rose from 1.6 to 12.5 years",
+   "doc": "doc09"
+  },
+  {
+   "source": "decline in new entrants",
+   "type": "INVOLVES",
+   "target": "innovative start-ups",
+   "description": "share of start-ups filing U.S. patents within 8 years fell below 10%",
+   "doc": "doc09"
+  },
+  {
+   "source": "shrinking share of basic research",
+   "type": "CAUSES",
+   "target": "stagnant innovation quality",
+   "description": "basic research share fell from 14% to 11%, lowering innovation quality",
+   "doc": "doc10"
+  },
+  {
+   "source": "venture capital",
+   "type": "WEAKNESS_LEADS_TO",
+   "target": "difficulty financing innovation",
+   "description": "VC's innovation-funding function is weak",
+   "doc": "doc10"
+  },
+  {
+   "source": "innovative entrepreneurs",
+   "type": "SHORTAGE_LEADS_TO",
+   "target": "decline in new entrants",
+   "description": "lack of conditions to nurture innovative entrepreneurs",
+   "doc": "doc10"
+  },
+  {
+   "source": "VC accessibility",
+   "type": "MEASURES",
+   "target": "venture capital",
+   "description": "Korea ranked 24th in the OECD in 2020; investment 0.16% of GDP (5th)",
+   "doc": "doc11"
+  },
+  {
+   "source": "government VC",
+   "type": "LED",
+   "target": "venture capital",
+   "description": "government led VC growth since the mid-2010s",
+   "doc": "doc11"
+  },
+  {
+   "source": "basic research",
+   "type": "IMPROVES",
+   "target": "patent citations",
+   "description": "raises citations, generality and originality, more so for large firms",
+   "doc": "doc12"
+  },
+  {
+   "source": "applied research",
+   "type": "IMPROVES",
+   "target": "patent applications",
+   "description": "stronger effect on the quantity of output",
+   "doc": "doc12"
+  },
+  {
+   "source": "applied research",
+   "type": "LOWERS",
+   "target": "patent citations",
+   "description": "more applied research lowers citations and originality",
+   "doc": "doc12"
+  },
+  {
+   "source": "basic research",
+   "type": "MORE_EFFECTIVE_FOR",
+   "target": "large firms",
+   "description": "large firms span many industries and can use basic research widely",
+   "doc": "doc12"
+  },
+  {
+   "source": "VC accessibility",
+   "type": "IMPROVES",
+   "target": "patent applications",
+   "description": "1% higher access → +0.007% filings and citations",
+   "doc": "doc13"
+  },
+  {
+   "source": "VC accessibility",
+   "type": "IMPROVES",
+   "target": "patent citations",
+   "description": "raising access to U.S. level (5.2) → +0.37% each",
+   "doc": "doc13"
+  },
+  {
+   "source": "secondary market",
+   "type": "ENABLES",
+   "target": "VC accessibility",
+   "description": "effect is significant only where the secondary market is developed",
+   "doc": "doc13"
+  },
+  {
+   "source": "developing the M&A market",
+   "type": "BOOSTS",
+   "target": "VC accessibility",
+   "description": "with a developed M&A market: filings +0.74%, citations +0.58%",
+   "doc": "doc13"
+  },
+  {
+   "source": "private VC",
+   "type": "IMPROVES",
+   "target": "patent applications",
+   "description": "only private VC significantly raises innovation output",
+   "doc": "doc14"
+  },
+  {
+   "source": "government VC",
+   "type": "NO_EFFECT_ON",
+   "target": "patent applications",
+   "description": "government VC investment has no significant effect",
+   "doc": "doc14"
+  },
+  {
+   "source": "independent VC",
+   "type": "TYPE_OF",
+   "target": "private VC",
+   "description": "by fund sponsor",
+   "doc": "doc14"
+  },
+  {
+   "source": "corporate VC",
+   "type": "TYPE_OF",
+   "target": "private VC",
+   "description": "by fund sponsor",
+   "doc": "doc14"
+  },
+  {
+   "source": "bank VC",
+   "type": "TYPE_OF",
+   "target": "private VC",
+   "description": "by fund sponsor",
+   "doc": "doc14"
+  },
+  {
+   "source": "bank VC",
+   "type": "LOWERS",
+   "target": "patent citations",
+   "description": "bank VC lowers patent filings and citations",
+   "doc": "doc14"
+  },
+  {
+   "source": "smart mavericks",
+   "type": "POTENTIAL",
+   "target": "innovative entrepreneurs",
+   "description": "in the U.S., large-scale founders were smart mavericks as teenagers",
+   "doc": "doc15"
+  },
+  {
+   "source": "smart mavericks",
+   "type": "MEASURED_IN",
+   "target": "Korean Education Longitudinal Study 2005",
+   "description": "identified by 7th-grade math scores and a nonconformity index",
+   "doc": "doc15"
+  },
+  {
+   "source": "golden ticket syndrome",
+   "type": "DISCOURAGES",
+   "target": "smart mavericks",
+   "description": "only 3.0% start or plan a business, similar to smart regular students (2.5%)",
+   "doc": "doc15"
+  },
+  {
+   "source": "negative view of failure",
+   "type": "DISCOURAGES",
+   "target": "smart mavericks",
+   "description": "61.0% report fear of failure",
+   "doc": "doc15"
+  },
+  {
+   "source": "targeted basic-research subsidy",
+   "type": "SUPPORTS",
+   "target": "basic research",
+   "description": "triple subsidies for basic research only",
+   "doc": "doc16"
+  },
+  {
+   "source": "targeted basic-research subsidy",
+   "type": "RAISES",
+   "target": "social welfare",
+   "description": "growth +0.22%p, welfare +2.1% (most effective)",
+   "doc": "doc16"
+  },
+  {
+   "source": "uniform R&D subsidy",
+   "type": "RAISES",
+   "target": "economic growth rate",
+   "description": "growth +0.20%p, welfare +0.4%",
+   "doc": "doc16"
+  },
+  {
+   "source": "stronger industry-academia collaboration",
+   "type": "ALTERNATIVE_TO",
+   "target": "targeted basic-research subsidy",
+   "description": "practical alternative when targeted support is infeasible",
+   "doc": "doc16"
+  },
+  {
+   "source": "stronger industry-academia collaboration",
+   "type": "INVOLVES",
+   "target": "public research institutes",
+   "description": "1.5x funding for public research + collaboration",
+   "doc": "doc16"
+  },
+  {
+   "source": "stronger industry-academia collaboration",
+   "type": "RAISES",
+   "target": "economic growth rate",
+   "description": "growth +0.18%p, welfare +1.3%",
+   "doc": "doc16"
+  },
+  {
+   "source": "Akcigit et al. (2021) structural model",
+   "type": "EVALUATES",
+   "target": "stronger industry-academia collaboration",
+   "description": "general-equilibrium structural model scenarios",
+   "doc": "doc16"
+  },
+  {
+   "source": "more start-up buyouts",
+   "type": "RAISES",
+   "target": "social welfare",
+   "description": "growth +0.04%p, welfare +0.6%",
+   "doc": "doc17"
+  },
+  {
+   "source": "higher entry rate of innovative firms",
+   "type": "RAISES",
+   "target": "social welfare",
+   "description": "growth +0.03%p, welfare +1.0%",
+   "doc": "doc17"
+  },
+  {
+   "source": "higher entry rate of innovative firms",
+   "type": "TARGETS",
+   "target": "innovative start-ups",
+   "description": "better financing and more innovative entrepreneurs",
+   "doc": "doc17"
+  },
+  {
+   "source": "more start-up buyouts",
+   "type": "TARGETS",
+   "target": "innovative start-ups",
+   "description": "buyout rate doubled via better VC and M&A",
+   "doc": "doc17"
+  },
+  {
+   "source": "basic research",
+   "type": "PRESCRIBED_FOR",
+   "target": "stagnant innovation quality",
+   "description": "conclusion: strengthen basic research, incentives for in-house basic research",
+   "doc": "doc18"
+  },
+  {
+   "source": "developing the M&A market",
+   "type": "PRESCRIBED_FOR",
+   "target": "difficulty financing innovation",
+   "description": "conclusion: improve VC access, expand independent and corporate VC",
+   "doc": "doc18"
+  },
+  {
+   "source": "supportive environment for entrepreneurship",
+   "type": "PRESCRIBED_FOR",
+   "target": "decline in new entrants",
+   "description": "conclusion: reduce the risk of failure, multiple-opportunity society",
+   "doc": "doc18"
+  },
+  {
+   "source": "supportive environment for entrepreneurship",
+   "type": "ADDRESSES",
+   "target": "negative view of failure",
+   "description": "social conditions that lower the cost of failure",
+   "doc": "doc18"
+  },
+  {
+   "source": "STEM talent development",
+   "type": "SUPPORTS",
+   "target": "innovation (concept)",
+   "description": "STEM talent to drive innovation; more STEM job exposure for youth",
+   "doc": "doc19"
+  }
+ ]
+}

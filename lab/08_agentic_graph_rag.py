@@ -1,5 +1,6 @@
 # %% [markdown]
 # # 실습 08. Agentic GraphRAG — LLM 에이전트가 도구로 그래프를 탐색
+# # Lab 08. Agentic GraphRAG — an LLM agent explores the graph with tools
 # 고정 파이프라인(실습 04) 대신, LLM 이 스스로
 #   "어떤 엔티티를 찾을지 → 어떤 이웃을 볼지 → 경로를 찾을지 → 원문을 읽을지"
 # 를 결정한다. Think-on-Graph 아이디어의 실용 버전이며, MCP 서버로 도구를 노출하는 것도 같은 원리.
@@ -8,19 +9,19 @@
 # %%
 from langchain.agents import create_agent
 
-from common import get_llm, header, load_questions
-from graph_tools import SYSTEM, TOOLS, find_path, get_neighbors, search_entities
+from common import get_llm, header, load_questions, t
+from graph_tools import TOOLS, find_path, get_neighbors, search_entities, system_prompt
 
 # %%
 llm = get_llm()
 if llm is None:
-    header("LLM_MODEL 미설정 — 도구만 직접 호출해 봅니다")
-    print(search_entities.invoke({"keyword": "벤처캐피탈"}))
-    print(get_neighbors.invoke({"entity": "똑똑한 이단아"}))
-    print(find_path.invoke({"source": "저업력 중소기업", "target": "M&A 시장 활성화"}))
+    header(t("LLM_MODEL 미설정 — 도구만 직접 호출해 봅니다", "LLM_MODEL not set — calling the tools directly"))
+    print(search_entities.invoke({"keyword": t("벤처캐피탈", "venture capital")}))
+    print(get_neighbors.invoke({"entity": t("똑똑한 이단아", "smart mavericks")}))
+    print(find_path.invoke({"source": t("저업력 중소기업", "young SMEs"), "target": t("M&A 시장 활성화", "developing the M&A market")}))
     raise SystemExit(0)
 
-agent = create_agent(llm, tools=TOOLS, system_prompt=SYSTEM)
+agent = create_agent(llm, tools=TOOLS, system_prompt=system_prompt())
 
 for q in load_questions():
     if q["id"] not in ("q3", "q4", "q5"):  # 근거가 여러 장에 흩어진 멀티홉 질문 위주
@@ -30,4 +31,4 @@ for q in load_questions():
     for m in result["messages"]:
         for call in getattr(m, "tool_calls", None) or []:
             print(f"  🔧 {call['name']}({call['args']})")
-    print("\n답변:", result["messages"][-1].text)
+    print(t("\n답변:", "\nAnswer:"), result["messages"][-1].text)

@@ -14,457 +14,33 @@
 <header class="topbar">
   <div class="brand">
     <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 6l6 10 6-9M5 6l12 1"/></g><circle cx="5" cy="6" r="2.6" fill="var(--accent)"/><circle cx="17" cy="7" r="2.6" fill="var(--vec)"/><circle cx="11" cy="16" r="2.6" fill="var(--hyb)"/></svg>
-    <span>GraphRAG <span class="full">라이브 랩</span></span>
+    <span>GraphRAG <span class="full" data-i18n="라이브 랩|Live Lab">라이브 랩</span></span>
   </div>
-  <nav class="viewtabs" role="tablist" aria-label="화면">
-    <button type="button" role="tab" id="tabLecture" aria-selected="true">강의</button>
-    <button type="button" role="tab" id="tabLab" aria-selected="false">라이브 실험실</button>
+  <nav class="viewtabs" role="tablist" aria-label="View">
+    <button type="button" role="tab" id="tabLecture" aria-selected="true" data-i18n="강의|Lecture">강의</button>
+    <button type="button" role="tab" id="tabLab" aria-selected="false" data-i18n="라이브 실험실|Live lab">라이브 실험실</button>
   </nav>
   <div class="spacer"></div>
   <span class="status" id="status"></span>
-  <button class="btn" id="zoomBtn" type="button" title="프로젝터용 글자 크기">가⁺</button>
-  <button class="btn" id="openFiles" type="button">코드·데이터</button>
-  <button class="btn primary" id="presentBtn" type="button">발표 모드</button>
+  <div class="seg" id="langSel" role="group" aria-label="Language"><button type="button" data-lang="ko" aria-pressed="false" title="한국어">KO</button><button type="button" data-lang="en" aria-pressed="false" title="English">EN</button></div>
+  <button class="btn" id="zoomBtn" type="button" title="프로젝터용 글자 크기" data-i18n="가⁺|A⁺" data-i18n-title="프로젝터용 글자 크기|Larger text for projectors">가⁺</button>
+  <button class="btn" id="openFiles" type="button" data-i18n="코드·데이터|Code &amp; data">코드·데이터</button>
+  <button class="btn primary" id="presentBtn" type="button" data-i18n="발표 모드|Present">발표 모드</button>
 </header>
 
 <div id="lectureView">
-<nav class="mobile-toc" id="mobileToc" aria-label="목차"></nav>
+<nav class="mobile-toc" id="mobileToc" aria-label="Contents"></nav>
 <div class="shell">
-<nav class="toc" aria-label="목차"><ol id="toc"></ol></nav>
+<nav class="toc" aria-label="Contents"><ol id="toc"></ol></nav>
 <main id="main">
-
-<!-- ───────────────────────── 0. 표지 ───────────────────────── -->
-<section id="intro" class="hero" data-title="들어가며">
-  <p class="eyebrow">LangChain 기반 LLM 애플리케이션 개발 · 특강</p>
-  <h1>검색을 <em>연결</em>로 바꾸다:<br>GraphRAG 입문</h1>
-  <p class="lead">RAG는 "질문과 비슷한 문장"을 찾아 줍니다. 하지만 답이 여러 장(章)에 흩어져 있고, 그 부분들이 <b>관계</b>로만 이어져 있다면 어떻게 될까요? 오늘은 교재 자료인 한국은행 보고서 「혁신과 경제성장 – 우리나라 기업의 혁신활동 분석 및 평가」(2024.5, 49쪽)로 벡터 RAG와 GraphRAG를 직접 비교합니다.</p>
-  <div class="hero-q">
-    <div class="qcard v">
-      <span class="tag">벡터 RAG · 오늘의 실험 결과</span>
-      <p><b>"저업력 중소기업이 겪는 자금 측면의 어려움은 무엇이고, 그 배경으로 지목된 자금 공급 주체의 우리나라 접근성 순위는?"</b></p>
-      <p style="color:var(--muted);font-size:.92rem">자금조달 어려움을 다룬 2장 문서(doc09)는 찾지만, 벤처캐피탈 접근성 <b>OECD 24위</b>가 적힌 3장 문서(doc11)는 놓칩니다. 대신 "우리나라 기업 R&D가 OECD 2위"라는 <b>다른 순위</b> 이야기(doc03)가 1등으로 올라옵니다. 필요한 사실 2개 중 1개 (k=3, 간이 임베딩).</p>
-    </div>
-    <div class="qcard g">
-      <span class="tag">GraphRAG · 같은 질문</span>
-      <div class="chain"><b>저업력 중소기업</b><i>겪음 →</i><b>혁신자금조달 어려움</b><i>← 기능 부족</i><b>벤처캐피탈</b><i>← 측정</i><b>벤처캐피탈 접근성</b></div>
-      <p style="color:var(--muted);font-size:.92rem">질문 속 두 엔티티 사이의 <b>경로</b>를 따라가 2장(문제)과 3장(원인)의 근거를 함께 찾습니다. 필요한 사실 2개 중 2개 (k=3).</p>
-    </div>
-  </div>
-  <p class="byline">정진수 · 삼육대학교 일반대학원 인공지능융합학부 · 지도교수 류한철</p>
-  <div class="agenda" id="agenda"></div>
-</section>
-
-<!-- ───────────────────────── 1. 그래프 ───────────────────────── -->
-<section id="graph" data-title="그래프란?">
-  <p class="eyebrow">Part 1 · 기초</p>
-  <h2>그래프란 무엇인가</h2>
-  <div class="prose">
-    <p><b>그래프(Graph)</b>는 <b>노드(Node, 점)</b>와 이를 잇는 <b>엣지(Edge, 선)</b>로 이루어진 자료구조입니다. 지하철 노선도, SNS 친구 관계, 웹 페이지 링크가 모두 그래프입니다. 핵심은 "무엇이 있나"가 아니라 <b>"무엇이 무엇과 연결되어 있나"</b>를 표현한다는 점입니다.</p>
-  </div>
-  <div class="bench">
-    <div class="controls" style="justify-content:space-between">
-      <b style="font-family:var(--f-display)">직접 해 보기: 두 사람을 차례로 클릭하면 최단 경로를 찾습니다</b>
-      <button class="btn" type="button" id="friendReset">초기화</button>
-    </div>
-    <div class="bench-grid">
-      <div class="svgbox"><svg class="graph small" id="friendSvg" role="img" aria-label="친구 관계 그래프"></svg></div>
-      <div class="info" id="friendInfo" aria-live="polite"><b>출발 노드를 클릭하세요</b><span>노드 위에 마우스를 올리면 이웃(1-hop)이 강조됩니다.</span></div>
-    </div>
-  </div>
-  <div class="grid3">
-    <div class="card"><h3>노드 · 엣지</h3><p>노드 = 개체(사람, 회사, 제품). 엣지 = 둘 사이의 관계. 노드에 연결된 엣지 수를 <b>차수(degree)</b>라고 합니다.</p></div>
-    <div class="card"><h3>방향 · 라벨</h3><p>"기초연구 → 특허피인용건수"처럼 방향이 있고, 엣지에 <code>IMPROVES</code> 같은 이름(라벨)이 붙으면 의미를 표현할 수 있습니다.</p></div>
-    <div class="card"><h3>경로 · hop</h3><p>엣지를 따라 이동하는 길이 <b>경로</b>입니다. 한 번 이동이 1-hop입니다. <b>멀티홉 추론 = 그래프 경로 탐색</b>입니다.</p></div>
-  </div>
-  <h3>지식그래프(Knowledge Graph)</h3>
-  <div class="grid2">
-    <div class="card">
-      <h3>트리플 (RDF 방식)</h3>
-      <p>모든 지식을 <code>(주어, 관계, 목적어)</code> 세 개짜리 사실로 표현합니다.</p>
-      <pre class="cmd">(기초연구, IMPROVES, 특허피인용건수)
-(대기업, SUFFERS, 혁신실적의 질 정체)
-(투자회수시장, ENABLES, 벤처캐피탈 접근성)</pre>
-    </div>
-    <div class="card">
-      <h3>속성 그래프 (Property Graph)</h3>
-      <p>노드와 엣지가 속성(key-value)을 가질 수 있습니다. Neo4j 같은 그래프 DB와 대부분의 GraphRAG 도구가 이 방식입니다.</p>
-      <pre class="cmd">(:Policy {name:"산학 연구협력 강화"})
-  -[:RAISES {성장률:"+0.18%p", 출처:"doc16"}]->
-(:Outcome {name:"경제성장률"})</pre>
-    </div>
-  </div>
-  <p class="note">지식그래프에 <b>허용되는 노드·관계 타입의 목록</b>을 미리 정한 것을 <b>스키마</b> 또는 <b>온톨로지</b>라고 합니다. 스키마가 있으면 추출이 일관되고, 없으면 유연하지만 지저분해집니다. 이 차이는 뒤에서 GraphRAG의 핵심 쟁점으로 다시 나옵니다.</p>
-  <p>실습 코드: <button class="filelink" data-file="lab/01_graph_basics.py">lab/01_graph_basics.py</button> — networkx로 이웃, 최단 경로, PageRank, 커뮤니티를 계산합니다.</p>
-</section>
-
-<!-- ───────────────────────── 2. RAG 복습 ───────────────────────── -->
-<section id="rag" data-title="RAG 복습과 한계">
-  <p class="eyebrow">Part 1 · 기초</p>
-  <h2>RAG 복습: 벡터 검색은 어떻게 동작하고, 어디서 막히나</h2>
-  <p class="flow-label">인덱싱 (미리 한 번)</p>
-  <div class="flow">
-    <div class="step vec"><b>문서 로드</b><small>DocumentLoader</small></div><span class="arrow">→</span>
-    <div class="step vec"><b>청크 분할</b><small>TextSplitter<br>500자, 겹침 50자</small></div><span class="arrow">→</span>
-    <div class="step vec"><b>임베딩</b><small>문장 → 숫자 벡터<br>(의미가 비슷하면 가까움)</small></div><span class="arrow">→</span>
-    <div class="step vec"><b>벡터 저장소</b><small>VectorStore</small></div>
-  </div>
-  <p class="flow-label">질의 (질문마다)</p>
-  <div class="flow">
-    <div class="step vec"><b>질문 임베딩</b></div><span class="arrow">→</span>
-    <div class="step vec"><b>유사도 Top-k</b><small>코사인 유사도</small></div><span class="arrow">→</span>
-    <div class="step vec"><b>프롬프트에 청크 삽입</b></div><span class="arrow">→</span>
-    <div class="step vec"><b>LLM 답변</b></div>
-  </div>
-  <h3>벡터 RAG가 구조적으로 약한 세 가지 질문</h3>
-  <div class="grid3">
-    <div class="card"><h3>① 멀티홉</h3><p>"혁신실적의 질과 밀접한 R&D 유형을 산학협력과 함께 지원하면 성장률은?" 답에 필요한 <b>중간 개념(기초연구)</b>이 질문에 없고, 근거가 3장(실증)과 4장(시나리오)에 나뉘어 있습니다.</p></div>
-    <div class="card"><h3>② 전역 요약</h3><p>"이 문서 전체의 구조와 위험 요인은?" Top-k 청크 몇 개로는 <b>코퍼스 전체</b>를 볼 수 없습니다. k를 키우면 컨텍스트가 넘칩니다.</p></div>
-    <div class="card"><h3>③ 관계·집계</h3><p>"사회후생을 높이는 정책을 모두 나열하라" 유사도는 <b>관계의 방향과 종류</b>, 빠짐없이 모으기와 개수 세기를 표현하지 못합니다.</p></div>
-  </div>
-  <p class="controls"><button type="button" class="btn primary live" data-live="ingest">▶ 실험실: 문서 처리(청크·임베딩) 보기</button> <button type="button" class="btn primary live" data-live="vector" data-q="q3">▶ 실험실: 벡터 RAG 단계별 실행</button> <span style="font-size:.9rem">코드: <button class="filelink" data-file="lab/02_vector_rag.py">lab/02_vector_rag.py</button></span></p>
-</section>
-
-<!-- ───────────────────────── 3. 왜 ───────────────────────── -->
-<section id="why" data-title="왜 GraphRAG인가">
-  <p class="eyebrow">Part 2 · 개념</p>
-  <h2>왜 GraphRAG가 생겨났나</h2>
-  <div class="prose">
-    <p>보고서는 <b>문제(2장) → 원인(3장 앞부분) → 실증(3장) → 정책 효과(4장) → 처방(5장)</b> 순서로 쓰여 있습니다. "중소기업 자금 문제"에 관한 사실만 해도 여러 장에 흩어져 있습니다.</p>
-  </div>
-  <div class="flow">
-    <div class="step"><b>doc09 · 2장</b><small>저업력 중소기업, 외부자금 부족 응답 9.9% → 45.4%</small></div><span class="arrow">→</span>
-    <div class="step"><b>doc10 · 3장</b><small>원인: 벤처캐피탈의 혁신자금 공급기능 부족</small></div><span class="arrow">→</span>
-    <div class="step"><b>doc11 · 3장</b><small>벤처캐피탈 접근성 OECD 24위, 정부 VC 주도</small></div><span class="arrow">→</span>
-    <div class="step"><b>doc13 · 3장</b><small>투자회수시장(M&A·IPO)이 발달해야 효과</small></div><span class="arrow">→</span>
-    <div class="step"><b>doc18 · 5장</b><small>처방: M&A 시장 활성화, 독립·기업 VC 역할 확대</small></div>
-  </div>
-  <div class="grid2">
-    <div class="card"><h3>청크 입장에서 보면</h3><p>doc11의 "24위" 청크에는 '저업력 중소기업'이라는 말이 없습니다. 질문과 표현이 겹치지 않으니 벡터 검색은 이 청크를 뒤로 밀고, 대신 "우리나라", "OECD", "순위(2위)" 같은 표현이 겹치는 엉뚱한 청크(기업 R&D 순위, doc03)를 올립니다.</p></div>
-    <div class="card"><h3>그래프 입장에서 보면</h3><p>각 문서가 남긴 관계(겪음, 기능 부족, 측정, 가능하게 함)를 이으면 <b>저업력 중소기업에서 벤처캐피탈 접근성까지 3-hop 경로</b>가 됩니다. 경로 위 관계의 출처 문서가 바로 필요한 근거입니다.</p></div>
-  </div>
-  <p class="controls"><button type="button" class="btn primary live" data-live="vector" data-q="q3">▶ 벡터 RAG로 실행</button> <button type="button" class="btn primary live" data-live="graph" data-q="q3">▶ 그래프 Local로 실행</button></p>
-  <p class="note">GraphRAG의 핵심 아이디어는 <b>"문서를 미리 읽어 관계를 구조로 저장해 두고, 질문할 때는 구조를 따라 근거를 모은다"</b>입니다. 비싼 이해(추출)를 인덱싱 시점에 미리 해 두는 대신, 질의 시점에는 연결을 빠르게 탐색합니다.</p>
-</section>
-
-<!-- ───────────────────────── 4. 동작 원리 ───────────────────────── -->
-<section id="how" data-title="GraphRAG 동작 원리">
-  <p class="eyebrow">Part 2 · 개념</p>
-  <h2>GraphRAG는 어떻게 동작하나</h2>
-  <p class="flow-label">인덱싱: 그래프 만들기 <button type="button" class="filelink live" data-live="extract">▶ 실험실: 추출 과정 보기</button></p>
-  <div class="flow">
-    <div class="step"><b>청크 분할</b><small>벡터 RAG와 동일</small></div><span class="arrow">→</span>
-    <div class="step hot"><b>엔티티·관계 추출</b><small>LLM이 청크마다 트리플 추출 (구조화 출력)</small></div><span class="arrow">→</span>
-    <div class="step hot"><b>엔티티 해소</b><small>"삼성"과 "Samsung"처럼 같은 개체를 병합</small></div><span class="arrow">→</span>
-    <div class="step"><b>그래프 저장</b><small>networkx, Neo4j 등</small></div><span class="arrow">→</span>
-    <div class="step hot"><b>커뮤니티 탐지·요약</b><small>Leiden으로 묶고 LLM으로 요약 (MS GraphRAG)</small></div>
-  </div>
-  <p class="flow-label">질의: 그래프로 근거 모으기</p>
-  <div class="grid2">
-    <div class="card">
-      <h3>Local Search</h3>
-      <p>질문 속 엔티티를 찾고(<b>Entity Linking</b>), 그 주변 이웃과 연결 경로, 원문을 모읍니다. 특정 개체나 관계에 대한 질문에 씁니다.</p>
-      <div class="chain" style="font-size:.84rem"><b>엔티티 연결</b><i>→</i><b>이웃·경로 확장</b><i>→</i><b>중요도(PPR) 순위</b><i>→</i><b>트리플 + 원문</b></div>
-      <span><button type="button" class="btn live" data-live="graph" data-q="q6">▶ Local 실행</button> <button class="filelink" data-file="lab/04_local_graph_rag.py">lab/04_local_graph_rag.py</button></span>
-    </div>
-    <div class="card">
-      <h3>Global Search</h3>
-      <p>미리 만든 <b>커뮤니티 요약</b> 전체에 질문을 던져 부분 답을 얻고(Map), 점수가 높은 부분 답을 종합합니다(Reduce). "전체 주제·구조" 질문에 씁니다.</p>
-      <div class="chain" style="font-size:.84rem"><b>요약 N개</b><i>→ Map →</i><b>부분 답 + 점수</b><i>→ Reduce →</i><b>최종 답</b></div>
-      <span><button type="button" class="btn live" data-live="global" data-q="q8">▶ Global 실행</button> <button class="filelink" data-file="lab/05_global_graph_rag.py">lab/05_global_graph_rag.py</button></span>
-    </div>
-    <div class="card">
-      <h3>DRIFT Search</h3>
-      <p>Global로 큰 방향을 잡은 뒤 후속 질문을 만들어 Local로 파고듭니다. Microsoft GraphRAG가 2024년 말에 추가한 하이브리드 방식입니다.</p>
-    </div>
-    <div class="card">
-      <h3>Text2Cypher</h3>
-      <p>LLM이 자연어를 그래프 쿼리 언어(Cypher)로 번역해 DB에서 직접 실행합니다. 집계("몇 개?")와 정확한 필터에 강합니다.</p>
-      <button class="filelink" data-file="lab/07_neo4j_text2cypher.py">lab/07_neo4j_text2cypher.py</button>
-    </div>
-  </div>
-</section>
-
-<!-- ───────────────────────── 4-b. LLM 그래프 추출 ───────────────────────── -->
-<section id="extraction" data-title="LLM 그래프 추출의 적절성">
-  <p class="eyebrow">Part 2 · 개념</p>
-  <h2>문서를 그래프로 바꾸는 방법과, LLM에게 맡겨도 되는가</h2>
-  <p class="lead">교재는 LangChain <code>LLMGraphTransformer</code>에 <code>gpt-4o</code>(temperature 0)를 붙여 문서를 그래프로 바꿉니다. 이 방법은 편리하지만, 기계가 만든 그래프를 그대로 믿어도 되는지는 따로 따져 봐야 합니다.</p>
-
-  <h3>문서 → 그래프 변환 방법들</h3>
-  <div class="tablewrap"><table style="min-width:920px">
-    <colgroup><col style="width:15%"><col style="width:37%"><col style="width:22%"><col style="width:26%"></colgroup>
-    <thead><tr><th>방법</th><th>도구 예</th><th>장점</th><th>한계</th></tr></thead>
-    <tbody>
-      <tr><td>LLM 자유 추출</td><td>LangChain <code>LLMGraphTransformer</code>(교재), MS GraphRAG 인덱싱, LightRAG</td><td>준비 없이 바로 시작, 문맥 이해</td><td>관계 이름이 제각각, 환각·누락, 비용</td></tr>
-      <tr><td>LLM 스키마 기반 추출</td><td><code>LLMGraphTransformer(allowed_nodes=…, allowed_relationships=…)</code>, Neo4j <code>neo4j-graphrag</code> SimpleKGPipeline, LlamaIndex SchemaLLMPathExtractor, 이 실습의 <code>extraction.py</code>(Pydantic 구조화 출력)</td><td>일관된 어휘, 검증·질의가 쉬움</td><td>스키마 설계 비용, 스키마 밖 지식은 버려짐</td></tr>
-      <tr><td>시간 인식 추출</td><td>Graphiti(Zep) <code>add_episode</code></td><td>사실의 유효 기간·갱신 관리</td><td>그래프 DB 필요, 호출 많음</td></tr>
-      <tr><td>LLM 없는 NLP</td><td>spaCy 개체명 인식 + 관계 추출 모델, 명사구 동시출현(LazyGraphRAG 방식)</td><td>싸고 빠르고 결과가 매번 같음</td><td>관계의 의미를 거의 모름, 한국어 모델 제약</td></tr>
-      <tr><td>사람의 수작업</td><td>도메인 전문가가 스프레드시트·온톨로지 도구로 작성</td><td>가장 정확, 책임 소재 명확</td><td>느리고 비쌈, 규모 확장 불가</td></tr>
-    </tbody>
-  </table></div>
-  <p class="note"><b>이 실습의 그래프는?</b> <code>data/kg.json</code>(노드 45, 관계 60)은 LLM 자동 추출 결과가 아니라, 강의 자료를 만들 때 AI 어시스턴트가 보고서를 읽고 <b>핵심 관계만 골라 수작업처럼 정리</b>한 참조 그래프입니다. 핵심 수치는 원문과 대조했지만, 수업 전 강사 검수를 권장합니다. 실습 03(<button type="button" class="filelink" data-file="lab/03_build_graph.py">03_build_graph.py</button>)은 교재 방식(<code>EXTRACTOR=lgt</code>)과 직접 구현(<code>custom</code>)으로 LLM 추출을 실행한 뒤, 이 참조 그래프와 자동으로 비교합니다.</p>
-
-  <h3>LLM으로 그래프를 기계식 생성하는 것의 적절성: 여섯 가지 관점</h3>
-  <div class="grid2">
-    <div class="card"><h3>① 정확성: 지어낸 관계와 빠진 관계</h3><p>LLM은 문서에 없는 관계를 그럴듯하게 만들기도 하고(환각), 여러 문장에 걸친 관계나 표·각주 속 수치는 자주 놓칩니다. 그래프에 들어간 오류는 이후 검색·답변까지 그대로 전파되며, <b>검색 단계에서는 오류인지 알 수 없습니다</b>.</p></div>
-    <div class="card"><h3>② 재현성: temperature 0은 '같은 결과'를 보장하지 않는다</h3><p>temperature 0은 무작위성을 줄일 뿐, 서버의 병렬 계산 방식이나 모델 버전 교체 때문에 결과가 달라질 수 있습니다. 게다가 최신 추론 모델은 temperature 자체를 받지 않는 경우가 많습니다. 재현성은 <b>구조화 출력(JSON 스키마) + 결과 스냅샷 저장 + 모델 버전 고정</b>으로 확보하는 편이 현실적입니다.</p></div>
-    <div class="card"><h3>③ 의미 손실: 경제 보고서의 '유보'와 '조건'이 사라진다</h3><p>보고서는 "~일 가능성이 있다", "투자회수시장이 발전한 경우에만 유의", "모형 추정치" 같은 표현으로 주장의 강도를 조절합니다. <code>(벤처캐피탈, CAUSES, 자금조달 어려움)</code> 같은 트리플은 이 뉘앙스를 지우고 <b>추정·상관을 확정된 인과처럼</b> 보이게 합니다. 관계에 확신도·조건·근거 문장을 속성으로 남겨야 합니다.</p></div>
-    <div class="card"><h3>④ 일관성: 관계 이름과 개체 이름이 흔들린다</h3><p>자유 추출에서는 같은 관계가 CAUSES·LEADS_TO·RESULTS_IN으로, 같은 개체가 "벤처캐피탈·VC·벤처투자"로 나뉩니다. 그래프가 조각나면 경로 탐색이 끊깁니다. <b>스키마 기반 추출과 엔티티 해소</b>가 필수인 이유입니다.</p></div>
-    <div class="card"><h3>⑤ 검증 가능성과 책임</h3><p>정책 판단이나 강의 자료처럼 틀리면 곤란한 곳에 쓴다면, 모든 관계에 <b>출처 문서·문장</b>을 달아 사람이 되짚을 수 있어야 합니다. 전수 검수가 어렵다면 무작위 표본을 뽑아 검수하고 정밀도를 보고합니다. 외부 API로 문서를 보내는 것이 허용되는지(저작권·보안)도 함께 확인해야 합니다.</p></div>
-    <div class="card"><h3>⑥ 비용과 규모</h3><p>49쪽 보고서는 청크 100여 개라 부담이 없지만, 문서가 수만 건이면 추출 비용과 시간이 벡터 인덱싱의 수십 배가 됩니다. LazyGraphRAG·LightRAG가 나온 배경입니다. 반대로 <b>작은 핵심 문서</b>에는 사람이 스키마를 잡고 LLM이 초안을 만든 뒤 사람이 검수하는 방식이 가장 효율적입니다.</p></div>
-  </div>
-  <h3>실측: 이 보고서로 직접 돌려 본 결과 (Claude Sonnet 4.6, temperature 0)</h3>
-  <div class="tablewrap"><table>
-    <thead><tr><th>방식</th><th class="num">노드</th><th class="num">관계</th><th class="num">관계 이름 종류</th><th class="num">참조 노드 재현율</th><th class="num">참조 관계 재현율</th><th class="num">소요</th></tr></thead>
-    <tbody>
-      <tr><td>참조 그래프 (kg.json)</td><td class="num">45</td><td class="num">60</td><td class="num">36</td><td class="num">–</td><td class="num">–</td><td class="num">–</td></tr>
-      <tr><td>직접 구현 (Pydantic 구조화 출력)</td><td class="num">163</td><td class="num">300</td><td class="num">106</td><td class="num">69%</td><td class="num">37%</td><td class="num">119초</td></tr>
-      <tr><td>교재 방식 (LLMGraphTransformer)</td><td class="num">256</td><td class="num">478</td><td class="num">158</td><td class="num">73%</td><td class="num">28%</td><td class="num">약 2분</td></tr>
-    </tbody>
-  </table></div>
-  <div class="grid2">
-    <div class="card"><h3>관찰 ① 많이 뽑지만 핵심을 놓친다</h3><p>LLM은 참조보다 5~8배 많은 관계를 만들었지만, "저업력 중소기업이 혁신자금조달 어려움을 겪는다" 같은 핵심 관계는 놓치거나 "중소기업(업력 하위 20%)"처럼 다른 이름으로 만들었습니다. 관계 이름도 106~158종으로 흩어졌습니다.</p></div>
-    <div class="card"><h3>관찰 ② temperature 0인데도 매번 다르다</h3><p>같은 문서 3개를 같은 설정으로 두 번 추출했을 때 완전히 같은 트리플의 비율(자카드)은 <b>0.11~0.42</b>였습니다. "기업 벤처캐피탈 → 특허출원건수"가 다음 번엔 "→ 혁신실적지표"가 되는 식입니다.</p></div>
-    <div class="card"><h3>관찰 ③ 문서 메타 정보가 섞인다</h3><p>"경제전망보고서 → CONTAINS → 한국기업혁신조사"처럼 내용이 아닌 출처·방법론 관계가 다수 생겼습니다. 스키마와 프롬프트로 "무엇을 뽑을지"를 정해야 하는 이유입니다.</p></div>
-    <div class="card"><h3>해석할 때 주의</h3><p>비교는 이름을 엄격히 맞춘 결과라, 표기만 다른 같은 개념은 '놓침'으로 셉니다. 즉 재현율은 실제보다 낮게 나옵니다. 그래도 엔티티 해소 없이는 그래프가 조각난다는 점을 보여 줍니다. 결과 파일: <button type="button" class="filelink" data-file="data/kg_extracted_custom.json">kg_extracted_custom.json</button> · <button type="button" class="filelink" data-file="data/kg_extracted_lgt.json">kg_extracted_lgt.json</button></p></div>
-  </div>
-  <h3>권장 절차</h3>
-  <div class="flow">
-    <div class="step hot"><b>① 스키마 설계</b><small>노드·관계 타입을 사람이 먼저 정함</small></div><span class="arrow">→</span>
-    <div class="step hot"><b>② 구조화 추출</b><small>JSON 스키마 강제, 낮은 무작위성</small></div><span class="arrow">→</span>
-    <div class="step hot"><b>③ 근거 보존</b><small>관계마다 출처 문서·문장·확신도</small></div><span class="arrow">→</span>
-    <div class="step hot"><b>④ 엔티티 해소</b><small>정규화 → 임베딩 → LLM 판정</small></div><span class="arrow">→</span>
-    <div class="step hot"><b>⑤ 표본 검수</b><small>정밀도·재현율 측정 (실습 03 비교)</small></div><span class="arrow">→</span>
-    <div class="step hot"><b>⑥ 버전 관리</b><small>그래프 스냅샷, 모델·프롬프트 기록</small></div>
-  </div>
-
-  <h3>temperature를 지원하는 최신 모델 (2026년 9월 확인)</h3>
-  <div class="tablewrap"><table>
-    <thead><tr><th>공급사</th><th>temperature 지원</th><th>지원하지 않음 / 주의</th></tr></thead>
-    <tbody>
-      <tr><td>Anthropic</td><td>Claude Sonnet 4.6, Opus 4.6, Haiku 4.5</td><td>Opus 5.5·5, Sonnet 5.5·5, Fable 5.x 등 5세대는 temperature 등 샘플링 값을 보내면 오류(400). 대신 effort로 추론 깊이를 조절</td></tr>
-      <tr><td>OpenAI</td><td>GPT-4.1·GPT-4o 등 비추론 모델, GPT-5.1 이후 모델은 <code>reasoning_effort="none"</code>일 때만</td><td>GPT-6 Astra 등 추론 모델은 추론을 켜면 temperature 불가</td></tr>
-      <tr><td>Google</td><td>Gemini 2.5 계열은 0까지 자유롭게</td><td>Gemini 3 계열은 값을 받지만 1.0 유지를 강하게 권고(낮추면 반복·성능 저하 가능)</td></tr>
-    </tbody>
-  </table></div>
-</section>
-
-<!-- ───────────────────────── 5. 비교 ───────────────────────── -->
-<section id="compare" data-title="기존 RAG와의 차이">
-  <p class="eyebrow">Part 2 · 개념</p>
-  <h2>벡터 RAG vs GraphRAG: 무엇이 다른가</h2>
-  <p class="lead">둘은 경쟁 관계라기보다 <b>검색의 기준</b>이 다릅니다. 벡터 RAG는 "의미가 비슷한가", GraphRAG는 "구조적으로 연결되어 있는가"를 봅니다.</p>
-  <div class="tablewrap">
-  <table>
-    <thead><tr><th>관점</th><th class="v">벡터 RAG</th><th class="g">GraphRAG</th></tr></thead>
-    <tbody>
-      <tr><td>저장 단위</td><td class="v">청크(텍스트 조각) + 임베딩 벡터</td><td class="g">엔티티·관계(트리플) + 원문 링크 + (커뮤니티 요약)</td></tr>
-      <tr><td>인덱싱 과정</td><td class="v">분할 → 임베딩</td><td class="g">분할 → LLM 추출 → 엔티티 해소 → 그래프 구축 → (커뮤니티 탐지 → 요약) → 임베딩</td></tr>
-      <tr><td>인덱싱 비용</td><td class="v">임베딩 호출만 (저렴하고 빠름)</td><td class="g">청크마다 LLM 호출. 원조 MS GraphRAG는 벡터 RAG보다 훨씬 비쌈 → LazyGraphRAG, LightRAG가 이를 줄이려 등장</td></tr>
-      <tr><td>검색 기준</td><td class="v">의미적 유사도 (코사인)</td><td class="g">구조적 연결성: 이웃, 경로, 중심성, 커뮤니티</td></tr>
-      <tr><td>검색 연산</td><td class="v">Top-k 최근접 이웃 탐색</td><td class="g">엔티티 연결 → k-hop 확장 / 최단 경로 / Personalized PageRank / 요약 Map-Reduce / Cypher</td></tr>
-      <tr><td>LLM에 주는 컨텍스트</td><td class="v">원문 청크 나열</td><td class="g">관계 트리플·경로·커뮤니티 요약 + 원문</td></tr>
-      <tr><td>강한 질문</td><td class="v">답이 한 곳에 있는 사실 질문, 표현이 다양한 질문</td><td class="g">멀티홉, 관계, 인과 연쇄, 전역 요약, 집계</td></tr>
-      <tr><td>약한 질문</td><td class="v">멀티홉, 전역 요약, 집계</td><td class="g">추출 단계에서 빠진 정보, 관계로 표현하기 어려운 뉘앙스, 단순 질문(과잉 설계)</td></tr>
-      <tr><td>설명 가능성</td><td class="v">"이 청크가 질문과 비슷해서"</td><td class="g">"A → B → C 경로 때문에" (근거 경로를 보여 줄 수 있음)</td></tr>
-      <tr><td>데이터 갱신</td><td class="v">새 청크를 추가하면 끝</td><td class="g">엔티티 병합, 커뮤니티 재계산이 필요. LightRAG, Graphiti는 증분 갱신 지원</td></tr>
-      <tr><td>실패 양상</td><td class="v">관련 문서 누락, 비슷하지만 틀린 청크</td><td class="g">추출 오류, 중복 엔티티, 지어낸 관계가 검색까지 그대로 전파</td></tr>
-      <tr><td>인프라</td><td class="v">벡터 DB (Chroma, FAISS, pgvector 등)</td><td class="g">그래프 저장소(networkx, Neo4j 등) + 대개 벡터 인덱스도 함께</td></tr>
-      <tr><td>평가</td><td class="v">검색 Recall, 답변 정확도</td><td class="g">+ 그래프 품질(추출 정밀도·재현율, 엔티티 중복률)</td></tr>
-      <tr><td>LangChain 구성요소</td><td class="v">TextSplitter · Embeddings · VectorStore · Retriever · LCEL</td><td class="g">+ with_structured_output(추출) · networkx/Neo4jGraph · GraphCypherQAChain · create_agent(도구 탐색)</td></tr>
-    </tbody>
-  </table>
-  </div>
-  <p class="note warn"><b>흔한 오해:</b> "GraphRAG가 벡터 RAG보다 항상 낫다"는 사실이 아닙니다. 여러 벤치마크 연구에서 단순 사실 질문은 벡터 RAG가 비슷하거나 더 나았고, 그래프의 이점은 멀티홉·전역 질문에 집중되었습니다. 실무 표준은 둘을 섞는 <b>하이브리드</b>입니다. 아래 실험에서 직접 확인해 봅시다.</p>
-</section>
-
-<!-- ───────────────────────── 6. 실험 ───────────────────────── -->
-<section id="demo" data-title="같은 질문, 다른 검색">
-  <p class="eyebrow">Part 3 · 실험</p>
-  <h2>같은 질문, 다른 검색: 실험실에서 직접 돌려 보기</h2>
-  <p class="lead">아래 버튼은 <b>라이브 실험실</b>을 열고 질문을 바로 실행합니다. 서버가 실습 코드를 실제로 돌리고, 각 처리 단계의 중간 결과를 하나씩 보여 줍니다. 발표 중에는 <kbd>→</kbd> 키로 한 단계씩 넘기며 설명하세요.</p>
-  <div class="grid2">
-    <div class="card"><h3>⓪ PDF가 인덱스가 되기까지</h3><p>보고서 PDF 49쪽을 정제하고 19개 문서로 나눈 뒤, 청크 크기·겹침을 슬라이더로 바꿔 가며 청크와 임베딩을 봅니다.</p><button type="button" class="btn primary live" data-live="ingest">▶ 문서 처리 과정 보기</button></div>
-    <div class="card"><h3>① 벡터 RAG가 놓치는 근거</h3><p>q3를 벡터 검색으로 실행해 유사도 점수, 임베딩 공간, 컨텍스트로 들어가는 청크를 봅니다.</p><button type="button" class="btn primary live" data-live="vector" data-q="q3">▶ 벡터 RAG로 실행</button></div>
-    <div class="card"><h3>② 그래프가 찾는 연결고리</h3><p>같은 질문을 그래프 Local Search로 실행합니다. 엔티티 연결 → 경로 → PPR → 문서 순위를 단계별로 봅니다.</p><button type="button" class="btn primary live" data-live="graph" data-q="q3">▶ 그래프 Local로 실행</button></div>
-    <div class="card"><h3>③ 세 검색기 나란히 + 벤치마크</h3><p>벡터, 그래프, 하이브리드의 검색 결과와 Recall을 한 화면에서 비교하고, 질문 7개 전체 벤치마크를 실시간으로 돌립니다.</p><button type="button" class="btn live" data-live="compare" data-q="q4">▶ 나란히 비교</button></div>
-  </div>
-  <div class="bench">
-    <div class="controls" style="justify-content:space-between"><b style="font-family:var(--f-display)">실시간 벤치마크 (Recall@k, 질문 q1~q7)</b>
-      <span class="controls"><div class="seg" id="benchK"><button type="button" data-k="3" aria-pressed="false">k=3</button><button type="button" data-k="5" aria-pressed="true">k=5</button></div>
-      <button type="button" class="btn primary" id="benchRun">실행</button></span></div>
-    <div id="benchOut" class="tablewrap"><p style="padding:14px;color:var(--muted)">실행을 누르면 현재 서버 설정(임베딩)으로 06_compare_eval.py와 같은 평가를 돌립니다.</p></div>
-  </div>
-  <div class="grid2">
-    <div class="card"><h3>관찰 ① 보고서 한 편에서는 벡터가 이미 강하다</h3><p>질문이 보고서 문장과 표현을 많이 공유하기 때문에 벡터 검색의 평균 Recall이 높습니다(k=5에서 0.93). "GraphRAG가 항상 이긴다"는 사실이 아닙니다.</p></div>
-    <div class="card"><h3>관찰 ② 그래프가 이기는 곳</h3><p>q3처럼 <b>질문 속 두 개념을 잇는 근거가 다른 장에 있을 때</b>. 벡터가 "우리나라·OECD·순위"라는 표현에 끌려 엉뚱한 청크(R&D 순위)를 고르는 동안, 그래프는 경로로 3장 문서를 찾아옵니다.</p></div>
-    <div class="card"><h3>관찰 ③ 둘 다 놓치는 곳</h3><p>q5의 "결론에서 권고한 유형"처럼 <b>엔티티 이름 없이 문서 위치를 가리키는 표현</b>. 문자열 매칭 엔티티 연결의 한계이며, 질문을 해석하는 <button type="button" class="filelink live" data-live="agent" data-q="q5">에이전트 방식</button>이 필요한 이유입니다.</p></div>
-    <div class="card"><h3>실험의 한계</h3><p>보고서 1편(청크 113개)이라 규모가 작습니다. 참조 그래프는 핵심 관계만 골라 원문과 대조해 정리한 것이라 자동 추출보다 깔끔합니다(아래 "LLM 그래프 추출" 절 참고). 결과는 임베딩 모델·k·청크 크기에 따라 달라지니 직접 바꿔 보세요.</p></div>
-  </div>
-</section>
-
-<!-- ───────────────────────── 7. 역사 ───────────────────────── -->
-<section id="history" data-title="발전의 역사">
-  <p class="eyebrow">Part 4 · 흐름</p>
-  <h2>GraphRAG는 어떻게 발전해 왔나</h2>
-  <p class="lead">각 단계는 앞 단계가 남긴 문제를 풀기 위해 등장했습니다. <b>문제 → 해법 → 남은 과제</b>의 연쇄로 읽어 보세요.</p>
-  <div class="timeline">
-    <div class="tl era"><time>~2023 · 전사(前史)</time><h3>지식그래프 + 언어모델 연구</h3>
-      <p>Wikidata 같은 정형 KG로 질의응답(KGQA)을 하는 연구가 오래 있었습니다.</p>
-      <div class="pr"><span><b>한계</b> KG를 사람이 만들어야 해서 비싸고, 사내 문서 같은 비정형 텍스트와 동떨어짐</span></div></div>
-    <div class="tl"><time>2020</time><h3>RAG 등장 (Lewis 외, Facebook AI)</h3>
-      <p>LLM이 외부 문서를 검색해 답하게 한 프레임워크. 지금 수업에서 배우는 벡터 RAG의 원형입니다.</p>
-      <div class="pr"><span><b>남은 과제</b> 청크 단위 유사도 검색이라 멀티홉과 전역 질문에 약함</span></div></div>
-    <div class="tl"><time>2023</time><h3>Think-on-Graph (ToG)</h3>
-      <p>LLM이 에이전트처럼 KG 위를 빔서치로 탐색하며 다음에 따라갈 관계를 스스로 고릅니다.</p>
-      <div class="pr"><span><b>기여</b> "관계를 이해하며 탐색"</span><span><b>한계</b> 잘 만들어진 KG가 있어야 함, LLM 호출 많음</span></div></div>
-    <div class="tl"><time>2024.01</time><h3>RAPTOR</h3>
-      <p>청크를 재귀적으로 클러스터링·요약해 트리를 만듭니다. 그래프는 아니지만 <b>"계층 요약으로 전역 질문에 답한다"</b>는 아이디어를 보여 줬습니다.</p></div>
-    <div class="tl"><time>2024.02</time><h3>G-Retriever · GNN 계열</h3>
-      <p>그래프 신경망(GNN)으로 관련 서브그래프를 골라 LLM에 전달합니다. 뒤이어 GNN-RAG(2024.05) 등이 나왔습니다.</p>
-      <div class="pr"><span><b>한계</b> 학습 데이터·모델 훈련이 필요해 실무 도입이 어려움</span></div></div>
-    <div class="tl era"><time>2024.04 → 07</time><h3>Microsoft GraphRAG ("From Local to Global")</h3>
-      <p><b>LLM이 문서에서 KG를 자동으로 만들고</b>, Leiden 커뮤니티마다 요약을 미리 생성해 Global Search로 전역 질문에 답합니다. 7월 오픈소스 공개 후 "GraphRAG" 붐이 시작됐습니다.</p>
-      <div class="pr"><span><b>해결</b> KG 구축 비용(사람) 문제, 전역 질문</span><span><b>남은 과제</b> 인덱싱 LLM 비용이 매우 큼, 문서 추가 시 재계산</span></div></div>
-    <div class="tl"><time>2024.05</time><h3>HippoRAG</h3>
-      <p>뇌의 해마 기억 이론에서 착안. 추출한 KG에 <b>Personalized PageRank</b>를 돌려 한 번의 검색으로 멀티홉 근거를 찾습니다. 오늘 실습 04의 순위 계산이 이 아이디어입니다.</p></div>
-    <div class="tl"><time>2024.09</time><h3>KAG (Ant Group)</h3>
-      <p>스키마·논리 형식 기반의 지식 증강 생성. 금융·의료처럼 정확성이 중요한 <b>전문 도메인</b>을 겨냥했습니다.</p></div>
-    <div class="tl"><time>2024.10</time><h3>LightRAG · DRIFT Search</h3>
-      <p>LightRAG는 커뮤니티 요약 없이 엔티티(저수준)와 주제 키워드(고수준) <b>이중 검색</b>을 하고 <b>증분 업데이트</b>를 지원해 가볍습니다. 같은 시기 MS는 Global과 Local을 잇는 DRIFT Search를 공개했습니다.</p>
-      <div class="pr"><span><b>해결</b> 비용, 업데이트</span></div></div>
-    <div class="tl"><time>2024.11</time><h3>LazyGraphRAG (Microsoft)</h3>
-      <p>요약을 미리 만들지 않고 <b>질의 시점까지 LLM 처리를 미룹니다</b>. 인덱싱 비용을 벡터 RAG 수준으로 낮추는 것이 목표입니다.</p></div>
-    <div class="tl era"><time>2025.01</time><h3>Zep · Graphiti — 시간 인식 지식그래프</h3>
-      <p>관계마다 유효 기간을 두고, 모순되는 새 사실이 오면 옛 사실을 무효화합니다. GraphRAG가 <b>에이전트의 장기 기억</b>으로 확장된 사례입니다.</p></div>
-    <div class="tl"><time>2025</time><h3>HippoRAG 2 · PathRAG · NodeRAG · HyperGraphRAG</h3>
-      <p>경로 단위 가지치기(PathRAG), 이질적 노드 설계(NodeRAG), 셋 이상을 잇는 하이퍼엣지(HyperGraphRAG) 등 <b>검색 품질과 표현력</b>을 다듬는 연구가 이어졌습니다.</p></div>
-    <div class="tl"><time>2025</time><h3>평가와 회의론: GraphRAG-Bench 등</h3>
-      <p>"언제 그래프가 실제로 이기는가"를 체계적으로 측정하기 시작했습니다. 이점은 멀티홉·전역 질문에 집중되고 단순 질문에서는 이점이 작다는 결과가 반복됐습니다.</p></div>
-    <div class="tl era"><time>2025 → 2026</time><h3>Agentic · 하이브리드 · 스키마</h3>
-      <p>고정 파이프라인 대신 LLM 에이전트가 그래프 도구(MCP 서버 등)를 골라 쓰고, 벡터+키워드+그래프 하이브리드가 표준이 되었습니다. 엔터프라이즈에서는 스키마를 먼저 정하는 추출로 돌아가는 흐름이 강해졌습니다. MS GraphRAG는 3.x까지 판을 올렸습니다.</p></div>
-  </div>
-</section>
-
-<!-- ───────────────────────── 8. 개념 ───────────────────────── -->
-<section id="concepts" data-title="핵심 개념 사전">
-  <p class="eyebrow">Part 4 · 흐름</p>
-  <h2>핵심 개념 사전</h2>
-  <p class="lead">강의에 나온 용어를 한곳에 모았습니다. 분류를 눌러 골라 보세요. 실습 파일 이름을 누르면 코드가 열립니다.</p>
-  <div class="filter seg" id="conceptFilter" style="width:fit-content;max-width:100%;overflow-x:auto"></div>
-  <div class="concepts" id="conceptGrid"></div>
-</section>
-
-<!-- ───────────────────────── 9. 트렌드 ───────────────────────── -->
-<section id="trends" data-title="최신 트렌드와 과제">
-  <p class="eyebrow">Part 5 · 현재</p>
-  <h2>최신 트렌드와 남은 과제 (2025–2026)</h2>
-  <div class="grid2">
-    <div class="card"><h3>비용 절감: Lazy · Lite</h3><p>질의 시점까지 처리를 미루거나(LazyGraphRAG), 요약을 생략하거나(LightRAG), 추출 전용 소형 모델을 씁니다. 증분 인덱싱도 기본이 되었습니다.</p></div>
-    <div class="card"><h3>Agentic GraphRAG</h3><p>에이전트가 <code>search_entity</code>, <code>get_neighbors</code>, <code>find_path</code>, <code>run_cypher</code> 같은 도구를 골라 반복 호출합니다. 그래프 DB를 MCP 서버로 노출하는 패턴이 확산되었습니다.</p><span><button type="button" class="btn live" data-live="agent" data-q="q3">▶ 에이전트 실행</button> <button class="filelink" data-file="lab/08_agentic_graph_rag.py">08_agentic_graph_rag.py</button></span></div>
-    <div class="card"><h3>에이전트 메모리 = 시간 인식 KG</h3><p>Graphiti/Zep, Mem0, Cognee 등이 대화에서 사실을 뽑아 그래프로 쌓고, 유효 기간으로 모순을 처리합니다.</p><span><button type="button" class="btn live" data-live="temporal">▶ 시간 메모리 실습</button> <button class="filelink" data-file="lab/09_temporal_memory.py">09_temporal_memory.py</button></span></div>
-    <div class="card"><h3>하이브리드가 표준</h3><p>벡터(의미) + BM25(키워드) + 그래프 확장(관계) → 리랭커. 그래프 DB가 벡터 인덱스를 내장하는 것도 일반적입니다.</p></div>
-    <div class="card"><h3>스키마·온톨로지의 귀환</h3><p>자유 추출은 노이즈가 많아 엔터프라이즈에서는 도메인 스키마를 먼저 정하고 그 안에서만 추출합니다.</p></div>
-    <div class="card"><h3>표현력 확장</h3><p>n-ary 관계(하이퍼그래프), 표·이미지 노드(멀티모달), 코드 저장소의 호출 그래프(코딩 에이전트 컨텍스트)로 넓어지고 있습니다.</p></div>
-  </div>
-  <h3>남은 과제</h3>
-  <div class="tablewrap"><table>
-    <thead><tr><th>과제</th><th>내용</th><th>관련 실습</th></tr></thead>
-    <tbody>
-      <tr><td>추출 품질</td><td>LLM이 관계를 빠뜨리거나 지어냄. 오류가 검색까지 전파됨</td><td><button class="filelink" data-file="lab/03_build_graph.py">03</button></td></tr>
-      <tr><td>엔티티 해소</td><td>같은 개체의 다른 표기를 병합하는 문제. 가장 과소평가된 단계</td><td><button class="filelink" data-file="lab/03_build_graph.py">03</button></td></tr>
-      <tr><td>비용·지연</td><td>인덱싱 LLM 호출 비용, Global Search의 Map-Reduce 지연</td><td><button class="filelink" data-file="lab/05_global_graph_rag.py">05</button></td></tr>
-      <tr><td>갱신과 일관성</td><td>문서가 바뀌면 그래프와 요약을 어떻게 갱신하나, 모순된 사실은?</td><td><button class="filelink" data-file="lab/09_temporal_memory.py">09</button></td></tr>
-      <tr><td>평가</td><td>그래프 품질과 최종 답변 품질을 함께 재는 표준 벤치마크가 아직 부족</td><td><button class="filelink" data-file="lab/06_compare_eval.py">06</button></td></tr>
-      <tr><td>롱컨텍스트와의 경쟁</td><td>컨텍스트 창이 커져 "다 넣으면 되지 않나"는 반론. 대규모 코퍼스에서는 비용과 지연 때문에 구조화가 여전히 유리하다는 쪽이 우세</td><td>토론</td></tr>
-      <tr><td>보안</td><td>Text2Cypher는 LLM이 만든 쿼리를 DB에서 실행함. 읽기 전용 계정, 쿼리 검증 필요</td><td><button class="filelink" data-file="lab/07_neo4j_text2cypher.py">07</button></td></tr>
-    </tbody>
-  </table></div>
-</section>
-
-<!-- ───────────────────────── 10. 환경 ───────────────────────── -->
-<section id="setup" data-title="환경과 초기 셋팅">
-  <p class="eyebrow">Part 5 · 현재</p>
-  <h2>최근 많이 쓰는 GraphRAG 환경과 초기 셋팅</h2>
-  <div class="tablewrap"><table>
-    <thead><tr><th>도구</th><th>형태</th><th>강점</th><th>이럴 때</th></tr></thead>
-    <tbody>
-      <tr><td>Microsoft GraphRAG</td><td>CLI 파이프라인 (<code>graphrag</code> 3.x)</td><td>커뮤니티 요약, Local·Global·DRIFT·basic 검색, 프롬프트 자동 튜닝</td><td>전역 요약 질문이 중요, 비용 여유</td></tr>
-      <tr><td>LightRAG</td><td>파이썬 라이브러리 + 서버/웹 UI</td><td>가볍고 빠름, 증분 삽입, 5가지 검색 모드</td><td>빠르게 프로토타입, 문서가 자주 추가됨</td></tr>
-      <tr><td>Neo4j + LangChain</td><td>그래프 DB + <code>langchain-neo4j</code></td><td>Cypher, 벡터 인덱스 내장, 운영 도구, 시각화</td><td>서비스 운영, 정형 스키마, 집계 질의</td></tr>
-      <tr><td>Graphiti (Zep)</td><td>파이썬 라이브러리 (+Neo4j 등)</td><td>시간 인식 KG, 에피소드 단위 증분 갱신</td><td>에이전트 장기 기억, 사실이 계속 바뀜</td></tr>
-      <tr><td>직접 구현 (이 실습)</td><td>LangChain + networkx</td><td>원리 이해, 의존성 최소</td><td>수업, 소규모 실험</td></tr>
-    </tbody>
-  </table></div>
-  <p style="font-size:.9rem;color:var(--muted)">아래 명령과 코드는 2026년 9월 기준 최신 패키지(graphrag 3.2, lightrag-hku 1.5, graphiti-core 0.30, langchain 1.4)로 API를 확인했습니다. 버전이 바뀌면 옵션이 달라질 수 있습니다.</p>
-  <div class="tabs" role="tablist" id="setupTabs"></div>
-  <div id="setupPanels"></div>
-</section>
-
-<!-- ───────────────────────── 11. 실습 ───────────────────────── -->
-<section id="lab" data-title="실습 안내">
-  <p class="eyebrow">Part 6 · 실습</p>
-  <h2>실습 로드맵</h2>
-  <p class="lead">카드를 누르면 코드가 열립니다. 라이브 실험실은 <code>python app/server.py</code>로 띄운 서버가 이 코드를 그대로 import 해서 실행합니다. <span class="pill free">키 없이 실행</span>은 API 키 없이 돌아가고, <span class="pill need">LLM 필요</span>는 <code>.env</code>의 <code>LLM_MODEL</code>이 있어야 전체 기능이 동작합니다(없으면 검색 결과만 보여 줍니다).</p>
-  <div class="labs" id="labCards"></div>
-  <h3>실습 데이터</h3>
-  <p style="color:var(--muted);font-size:.95rem">한국은행 경제전망보고서(2024.5) III장 중장기 심층연구 「혁신과 경제성장 – 우리나라 기업의 혁신활동 분석 및 평가」(경제연구원, 49쪽). 원본 PDF는 <code>data/source/</code>에 있고, <code>00_prepare_pdf.py</code>가 이를 주제별 문서 19개로 만듭니다.</p>
-  <div class="labs" id="dataCards"></div>
-</section>
-
-<!-- ───────────────────────── 12. 마무리 ───────────────────────── -->
-<section id="wrap" data-title="정리와 토론">
-  <p class="eyebrow">마무리</p>
-  <h2>언제 GraphRAG를 써야 할까</h2>
-  <div class="tablewrap"><table>
-    <thead><tr><th>상황</th><th>추천</th></tr></thead>
-    <tbody>
-      <tr><td>단순 FAQ, 사실 검색</td><td>벡터 RAG + 리랭커로 충분</td></tr>
-      <tr><td>멀티홉·인과 연쇄 질문이 잦음</td><td>그래프 경로·PPR 확장 + 벡터 하이브리드 (HippoRAG 2, LightRAG)</td></tr>
-      <tr><td>"전체 요약/테마" 질문</td><td>커뮤니티 요약 기반 Global Search (MS GraphRAG, LazyGraphRAG)</td></tr>
-      <tr><td>도메인 스키마가 명확함 (금융, 제조)</td><td>스키마 기반 KG + Neo4j + Text2Cypher</td></tr>
-      <tr><td>문서·사실이 계속 바뀜</td><td>증분 갱신 도구 (LightRAG, Graphiti)</td></tr>
-      <tr><td>에이전트 장기 기억</td><td>시간 인식 KG (Graphiti/Zep, Mem0)</td></tr>
-    </tbody>
-  </table></div>
-  <div class="grid2">
-    <div class="card"><h3>오늘의 요점</h3>
-      <ul style="margin:0;padding-left:1.2em;color:var(--muted);font-size:.95rem;display:grid;gap:4px">
-        <li>그래프 = 노드와 엣지. 멀티홉 추론 = 경로 탐색</li>
-        <li>GraphRAG는 인덱싱 때 관계를 추출해 두고, 질의 때 구조를 따라 근거를 모은다</li>
-        <li>강점은 멀티홉·전역 질문, 약점은 추출 비용과 품질</li>
-        <li>실무는 하이브리드, 그리고 에이전트·메모리로 확장 중</li>
-      </ul></div>
-    <div class="card"><h3>토론 질문</h3>
-      <ol style="margin:0;padding-left:1.2em;color:var(--muted);font-size:.95rem;display:grid;gap:4px">
-        <li>실습 03에서 LLM이 만든 그래프는 참조 그래프 kg.json과 무엇이 다른가?</li>
-        <li>q3 같은 질문을 에이전트 없이 해결하려면 무엇을 바꿔야 할까?</li>
-        <li>문서가 12만 개라면 벡터와 그래프 중 무엇이 더 크게 흔들릴까?</li>
-        <li>우리 팀 프로젝트 데이터에 그래프가 필요한 질문이 실제로 있는가?</li>
-      </ol></div>
-  </div>
-  <h3>더 읽을거리</h3>
-  <div class="tablewrap"><table>
-    <thead><tr><th>자료</th><th>링크</th></tr></thead>
-    <tbody>
-      <tr><td>MS GraphRAG 논문 (From Local to Global)</td><td><a href="https://arxiv.org/abs/2404.16130">arXiv 2404.16130</a> · <a href="https://github.com/microsoft/graphrag">GitHub</a></td></tr>
-      <tr><td>Graph RAG 서베이</td><td><a href="https://arxiv.org/abs/2408.08921">arXiv 2408.08921</a></td></tr>
-      <tr><td>LightRAG</td><td><a href="https://arxiv.org/abs/2410.05779">arXiv 2410.05779</a> · <a href="https://github.com/HKUDS/LightRAG">GitHub</a></td></tr>
-      <tr><td>HippoRAG / HippoRAG 2</td><td><a href="https://arxiv.org/abs/2405.14831">2405.14831</a> · <a href="https://arxiv.org/abs/2502.14802">2502.14802</a> · <a href="https://github.com/OSU-NLP-Group/HippoRAG">GitHub</a></td></tr>
-      <tr><td>RAPTOR</td><td><a href="https://arxiv.org/abs/2401.18059">arXiv 2401.18059</a></td></tr>
-      <tr><td>Think-on-Graph</td><td><a href="https://arxiv.org/abs/2307.07697">arXiv 2307.07697</a></td></tr>
-      <tr><td>Zep / Graphiti</td><td><a href="https://arxiv.org/abs/2501.13956">arXiv 2501.13956</a> · <a href="https://github.com/getzep/graphiti">GitHub</a></td></tr>
-      <tr><td>LangChain Neo4j 연동</td><td><a href="https://github.com/langchain-ai/langchain-neo4j">GitHub</a></td></tr>
-    </tbody>
-  </table></div>
-</section>
+<!-- 강의 내용은 lecture.<lang>.html 에서 불러온다 (app.js) -->
 </main>
 </div>
-<div class="pnav" id="pnav" aria-label="발표 탐색">
-  <button type="button" id="prevBtn" aria-label="이전">←</button>
+<div class="pnav" id="pnav" aria-label="Slides">
+  <button type="button" id="prevBtn" aria-label="Previous">←</button>
   <span id="pcount">1 / 1</span>
-  <button type="button" id="nextBtn" aria-label="다음">→</button>
-  <button type="button" id="exitBtn">종료</button>
+  <button type="button" id="nextBtn" aria-label="Next">→</button>
+  <button type="button" id="exitBtn" data-i18n="종료|Exit">종료</button>
 </div>
 </div>
 
@@ -472,39 +48,39 @@
   <div class="lab-top">
     <div class="modes" role="tablist" id="modes"></div>
     <form class="qform" id="qform">
-      <label class="sr" for="qinput">질문</label>
-      <input id="qinput" type="text" autocomplete="off" placeholder="질문을 입력하거나 아래 예시를 고르세요">
+      <label class="sr" for="qinput" data-i18n="질문|Question">질문</label>
+      <input id="qinput" type="text" autocomplete="off" placeholder="질문을 입력하거나 아래 예시를 고르세요" data-i18n-placeholder="질문을 입력하거나 아래 예시를 고르세요|Type a question or pick an example below">
       <label class="kpick">k <select id="kSelect"><option>3</option><option selected>5</option></select></label>
-      <label class="kpick">임베딩 <select id="embSelect"></select></label>
-      <button class="btn primary" type="submit" id="runBtn">실행</button>
+      <label class="kpick"><span data-i18n="임베딩|Embedding">임베딩</span> <select id="embSelect"></select></label>
+      <button class="btn primary" type="submit" id="runBtn" data-i18n="실행|Run">실행</button>
     </form>
     <div class="samples" id="samples"></div>
   </div>
   <div class="lab-main" id="labMain">
-    <aside class="stepper" aria-label="처리 단계">
+    <aside class="stepper" aria-label="Steps">
       <div class="stepper-head">
-        <b id="stepperTitle">처리 단계</b>
-        <label class="reveal"><input type="checkbox" id="revealMode" checked> 단계별 공개</label>
+        <b id="stepperTitle" data-i18n="처리 단계|Processing steps">처리 단계</b>
+        <label class="reveal"><input type="checkbox" id="revealMode" checked> <span data-i18n="단계별 공개|Reveal step by step">단계별 공개</span></label>
       </div>
       <ol id="steps"></ol>
-      <div class="stepnav"><button class="btn" type="button" id="stepPrev">← 이전</button><button class="btn primary" type="button" id="stepNext">다음 단계 →</button></div>
+      <div class="stepnav"><button class="btn" type="button" id="stepPrev" data-i18n="← 이전|← Prev">← 이전</button><button class="btn primary" type="button" id="stepNext" data-i18n="다음 단계 →|Next step →">다음 단계 →</button></div>
     </aside>
     <section class="stage" id="stage" aria-live="polite"></section>
     <aside class="visual">
-      <div class="visual-head"><b id="visualTitle">지식그래프</b><span id="visualNote"></span></div>
-      <div class="svgbox"><svg class="graph" id="vis" role="img" aria-label="시각화"></svg></div>
+      <div class="visual-head"><b id="visualTitle" data-i18n="지식그래프|Knowledge graph">지식그래프</b><span id="visualNote"></span></div>
+      <div class="svgbox"><svg class="graph" id="vis" role="img" aria-label="Visualization"></svg></div>
       <div class="legend" id="visLegend"></div>
       <div class="info" id="nodeInfo" hidden></div>
     </aside>
   </div>
 </div>
 
-<div class="drawer" id="drawer" hidden role="dialog" aria-modal="true" aria-label="코드와 데이터">
+<div class="drawer" id="drawer" hidden role="dialog" aria-modal="true" aria-label="Code and data">
   <div class="panel">
     <header>
       <span class="path" id="fpath"></span>
-      <button class="btn" type="button" id="copyBtn">복사</button>
-      <button class="btn" type="button" id="closeBtn">닫기 (Esc)</button>
+      <button class="btn" type="button" id="copyBtn" data-i18n="복사|Copy">복사</button>
+      <button class="btn" type="button" id="closeBtn" data-i18n="닫기 (Esc)|Close (Esc)">닫기 (Esc)</button>
     </header>
     <nav class="tree" id="tree"></nav>
     <div class="viewer" id="viewer"><div class="band" id="band" hidden></div><pre class="gut" id="gutter"></pre><pre><code id="code"></code></pre></div>

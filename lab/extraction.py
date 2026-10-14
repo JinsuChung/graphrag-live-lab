@@ -6,20 +6,22 @@ import re
 from langchain_core.prompts import ChatPromptTemplate
 from pydantic import BaseModel, Field
 
+from prompts import ByLang
+
 ENTITY_TYPES = ["Organization", "Person", "Product", "Event", "Technology", "Policy", "Location", "Concept"]
 
 
 class Entity(BaseModel):
-    name: str = Field(description="엔티티의 대표 이름 (문서에 나온 표기 그대로)")
-    type: str = Field(description=f"다음 중 하나: {', '.join(ENTITY_TYPES)}")
-    description: str = Field(description="문서에 근거한 한 문장 설명")
+    name: str = Field(description="엔티티의 대표 이름 (문서에 나온 표기 그대로) / canonical entity name as written in the document")
+    type: str = Field(description=f"다음 중 하나 / one of: {', '.join(ENTITY_TYPES)}")
+    description: str = Field(description="문서에 근거한 한 문장 설명 / one-sentence description grounded in the document")
 
 
 class Relation(BaseModel):
-    source: str = Field(description="관계의 주어 엔티티 이름")
-    type: str = Field(description="관계 이름, 영어 대문자 스네이크 케이스 (예: CEO_OF, SUPPLIES)")
-    target: str = Field(description="관계의 목적어 엔티티 이름")
-    description: str = Field(description="관계를 뒷받침하는 짧은 설명")
+    source: str = Field(description="관계의 주어 엔티티 이름 / subject entity name")
+    type: str = Field(description="관계 이름, 영어 대문자 스네이크 케이스 / relation name in UPPER_SNAKE_CASE (e.g. CAUSES, IMPROVES)")
+    target: str = Field(description="관계의 목적어 엔티티 이름 / object entity name")
+    description: str = Field(description="관계를 뒷받침하는 짧은 설명 / short supporting description")
 
 
 class Extraction(BaseModel):
@@ -27,12 +29,20 @@ class Extraction(BaseModel):
     relations: list[Relation]
 
 
-EXTRACT_PROMPT = ChatPromptTemplate.from_messages([
-    ("system",
-     "당신은 문서에서 지식그래프를 추출하는 도우미입니다. 문서에 명시된 사실만 추출하세요. "
-     "추측하지 마세요. relations 의 source/target 은 반드시 entities 의 name 중 하나여야 합니다."),
-    ("human", "# 문서\n{text}"),
-])
+EXTRACT_PROMPT = ByLang(
+    ko=ChatPromptTemplate.from_messages([
+        ("system",
+         "당신은 문서에서 지식그래프를 추출하는 도우미입니다. 문서에 명시된 사실만 추출하세요. "
+         "추측하지 마세요. relations 의 source/target 은 반드시 entities 의 name 중 하나여야 합니다."),
+        ("human", "# 문서\n{text}"),
+    ]),
+    en=ChatPromptTemplate.from_messages([
+        ("system",
+         "You extract a knowledge graph from a document. Extract only facts stated in the document; do not guess. "
+         "Every relation's source/target must be one of the entity names. Write names in English as in the text."),
+        ("human", "# Document\n{text}"),
+    ]),
+)
 
 
 def make_extractor(llm):

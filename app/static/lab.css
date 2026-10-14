@@ -214,7 +214,7 @@ table.t td:first-child{min-width:120px}
 .compbar i{display:block;min-width:2px}
 .segtext{white-space:pre-wrap}
 .segtext .tpl{color:var(--muted)}
-.segtext .seg{background:color-mix(in srgb,var(--sc) 18%,transparent);border-left:3px solid var(--sc);padding-left:3px}
+.segtext .psg{background:color-mix(in srgb,var(--sc) 18%,transparent);border-left:3px solid var(--sc);padding-left:3px}
 /* ── grouped evidence ── */
 .gold .grp{display:inline-flex;align-items:center;gap:4px;border:1px dashed var(--line);border-radius:8px;padding:2px 6px;font-size:.8rem}
 .gold .grp.ok{border-color:var(--ok)}

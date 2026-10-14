@@ -14,20 +14,49 @@ from langchain_core.documents import Document
 from langchain_core.embeddings import Embeddings
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA = ROOT / "data"
+DATA = ROOT / "data"          # data/source = 원본 PDF, data/ko · data/en = 언어별 데이터 묶음
 load_dotenv(ROOT / ".env")
+
+# ---------------------------------------------------------------------------
+# 언어 (데이터 묶음 + 화면·출력 문구)
+# ---------------------------------------------------------------------------
+LANGS = ("ko", "en")
+
+
+def get_lang() -> str:
+    """현재 언어. .env 의 DATA_LANG (ko | en), 라이브 실험실에서는 화면 상단 선택기로 바뀐다."""
+    lang = os.getenv("DATA_LANG", "ko").strip().lower()
+    return lang if lang in LANGS else "ko"
+
+
+def set_lang(lang: str) -> None:
+    if lang not in LANGS:
+        raise ValueError(f"지원하지 않는 언어: {lang}")
+    os.environ["DATA_LANG"] = lang
+
+
+def data_dir() -> Path:
+    """현재 언어의 데이터 묶음 폴더 (data/ko 또는 data/en)."""
+    return DATA / get_lang()
+
+
+def t(ko: str, en: str) -> str:
+    """현재 언어에 맞는 문구를 고른다. / Pick the string for the current language."""
+    return en if get_lang() == "en" else ko
 
 
 # ---------------------------------------------------------------------------
 # 데이터 로딩
 # ---------------------------------------------------------------------------
 def load_docs() -> list[Document]:
-    """data/docs/*.md 를 LangChain Document 리스트로 읽는다. doc_id = 'doc01' 형식."""
+    """data/<언어>/docs/*.md 를 LangChain Document 리스트로 읽는다. doc_id = 'doc01' 형식."""
     docs = []
-    paths = sorted((DATA / "docs").glob("*.md"))
+    paths = sorted((data_dir() / "docs").glob("*.md"))
     if not paths:
-        raise SystemExit("data/docs 에 문서가 없습니다. 먼저 `python lab/00_prepare_pdf.py` 를 실행하세요 "
-                         "(한국은행 보고서 PDF 를 받아 실습 문서를 만듭니다).")
+        raise SystemExit(t(f"data/{get_lang()}/docs 에 문서가 없습니다. 먼저 `python lab/00_prepare_pdf.py` 를 실행하세요 "
+                           "(한국은행 보고서 PDF 를 받아 실습 문서를 만듭니다).",
+                           f"No documents in data/{get_lang()}/docs. Run `python lab/00_prepare_pdf.py` first "
+                           "(it downloads the Bank of Korea report and builds the lab documents)."))
     for path in paths:
         text = path.read_text(encoding="utf-8")
         title = text.splitlines()[0].lstrip("# ").strip()
@@ -43,10 +72,10 @@ def doc_by_id() -> dict[str, Document]:
 def load_kg(path: Path | None = None) -> nx.MultiDiGraph:
     """kg.json(노드/엣지 리스트)을 networkx 방향 멀티그래프로 변환한다.
 
-    기본은 원문과 대조해 정리한 참조 그래프 data/kg.json (README 의 '참조 그래프' 참고). 실습 03 에서 LLM 으로 직접 추출했다면
+    기본은 원문과 대조해 정리한 참조 그래프 data/<언어>/kg.json (README 의 '참조 그래프' 참고). 실습 03 에서 LLM 으로 직접 추출했다면
     .env 에 KG_FILE=kg_extracted.json 을 넣어 그 그래프로 바꿔 실험할 수 있다.
     """
-    raw = json.loads((path or DATA / os.getenv("KG_FILE", "kg.json")).read_text(encoding="utf-8"))
+    raw = json.loads((path or data_dir() / os.getenv("KG_FILE", "kg.json")).read_text(encoding="utf-8"))
     G = nx.MultiDiGraph()
     for n in raw["nodes"]:
         G.add_node(n["id"], **{k: v for k, v in n.items() if k != "id"})
@@ -57,7 +86,7 @@ def load_kg(path: Path | None = None) -> nx.MultiDiGraph:
 
 
 def load_questions() -> list[dict]:
-    return json.loads((DATA / "questions.json").read_text(encoding="utf-8"))
+    return json.loads((data_dir() / "questions.json").read_text(encoding="utf-8"))
 
 
 def evidence_recall(got: list[str], evidence: list[list[str]]) -> float:

@@ -1,0 +1,425 @@
+<!-- ───────────────────────── 0. Cover ───────────────────────── -->
+<section id="intro" class="hero" data-title="Introduction">
+  <p class="eyebrow">LLM Application Development with LangChain · Guest lecture</p>
+  <h1>From search to <em>connections</em>:<br>an introduction to GraphRAG</h1>
+  <p class="lead">RAG finds "sentences similar to the question". But what if the answer is spread across several chapters, and the pieces are linked only by <b>relationships</b>? Today we compare vector RAG and GraphRAG hands-on, using the Bank of Korea report <i>Innovation and Economic Growth: Review of Korean Firms' Innovation Performance</i> (May 2024, English edition, 48 pages).</p>
+  <div class="hero-q">
+    <div class="qcard v">
+      <span class="tag">Vector RAG · today's experiment</span>
+      <p><b>"What financing problem do young SMEs face, and where does Korea rank in access to the funding source blamed for it?"</b></p>
+      <p style="color:var(--muted);font-size:.92rem">It finds the Chapter II document on financing difficulties (doc09), but misses the Chapter III document (doc11) that says venture capital accessibility ranks <b>24th in the OECD</b>. Instead, a <b>different ranking</b> story, "Korean business R&D ranks 2nd in the OECD" (doc03), shows up. 1 of 2 required facts (k=3, simple embedding).</p>
+    </div>
+    <div class="qcard g">
+      <span class="tag">GraphRAG · same question</span>
+      <div class="chain"><b>young SMEs</b><i>SUFFERS →</i><b>difficulty financing innovation</b><i>← WEAKNESS_LEADS_TO</i><b>venture capital</b><i>← MEASURES</i><b>VC accessibility</b></div>
+      <p style="color:var(--muted);font-size:.92rem">It follows the <b>path</b> between the two entities in the question and collects evidence from both Chapter II (the problem) and Chapter III (the cause). 2 of 2 required facts (k=3).</p>
+    </div>
+  </div>
+  <p class="byline">정진수 · Sahmyook University Graduate School, Division of AI Convergence · Advisor: 류한철</p>
+  <div class="agenda" id="agenda"></div>
+</section>
+
+<!-- ───────────────────────── 1. Graphs ───────────────────────── -->
+<section id="graph" data-title="What is a graph?">
+  <p class="eyebrow">Part 1 · Basics</p>
+  <h2>What is a graph?</h2>
+  <div class="prose">
+    <p>A <b>graph</b> is a data structure made of <b>nodes</b> (points) and the <b>edges</b> (lines) that connect them. Subway maps, social networks and web links are all graphs. The key idea is that a graph records not just "what exists" but <b>"what is connected to what"</b>.</p>
+  </div>
+  <div class="bench">
+    <div class="controls" style="justify-content:space-between">
+      <b style="font-family:var(--f-display)">Try it: click two people in turn to find the shortest path</b>
+      <button class="btn" type="button" id="friendReset">Reset</button>
+    </div>
+    <div class="bench-grid">
+      <div class="svgbox"><svg class="graph small" id="friendSvg" role="img" aria-label="Friendship graph"></svg></div>
+      <div class="info" id="friendInfo" aria-live="polite"><b>Click a start node</b><span>Hover over a node to highlight its neighbors (1-hop).</span></div>
+    </div>
+  </div>
+  <div class="grid3">
+    <div class="card"><h3>Nodes · edges</h3><p>Node = an entity (person, company, product). Edge = a relationship between two of them. The number of edges attached to a node is its <b>degree</b>.</p></div>
+    <div class="card"><h3>Direction · labels</h3><p>Edges can have a direction, like "basic research → patent citations", and a name (label) such as <code>IMPROVES</code> that carries meaning.</p></div>
+    <div class="card"><h3>Paths · hops</h3><p>A route along edges is a <b>path</b>. One step is one hop. <b>Multi-hop reasoning = searching for paths in a graph</b>.</p></div>
+  </div>
+  <h3>Knowledge graphs</h3>
+  <div class="grid2">
+    <div class="card">
+      <h3>Triples (RDF style)</h3>
+      <p>Every piece of knowledge is a three-part fact: <code>(subject, predicate, object)</code>.</p>
+      <pre class="cmd">(basic research, IMPROVES, patent citations)
+(large firms, SUFFERS, stagnant innovation quality)
+(secondary market, ENABLES, VC accessibility)</pre>
+    </div>
+    <div class="card">
+      <h3>Property graphs</h3>
+      <p>Nodes and edges can carry properties (key-value pairs). Graph databases like Neo4j and most GraphRAG tools use this model.</p>
+      <pre class="cmd">(:Policy {name:"stronger industry-academia collaboration"})
+  -[:RAISES {growth:"+0.18%p", source:"doc16"}]->
+(:Outcome {name:"economic growth rate"})</pre>
+    </div>
+  </div>
+  <p class="note">A predefined <b>list of allowed node and relationship types</b> is called a <b>schema</b> or <b>ontology</b>. With a schema, extraction is consistent; without one, it is flexible but messy. This trade-off comes back later as a central GraphRAG issue.</p>
+  <p>Lab code: <button class="filelink" data-file="lab/01_graph_basics.py">lab/01_graph_basics.py</button> computes neighbors, shortest paths, PageRank and communities with networkx.</p>
+</section>
+
+<!-- ───────────────────────── 2. RAG recap ───────────────────────── -->
+<section id="rag" data-title="RAG recap and limits">
+  <p class="eyebrow">Part 1 · Basics</p>
+  <h2>RAG recap: how vector search works, and where it gets stuck</h2>
+  <p class="flow-label">Indexing (once, ahead of time)</p>
+  <div class="flow">
+    <div class="step vec"><b>Load documents</b><small>DocumentLoader</small></div><span class="arrow">→</span>
+    <div class="step vec"><b>Split into chunks</b><small>TextSplitter<br>500 chars, 50 overlap</small></div><span class="arrow">→</span>
+    <div class="step vec"><b>Embed</b><small>text → vector<br>(similar meaning = close)</small></div><span class="arrow">→</span>
+    <div class="step vec"><b>Vector store</b><small>VectorStore</small></div>
+  </div>
+  <p class="flow-label">Querying (for every question)</p>
+  <div class="flow">
+    <div class="step vec"><b>Embed the question</b></div><span class="arrow">→</span>
+    <div class="step vec"><b>Top-k by similarity</b><small>cosine similarity</small></div><span class="arrow">→</span>
+    <div class="step vec"><b>Insert chunks into the prompt</b></div><span class="arrow">→</span>
+    <div class="step vec"><b>LLM answer</b></div>
+  </div>
+  <h3>Three kinds of questions vector RAG is structurally weak at</h3>
+  <div class="grid3">
+    <div class="card"><h3>① Multi-hop</h3><p>"Which R&D type is linked to innovation quality, and how much would supporting it together with public research institutes raise growth?" The <b>bridging concept (basic research)</b> is not in the question, and the evidence is split between Chapter III (evidence) and Chapter IV (scenarios).</p></div>
+    <div class="card"><h3>② Global summary</h3><p>"What is the overall structure of this report and its risk factors?" A few top-k chunks cannot see the <b>whole corpus</b>. Raising k overflows the context.</p></div>
+    <div class="card"><h3>③ Relations and aggregation</h3><p>"List every policy that raises social welfare." Similarity cannot express <b>the type and direction of relationships</b>, exhaustive collection, or counting.</p></div>
+  </div>
+  <p class="controls"><button type="button" class="btn primary live" data-live="ingest">▶ Lab: see document processing (chunks · embeddings)</button> <button type="button" class="btn primary live" data-live="vector" data-q="q3">▶ Lab: run vector RAG step by step</button> <span style="font-size:.9rem">Code: <button class="filelink" data-file="lab/02_vector_rag.py">lab/02_vector_rag.py</button></span></p>
+</section>
+
+<!-- ───────────────────────── 3. Why ───────────────────────── -->
+<section id="why" data-title="Why GraphRAG">
+  <p class="eyebrow">Part 2 · Concepts</p>
+  <h2>Why GraphRAG emerged</h2>
+  <div class="prose">
+    <p>The report is written in the order <b>problems (Ch. II) → causes (early Ch. III) → evidence (Ch. III) → policy effects (Ch. IV) → prescriptions (Ch. V)</b>. Even the facts about "SME financing" alone are scattered across chapters.</p>
+  </div>
+  <div class="flow">
+    <div class="step"><b>doc09 · Ch. II</b><small>Young SMEs citing lack of external funds: 9.9% → 45.4%</small></div><span class="arrow">→</span>
+    <div class="step"><b>doc10 · Ch. III</b><small>Cause: weak supply of innovation funding from venture capital</small></div><span class="arrow">→</span>
+    <div class="step"><b>doc11 · Ch. III</b><small>VC accessibility 24th in the OECD, government-led VC</small></div><span class="arrow">→</span>
+    <div class="step"><b>doc13 · Ch. III</b><small>Works only with a developed secondary market (M&A, IPO)</small></div><span class="arrow">→</span>
+    <div class="step"><b>doc18 · Ch. V</b><small>Prescription: develop the M&A market, expand independent and corporate VC</small></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h3>From a chunk's point of view</h3><p>The "24th" chunk in doc11 never mentions "young SMEs". Because its wording does not overlap with the question, vector search pushes it down and instead ranks an unrelated chunk (business R&D ranking, doc03) that shares words like "Korea", "OECD" and "rank (2nd)".</p></div>
+    <div class="card"><h3>From the graph's point of view</h3><p>Linking the relations each document leaves behind (suffers, weakness leads to, measures, enables) gives a <b>3-hop path from young SMEs to VC accessibility</b>. The source documents of the relations on that path are exactly the evidence we need.</p></div>
+  </div>
+  <p class="controls"><button type="button" class="btn primary live" data-live="vector" data-q="q3">▶ Run with vector RAG</button> <button type="button" class="btn primary live" data-live="graph" data-q="q3">▶ Run with graph Local</button></p>
+  <p class="note">The core idea of GraphRAG: <b>"read the documents in advance and store their relationships as structure; at question time, follow the structure to gather evidence."</b> The expensive understanding step (extraction) happens at indexing time, so query time only needs fast traversal.</p>
+</section>
+
+<!-- ───────────────────────── 4. How it works ───────────────────────── -->
+<section id="how" data-title="How GraphRAG works">
+  <p class="eyebrow">Part 2 · Concepts</p>
+  <h2>How does GraphRAG work?</h2>
+  <p class="flow-label">Indexing: building the graph <button type="button" class="filelink live" data-live="extract">▶ Lab: watch extraction</button></p>
+  <div class="flow">
+    <div class="step"><b>Split into chunks</b><small>same as vector RAG</small></div><span class="arrow">→</span>
+    <div class="step hot"><b>Extract entities and relations</b><small>LLM extracts triples per chunk (structured output)</small></div><span class="arrow">→</span>
+    <div class="step hot"><b>Entity resolution</b><small>merge the same entity, e.g. "VC" and "venture capital"</small></div><span class="arrow">→</span>
+    <div class="step"><b>Store the graph</b><small>networkx, Neo4j, ...</small></div><span class="arrow">→</span>
+    <div class="step hot"><b>Detect and summarize communities</b><small>cluster with Leiden, summarize with an LLM (MS GraphRAG)</small></div>
+  </div>
+  <p class="flow-label">Querying: gathering evidence through the graph</p>
+  <div class="grid2">
+    <div class="card">
+      <h3>Local Search</h3>
+      <p>Find the entities in the question (<b>entity linking</b>), then collect their neighbors, connecting paths and source text. Used for questions about specific entities or relations.</p>
+      <div class="chain" style="font-size:.84rem"><b>Entity linking</b><i>→</i><b>Expand neighbors · paths</b><i>→</i><b>Rank by importance (PPR)</b><i>→</i><b>Triples + source text</b></div>
+      <span><button type="button" class="btn live" data-live="graph" data-q="q6">▶ Run Local</button> <button class="filelink" data-file="lab/04_local_graph_rag.py">lab/04_local_graph_rag.py</button></span>
+    </div>
+    <div class="card">
+      <h3>Global Search</h3>
+      <p>Send the question to every precomputed <b>community summary</b> to get partial answers (Map), then combine the highest-scoring ones (Reduce). Used for "overall themes and structure" questions.</p>
+      <div class="chain" style="font-size:.84rem"><b>N summaries</b><i>→ Map →</i><b>partial answers + scores</b><i>→ Reduce →</i><b>final answer</b></div>
+      <span><button type="button" class="btn live" data-live="global" data-q="q8">▶ Run Global</button> <button class="filelink" data-file="lab/05_global_graph_rag.py">lab/05_global_graph_rag.py</button></span>
+    </div>
+    <div class="card">
+      <h3>DRIFT Search</h3>
+      <p>Uses Global to set the overall direction, then generates follow-up questions and digs in with Local. A hybrid mode Microsoft GraphRAG added in late 2024.</p>
+    </div>
+    <div class="card">
+      <h3>Text2Cypher</h3>
+      <p>The LLM translates natural language into a graph query language (Cypher) and runs it directly on the database. Strong at aggregation ("how many?") and exact filters.</p>
+      <button class="filelink" data-file="lab/07_neo4j_text2cypher.py">lab/07_neo4j_text2cypher.py</button>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 4-b. LLM graph extraction ───────────────────────── -->
+<section id="extraction" data-title="Should an LLM build the graph?">
+  <p class="eyebrow">Part 2 · Concepts</p>
+  <h2>Ways to turn documents into graphs, and whether to trust an LLM with it</h2>
+  <p class="lead">The textbook converts documents into a graph with LangChain <code>LLMGraphTransformer</code> and <code>gpt-4o</code> (temperature 0). It is convenient, but whether a machine-built graph can be trusted as-is is a separate question.</p>
+
+  <h3>Methods for converting documents to graphs</h3>
+  <div class="tablewrap"><table style="min-width:920px">
+    <colgroup><col style="width:15%"><col style="width:37%"><col style="width:22%"><col style="width:26%"></colgroup>
+    <thead><tr><th>Method</th><th>Example tools</th><th>Strengths</th><th>Limits</th></tr></thead>
+    <tbody>
+      <tr><td>Free-form LLM extraction</td><td>LangChain <code>LLMGraphTransformer</code> (textbook), MS GraphRAG indexing, LightRAG</td><td>No setup, understands context</td><td>Inconsistent relation names, hallucinations and omissions, cost</td></tr>
+      <tr><td>Schema-guided LLM extraction</td><td><code>LLMGraphTransformer(allowed_nodes=…, allowed_relationships=…)</code>, Neo4j <code>neo4j-graphrag</code> SimpleKGPipeline, LlamaIndex SchemaLLMPathExtractor, this lab's <code>extraction.py</code> (Pydantic structured output)</td><td>Consistent vocabulary, easy to validate and query</td><td>Schema design cost; knowledge outside the schema is dropped</td></tr>
+      <tr><td>Time-aware extraction</td><td>Graphiti (Zep) <code>add_episode</code></td><td>Tracks validity periods and updates of facts</td><td>Needs a graph DB, many calls</td></tr>
+      <tr><td>NLP without an LLM</td><td>spaCy NER + relation extraction models, noun-phrase co-occurrence (LazyGraphRAG style)</td><td>Cheap, fast and deterministic</td><td>Barely understands relation meaning</td></tr>
+      <tr><td>Manual curation</td><td>Domain experts using spreadsheets or ontology tools</td><td>Most accurate, clear accountability</td><td>Slow and expensive, does not scale</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note"><b>What about this lab's graph?</b> <code>data/en/kg.json</code> (45 nodes, 60 relations) is not raw LLM extraction output. While preparing the course, an AI assistant read the report and <b>hand-picked only the key relations</b> into a reference graph (the English graph mirrors the Korean one node for node). Key figures were checked against the source, but instructors should review it before class. Lab 03 (<button type="button" class="filelink" data-file="lab/03_build_graph.py">03_build_graph.py</button>) runs LLM extraction with the textbook method (<code>EXTRACTOR=lgt</code>) and a custom implementation (<code>custom</code>), then compares the results with this reference graph automatically.</p>
+
+  <h3>Is machine-generating a graph with an LLM appropriate? Six perspectives</h3>
+  <div class="grid2">
+    <div class="card"><h3>① Accuracy: invented and missing relations</h3><p>LLMs sometimes produce plausible relations that are not in the document (hallucination), and often miss relations spanning several sentences or figures in tables and footnotes. Errors in the graph propagate into retrieval and answers, and <b>retrieval cannot tell that they are errors</b>.</p></div>
+    <div class="card"><h3>② Reproducibility: temperature 0 does not guarantee identical output</h3><p>Temperature 0 only reduces randomness; results can still change with server-side parallelism or model updates. Many recent reasoning models do not accept temperature at all. Reproducibility is more realistically achieved with <b>structured output (JSON schema) + saved result snapshots + pinned model versions</b>.</p></div>
+    <div class="card"><h3>③ Lost meaning: an economic report's hedges and conditions disappear</h3><p>The report modulates its claims with phrases like "may", "significant only where the secondary market is developed" and "model estimates". A triple like <code>(venture capital, CAUSES, financing difficulty)</code> erases that nuance and makes <b>estimates and correlations look like established causation</b>. Relations should keep confidence, conditions and evidence sentences as properties.</p></div>
+    <div class="card"><h3>④ Consistency: relation and entity names drift</h3><p>In free-form extraction the same relation is split into CAUSES, LEADS_TO and RESULTS_IN, and the same entity into "venture capital", "VC" and "venture investment". A fragmented graph breaks path search. That is why <b>schema-guided extraction and entity resolution</b> are essential.</p></div>
+    <div class="card"><h3>⑤ Verifiability and accountability</h3><p>If the graph feeds policy decisions or course material, every relation needs a <b>source document and sentence</b> so people can trace it. If a full review is impractical, review a random sample and report precision. Also check whether sending documents to an external API is allowed (copyright, security).</p></div>
+    <div class="card"><h3>⑥ Cost and scale</h3><p>A 48-page report is about 200 chunks, which is cheap, but with tens of thousands of documents extraction costs and time reach dozens of times those of vector indexing. That is why LazyGraphRAG and LightRAG appeared. Conversely, for <b>small, critical document sets</b>, the most efficient approach is a human-designed schema, an LLM draft, and human review.</p></div>
+  </div>
+  <h3>Measured: running it on this report (Claude Sonnet 4.6, temperature 0)</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Method</th><th class="num">Nodes</th><th class="num">Relations</th><th class="num">Relation types</th><th class="num">Reference node recall</th><th class="num">Reference relation recall</th><th class="num">Time</th></tr></thead>
+    <tbody>
+      <tr><td>Reference graph (kg.json)</td><td class="num">45</td><td class="num">60</td><td class="num">36</td><td class="num">–</td><td class="num">–</td><td class="num">–</td></tr>
+      <tr><td>Custom (Pydantic structured output)</td><td class="num">202</td><td class="num">323</td><td class="num">142</td><td class="num">67%</td><td class="num">25%</td><td class="num">80 s</td></tr>
+      <tr><td>Textbook (LLMGraphTransformer)</td><td class="num">265</td><td class="num">542</td><td class="num">214</td><td class="num">78%</td><td class="num">33%</td><td class="num">118 s</td></tr>
+    </tbody>
+  </table></div>
+  <div class="grid2">
+    <div class="card"><h3>Observation ① Extracts a lot, misses the core</h3><p>The LLM produced several times more relations than the reference graph, yet missed key relations such as "young SMEs suffer from difficulty financing innovation", or created them under different names. Relation names also scattered across 142–214 types (the reference uses 36).</p></div>
+    <div class="card"><h3>Observation ② Different every time, even at temperature 0</h3><p>When we extracted the same three documents twice with identical settings (Korean edition), the share of exactly matching triples (Jaccard) was only <b>0.11–0.42</b>. "corporate VC → patent applications" became "→ innovation output indicators" on the next run.</p></div>
+    <div class="card"><h3>Observation ③ Document metadata leaks in</h3><p>Many relations described sources and methodology rather than content, e.g. "Bank of Korea → PUBLISHED → Korean firms". This is why a schema and prompt must define "what to extract".</p></div>
+    <div class="card"><h3>Caveat when interpreting</h3><p>The comparison matches names strictly, so the same concept written differently counts as "missed". Recall is therefore understated. It still shows that without entity resolution the graph fragments. Result files: <button type="button" class="filelink" data-file="data/en/kg_extracted_custom.json">kg_extracted_custom.json</button> · <button type="button" class="filelink" data-file="data/en/kg_extracted_lgt.json">kg_extracted_lgt.json</button></p></div>
+  </div>
+  <h3>Recommended process</h3>
+  <div class="flow">
+    <div class="step hot"><b>① Design a schema</b><small>humans define node and relation types first</small></div><span class="arrow">→</span>
+    <div class="step hot"><b>② Structured extraction</b><small>enforce a JSON schema, low randomness</small></div><span class="arrow">→</span>
+    <div class="step hot"><b>③ Keep evidence</b><small>source document, sentence, confidence per relation</small></div><span class="arrow">→</span>
+    <div class="step hot"><b>④ Entity resolution</b><small>normalize → embed → LLM judgment</small></div><span class="arrow">→</span>
+    <div class="step hot"><b>⑤ Sample review</b><small>measure precision and recall (Lab 03 comparison)</small></div><span class="arrow">→</span>
+    <div class="step hot"><b>⑥ Version control</b><small>graph snapshots, record model and prompt</small></div>
+  </div>
+
+  <h3>Recent models that support temperature (checked September 2026)</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Provider</th><th>Supports temperature</th><th>Not supported / caveats</th></tr></thead>
+    <tbody>
+      <tr><td>Anthropic</td><td>Claude Sonnet 4.6, Opus 4.6, Haiku 4.5</td><td>5th-generation models (Opus 5.5/5, Sonnet 5.5/5, Fable 5.x) return an error (400) if sampling parameters such as temperature are sent; use effort to control reasoning depth instead</td></tr>
+      <tr><td>OpenAI</td><td>Non-reasoning models such as GPT-4.1 and GPT-4o; GPT-5.1 and later only with <code>reasoning_effort="none"</code></td><td>Reasoning models such as GPT-6 Astra do not accept temperature when reasoning is on</td></tr>
+      <tr><td>Google</td><td>Gemini 2.5 family, freely down to 0</td><td>Gemini 3 family accepts the value but strongly recommends keeping 1.0 (lowering it can cause looping or worse performance)</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ───────────────────────── 5. Comparison ───────────────────────── -->
+<section id="compare" data-title="Vector RAG vs GraphRAG">
+  <p class="eyebrow">Part 2 · Concepts</p>
+  <h2>Vector RAG vs GraphRAG: what is different?</h2>
+  <p class="lead">They are less competitors than two different <b>retrieval criteria</b>. Vector RAG asks "is it similar in meaning?"; GraphRAG asks "is it structurally connected?".</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Aspect</th><th class="v">Vector RAG</th><th class="g">GraphRAG</th></tr></thead>
+    <tbody>
+      <tr><td>Unit of storage</td><td class="v">Chunks (text pieces) + embedding vectors</td><td class="g">Entities and relations (triples) + links to source text + (community summaries)</td></tr>
+      <tr><td>Indexing pipeline</td><td class="v">Split → embed</td><td class="g">Split → LLM extraction → entity resolution → build graph → (community detection → summaries) → embed</td></tr>
+      <tr><td>Indexing cost</td><td class="v">Embedding calls only (cheap and fast)</td><td class="g">An LLM call per chunk. The original MS GraphRAG is far more expensive than vector RAG → LazyGraphRAG and LightRAG emerged to cut this</td></tr>
+      <tr><td>Retrieval criterion</td><td class="v">Semantic similarity (cosine)</td><td class="g">Structural connectivity: neighbors, paths, centrality, communities</td></tr>
+      <tr><td>Retrieval operation</td><td class="v">Top-k nearest-neighbor search</td><td class="g">Entity linking → k-hop expansion / shortest paths / Personalized PageRank / summary map-reduce / Cypher</td></tr>
+      <tr><td>Context given to the LLM</td><td class="v">A list of source chunks</td><td class="g">Relation triples, paths, community summaries + source text</td></tr>
+      <tr><td>Good at</td><td class="v">Facts found in one place, questions phrased many ways</td><td class="g">Multi-hop, relations, causal chains, global summaries, aggregation</td></tr>
+      <tr><td>Weak at</td><td class="v">Multi-hop, global summaries, aggregation</td><td class="g">Information lost during extraction, nuance hard to express as relations, simple questions (over-engineering)</td></tr>
+      <tr><td>Explainability</td><td class="v">"This chunk is similar to the question"</td><td class="g">"Because of the path A → B → C" (can show the evidence path)</td></tr>
+      <tr><td>Updating data</td><td class="v">Just add new chunks</td><td class="g">Needs entity merging and community recomputation; LightRAG and Graphiti support incremental updates</td></tr>
+      <tr><td>Failure modes</td><td class="v">Missing relevant documents, similar-but-wrong chunks</td><td class="g">Extraction errors, duplicate entities and invented relations propagate into retrieval</td></tr>
+      <tr><td>Infrastructure</td><td class="v">Vector DB (Chroma, FAISS, pgvector, ...)</td><td class="g">Graph store (networkx, Neo4j, ...) + usually a vector index as well</td></tr>
+      <tr><td>Evaluation</td><td class="v">Retrieval recall, answer accuracy</td><td class="g">+ graph quality (extraction precision and recall, entity duplication rate)</td></tr>
+      <tr><td>LangChain components</td><td class="v">TextSplitter · Embeddings · VectorStore · Retriever · LCEL</td><td class="g">+ with_structured_output (extraction) · networkx/Neo4jGraph · GraphCypherQAChain · create_agent (tool-based exploration)</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note warn"><b>Common misconception:</b> "GraphRAG is always better than vector RAG" is not true. Several benchmark studies found vector RAG equal or better on simple factual questions, with the graph advantage concentrated on multi-hop and global questions. The practical standard is a <b>hybrid</b> of both. Let's check it ourselves in the experiments below.</p>
+</section>
+
+<!-- ───────────────────────── 6. Experiments ───────────────────────── -->
+<section id="demo" data-title="Same question, different retrieval">
+  <p class="eyebrow">Part 3 · Experiments</p>
+  <h2>Same question, different retrieval: run it in the lab</h2>
+  <p class="lead">The buttons below open the <b>live lab</b> and run the question immediately. The server actually executes the lab code and shows the intermediate result of each processing step one at a time. While presenting, press <kbd>→</kbd> to advance step by step.</p>
+  <div class="grid2">
+    <div class="card"><h3>⓪ From PDF to index</h3><p>Clean the 48-page report PDF, split it into 19 documents, then explore chunks and embeddings while changing chunk size and overlap with sliders.</p><button type="button" class="btn primary live" data-live="ingest">▶ See document processing</button></div>
+    <div class="card"><h3>① Evidence vector RAG misses</h3><p>Run q3 with vector search and inspect similarity scores, the embedding space, and the chunks that go into the context.</p><button type="button" class="btn primary live" data-live="vector" data-q="q3">▶ Run with vector RAG</button></div>
+    <div class="card"><h3>② The links a graph finds</h3><p>Run the same question with graph Local Search. Step through entity linking → paths → PPR → document ranking.</p><button type="button" class="btn primary live" data-live="graph" data-q="q3">▶ Run with graph Local</button></div>
+    <div class="card"><h3>③ Three retrievers side by side + benchmark</h3><p>Compare vector, graph and hybrid results and recall on one screen, and run the full 7-question benchmark live.</p><button type="button" class="btn live" data-live="compare" data-q="q4">▶ Compare side by side</button></div>
+  </div>
+  <div class="bench">
+    <div class="controls" style="justify-content:space-between"><b style="font-family:var(--f-display)">Live benchmark (Recall@k, questions q1–q7)</b>
+      <span class="controls"><div class="seg" id="benchK"><button type="button" data-k="3" aria-pressed="false">k=3</button><button type="button" data-k="5" aria-pressed="true">k=5</button></div>
+      <button type="button" class="btn primary" id="benchRun">Run</button></span></div>
+    <div id="benchOut" class="tablewrap"><p style="padding:14px;color:var(--muted)">Press Run to evaluate with the server's current settings (embedding), the same evaluation as 06_compare_eval.py.</p></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h3>Observation ① On a single report, vector search is already strong</h3><p>Because the questions share a lot of wording with the report, vector search already reaches a high average recall (0.79–0.93 at k=5, depending on the embedding model). "GraphRAG always wins" is not true.</p></div>
+    <div class="card"><h3>Observation ② Where the graph wins</h3><p>Questions like q3, where <b>the evidence linking two concepts in the question lives in another chapter</b>. While vector search is pulled toward the words "Korea · OECD · rank" and picks an unrelated chunk (R&D ranking), the graph reaches the Chapter III document through a path.</p></div>
+    <div class="card"><h3>Observation ③ Where both miss</h3><p>Phrases like "the types the conclusion recommends" in q5, which <b>point to a place in the document rather than naming an entity</b>. This is a limit of string-matching entity linking, and why an <button type="button" class="filelink live" data-live="agent" data-q="q5">agentic approach</button> that interprets the question is needed.</p></div>
+    <div class="card"><h3>Limits of this experiment</h3><p>One report (about 200 chunks) is small. The reference graph was curated from key relations and checked against the source, so it is cleaner than automatic extraction (see the "LLM graph extraction" section). Results vary with the embedding model, k and chunk size; try changing them yourself.</p></div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 7. History ───────────────────────── -->
+<section id="history" data-title="A short history">
+  <p class="eyebrow">Part 4 · Evolution</p>
+  <h2>How GraphRAG evolved</h2>
+  <p class="lead">Each stage appeared to solve a problem left by the previous one. Read it as a chain of <b>problem → solution → remaining challenge</b>.</p>
+  <div class="timeline">
+    <div class="tl era"><time>~2023 · prehistory</time><h3>Knowledge graphs + language models</h3>
+      <p>There was a long line of research on question answering over structured KGs such as Wikidata (KGQA).</p>
+      <div class="pr"><span><b>Limit</b> KGs had to be built by hand, which was expensive and disconnected from unstructured text such as internal documents</span></div></div>
+    <div class="tl"><time>2020</time><h3>RAG (Lewis et al., Facebook AI)</h3>
+      <p>A framework where the LLM retrieves external documents to answer. The prototype of the vector RAG taught in this course.</p>
+      <div class="pr"><span><b>Remaining</b> chunk-level similarity search is weak at multi-hop and global questions</span></div></div>
+    <div class="tl"><time>2023</time><h3>Think-on-Graph (ToG)</h3>
+      <p>The LLM explores a KG like an agent with beam search, choosing which relation to follow next.</p>
+      <div class="pr"><span><b>Contribution</b> "exploring while understanding relations"</span><span><b>Limit</b> needs a well-built KG, many LLM calls</span></div></div>
+    <div class="tl"><time>2024.01</time><h3>RAPTOR</h3>
+      <p>Recursively clusters and summarizes chunks into a tree. Not a graph, but it showed the idea of <b>"answering global questions with hierarchical summaries"</b>.</p></div>
+    <div class="tl"><time>2024.02</time><h3>G-Retriever · GNN-based methods</h3>
+      <p>Uses graph neural networks (GNNs) to select a relevant subgraph and pass it to the LLM. GNN-RAG (2024.05) and others followed.</p>
+      <div class="pr"><span><b>Limit</b> needs training data and model training, hard to adopt in practice</span></div></div>
+    <div class="tl era"><time>2024.04 → 07</time><h3>Microsoft GraphRAG ("From Local to Global")</h3>
+      <p><b>An LLM builds the KG from documents automatically</b>, pre-generates a summary for each Leiden community, and answers global questions with Global Search. Its open-source release in July started the "GraphRAG" boom.</p>
+      <div class="pr"><span><b>Solved</b> the (human) cost of building KGs, global questions</span><span><b>Remaining</b> very high LLM indexing cost, recomputation when documents are added</span></div></div>
+    <div class="tl"><time>2024.05</time><h3>HippoRAG</h3>
+      <p>Inspired by the hippocampal memory theory of the brain. Runs <b>Personalized PageRank</b> over an extracted KG to find multi-hop evidence in a single retrieval. The ranking in today's Lab 04 uses this idea.</p></div>
+    <div class="tl"><time>2024.09</time><h3>KAG (Ant Group)</h3>
+      <p>Knowledge-augmented generation based on schemas and logical forms, aimed at <b>professional domains</b> such as finance and healthcare where accuracy matters.</p></div>
+    <div class="tl"><time>2024.10</time><h3>LightRAG · DRIFT Search</h3>
+      <p>LightRAG skips community summaries and does <b>dual-level retrieval</b> over entities (low level) and topic keywords (high level), with <b>incremental updates</b>, making it lightweight. Around the same time Microsoft released DRIFT Search, which bridges Global and Local.</p>
+      <div class="pr"><span><b>Solved</b> cost, updates</span></div></div>
+    <div class="tl"><time>2024.11</time><h3>LazyGraphRAG (Microsoft)</h3>
+      <p>Does not precompute summaries and <b>defers LLM processing until query time</b>. The goal is to bring indexing cost down to the level of vector RAG.</p></div>
+    <div class="tl era"><time>2025.01</time><h3>Zep · Graphiti: time-aware knowledge graphs</h3>
+      <p>Each relation has a validity period; when a contradicting new fact arrives, the old one is invalidated. An example of GraphRAG expanding into <b>long-term memory for agents</b>.</p></div>
+    <div class="tl"><time>2025</time><h3>HippoRAG 2 · PathRAG · NodeRAG · HyperGraphRAG</h3>
+      <p>Research continued on refining <b>retrieval quality and expressiveness</b>: path-level pruning (PathRAG), heterogeneous node design (NodeRAG), hyperedges linking three or more entities (HyperGraphRAG).</p></div>
+    <div class="tl"><time>2025</time><h3>Evaluation and skepticism: GraphRAG-Bench and others</h3>
+      <p>Researchers began to measure systematically "when does the graph actually win?". Results repeatedly showed the benefit concentrated on multi-hop and global questions, with little gain on simple ones.</p></div>
+    <div class="tl era"><time>2025 → 2026</time><h3>Agentic · hybrid · schema-first</h3>
+      <p>Instead of fixed pipelines, LLM agents choose graph tools (e.g. MCP servers), and vector + keyword + graph hybrids became standard. Enterprises increasingly returned to schema-first extraction. MS GraphRAG reached version 3.x.</p></div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 8. Concepts ───────────────────────── -->
+<section id="concepts" data-title="Glossary">
+  <p class="eyebrow">Part 4 · Evolution</p>
+  <h2>Glossary of key concepts</h2>
+  <p class="lead">All terms from the lecture in one place. Filter by category. Click a lab file name to open the code.</p>
+  <div class="filter seg" id="conceptFilter" style="width:fit-content;max-width:100%;overflow-x:auto"></div>
+  <div class="concepts" id="conceptGrid"></div>
+</section>
+
+<!-- ───────────────────────── 9. Trends ───────────────────────── -->
+<section id="trends" data-title="Trends and open problems">
+  <p class="eyebrow">Part 5 · Today</p>
+  <h2>Recent trends and open problems (2025–2026)</h2>
+  <div class="grid2">
+    <div class="card"><h3>Cutting cost: Lazy · Lite</h3><p>Defer processing to query time (LazyGraphRAG), skip summaries (LightRAG), or use small extraction-only models. Incremental indexing has become the default.</p></div>
+    <div class="card"><h3>Agentic GraphRAG</h3><p>An agent repeatedly picks tools such as <code>search_entity</code>, <code>get_neighbors</code>, <code>find_path</code> and <code>run_cypher</code>. Exposing a graph DB as an MCP server has become a common pattern.</p><span><button type="button" class="btn live" data-live="agent" data-q="q3">▶ Run the agent</button> <button class="filelink" data-file="lab/08_agentic_graph_rag.py">08_agentic_graph_rag.py</button></span></div>
+    <div class="card"><h3>Agent memory = time-aware KG</h3><p>Graphiti/Zep, Mem0, Cognee and others extract facts from conversations into a graph and resolve contradictions with validity periods.</p><span><button type="button" class="btn live" data-live="temporal">▶ Temporal memory lab</button> <button class="filelink" data-file="lab/09_temporal_memory.py">09_temporal_memory.py</button></span></div>
+    <div class="card"><h3>Hybrid is the standard</h3><p>Vector (meaning) + BM25 (keywords) + graph expansion (relations) → reranker. Graph DBs with built-in vector indexes are now common.</p></div>
+    <div class="card"><h3>The return of schemas and ontologies</h3><p>Free-form extraction is noisy, so enterprises define a domain schema first and extract only within it.</p></div>
+    <div class="card"><h3>More expressive graphs</h3><p>Expanding to n-ary relations (hypergraphs), table and image nodes (multimodal), and call graphs of code repositories (context for coding agents).</p></div>
+  </div>
+  <h3>Open problems</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Problem</th><th>Details</th><th>Related lab</th></tr></thead>
+    <tbody>
+      <tr><td>Extraction quality</td><td>LLMs miss or invent relations, and errors propagate into retrieval</td><td><button class="filelink" data-file="lab/03_build_graph.py">03</button></td></tr>
+      <tr><td>Entity resolution</td><td>Merging different spellings of the same entity; the most underrated step</td><td><button class="filelink" data-file="lab/03_build_graph.py">03</button></td></tr>
+      <tr><td>Cost and latency</td><td>LLM calls for indexing, map-reduce latency of Global Search</td><td><button class="filelink" data-file="lab/05_global_graph_rag.py">05</button></td></tr>
+      <tr><td>Updates and consistency</td><td>How to update the graph and summaries when documents change? What about contradicting facts?</td><td><button class="filelink" data-file="lab/09_temporal_memory.py">09</button></td></tr>
+      <tr><td>Evaluation</td><td>Still few standard benchmarks that measure graph quality and final answer quality together</td><td><button class="filelink" data-file="lab/06_compare_eval.py">06</button></td></tr>
+      <tr><td>Competition with long context</td><td>As context windows grow: "why not just put everything in?" For large corpora, the prevailing view is that structure still wins on cost and latency</td><td>Discussion</td></tr>
+      <tr><td>Security</td><td>Text2Cypher runs LLM-generated queries on the database. Use read-only accounts and validate queries</td><td><button class="filelink" data-file="lab/07_neo4j_text2cypher.py">07</button></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ───────────────────────── 10. Environments ───────────────────────── -->
+<section id="setup" data-title="Tools and setup">
+  <p class="eyebrow">Part 5 · Today</p>
+  <h2>Popular GraphRAG environments and initial setup</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Tool</th><th>Form</th><th>Strengths</th><th>When to use</th></tr></thead>
+    <tbody>
+      <tr><td>Microsoft GraphRAG</td><td>CLI pipeline (<code>graphrag</code> 3.x)</td><td>Community summaries, Local/Global/DRIFT/basic search, automatic prompt tuning</td><td>Global summary questions matter and budget allows</td></tr>
+      <tr><td>LightRAG</td><td>Python library + server/web UI</td><td>Light and fast, incremental inserts, 5 retrieval modes</td><td>Quick prototypes, documents added often</td></tr>
+      <tr><td>Neo4j + LangChain</td><td>Graph DB + <code>langchain-neo4j</code></td><td>Cypher, built-in vector index, operations tooling, visualization</td><td>Production services, structured schemas, aggregation queries</td></tr>
+      <tr><td>Graphiti (Zep)</td><td>Python library (+ Neo4j, etc.)</td><td>Time-aware KG, incremental updates per episode</td><td>Long-term agent memory, facts that keep changing</td></tr>
+      <tr><td>DIY (this lab)</td><td>LangChain + networkx</td><td>Understand the principles, minimal dependencies</td><td>Classes, small experiments</td></tr>
+    </tbody>
+  </table></div>
+  <p style="font-size:.9rem;color:var(--muted)">The commands and code below were checked against the latest packages as of September 2026 (graphrag 3.2, lightrag-hku 1.5, graphiti-core 0.30, langchain 1.4). Options may change with new versions.</p>
+  <div class="tabs" role="tablist" id="setupTabs"></div>
+  <div id="setupPanels"></div>
+</section>
+
+<!-- ───────────────────────── 11. Labs ───────────────────────── -->
+<section id="lab" data-title="Lab guide">
+  <p class="eyebrow">Part 6 · Labs</p>
+  <h2>Lab roadmap</h2>
+  <p class="lead">Click a card to open its code. The live lab is a server started with <code>python app/server.py</code> that imports and runs this same code. <span class="pill free">no key needed</span> runs without an API key; <span class="pill need">needs an LLM</span> requires <code>LLM_MODEL</code> in <code>.env</code> for full functionality (otherwise it shows retrieval results only).</p>
+  <div class="labs" id="labCards"></div>
+  <h3>Lab data</h3>
+  <p style="color:var(--muted);font-size:.95rem">Bank of Korea, <i>Innovation and Economic Growth: Review of Korean Firms' Innovation Performance</i> (Economic Research Institute, May 2024; English edition, 48 pages). <code>00_prepare_pdf.py</code> downloads the PDF from the official link into <code>data/source/</code> and turns it into 19 topic documents. The PDF and its text are not included in the repository (copyright).</p>
+  <div class="labs" id="dataCards"></div>
+</section>
+
+<!-- ───────────────────────── 12. Wrap-up ───────────────────────── -->
+<section id="wrap" data-title="Wrap-up and discussion">
+  <p class="eyebrow">Wrap-up</p>
+  <h2>When should you use GraphRAG?</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Situation</th><th>Recommendation</th></tr></thead>
+    <tbody>
+      <tr><td>Simple FAQ, fact lookup</td><td>Vector RAG + reranker is enough</td></tr>
+      <tr><td>Frequent multi-hop or causal-chain questions</td><td>Graph path and PPR expansion + vector hybrid (HippoRAG 2, LightRAG)</td></tr>
+      <tr><td>"Overall summary / themes" questions</td><td>Global Search over community summaries (MS GraphRAG, LazyGraphRAG)</td></tr>
+      <tr><td>Clear domain schema (finance, manufacturing)</td><td>Schema-based KG + Neo4j + Text2Cypher</td></tr>
+      <tr><td>Documents and facts keep changing</td><td>Incremental update tools (LightRAG, Graphiti)</td></tr>
+      <tr><td>Long-term agent memory</td><td>Time-aware KG (Graphiti/Zep, Mem0)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="grid2">
+    <div class="card"><h3>Key takeaways</h3>
+      <ul style="margin:0;padding-left:1.2em;color:var(--muted);font-size:.95rem;display:grid;gap:4px">
+        <li>Graph = nodes and edges. Multi-hop reasoning = path search</li>
+        <li>GraphRAG extracts relations at indexing time and follows the structure to gather evidence at query time</li>
+        <li>Strengths: multi-hop and global questions. Weaknesses: extraction cost and quality</li>
+        <li>In practice: hybrid, and expanding into agents and memory</li>
+      </ul></div>
+    <div class="card"><h3>Discussion questions</h3>
+      <ol style="margin:0;padding-left:1.2em;color:var(--muted);font-size:.95rem;display:grid;gap:4px">
+        <li>How does the LLM-built graph from Lab 03 differ from the reference graph kg.json?</li>
+        <li>What would you change to solve a question like q3 without an agent?</li>
+        <li>With 120,000 documents, which would be shaken more: vector or graph?</li>
+        <li>Does your team project's data actually contain questions that need a graph?</li>
+      </ol></div>
+  </div>
+  <h3>Further reading</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Resource</th><th>Links</th></tr></thead>
+    <tbody>
+      <tr><td>MS GraphRAG paper (From Local to Global)</td><td><a href="https://arxiv.org/abs/2404.16130">arXiv 2404.16130</a> · <a href="https://github.com/microsoft/graphrag">GitHub</a></td></tr>
+      <tr><td>Graph RAG survey</td><td><a href="https://arxiv.org/abs/2408.08921">arXiv 2408.08921</a></td></tr>
+      <tr><td>LightRAG</td><td><a href="https://arxiv.org/abs/2410.05779">arXiv 2410.05779</a> · <a href="https://github.com/HKUDS/LightRAG">GitHub</a></td></tr>
+      <tr><td>HippoRAG / HippoRAG 2</td><td><a href="https://arxiv.org/abs/2405.14831">2405.14831</a> · <a href="https://arxiv.org/abs/2502.14802">2502.14802</a> · <a href="https://github.com/OSU-NLP-Group/HippoRAG">GitHub</a></td></tr>
+      <tr><td>RAPTOR</td><td><a href="https://arxiv.org/abs/2401.18059">arXiv 2401.18059</a></td></tr>
+      <tr><td>Think-on-Graph</td><td><a href="https://arxiv.org/abs/2307.07697">arXiv 2307.07697</a></td></tr>
+      <tr><td>Zep / Graphiti</td><td><a href="https://arxiv.org/abs/2501.13956">arXiv 2501.13956</a> · <a href="https://github.com/getzep/graphiti">GitHub</a></td></tr>
+      <tr><td>LangChain Neo4j integration</td><td><a href="https://github.com/langchain-ai/langchain-neo4j">GitHub</a></td></tr>
+    </tbody>
+  </table></div>
+</section>

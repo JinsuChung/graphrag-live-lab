@@ -2,41 +2,50 @@
 import networkx as nx
 from langchain_core.tools import tool
 
-from common import doc_by_id, triple_text
+from common import doc_by_id, get_lang, t, triple_text
 from retrievers import get_graph
 
-G = get_graph()
-U = G.to_undirected(as_view=True)
-DOCS = doc_by_id()
+
+
+def _g():
+    return get_graph()
+
+
+def _docs():
+    return doc_by_id()
 
 
 @tool
 def search_entities(keyword: str) -> str:
-    """키워드가 이름·별칭·설명에 포함된 그래프 엔티티를 찾는다. 탐색의 시작점을 정할 때 사용."""
+    """Find graph entities whose name, alias or description contains the keyword. Use it to pick a starting point. (키워드로 엔티티 찾기)"""
+    k = keyword.lower()
     hits = [
         f"{n} ({d['type']}): {d['description']}"
-        for n, d in G.nodes(data=True)
-        if keyword in n or any(keyword in a for a in d.get("aliases", [])) or keyword in d["description"]
+        for n, d in _g().nodes(data=True)
+        if k in n.lower() or any(k in a.lower() for a in d.get("aliases", [])) or k in d["description"].lower()
     ]
     return "\n".join(hits) or "결과 없음"
 
 
 @tool
 def get_neighbors(entity: str) -> str:
-    """엔티티에 연결된 모든 관계(나가는/들어오는 엣지)를 트리플로 보여 준다. 출처 문서 id 포함."""
+    """List all relations (in/out edges) of an entity as triples, with source document ids. (엔티티의 관계 보기)"""
+    G = _g()
     if entity not in G:
-        return f"'{entity}' 노드가 없습니다. search_entities 로 정확한 이름을 먼저 찾으세요."
+        return t(f"'{entity}' 노드가 없습니다. search_entities 로 정확한 이름을 먼저 찾으세요.",
+                 f"No node named '{entity}'. Use search_entities to find the exact name first.")
     edges = list(G.out_edges(entity, data=True)) + list(G.in_edges(entity, data=True))
     return "\n".join(f"{triple_text(u, v, d)} [출처 {d['doc']}]" for u, v, d in edges)
 
 
 @tool
 def find_path(source: str, target: str) -> str:
-    """두 엔티티 사이의 최단 연결 경로를 찾는다. 인과 관계나 간접 연결을 확인할 때 사용."""
+    """Find the shortest connecting path between two entities, for causal or indirect links. (두 엔티티 사이 경로)"""
+    G = _g()
     try:
-        path = nx.shortest_path(U, source, target)
+        path = nx.shortest_path(G.to_undirected(as_view=True), source, target)
     except (nx.NetworkXNoPath, nx.NodeNotFound) as e:
-        return f"경로 없음: {e}"
+        return t("경로 없음: ", "No path: ") + str(e)
     lines = []
     for a, b in zip(path, path[1:]):
         for u, v in ((a, b), (b, a)):
@@ -47,14 +56,25 @@ def find_path(source: str, target: str) -> str:
 
 @tool
 def read_document(doc_id: str) -> str:
-    """원문 문서(doc01 ~ doc19)를 읽는다. 그래프 정보만으로 부족할 때 근거 확인용."""
-    return DOCS[doc_id].page_content if doc_id in DOCS else "없는 문서"
+    """Read a source document (doc01-doc19) to check evidence when the graph is not enough. (원문 읽기)"""
+    docs = _docs()
+    return docs[doc_id].page_content if doc_id in docs else t("없는 문서", "No such document")
 
 
 TOOLS = [search_entities, get_neighbors, find_path, read_document]
 
-SYSTEM = (
-    "당신은 지식그래프 탐색 도구를 가진 리서치 에이전트입니다. "
-    "질문의 엔티티를 search_entities 로 찾고, get_neighbors / find_path 로 관계를 따라가며, "
-    "필요하면 read_document 로 원문을 확인하세요. 최종 답변에는 추론 경로와 출처 문서 id 를 포함하세요."
-)
+_SYSTEM = {
+    "ko": ("당신은 지식그래프 탐색 도구를 가진 리서치 에이전트입니다. "
+           "질문의 엔티티를 search_entities 로 찾고, get_neighbors / find_path 로 관계를 따라가며, "
+           "필요하면 read_document 로 원문을 확인하세요. 최종 답변에는 추론 경로와 출처 문서 id 를 포함하세요."),
+    "en": ("You are a research agent with knowledge-graph tools. Find the question's entities with search_entities, "
+           "follow relations with get_neighbors / find_path, and read source text with read_document when needed. "
+           "Include the reasoning path and source document ids in your final answer."),
+}
+
+
+def system_prompt() -> str:
+    return _SYSTEM[get_lang()]
+
+
+SYSTEM = _SYSTEM["ko"]  # 하위 호환

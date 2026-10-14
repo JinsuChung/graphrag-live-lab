@@ -23,13 +23,13 @@ sys.path.insert(0, str(ROOT / "app"))
 import networkx as nx  # noqa: E402
 import uvicorn  # noqa: E402
 from fastapi import FastAPI, HTTPException  # noqa: E402
-from fastapi.responses import FileResponse, StreamingResponse  # noqa: E402
+from fastapi.responses import FileResponse, HTMLResponse, StreamingResponse  # noqa: E402
 from fastapi.staticfiles import StaticFiles  # noqa: E402
 from pydantic import BaseModel  # noqa: E402
 
 import pdf_prep  # noqa: E402
 
-pdf_prep.ensure_docs()  # 처음 실행이면 보고서 PDF 를 받아 data/docs 를 만든다
+pdf_prep.ensure_docs()  # 처음 실행이면 보고서 PDF 를 받아 data/<언어>/docs 를 만든다
 
 import common  # noqa: E402
 import pipelines  # noqa: E402
@@ -50,7 +50,14 @@ async def no_cache_static(request, call_next):
 STATIC = ROOT / "app" / "static"
 
 LLM = common.get_llm()
-TEMPORAL = demo_kg()
+TEMPORAL = {}  # 언어별 시간 메모리 (화면에서 추가한 사실은 서버가 켜져 있는 동안 유지)
+
+
+def temporal():
+    lang = common.get_lang()
+    if lang not in TEMPORAL:
+        TEMPORAL[lang] = demo_kg(lang)
+    return TEMPORAL[lang]
 
 
 # ---------------------------------------------------------------------------
@@ -66,8 +73,8 @@ def available_embeddings() -> list[dict]:
 
 
 def kg_layout(G: nx.MultiDiGraph) -> dict:
-    """노드 좌표. data/kg_layout.json 이 현재 그래프와 맞으면 그대로 쓰고, 아니면 새로 계산."""
-    cache = common.DATA / "kg_layout.json"
+    """노드 좌표. data/<언어>/kg_layout.json 이 현재 그래프와 맞으면 그대로 쓰고, 아니면 새로 계산."""
+    cache = common.data_dir() / "kg_layout.json"
     if cache.exists():
         pos = json.loads(cache.read_text(encoding="utf-8"))
         if set(pos) == set(G.nodes):
@@ -96,10 +103,12 @@ def config():
         "llm": os.getenv("LLM_MODEL") if LLM else None,
         "embedding": os.getenv("EMBEDDING_MODEL") or "local-ngram",
         "embeddings": available_embeddings(),
+        "lang": common.get_lang(),
+        "langs": list(common.LANGS),
         "kg_file": os.getenv("KG_FILE", "kg.json"),
         "chunking": {"chunk_size": R.CHUNK_SIZE, "overlap": R.CHUNK_OVERLAP},
         "questions": common.load_questions(),
-        "docs": [{"id": d.metadata["doc_id"], "title": d.metadata["title"], "file": "data/docs/" + d.metadata["source"]}
+        "docs": [{"id": d.metadata["doc_id"], "title": d.metadata["title"], "file": f"data/{common.get_lang()}/docs/" + d.metadata["source"]}
                  for d in common.load_docs()],
         "kg": {
             "nodes": [{"id": n, "type": d["type"], "description": d["description"], "docs": d.get("docs", []),
@@ -111,6 +120,23 @@ def config():
     }
 
 
+class LangReq(BaseModel):
+    lang: str
+
+
+@app.post("/api/config/lang")
+def set_lang(req: LangReq):
+    """데이터 묶음과 화면 언어를 바꾼다 (data/ko ↔ data/en). 처음이면 해당 언어의 PDF 를 받아 문서를 만든다."""
+    if req.lang not in common.LANGS:
+        raise HTTPException(400, f"unsupported language: {req.lang}")
+    common.set_lang(req.lang)
+    pdf_prep.ensure_docs()
+    R.reset_caches()
+    t0 = time.perf_counter()
+    R.build_vector_store()
+    return {"lang": req.lang, "index_ms": round((time.perf_counter() - t0) * 1000)}
+
+
 class EmbeddingReq(BaseModel):
     embedding: str
 
@@ -118,7 +144,7 @@ class EmbeddingReq(BaseModel):
 @app.post("/api/config/embedding")
 def set_embedding(req: EmbeddingReq):
     if req.embedding not in {o["id"] for o in available_embeddings()}:
-        raise HTTPException(400, "사용할 수 없는 임베딩입니다")
+        raise HTTPException(400, common.t("사용할 수 없는 임베딩입니다", "Embedding not available"))
     os.environ["EMBEDDING_MODEL"] = req.embedding
     R._vector_store = None  # 다음 검색 때 새 임베딩으로 다시 인덱싱
     t0 = time.perf_counter()
@@ -139,14 +165,14 @@ class TraceReq(BaseModel):
 def trace(req: TraceReq):
     q = req.question.strip()
     if not q:
-        raise HTTPException(400, "질문을 입력하세요")
+        raise HTTPException(400, common.t("질문을 입력하세요", "Enter a question"))
     if req.mode == "vector":
         return pipelines.vector_trace(q, req.k)
     if req.mode == "graph":
         return pipelines.graph_trace(q, req.k)
     if req.mode == "global":
         return pipelines.global_trace(q, LLM)
-    raise HTTPException(400, f"알 수 없는 모드: {req.mode}")
+    raise HTTPException(400, common.t("알 수 없는 모드: ", "Unknown mode: ") + req.mode)
 
 
 @app.post("/api/compare")
@@ -174,7 +200,8 @@ def ingest(req: IngestReq):
 @app.post("/api/ingest/chunks")
 def ingest_chunks(req: IngestReq):
     if not (50 <= req.chunk_size <= 4000) or not (0 <= req.overlap < req.chunk_size):
-        raise HTTPException(400, "청크 크기는 50~4000, 겹침은 0 이상 청크 크기 미만이어야 합니다")
+        raise HTTPException(400, common.t("청크 크기는 50~4000, 겹침은 0 이상 청크 크기 미만이어야 합니다",
+                                          "Chunk size must be 50-4000 and overlap between 0 and the chunk size"))
     return pipelines.chunk_view(req.doc_id, req.chunk_size, req.overlap)
 
 
@@ -182,7 +209,8 @@ def ingest_chunks(req: IngestReq):
 def set_chunking(req: IngestReq):
     """벡터 인덱스를 새 청크 설정으로 다시 만든다 (이후 벡터 RAG 모드에 반영)."""
     if not (50 <= req.chunk_size <= 4000) or not (0 <= req.overlap < req.chunk_size):
-        raise HTTPException(400, "청크 크기는 50~4000, 겹침은 0 이상 청크 크기 미만이어야 합니다")
+        raise HTTPException(400, common.t("청크 크기는 50~4000, 겹침은 0 이상 청크 크기 미만이어야 합니다",
+                                          "Chunk size must be 50-4000 and overlap between 0 and the chunk size"))
     R.CHUNK_SIZE, R.CHUNK_OVERLAP = req.chunk_size, req.overlap
     R._vector_store = None
     t0 = time.perf_counter()
@@ -216,8 +244,10 @@ class AnswerReq(BaseModel):
 async def answer(req: AnswerReq):
     async def gen():
         if LLM is None:
-            yield sse({"error": "LLM_MODEL 이 설정되지 않았습니다. .env 에 LLM_MODEL 과 API 키를 넣고 서버를 다시 시작하세요. "
-                                "(검색 단계까지는 LLM 없이도 모두 실행됩니다)"})
+            yield sse({"error": common.t("LLM_MODEL 이 설정되지 않았습니다. .env 에 LLM_MODEL 과 API 키를 넣고 서버를 다시 시작하세요. "
+                                         "(검색 단계까지는 LLM 없이도 모두 실행됩니다)",
+                                         "LLM_MODEL is not set. Add LLM_MODEL and an API key to .env and restart the server. "
+                                         "(All retrieval steps run without an LLM.)")})
             return
         t0, first, agg = time.perf_counter(), None, None
         try:
@@ -244,13 +274,14 @@ class AgentReq(BaseModel):
 async def agent(req: AgentReq):
     async def gen():
         if LLM is None:
-            yield sse({"error": "에이전트는 LLM 이 필요합니다. .env 에 LLM_MODEL 과 API 키를 설정하세요."})
+            yield sse({"error": common.t("에이전트는 LLM 이 필요합니다. .env 에 LLM_MODEL 과 API 키를 설정하세요.",
+                                         "The agent needs an LLM. Set LLM_MODEL and an API key in .env.")})
             return
         from langchain.agents import create_agent
         from langchain_core.messages import AIMessage, ToolMessage
 
-        from graph_tools import SYSTEM, TOOLS
-        ag = create_agent(LLM, tools=TOOLS, system_prompt=SYSTEM)
+        from graph_tools import TOOLS, system_prompt
+        ag = create_agent(LLM, tools=TOOLS, system_prompt=system_prompt())
         t0 = time.perf_counter()
         try:
             async for update in ag.astream({"messages": [{"role": "user", "content": req.question}]},
@@ -286,34 +317,34 @@ class FactReq(BaseModel):
 
 @app.get("/api/temporal")
 def temporal_state():
-    return {"facts": TEMPORAL.as_dicts(), "exclusive": sorted(TEMPORAL.exclusive)}
+    kg = temporal()
+    return {"facts": kg.as_dicts(), "exclusive": sorted(kg.exclusive)}
 
 
 @app.post("/api/temporal/add")
 def temporal_add(req: FactReq):
-    inv = TEMPORAL.add(Fact(**req.model_dump()))
+    inv = temporal().add(Fact(**req.model_dump()))
     return {"invalidated": [f"{f.source} -[{f.relation}]-> {f.target}" for f in inv], **temporal_state()}
 
 
 @app.post("/api/temporal/reset")
 def temporal_reset():
-    global TEMPORAL
-    TEMPORAL = demo_kg()
+    TEMPORAL[common.get_lang()] = demo_kg(common.get_lang())
     return temporal_state()
 
 
 @app.get("/api/temporal/query")
 def temporal_query(source: str, relation: str, as_of: str):
-    return {"answer": TEMPORAL.query(source, relation, as_of)}
+    return {"answer": temporal().query(source, relation, as_of)}
 
 
 # ---------------------------------------------------------------------------
 # 코드·데이터 뷰어
 # ---------------------------------------------------------------------------
 def project_files() -> list[str]:
-    files = ["README.md", "requirements.txt", ".env.example", "docker-compose.yml"]
+    files = ["README.md", "README.ko.md", "requirements.txt", ".env.example", "docker-compose.yml"]
     files += sorted(str(p.relative_to(ROOT)) for p in (ROOT / "lab").glob("*.py"))
-    files += sorted(str(p.relative_to(ROOT)) for p in (ROOT / "data").rglob("*") if p.is_file())
+    files += sorted(str(p.relative_to(ROOT)) for p in common.data_dir().rglob("*") if p.is_file())
     files += sorted(str(p.relative_to(ROOT)) for p in (ROOT / "app").rglob("*")
                     if p.is_file() and "__pycache__" not in p.parts)
     text_ext = {".py", ".md", ".json", ".txt", ".yml", ".example", ".html", ".css", ".js"}
@@ -323,8 +354,8 @@ def project_files() -> list[str]:
 @app.get("/api/pdf")
 def pdf():
     """원본 보고서 PDF (브라우저 새 탭에서 열기용)."""
-    from pdf_prep import PDF_PATH
-    return FileResponse(PDF_PATH, media_type="application/pdf")
+    path = pdf_prep.download_pdf()
+    return FileResponse(path, media_type="application/pdf")
 
 
 @app.get("/api/files")
@@ -335,7 +366,7 @@ def files():
 @app.get("/api/file")
 def file(path: str):
     if path not in project_files():
-        raise HTTPException(404, "파일이 없습니다")
+        raise HTTPException(404, common.t("파일이 없습니다", "File not found"))
     return {"path": path, "content": (ROOT / path).read_text(encoding="utf-8")}
 
 
@@ -343,7 +374,7 @@ def file(path: str):
 def coderef(file: str, symbol: str):
     """함수/클래스/변수 이름으로 소스 코드의 줄 범위를 찾는다 ('코드 보기' 버튼용)."""
     if file not in project_files() or not file.endswith(".py"):
-        raise HTTPException(404, "파일이 없습니다")
+        raise HTTPException(404, common.t("파일이 없습니다", "File not found"))
     tree = ast.parse((ROOT / file).read_text(encoding="utf-8"))
     for node in ast.walk(tree):
         names = []
@@ -358,7 +389,9 @@ def coderef(file: str, symbol: str):
 
 @app.get("/")
 def index():
-    return FileResponse(STATIC / "index.html")
+    # 서버의 현재 언어를 <html lang> 에 넣어 보낸다 → 브라우저가 처음 열 때의 기본 언어
+    html = (STATIC / "index.html").read_text(encoding="utf-8")
+    return HTMLResponse(html.replace('<html lang="ko">', f'<html lang="{common.get_lang()}">', 1))
 
 
 app.mount("/static", StaticFiles(directory=STATIC), name="static")
