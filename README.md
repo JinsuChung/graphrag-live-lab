@@ -2,7 +2,7 @@
 
 **문서 처리부터 벡터 RAG·GraphRAG까지, 각 처리 단계에서 무슨 일이 일어나는지 실시간으로 펼쳐 보는 LangChain 강의·실습 시스템**
 
-학부 "LangChain 기반 LLM 애플리케이션 개발" 수업의 GraphRAG 특강용으로 만들었습니다.
+학부 "LangChain 기반 LLM 애플리케이션 개발" 수업의 GraphRAG 특강용으로 만들었습니다. (지도교수: 류한철)
 한국은행 보고서 「혁신과 경제성장 – 우리나라 기업의 혁신활동 분석 및 평가」(2024.5) 한 편을 실습 자료로,
 같은 질문을 벡터 RAG와 GraphRAG로 돌려 보며 **청크·임베딩·유사도·엔티티 연결·경로·PageRank·프롬프트·LLM 답변**을 단계별로 보여 줍니다.
 
@@ -144,6 +144,11 @@ notes/      GraphRAG 개념 정리 노트
 - 실습 자료: 한국은행, 「경제전망보고서(2024년 5월)」 III. 중장기 심층연구 「혁신과 경제성장 – 우리나라 기업의 혁신활동 분석 및 평가」(경제연구원 미시제도연구실). [게시물](https://www.bok.or.kr/portal/bbs/P0002359/view.do?nttId=10084275&menuNo=200066)
 - 보고서의 저작권은 한국은행에 있습니다. [한국은행 저작권보호방침](https://www.bok.or.kr/portal/main/contents.do?menuNo=200228)에 따라 이 저장소에는 PDF와 본문 텍스트를 넣지 않고, 실행 시 공식 링크에서 내려받습니다.
 - `data/kg.json`·`questions.json`·`community_summaries.json`은 보고서의 수치와 내용을 요약해 이 프로젝트에서 작성한 것입니다. 참조 그래프는 LLM 자동 추출이 아니라 AI 어시스턴트가 원문을 읽고 핵심 관계만 골라 정리했고, 핵심 수치는 원문과 대조했습니다. 수업에 쓰기 전 검토를 권장합니다.
+
+## 만든 사람
+
+- 지도교수: 류한철
+- 제작: [JinsuChung](https://github.com/JinsuChung)
 
 ## 라이선스
 
