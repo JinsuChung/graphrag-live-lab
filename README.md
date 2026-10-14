@@ -2,7 +2,7 @@
 
 **문서 처리부터 벡터 RAG·GraphRAG까지, 각 처리 단계에서 무슨 일이 일어나는지 실시간으로 펼쳐 보는 LangChain 강의·실습 시스템**
 
-학부 "LangChain 기반 LLM 애플리케이션 개발" 수업의 GraphRAG 특강용으로 만들었습니다. (지도교수: 류한철)
+학부 "LangChain 기반 LLM 애플리케이션 개발" 수업의 GraphRAG 특강용으로 만들었습니다. (삼육대학교 일반대학원 인공지능융합학부 정진수, 지도교수 류한철)
 한국은행 보고서 「혁신과 경제성장 – 우리나라 기업의 혁신활동 분석 및 평가」(2024.5) 한 편을 실습 자료로,
 같은 질문을 벡터 RAG와 GraphRAG로 돌려 보며 **청크·임베딩·유사도·엔티티 연결·경로·PageRank·프롬프트·LLM 답변**을 단계별로 보여 줍니다.
 
@@ -147,8 +147,9 @@ notes/      GraphRAG 개념 정리 노트
 
 ## 만든 사람
 
+- 제작: 정진수 ([GitHub](https://github.com/JinsuChung))
 - 지도교수: 류한철
-- 제작: [JinsuChung](https://github.com/JinsuChung)
+- 소속: 삼육대학교 일반대학원 인공지능융합학부
 
 ## 라이선스
 

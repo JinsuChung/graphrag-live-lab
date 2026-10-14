@@ -221,3 +221,5 @@ table.t td:first-child{min-width:120px}
 .gold .grp.no{border-color:var(--warn)}
 .gold .or{font-size:.7rem;color:var(--muted)}
 #vis .n text{font-size:17px;stroke-width:5px}
+
+.byline{font-size:.92rem;color:var(--muted)}
