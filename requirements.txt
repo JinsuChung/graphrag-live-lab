@@ -1,0 +1,25 @@
+# Python 3.10 이상 (3.11~3.12 권장)
+langchain>=1.0
+langchain-core>=1.0
+langchain-text-splitters>=1.0
+langchain-community>=0.4      # PyPDFLoader (실습 00)
+pypdf>=5.0
+langchain-experimental>=0.3   # 실습 03 교과서 방식 LLMGraphTransformer (EXTRACTOR=lgt)
+langchain-anthropic>=1.0      # Claude 사용 시
+langchain-openai>=1.0         # OpenAI 사용 시 (임베딩 포함)
+langchain-neo4j>=0.5          # 실습 07 (Neo4j)
+networkx>=3.3
+python-dotenv>=1.0
+pydantic>=2.7
+numpy>=1.26
+
+# 라이브 실험실 서버 (app/server.py)
+fastapi>=0.110
+uvicorn[standard]>=0.29
+
+# 선택: Google Gemini 사용 시 (LLM_MODEL=google_genai:...)
+# langchain-google-genai>=2.0
+
+# 선택: 로컬 무료 임베딩 (EMBEDDING_MODEL=huggingface:intfloat/multilingual-e5-small)
+# langchain-huggingface>=1.0
+# sentence-transformers>=3.0

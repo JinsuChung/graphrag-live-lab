@@ -1,0 +1,3723 @@
+{
+ "nodes": [
+  {
+   "id": "한국은행",
+   "type": "Organization",
+   "description": "경제전망보고서(2024.5)를 발간한 중앙은행으로, 혁신과 경제성장에 관한 중장기 심층연구를 수행함",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc02",
+    "doc03",
+    "doc04",
+    "doc05",
+    "doc06",
+    "doc07",
+    "doc08",
+    "doc09",
+    "doc10",
+    "doc11",
+    "doc12",
+    "doc13",
+    "doc14",
+    "doc15",
+    "doc16",
+    "doc17",
+    "doc18",
+    "doc19"
+   ]
+  },
+  {
+   "id": "경제전망보고서(2024.5)",
+   "type": "Product",
+   "description": "한국은행이 2024년 5월 발간한 보고서로, 우리나라 기업의 혁신활동 분석 및 평가를 포함한 중장기 심층연구를 담고 있음",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc02",
+    "doc04",
+    "doc06",
+    "doc07",
+    "doc08",
+    "doc09",
+    "doc10",
+    "doc11",
+    "doc13",
+    "doc15",
+    "doc16",
+    "doc17",
+    "doc18",
+    "doc19"
+   ]
+  },
+  {
+   "id": "혁신기업",
+   "type": "Concept",
+   "description": "미국 내 특허를 출원할 정도로 우수한 기업으로, 전체 기업 R&D 지출의 72% 내외를 담당하는 기업군",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc06",
+    "doc07",
+    "doc09",
+    "doc18"
+   ]
+  },
+  {
+   "id": "대기업",
+   "type": "Concept",
+   "description": "종업원수 상위 5% 기업으로, 전체 R&D 지출 증가를 주도했으나 생산성 성장세는 정체된 기업군",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc07",
+    "doc08",
+    "doc09",
+    "doc10",
+    "doc12",
+    "doc18"
+   ]
+  },
+  {
+   "id": "중소기업",
+   "type": "Concept",
+   "description": "업력 하위 20% 중소기업을 포함하며, 2010년대 이전에는 생산성 증가세가 가팔랐으나 이후 크게 둔화된 기업군",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc08",
+    "doc10",
+    "doc12",
+    "doc18"
+   ]
+  },
+  {
+   "id": "R&D 지출",
+   "type": "Concept",
+   "description": "우리나라 기업의 혁신활동지표로, 2022년 기준 GDP의 4.1%로 세계 2위 수준",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc03",
+    "doc04",
+    "doc06",
+    "doc07",
+    "doc09",
+    "doc10"
+   ]
+  },
+  {
+   "id": "특허출원",
+   "type": "Concept",
+   "description": "우리나라 기업의 혁신활동지표로, 미국 내 특허출원건수 기준 2020년 세계 4위(국가별 비중 7.6%)",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc03"
+   ]
+  },
+  {
+   "id": "기초연구",
+   "type": "Concept",
+   "description": "선도적 기술개발의 기반인 혁신의 질과 밀접한 연구로, 우리 기업의 기초연구 지출 비중은 2010년 14%에서 2021년 11%로 감소함",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc05",
+    "doc10",
+    "doc12",
+    "doc16",
+    "doc18"
+   ]
+  },
+  {
+   "id": "응용연구",
+   "type": "Concept",
+   "description": "혁신실적의 양을 늘리는 데 효과적인 연구 유형",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc05",
+    "doc10",
+    "doc12",
+    "doc16"
+   ]
+  },
+  {
+   "id": "벤처캐피탈",
+   "type": "Concept",
+   "description": "혁신자금 조달 기능을 담당하며, 접근성이 높을수록 혁신실적이 개선되나 2010년대 들어 접근성이 낮아진 자금조달 수단",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc05",
+    "doc10",
+    "doc13",
+    "doc16",
+    "doc17",
+    "doc18"
+   ]
+  },
+  {
+   "id": "투자회수시장",
+   "type": "Concept",
+   "description": "M&A 및 IPO를 포함하며, 벤처캐피탈의 혁신실적 제고 효과를 거두기 위해 발전이 필요한 시장",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc13"
+   ]
+  },
+  {
+   "id": "혁신창업가",
+   "type": "Concept",
+   "description": "학창시절 인지능력이 우수하고 틀에 얽매이기를 싫어하는 특성을 가진 창업가로, 혁신 신생기업 진입을 이끄는 주체",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc05",
+    "doc10",
+    "doc11",
+    "doc15",
+    "doc16",
+    "doc18"
+   ]
+  },
+  {
+   "id": "초저출산·초고령화",
+   "type": "Concept",
+   "description": "우리나라가 직면한 인구구조 문제로, 생산성 제고의 필요성을 높이는 사회적 과제",
+   "aliases": [],
+   "docs": [
+    "doc01",
+    "doc02"
+   ]
+  },
+  {
+   "id": "생산성증가율",
+   "type": "Concept",
+   "description": "기업의 생산성 성장 지표로, 2001~2010년 연평균 6.1%에서 2011~2020년 0.5%로 크게 낮아짐",
+   "aliases": [],
+   "docs": [
+    "doc01"
+   ]
+  },
+  {
+   "id": "민간벤처캐피탈",
+   "type": "Concept",
+   "description": "정부 주도 벤처캐피탈에 비해 혁신실적 제고 효과가 보다 뚜렷한 민간 주도의 벤처캐피탈",
+   "aliases": [
+    "민간 벤처캐피탈"
+   ],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc11",
+    "doc14"
+   ]
+  },
+  {
+   "id": "통계청",
+   "type": "Organization",
+   "description": "2023년 12월 장래인구추계를 발표한 대한민국 정부 기관이다.",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "장래인구추계",
+   "type": "Product",
+   "description": "통계청이 발표한 인구 전망 자료로, 중위가정 기준 우리나라 총인구가 2020년 이후 감소세로 전환될 것으로 예측하였다.",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "조태형(2023)",
+   "type": "Product",
+   "description": "장기 경제전망을 제시한 연구로, 인구 감소 시나리오에 따라 2040년대 마이너스 성장 가능성을 분석하였다.",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "Aghion·Howitt 1992",
+   "type": "Product",
+   "description": "혁신이 기술진보와 창조적 파괴를 통해 장기 성장을 이끄는 주된 동력임을 분석한 선행연구이다.",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "우리나라",
+   "type": "Location",
+   "description": "초저출산·초고령화로 인해 성장잠재력이 빠르게 약화되고 있는 국가로, 혁신을 통한 대응이 필요한 상황이다.",
+   "aliases": [],
+   "docs": [
+    "doc02",
+    "doc03",
+    "doc08"
+   ]
+  },
+  {
+   "id": "혁신",
+   "type": "Concept",
+   "description": "연구개발(R&D)을 통해 지식을 축적하고 새로운 아이디어를 실현하여 경제적 가치를 창출하는 일련의 활동이다.",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "연구개발(R&D)",
+   "type": "Concept",
+   "description": "혁신의 핵심 수단으로, 지식을 축적하고 새로운 아이디어를 실현하는 활동이다.",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "창조적 파괴",
+   "type": "Concept",
+   "description": "기존 혁신을 대체하는 과정으로, 혁신이 장기 성장을 이끄는 경로 중 하나이다.",
+   "aliases": [],
+   "docs": [
+    "doc02",
+    "doc16",
+    "doc17"
+   ]
+  },
+  {
+   "id": "기술진보",
+   "type": "Concept",
+   "description": "혁신을 통해 달성되며, 기대수익 증가와 자본투자 확대, 신산업 등장 등을 유발하여 장기 성장에 기여한다.",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "인적자본",
+   "type": "Concept",
+   "description": "의료기술 발전, 생활가전, 교육의 신기술 활용 등을 통해 양과 질이 향상되어 경제성장에 기여하는 요소이다.",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "성장잠재력",
+   "type": "Concept",
+   "description": "우리나라의 장기 경제성장 능력으로, 초저출산·초고령화로 인해 빠르게 약화되고 있다.",
+   "aliases": [],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "OECD",
+   "type": "Organization",
+   "description": "회원국의 R&D 지출, 특허, 혁신역량 등을 비교·평가하는 국제기구",
+   "aliases": [],
+   "docs": [
+    "doc03",
+    "doc04",
+    "doc06",
+    "doc11",
+    "doc15",
+    "doc19"
+   ]
+  },
+  {
+   "id": "USPTO",
+   "type": "Organization",
+   "description": "미국 특허청으로, 글로벌 기업들이 특허를 출원하는 기관이며 글로벌 혁신실적 측정의 객관적 지표로 활용됨",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "이스라엘",
+   "type": "Location",
+   "description": "2022년 GDP 대비 R&D 지출 6.0%로 OECD 회원국 중 1위를 차지한 국가",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "독일",
+   "type": "Location",
+   "description": "미국 특허청 특허출원 건수에서 우리나라에 추월당한 국가",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "영국",
+   "type": "Location",
+   "description": "미국 특허청 특허출원 건수에서 우리나라에 추월당한 국가",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "삼성전자",
+   "type": "Organization",
+   "description": "2023년 현재 미국 내 특허출원 건수 1위를 차지한 우리나라 기업",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "LG전자",
+   "type": "Organization",
+   "description": "2023년 현재 미국 내 특허출원 건수 2위를 차지한 우리나라 기업",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "현대자동차",
+   "type": "Organization",
+   "description": "2023년 미국 내 특허출원 건수 상위 25위권 중 15위를 차지한 우리나라 기업",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "SK하이닉스",
+   "type": "Organization",
+   "description": "2023년 미국 내 특허출원 건수 상위 25위권 중 24위를 차지한 우리나라 기업",
+   "aliases": [],
+   "docs": [
+    "doc03",
+    "doc11"
+   ]
+  },
+  {
+   "id": "Global Innovation Index",
+   "type": "Product",
+   "description": "혁신 자원·인프라, 투자규모, 효율성 등을 종합적으로 고려하는 주요 국가혁신평가 지수(GII)",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "국가과학기술혁신역량평가",
+   "type": "Product",
+   "description": "혁신 자원·인프라, 투자규모, 효율성 등을 종합적으로 고려하는 주요 국가혁신평가 지수(COSTII)",
+   "aliases": [],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "글로벌 금융위기",
+   "type": "Event",
+   "description": "이 위기 이후 기업의 생산성 성장세가 둔화되고 경제 전반의 생산성이 정체되는 데 영향을 미친 사건이다.",
+   "aliases": [
+    "글로벌금융위기"
+   ],
+   "docs": [
+    "doc04",
+    "doc06",
+    "doc08",
+    "doc10",
+    "doc11",
+    "doc18"
+   ]
+  },
+  {
+   "id": "총요소생산성",
+   "type": "Concept",
+   "description": "국민계정 기준으로 산출되는 생산성 지표로, 글로벌 금융위기 이후 우리나라를 포함한 다수 국가에서 증가세가 낮아졌다.",
+   "aliases": [],
+   "docs": [
+    "doc04",
+    "doc06",
+    "doc08"
+   ]
+  },
+  {
+   "id": "똑똑한 이단아",
+   "type": "Concept",
+   "description": "인지능력이 우수한 동시에 틀에 얽매이기를 싫어하는 사람으로, 미국에서 혁신창업가의 주요 유형으로 분석된다.",
+   "aliases": [],
+   "docs": [
+    "doc04",
+    "doc15"
+   ]
+  },
+  {
+   "id": "일반균형 구조모형",
+   "type": "Technology",
+   "description": "주요 혁신정책이 경제성장률 및 사회후생에 미치는 영향을 추정하기 위해 사용되는 시나리오 분석 도구이다.",
+   "aliases": [],
+   "docs": [
+    "doc04"
+   ]
+  },
+  {
+   "id": "최창호·이종호·함건 2018",
+   "type": "Product",
+   "description": "글로벌화 정체로 인해 수출 중심의 한국 경제가 영향을 받았다는 점 등을 기업 생산성 둔화 요인으로 지적한 선행연구이다.",
+   "aliases": [],
+   "docs": [
+    "doc04"
+   ]
+  },
+  {
+   "id": "남충현·송상윤 2020",
+   "type": "Product",
+   "description": "기업 생산성 성장세 둔화 요인을 분석한 선행연구이다.",
+   "aliases": [],
+   "docs": [
+    "doc04"
+   ]
+  },
+  {
+   "id": "정선영 2021",
+   "type": "Product",
+   "description": "기업 생산성 성장세 둔화 요인을 분석한 선행연구이다.",
+   "aliases": [],
+   "docs": [
+    "doc04"
+   ]
+  },
+  {
+   "id": "특허출원건수",
+   "type": "Concept",
+   "description": "혁신실적의 양을 나타내는 지표로, 대기업의 경우 크게 증가하였으나 질적 개선은 이루어지지 못하였다.",
+   "aliases": [],
+   "docs": [
+    "doc04",
+    "doc05",
+    "doc12",
+    "doc13",
+    "doc14"
+   ]
+  },
+  {
+   "id": "특허피인용건수",
+   "type": "Concept",
+   "description": "혁신의 중요도를 나타내는 질적 지표로, 2000년대 중반 이후 개선되지 못하였다.",
+   "aliases": [],
+   "docs": [
+    "doc04",
+    "doc05",
+    "doc08",
+    "doc12",
+    "doc13",
+    "doc14"
+   ]
+  },
+  {
+   "id": "M&A 시장",
+   "type": "Concept",
+   "description": "투자회수시장의 일부로, 우리나라 M&A 시장을 선진국 수준으로 발전시킬 경우 벤처캐피탈 효과와 결합하여 특허 출원건수와 피인용건수를 각각 0.74%, 0.58% 증가시킬 수 있는 것으로 분석되었다.",
+   "aliases": [],
+   "docs": [
+    "doc04",
+    "doc18"
+   ]
+  },
+  {
+   "id": "기업 혁신활동",
+   "type": "Concept",
+   "description": "생산성을 결정하는 직접적인 요인으로, 혁신추진결정, 혁신투입, 지식자본스톡 축적, 혁신산출물생산, 생산성향상 등 5단계로 구성됨",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "혁신추진결정",
+   "type": "Concept",
+   "description": "기업 혁신활동의 첫 번째 단계로, 혁신을 추진할지 여부를 결정하는 단계",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "혁신투입",
+   "type": "Concept",
+   "description": "기업 혁신활동의 두 번째 단계로, R&D 수행을 통해 기초연구와 응용연구를 포함하는 단계",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "지식자본스톡 축적",
+   "type": "Concept",
+   "description": "기업 혁신활동의 세 번째 단계로, R&D 수행을 통해 지식 자본을 쌓아가는 단계",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "혁신산출물생산",
+   "type": "Concept",
+   "description": "기업 혁신활동의 네 번째 단계로, 양적 실적(특허출원건수)과 질적 실적(특허피인용건수)으로 측정됨",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "생산성향상",
+   "type": "Concept",
+   "description": "기업 혁신활동의 다섯 번째 단계로, 혁신활동의 최종 결과물",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "기존기업",
+   "type": "Concept",
+   "description": "시장주도권을 뺏기지 않기 위해 점진적 혁신을 추구하는 혁신 주체",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "미국국립과학재단",
+   "type": "Organization",
+   "description": "기초연구와 응용연구의 정의를 제시한 미국의 과학 연구 지원 기관",
+   "aliases": [],
+   "docs": [
+    "doc05"
+   ]
+  },
+  {
+   "id": "Akcigit·Kerr 2018",
+   "type": "Product",
+   "description": "기존기업의 점진적 혁신과 혁신창업가의 파괴적 혁신 성향 차이를 제시한 선행연구(2018)",
+   "aliases": [],
+   "docs": [
+    "doc05",
+    "doc07",
+    "doc12"
+   ]
+  },
+  {
+   "id": "일반기업",
+   "type": "Concept",
+   "description": "미국 내 출원특허를 보유하지 않은 기업으로, 혁신기업과 대비되는 분류이다.",
+   "aliases": [],
+   "docs": [
+    "doc06"
+   ]
+  },
+  {
+   "id": "Oslo Manual",
+   "type": "Product",
+   "description": "OECD가 혁신통계 작성에 관해 발간한 지침서로, 혁신기업을 제품혁신·공정혁신 등 혁신실적을 한 건 이상 달성한 기업으로 정의한다.",
+   "aliases": [],
+   "docs": [
+    "doc06"
+   ]
+  },
+  {
+   "id": "미국 특허청",
+   "type": "Organization",
+   "description": "기업의 혁신실적 분석을 위한 특허 데이터를 제공한 기관이다.",
+   "aliases": [
+    "미국특허청"
+   ],
+   "docs": [
+    "doc06",
+    "doc08",
+    "doc12",
+    "doc14"
+   ]
+  },
+  {
+   "id": "KoPDP",
+   "type": "Product",
+   "description": "이지홍 외(2020)가 구축한 데이터베이스로, 기업 혁신실적 분석을 위한 통계자료 수집에 활용되었다.",
+   "aliases": [],
+   "docs": [
+    "doc06",
+    "doc12",
+    "doc14"
+   ]
+  },
+  {
+   "id": "KoDATA",
+   "type": "Organization",
+   "description": "기업의 혁신실적 및 총요소생산성 분석을 위한 통계자료를 제공한 기관이다.",
+   "aliases": [],
+   "docs": [
+    "doc06",
+    "doc14"
+   ]
+  },
+  {
+   "id": "ValueSearch",
+   "type": "Product",
+   "description": "기업 분석을 위한 통계자료 수집에 활용된 데이터 소스이다.",
+   "aliases": [],
+   "docs": [
+    "doc06",
+    "doc12",
+    "doc14"
+   ]
+  },
+  {
+   "id": "Ackerberg et al.(2015)",
+   "type": "Concept",
+   "description": "기업의 총요소생산성 추정에 활용된 선행연구 방법론으로, 본 분석에서 총요소생산성 추정에 사용되었다.",
+   "aliases": [],
+   "docs": [
+    "doc06"
+   ]
+  },
+  {
+   "id": "제조업",
+   "type": "Concept",
+   "description": "혁신기업 중 차지하는 비중이 상대적으로 크게 높아 경제 전반의 생산성 향상을 주도한 산업이다.",
+   "aliases": [],
+   "docs": [
+    "doc06"
+   ]
+  },
+  {
+   "id": "ICT산업",
+   "type": "Concept",
+   "description": "혁신기업 중 차지하는 비중이 상대적으로 크게 높아 경제 전반의 생산성 향상을 주도한 산업이다.",
+   "aliases": [],
+   "docs": [
+    "doc06"
+   ]
+  },
+  {
+   "id": "고업력 중소기업",
+   "type": "Concept",
+   "description": "혁신기업 중 대기업을 제외한 중소기업 중에서 업력 기준 하위 20%에 해당하지 않는 기업으로, 기업수 기준 전체 혁신기업의 76% 내외를 차지",
+   "aliases": [],
+   "docs": [
+    "doc07"
+   ]
+  },
+  {
+   "id": "저업력 중소기업",
+   "type": "Concept",
+   "description": "혁신기업 중 중소기업 중에서 매년 업력 기준 하위 20%에 해당하는 기업으로, 신제품 개발과 같은 파괴적 혁신을 추구하는 성향이 강함",
+   "aliases": [],
+   "docs": [
+    "doc07",
+    "doc09"
+   ]
+  },
+  {
+   "id": "파괴적 혁신",
+   "type": "Concept",
+   "description": "업력이 짧은 기업일수록 공정 개선보다 신제품 개발과 같은 방식으로 추구하는 혁신 유형",
+   "aliases": [],
+   "docs": [
+    "doc07"
+   ]
+  },
+  {
+   "id": "Cohen·Klepper 1992",
+   "type": "Event",
+   "description": "기업 규모가 클수록 R&D 투자를 많이 한다는 분석을 제시한 선행연구(1992)",
+   "aliases": [],
+   "docs": [
+    "doc07"
+   ]
+  },
+  {
+   "id": "Acemoglu·Cao 2015",
+   "type": "Event",
+   "description": "업력이 짧은 기업일수록 파괴적 혁신을 추구하여 생산성이 높다는 분석을 제시한 선행연구(2015)",
+   "aliases": [],
+   "docs": [
+    "doc07"
+   ]
+  },
+  {
+   "id": "Acemoglu et al. 2018",
+   "type": "Event",
+   "description": "업력이 짧은 기업의 혁신 성향과 생산성에 관한 분석을 제시한 선행연구(2018)",
+   "aliases": [],
+   "docs": [
+    "doc07"
+   ]
+  },
+  {
+   "id": "기업생산성",
+   "type": "Concept",
+   "description": "혁신기업 분류별로 측정되는 생산성 지표로, 2010년대 이후 대기업은 정체, 저업력 중소기업은 크게 둔화된 것으로 나타남",
+   "aliases": [],
+   "docs": [
+    "doc07"
+   ]
+  },
+  {
+   "id": "R&D 투자",
+   "type": "Concept",
+   "description": "대기업이 적극적으로 수행하는 연구개발 투자로, 양적 혁신실적 증가를 이끌었으나 질적 개선으로는 이어지지 못함",
+   "aliases": [],
+   "docs": [
+    "doc08",
+    "doc18"
+   ]
+  },
+  {
+   "id": "Hall et al. 2001",
+   "type": "Product",
+   "description": "특허피인용건수를 혁신실적의 질을 나타내는 지표로 활용한 선행연구",
+   "aliases": [],
+   "docs": [
+    "doc08"
+   ]
+  },
+  {
+   "id": "Hall et al. 2005",
+   "type": "Product",
+   "description": "특허피인용건수가 높은 기업일수록 지식자본스톡이 늘어나 기업가치가 상승함을 실증 분석한 선행연구",
+   "aliases": [],
+   "docs": [
+    "doc08"
+   ]
+  },
+  {
+   "id": "Akcigit et al. 2021",
+   "type": "Product",
+   "description": "특허피인용건수를 기업생산성 증가폭의 대리변수로 활용하여 기업연구활동의 거시경제적 영향을 추정한 선행연구",
+   "aliases": [
+    "Akcigit et al.(2021)"
+   ],
+   "docs": [
+    "doc08",
+    "doc12",
+    "doc16"
+   ]
+  },
+  {
+   "id": "미국",
+   "type": "Location",
+   "description": "2011~15년 중 특허 건당 피인용건수가 5.0건으로 우리나라보다 높은 국가",
+   "aliases": [],
+   "docs": [
+    "doc08",
+    "doc13"
+   ]
+  },
+  {
+   "id": "네덜란드",
+   "type": "Location",
+   "description": "2011~15년 중 특허 건당 피인용건수가 3.7건으로 우리나라보다 높은 국가",
+   "aliases": [],
+   "docs": [
+    "doc08"
+   ]
+  },
+  {
+   "id": "스위스",
+   "type": "Location",
+   "description": "2011~15년 중 특허 건당 피인용건수가 2.8건으로 우리나라보다 높은 국가",
+   "aliases": [],
+   "docs": [
+    "doc08"
+   ]
+  },
+  {
+   "id": "한국기업혁신조사",
+   "type": "Product",
+   "description": "저업력 중소기업의 혁신저해요인 등을 조사한 원시자료 데이터베이스",
+   "aliases": [],
+   "docs": [
+    "doc09"
+   ]
+  },
+  {
+   "id": "연구활동조사",
+   "type": "Product",
+   "description": "기업 규모별 R&D 지출 현황을 조사한 통계자료",
+   "aliases": [],
+   "docs": [
+    "doc09"
+   ]
+  },
+  {
+   "id": "신생기업",
+   "type": "Organization",
+   "description": "설립 후 8년 내에 미국특허를 출원한 혁신잠재력을 갖춘 기업으로, 2010년대 이후 진입이 감소",
+   "aliases": [],
+   "docs": [
+    "doc09"
+   ]
+  },
+  {
+   "id": "외부자금 부족",
+   "type": "Concept",
+   "description": "저업력 중소기업이 혁신저해요인으로 응답한 항목으로, 제조업 기준 2007년 9.9%에서 2021년 45.4%로 증가",
+   "aliases": [],
+   "docs": [
+    "doc09"
+   ]
+  },
+  {
+   "id": "내부자금 부족",
+   "type": "Concept",
+   "description": "저업력 중소기업이 혁신저해요인으로 응답한 항목으로, 제조업 기준 2007년 12.8%에서 2021년 77.6%로 증가",
+   "aliases": [],
+   "docs": [
+    "doc09"
+   ]
+  },
+  {
+   "id": "미국특허",
+   "type": "Concept",
+   "description": "혁신잠재력의 지표로 사용되는 특허로, 저업력 중소기업 중 출원 신생기업 비중이 2010년대 이후 10% 미만으로 감소",
+   "aliases": [],
+   "docs": [
+    "doc09"
+   ]
+  },
+  {
+   "id": "벤처기업육성에 관한 특별조치법",
+   "type": "Policy",
+   "description": "혁신기업 중 저업력 중소기업 분류 기준으로 활용된 법률",
+   "aliases": [],
+   "docs": [
+    "doc09"
+   ]
+  },
+  {
+   "id": "Nelson 1959",
+   "type": "Product",
+   "description": "기초연구가 기업이 신기술 분야의 선도자로 도약하기 위한 학술기반을 제공한다는 것을 제시한 선행연구",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "Fabrizio 2009",
+   "type": "Product",
+   "description": "기초연구가 기업이 대학 등 외부기관에서 생산한 기술·지식을 습득할 수 있는 수용력을 높여준다는 것을 제시한 선행연구",
+   "aliases": [],
+   "docs": [
+    "doc10",
+    "doc12"
+   ]
+  },
+  {
+   "id": "Hicks 1995",
+   "type": "Product",
+   "description": "기초연구가 기업이 유능한 연구자를 유치하는 데 도움을 준다는 것을 제시한 선행연구",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "Mansfield 1980",
+   "type": "Product",
+   "description": "기초연구가 혁신실적의 질을 제고하고 기업 생산성을 높인다는 것을 실증 분석한 선행연구",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "Griliches 1986",
+   "type": "Product",
+   "description": "기초연구가 혁신실적의 질을 제고하고 기업 생산성을 높인다는 것을 실증 분석한 선행연구",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "Arora et al. 2017",
+   "type": "Product",
+   "description": "글로벌 금융위기 이후 기업의 R&D 구성 변화에 관한 선행연구",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "Mezzanotti·Simcoe 2023",
+   "type": "Product",
+   "description": "글로벌 금융위기 이후 기업의 R&D 구성 변화에 관한 선행연구",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "Jones·Summers 2022",
+   "type": "Product",
+   "description": "기초연구의 양의 외부효과로 인해 전체 사회후생 측면에서의 가치가 개별기업 입장에서의 가치보다 높다는 것을 분석한 선행연구",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "모태펀드",
+   "type": "Organization",
+   "description": "정부 벤처캐피탈의 일환으로 언급된 정책 펀드",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "산업은행",
+   "type": "Organization",
+   "description": "정부 벤처캐피탈의 일환으로 언급된 정책금융기관",
+   "aliases": [],
+   "docs": [
+    "doc10"
+   ]
+  },
+  {
+   "id": "벤처캐피탈 접근성 지표",
+   "type": "Concept",
+   "description": "세계경제포럼이 기업가 대상 설문조사를 통해 산출하는 벤처캐피탈 접근 가능성 지표",
+   "aliases": [],
+   "docs": [
+    "doc11",
+    "doc13"
+   ]
+  },
+  {
+   "id": "세계경제포럼",
+   "type": "Organization",
+   "description": "기업가 대상 설문조사를 통해 벤처캐피탈 접근성 지표를 산출하는 국제기구",
+   "aliases": [],
+   "docs": [
+    "doc11",
+    "doc13"
+   ]
+  },
+  {
+   "id": "정부 벤처캐피탈",
+   "type": "Concept",
+   "description": "투자촉진을 위한 마중물 역할을 수행하는 정부 주도의 벤처캐피탈로, 2010년대 중반 이후 벤처캐피탈 투자 증가를 주도",
+   "aliases": [],
+   "docs": [
+    "doc11",
+    "doc14"
+   ]
+  },
+  {
+   "id": "Jeff Bezos",
+   "type": "Person",
+   "description": "Amazon을 창업한 미국의 혁신창업가",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "Amazon",
+   "type": "Organization",
+   "description": "Jeff Bezos가 1990년대 이후 창업하여 현재 미국 시가총액 10위권으로 성장한 기업",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "Larry Page",
+   "type": "Person",
+   "description": "Sergey Brin과 함께 Google을 창업한 미국의 혁신창업가",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "Sergey Brin",
+   "type": "Person",
+   "description": "Larry Page와 함께 Google을 창업한 미국의 혁신창업가",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "Google",
+   "type": "Organization",
+   "description": "Larry Page와 Sergey Brin이 1990년대 이후 창업하여 현재 미국 시가총액 10위권으로 성장한 기업",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "Elon Musk",
+   "type": "Person",
+   "description": "Tesla를 창업한 미국의 혁신창업가",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "Tesla",
+   "type": "Organization",
+   "description": "Elon Musk가 1990년대 이후 창업하여 현재 미국 시가총액 10위권으로 성장한 기업",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "LG에너지솔루션",
+   "type": "Organization",
+   "description": "1947년 LG화학으로 설립된 우리나라 시가총액 상위 제조업 대기업",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "삼성바이오로직스",
+   "type": "Organization",
+   "description": "2011년 설립된 우리나라 시가총액 상위 기업",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "BCG",
+   "type": "Organization",
+   "description": "경영진 설문조사 결과와 주가수익률 등을 기준으로 글로벌 혁신기업을 선정하는 Boston Consulting Group",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "Levine·Rubinstein(2017)",
+   "type": "Product",
+   "description": "미국에서 대규모 사업체를 운영하는 창업가가 학창시절 인지능력이 우수하고 이단아 기질이 강했다는 분석을 담은 연구",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "박용린외 2017",
+   "type": "Product",
+   "description": "정부 벤처캐피탈과 민간 벤처캐피탈의 역할 차이를 분석한 연구",
+   "aliases": [],
+   "docs": [
+    "doc11"
+   ]
+  },
+  {
+   "id": "혁신실적",
+   "type": "Concept",
+   "description": "기업의 R&D 활동 결과로 나타나는 성과로, 양적 지표(특허출원건수)와 질적 지표(특허피인용건수, 범용성, 독창성)로 구분됨",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "특허범용성",
+   "type": "Concept",
+   "description": "혁신실적의 질적 지표 중 하나로, 특허가 다양한 분야에 활용될 수 있는 정도를 나타냄",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "특허독창성",
+   "type": "Concept",
+   "description": "혁신실적의 질적 지표 중 하나로, 특허가 얼마나 독창적인지를 나타냄",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "기초연구 지식스톡",
+   "type": "Concept",
+   "description": "기업이 논문발간건수를 통해 축적한 기초연구 지식의 저량(stock) 변수로, 전년도 지식스톡에서 감가상각분(15%)을 제외하고 금년 생산 지식분을 더하는 방식으로 산출됨",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "응용연구 지식스톡",
+   "type": "Concept",
+   "description": "기업이 특허출원건수를 통해 축적한 응용연구 지식의 저량(stock) 변수로, 전년도 지식스톡에서 감가상각분(15%)을 제외하고 금년 생산 지식분을 더하는 방식으로 산출됨",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "기업패널분석",
+   "type": "Concept",
+   "description": "선행연구를 참고하여 종속변수를 혁신실적의 양적·질적 지표로, 설명변수를 기업의 기초연구·응용연구 지식스톡으로 설정한 실증분석 방법",
+   "aliases": [],
+   "docs": [
+    "doc12",
+    "doc14"
+   ]
+  },
+  {
+   "id": "OpenAlex",
+   "type": "Technology",
+   "description": "기업패널분석에 사용된 대규모 개별기업 수준 데이터 출처 중 하나",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "Roper·Hewitt-Dundas 2015",
+   "type": "Event",
+   "description": "기업패널분석 설계에 참고된 선행연구",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "Adams·Clemmons 2008",
+   "type": "Event",
+   "description": "지식스톡 산출 방식(전년도 지식스톡에서 감가상각분 제외 후 금년 생산 지식분 추가)의 근거로 인용된 선행연구",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "Munari et al. 2022",
+   "type": "Event",
+   "description": "기업이 축적된 지식을 이용해 새로운 혁신을 만들기까지 3년의 시차를 적용한 근거로 인용된 선행연구",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "Akcigit·Goldschlag 2023",
+   "type": "Event",
+   "description": "시장주도기업이 응용연구를 주로 수행하려는 경향이 있다는 근거로 인용된 선행연구",
+   "aliases": [],
+   "docs": [
+    "doc12"
+   ]
+  },
+  {
+   "id": "M&A",
+   "type": "Concept",
+   "description": "벤처캐피탈 투자자가 투자금을 회수하는 방법 중 하나로, 우리나라는 분석 대상 32개국 중 17위로 하위그룹에 속함",
+   "aliases": [],
+   "docs": [
+    "doc13",
+    "doc17"
+   ]
+  },
+  {
+   "id": "IPO",
+   "type": "Concept",
+   "description": "벤처캐피탈 투자자가 투자금을 회수하는 방법 중 하나로, 우리나라는 분석 대상 32개국 중 12위로 상위그룹에 속함",
+   "aliases": [],
+   "docs": [
+    "doc13"
+   ]
+  },
+  {
+   "id": "국가패널분석",
+   "type": "Concept",
+   "description": "1986~2020년 미국 내 출원특허수 기준 상위 32개국을 대상으로 벤처캐피탈 접근성과 기업 혁신실적 간 관계를 분석한 실증분석 방법",
+   "aliases": [],
+   "docs": [
+    "doc13"
+   ]
+  },
+  {
+   "id": "대한민국",
+   "type": "Location",
+   "description": "분석 대상 32개국에 포함된 국가로, 2020년 기준 벤처캐피탈 접근성 지표가 3.4점이며 IPO 시장은 상위그룹, M&A 시장은 하위그룹에 속함",
+   "aliases": [],
+   "docs": [
+    "doc13"
+   ]
+  },
+  {
+   "id": "Schnitzer·Watzinger 2022",
+   "type": "Product",
+   "description": "벤처캐피탈 투자를 받은 기업이 높은 파급력을 갖는 혁신실적을 생산하며 미투자 기업의 혁신에도 긍정적 영향을 미친다는 것을 분석한 선행연구",
+   "aliases": [],
+   "docs": [
+    "doc13"
+   ]
+  },
+  {
+   "id": "독립 벤처캐피탈",
+   "type": "Organization",
+   "description": "기술평가 등의 전문성을 갖춘 개인 또는 기관 투자자가 자본을 출자하여 기술기업에 투자하는 가장 일반적인 형태의 벤처캐피탈로, IPO·M&A를 통한 투자차익 실현이 주된 목표임",
+   "aliases": [],
+   "docs": [
+    "doc14",
+    "doc18"
+   ]
+  },
+  {
+   "id": "기업 벤처캐피탈",
+   "type": "Organization",
+   "description": "모기업이 자본을 출자하여 기술기업에 투자하는 벤처캐피탈로, 사업 다각화·신시장 개척 등 모기업의 전략적 이익 확대가 주된 목표이며 투자기업과 기술노하우·자원을 공유함",
+   "aliases": [],
+   "docs": [
+    "doc14",
+    "doc18"
+   ]
+  },
+  {
+   "id": "은행 벤처캐피탈",
+   "type": "Organization",
+   "description": "은행이 자본을 출자하여 기술기업에 투자하는 벤처캐피탈로, 자금동원력에서 장점을 갖지만 기술전문성 부족과 위험회피적 성향으로 인해 특허출원건수와 피인용건수를 오히려 하락시키는 것으로 나타남",
+   "aliases": [],
+   "docs": [
+    "doc14"
+   ]
+  },
+  {
+   "id": "Grilli·Murtinu 2014",
+   "type": "Event",
+   "description": "정부 벤처투자자의 투자가 기업의 특허실적·매출·고용 등에 유의한 영향을 미치지 못함을 분석한 선행연구",
+   "aliases": [],
+   "docs": [
+    "doc14"
+   ]
+  },
+  {
+   "id": "Bertoni·Tykvova 2015",
+   "type": "Event",
+   "description": "정부 벤처투자자의 투자가 기업 혁신실적에 유의한 영향을 미치지 못함을 분석한 선행연구",
+   "aliases": [],
+   "docs": [
+    "doc14"
+   ]
+  },
+  {
+   "id": "Alperovych et al. 2015",
+   "type": "Event",
+   "description": "정부 벤처투자자의 투자가 기업 혁신실적에 유의한 영향을 미치지 못함을 분석한 선행연구",
+   "aliases": [],
+   "docs": [
+    "doc14"
+   ]
+  },
+  {
+   "id": "한국교육종단연구2005",
+   "type": "Product",
+   "description": "2005년 당시 중1 학생(주로 만 13세)의 교육 및 취업상황을 매년 추적·조사한 종단연구 원시자료",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "비동조 지수",
+   "type": "Concept",
+   "description": "중학교 재학 당시 지각, 복장 위반 등에 관한 설문 결과로 산출한 이단아 기질의 대리변수",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "다항로짓모형",
+   "type": "Technology",
+   "description": "인지능력 및 비동조 성향이 성인기 창업 여부 및 의향에 미치는 영향을 추정하기 위해 사용한 통계 분석 모형",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "황금티켓증후군",
+   "type": "Concept",
+   "description": "OECD(2022)가 묘사한 개념으로, 우리나라 청년이 전문직·대기업·공공부문 등 좋은 일자리에 안착하기 위해 치열하게 경쟁하는 현상",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "트렌드모니터",
+   "type": "Organization",
+   "description": "2019년 창업 관련 설문조사를 실시하여 실패에 대한 부정적 인식을 조사한 기관",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "단일기회방식",
+   "type": "Concept",
+   "description": "사회경력 초반의 성과가 인생 전체의 소득수준과 고용안정성을 결정하는 사회구조 방식으로, 황금티켓증후군의 원인으로 지목됨",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "수학성취도 검사점수",
+   "type": "Concept",
+   "description": "중1 당시 수학성취도 검사점수로, 인지능력의 대리변수로 활용됨",
+   "aliases": [],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "구조모형",
+   "type": "Technology",
+   "description": "혁신정책이 경제성장 및 사회후생에 미치는 피드백효과를 분석하는 데 사용되는 계량 분석 모형",
+   "aliases": [],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "내생적 성장이론",
+   "type": "Concept",
+   "description": "혁신을 장기적인 생산성 결정요인으로 보는 경제성장 이론",
+   "aliases": [],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "공공연구기관",
+   "type": "Organization",
+   "description": "대학 등 기초연구를 수행하며 정부의 직접 자금지원을 받는 연구기관",
+   "aliases": [],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "시나리오 ①",
+   "type": "Policy",
+   "description": "기업의 기초연구 및 응용연구에 대한 보조금 지급률을 일률적으로 2배 인상하는 정책 시나리오",
+   "aliases": [],
+   "docs": [
+    "doc16",
+    "doc17"
+   ]
+  },
+  {
+   "id": "시나리오 ②",
+   "type": "Policy",
+   "description": "기업의 기초연구에 대해서만 보조금 지급률을 3배 인상하는 정책 시나리오",
+   "aliases": [],
+   "docs": [
+    "doc16",
+    "doc17"
+   ]
+  },
+  {
+   "id": "시나리오 ③",
+   "type": "Policy",
+   "description": "기업의 기초·응용연구 보조금을 1.5배 인상하고 공공연구기관의 기초연구 직접자금지원도 1.5배 확대하는 정책 시나리오",
+   "aliases": [],
+   "docs": [
+    "doc16",
+    "doc17"
+   ]
+  },
+  {
+   "id": "시나리오 ④",
+   "type": "Policy",
+   "description": "시나리오 ③에 더해 기업과 공공연구기관 간 연구협력을 강화하여 공공연구기관의 기초연구 성과가 즉각 기업 생산에 적용되도록 하는 정책 시나리오",
+   "aliases": [],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "상아탑 효과",
+   "type": "Concept",
+   "description": "공공연구기관의 기초연구 성과가 상용화되기까지 일정 시간이 소요되는 현상",
+   "aliases": [],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "프랑스",
+   "type": "Location",
+   "description": "Akcigit et al.(2021)의 분석 대상 국가로, 규모별 기업의 기초연구 현황을 우리나라 모형 추정에 준용한 국가",
+   "aliases": [],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "혁신신생기업 육성 정책",
+   "type": "Policy",
+   "description": "혁신신생기업의 혁신자금 공급여건 개선 및 혁신인재 양성을 목표로 하는 정책으로, 경제성장과 사회후생 향상에 기여하는 것으로 분석되었다.",
+   "aliases": [],
+   "docs": [
+    "doc17"
+   ]
+  },
+  {
+   "id": "그림 4.2",
+   "type": "Product",
+   "description": "혁신신생기업 육성정책의 시나리오별 경제적 효과를 나타낸 도표로, 경제전망보고서에 수록되어 있다.",
+   "aliases": [],
+   "docs": [
+    "doc17"
+   ]
+  },
+  {
+   "id": "혁신클러스터",
+   "type": "Concept",
+   "description": "중소기업이 기초연구 성과를 흡수·활용할 수 있도록 지원하는 혁신 생태계 조성 방안 중 하나이다.",
+   "aliases": [],
+   "docs": [
+    "doc18"
+   ]
+  },
+  {
+   "id": "STEM",
+   "type": "Concept",
+   "description": "과학·기술·공학·수학을 의미하며, 우리나라 혁신을 이끌어갈 인재 양성을 위해 청소년의 STEM 직업 경험 확대 등 교육여건 확충이 필요하다.",
+   "aliases": [],
+   "docs": [
+    "doc18",
+    "doc19"
+   ]
+  },
+  {
+   "id": "혁신신생기업",
+   "type": "Organization",
+   "description": "혁신잠재력을 갖춘 신생기업으로, 글로벌 금융위기 이후 진입이 크게 감소한 것으로 분석되었다.",
+   "aliases": [],
+   "docs": [
+    "doc18"
+   ]
+  },
+  {
+   "id": "산학협력",
+   "type": "Concept",
+   "description": "중소기업이 기초연구 성과를 흡수·활용할 수 있도록 지원하는 방안 중 하나로 확대가 필요하다고 제시되었다.",
+   "aliases": [],
+   "docs": [
+    "doc18"
+   ]
+  },
+  {
+   "id": "노동시장 유연성",
+   "type": "Policy",
+   "description": "실패에 따른 리스크를 줄이고 고수익·고위험 혁신활동을 장려하기 위해 확대가 필요한 사회구조적 요소이다.",
+   "aliases": [],
+   "docs": [
+    "doc18"
+   ]
+  },
+  {
+   "id": "한국교육종단연구2013",
+   "type": "Product",
+   "description": "2013년 당시 초등학교 5학년 학생의 교육 및 취업 상황을 매년 추적·조사한 종단연구 원시자료이다.",
+   "aliases": [],
+   "docs": [
+    "doc19"
+   ]
+  },
+  {
+   "id": "선형확률모형",
+   "type": "Technology",
+   "description": "여성의 대학 진학 시 STEM 전공 선호를 결정하는 요인을 분석하기 위해 사용된 통계 추정 방법론이다.",
+   "aliases": [],
+   "docs": [
+    "doc19"
+   ]
+  },
+  {
+   "id": "여성의 STEM 전공 선호 결정요인 분석",
+   "type": "Concept",
+   "description": "인지능력 및 STEM 분야 직업노출도가 여성의 STEM 전공 선호에 미치는 영향을 실증 분석한 연구이다.",
+   "aliases": [],
+   "docs": [
+    "doc19"
+   ]
+  },
+  {
+   "id": "STEM 직업노출도",
+   "type": "Concept",
+   "description": "부친의 STEM 분야 종사 여부를 대리변수로 활용하여 측정한 STEM 직업에 대한 노출 정도이다.",
+   "aliases": [],
+   "docs": [
+    "doc19"
+   ]
+  },
+  {
+   "id": "인지능력",
+   "type": "Concept",
+   "description": "초등학교 5학년 당시 수학성취도 검사점수를 대리변수로 사용하여 측정한 학생의 인지적 역량이다.",
+   "aliases": [],
+   "docs": [
+    "doc19"
+   ]
+  },
+  {
+   "id": "일본",
+   "type": "Location",
+   "description": "전체 연구개발인력 중 여성 비중이 한국보다 낮아 OECD 회원국 중 가장 낮은 순위를 기록한 국가이다.",
+   "aliases": [],
+   "docs": [
+    "doc19"
+   ]
+  },
+  {
+   "id": "한국",
+   "type": "Location",
+   "description": "2021년 기준 대학 STEM 전공 대졸자 중 여성 비중이 26.5%로 OECD 회원국 중 4번째로 낮은 국가이다.",
+   "aliases": [],
+   "docs": [
+    "doc19"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "source": "한국은행",
+   "type": "PUBLISHED",
+   "target": "경제전망보고서(2024.5)",
+   "description": "한국은행이 2024년 5월 경제전망보고서를 발간하여 기업 혁신활동 분석 및 평가를 수록함",
+   "doc": "doc01"
+  },
+  {
+   "source": "혁신기업",
+   "type": "ACCOUNTS_FOR",
+   "target": "R&D 지출",
+   "description": "혁신기업은 전체 기업 R&D 지출의 72% 내외(2011~2020년 평균)를 담당함",
+   "doc": "doc01"
+  },
+  {
+   "source": "대기업",
+   "type": "LEADS",
+   "target": "R&D 지출",
+   "description": "대기업은 전체 R&D 지출 증가를 주도함",
+   "doc": "doc01"
+  },
+  {
+   "source": "대기업",
+   "type": "HAS_STAGNANT",
+   "target": "생산성증가율",
+   "description": "대기업은 R&D 지출 증가를 주도했으나 생산성 성장세는 정체됨",
+   "doc": "doc01"
+  },
+  {
+   "source": "기초연구",
+   "type": "AFFECTS_QUALITY_OF",
+   "target": "특허출원",
+   "description": "기초연구는 선도적 기술개발의 기반인 혁신의 질과 밀접하게 연관됨",
+   "doc": "doc01"
+  },
+  {
+   "source": "응용연구",
+   "type": "INCREASES_QUANTITY_OF",
+   "target": "특허출원",
+   "description": "응용연구는 혁신실적의 양을 늘리는 데 효과적임",
+   "doc": "doc01"
+  },
+  {
+   "source": "벤처캐피탈",
+   "type": "IMPROVES",
+   "target": "혁신기업",
+   "description": "벤처캐피탈 접근성이 높을수록 혁신실적이 개선되는 효과가 있음",
+   "doc": "doc01"
+  },
+  {
+   "source": "투자회수시장",
+   "type": "ENABLES_EFFECT_OF",
+   "target": "벤처캐피탈",
+   "description": "벤처캐피탈의 혁신실적 제고 효과는 투자회수시장(M&A, IPO)이 발전되어야 거둘 수 있음",
+   "doc": "doc01"
+  },
+  {
+   "source": "민간벤처캐피탈",
+   "type": "HAS_STRONGER_EFFECT_THAN",
+   "target": "벤처캐피탈",
+   "description": "민간벤처캐피탈의 혁신실적 제고 효과가 정부 주도 벤처캐피탈보다 보다 뚜렷함",
+   "doc": "doc01"
+  },
+  {
+   "source": "혁신창업가",
+   "type": "DRIVES",
+   "target": "혁신기업",
+   "description": "혁신창업가의 육성여건 미비가 혁신 신생기업 진입 감소에 영향을 미침",
+   "doc": "doc01"
+  },
+  {
+   "source": "초저출산·초고령화",
+   "type": "REQUIRES",
+   "target": "생산성증가율",
+   "description": "초저출산·초고령화에 대응하기 위해 생산성 제고가 필요함",
+   "doc": "doc01"
+  },
+  {
+   "source": "기초연구",
+   "type": "IMPACTS",
+   "target": "생산성증가율",
+   "description": "기초연구 강화 시 경제성장률 및 사회후생이 각각 0.2%p, 1.3% 개선되는 것으로 분석됨",
+   "doc": "doc01"
+  },
+  {
+   "source": "중소기업",
+   "type": "HAS_STAGNANT",
+   "target": "생산성증가율",
+   "description": "업력 하위 20% 중소기업은 2010년대 이후 생산성 증가세가 크게 둔화됨",
+   "doc": "doc01"
+  },
+  {
+   "source": "벤처캐피탈",
+   "type": "AFFECTS",
+   "target": "중소기업",
+   "description": "혁신자금 조달의 어려움 가중이 중소기업의 생산성 둔화에 영향을 미침",
+   "doc": "doc01"
+  },
+  {
+   "source": "한국은행",
+   "type": "PUBLISHED",
+   "target": "경제전망보고서(2024.5)",
+   "description": "한국은행이 2024년 5월 경제전망보고서를 발간하였다.",
+   "doc": "doc02"
+  },
+  {
+   "source": "통계청",
+   "type": "PUBLISHED",
+   "target": "장래인구추계",
+   "description": "통계청이 2023년 12월 장래인구추계를 발표하였다.",
+   "doc": "doc02"
+  },
+  {
+   "source": "장래인구추계",
+   "type": "PROJECTS_POPULATION_OF",
+   "target": "우리나라",
+   "description": "장래인구추계 중위가정에 따르면 우리나라 총인구는 2020년 5,184만명 정점 이후 감소하여 2070년 3,718만명으로 줄어들 것으로 예상된다.",
+   "doc": "doc02"
+  },
+  {
+   "source": "초저출산·초고령화",
+   "type": "WEAKENS",
+   "target": "성장잠재력",
+   "description": "우리나라의 초저출산·초고령화로 인해 성장잠재력이 빠르게 약화되고 있다.",
+   "doc": "doc02"
+  },
+  {
+   "source": "혁신",
+   "type": "PROMOTES",
+   "target": "성장잠재력",
+   "description": "혁신을 촉진함으로써 성장잠재력 약화에 대응할 수 있다.",
+   "doc": "doc02"
+  },
+  {
+   "source": "연구개발(R&D)",
+   "type": "ENABLES",
+   "target": "혁신",
+   "description": "연구개발(R&D)을 통해 지식을 축적하고 혁신을 실현한다.",
+   "doc": "doc02"
+  },
+  {
+   "source": "혁신",
+   "type": "LEADS_TO",
+   "target": "기술진보",
+   "description": "혁신은 기술진보를 통해 장기 성장을 이끄는 주된 동력이다.",
+   "doc": "doc02"
+  },
+  {
+   "source": "혁신",
+   "type": "LEADS_TO",
+   "target": "창조적 파괴",
+   "description": "혁신은 창조적 파괴(기존 혁신 대체)를 통해 장기 성장에 기여한다.",
+   "doc": "doc02"
+  },
+  {
+   "source": "Aghion·Howitt 1992",
+   "type": "ANALYZES",
+   "target": "혁신",
+   "description": "Aghion·Howitt(1992)는 혁신이 기술진보와 창조적 파괴를 통해 장기 성장을 이끄는 주된 동력임을 분석하였다.",
+   "doc": "doc02"
+  },
+  {
+   "source": "기술진보",
+   "type": "EXPANDS",
+   "target": "인적자본",
+   "description": "의료기술 발전 등 기술진보는 기대수명 연장과 인적자본의 양과 질 향상에 기여한다.",
+   "doc": "doc02"
+  },
+  {
+   "source": "혁신",
+   "type": "IMPROVES",
+   "target": "인적자본",
+   "description": "혁신은 의료기술 발전, 생활가전, 교육의 신기술 활용 등을 통해 인적자본의 양과 질을 늘린다.",
+   "doc": "doc02"
+  },
+  {
+   "source": "우리나라",
+   "type": "FACES",
+   "target": "초저출산·초고령화",
+   "description": "우리나라는 미증유의 초저출산·초고령화 문제에 직면해 있다.",
+   "doc": "doc02"
+  },
+  {
+   "source": "경제전망보고서(2024.5)",
+   "type": "CONTAINS_RESEARCH_ON",
+   "target": "혁신",
+   "description": "경제전망보고서(2024.5)는 우리나라 기업의 혁신활동 분석 및 평가를 중장기 심층연구로 포함하고 있다.",
+   "doc": "doc02"
+  },
+  {
+   "source": "한국은행",
+   "type": "PUBLISHED",
+   "target": "우리나라",
+   "description": "한국은행은 경제전망보고서(2024.5)를 통해 우리나라 기업의 혁신활동을 분석·평가함",
+   "doc": "doc03"
+  },
+  {
+   "source": "우리나라",
+   "type": "RANKED_IN",
+   "target": "R&D 지출",
+   "description": "우리나라는 2022년 GDP 대비 R&D 지출 5.2%로 OECD 회원국 중 이스라엘에 이어 2위를 기록함",
+   "doc": "doc03"
+  },
+  {
+   "source": "이스라엘",
+   "type": "RANKED_IN",
+   "target": "R&D 지출",
+   "description": "이스라엘은 2022년 GDP 대비 R&D 지출 6.0%로 OECD 회원국 중 1위를 차지함",
+   "doc": "doc03"
+  },
+  {
+   "source": "우리나라",
+   "type": "RANKED_IN",
+   "target": "특허출원",
+   "description": "우리나라는 2020년 현재 미국 특허청 특허출원 건수 세계 4위를 차지하며 독일, 영국 등을 추월함",
+   "doc": "doc03"
+  },
+  {
+   "source": "삼성전자",
+   "type": "RANKED_IN",
+   "target": "특허출원",
+   "description": "삼성전자는 2023년 미국 내 특허출원 건수 1위를 차지한 우리나라 기업임",
+   "doc": "doc03"
+  },
+  {
+   "source": "LG전자",
+   "type": "RANKED_IN",
+   "target": "특허출원",
+   "description": "LG전자는 2023년 미국 내 특허출원 건수 2위를 차지한 우리나라 기업임",
+   "doc": "doc03"
+  },
+  {
+   "source": "현대자동차",
+   "type": "RANKED_IN",
+   "target": "특허출원",
+   "description": "현대자동차는 2023년 미국 내 특허출원 건수 상위 25위권 중 15위를 차지함",
+   "doc": "doc03"
+  },
+  {
+   "source": "SK하이닉스",
+   "type": "RANKED_IN",
+   "target": "특허출원",
+   "description": "SK하이닉스는 2023년 미국 내 특허출원 건수 상위 25위권 중 24위를 차지함",
+   "doc": "doc03"
+  },
+  {
+   "source": "USPTO",
+   "type": "MEASURES",
+   "target": "특허출원",
+   "description": "미국 특허청은 글로벌 경쟁력을 갖춘 혁신실적을 측정하는 객관적 지표로 특허출원 건수를 집계함",
+   "doc": "doc03"
+  },
+  {
+   "source": "삼성전자",
+   "type": "LOCATED_IN",
+   "target": "우리나라",
+   "description": "삼성전자는 우리나라 기업으로 글로벌 특허 경쟁에서 뛰어난 성적을 거두고 있음",
+   "doc": "doc03"
+  },
+  {
+   "source": "LG전자",
+   "type": "LOCATED_IN",
+   "target": "우리나라",
+   "description": "LG전자는 우리나라 기업으로 글로벌 특허 경쟁에서 뛰어난 성적을 거두고 있음",
+   "doc": "doc03"
+  },
+  {
+   "source": "현대자동차",
+   "type": "LOCATED_IN",
+   "target": "우리나라",
+   "description": "현대자동차는 우리나라 기업으로 미국 특허출원 상위 25위권에 속해 있음",
+   "doc": "doc03"
+  },
+  {
+   "source": "SK하이닉스",
+   "type": "LOCATED_IN",
+   "target": "우리나라",
+   "description": "SK하이닉스는 우리나라 기업으로 미국 특허출원 상위 25위권에 속해 있음",
+   "doc": "doc03"
+  },
+  {
+   "source": "Global Innovation Index",
+   "type": "EVALUATES",
+   "target": "우리나라",
+   "description": "GII 평가에서 우리나라는 상승세를 이어왔음",
+   "doc": "doc03"
+  },
+  {
+   "source": "국가과학기술혁신역량평가",
+   "type": "EVALUATES",
+   "target": "우리나라",
+   "description": "COSTII 평가에서 우리나라는 상승세를 이어왔음",
+   "doc": "doc03"
+  },
+  {
+   "source": "OECD",
+   "type": "EVALUATES",
+   "target": "우리나라",
+   "description": "OECD는 2023년 우리나라의 혁신활동이 투입 및 산출 측면에서 모두 빠르게 제고되어온 것으로 평가함",
+   "doc": "doc03"
+  },
+  {
+   "source": "한국은행",
+   "type": "PUBLISHED",
+   "target": "경제전망보고서(2024.5)",
+   "description": "한국은행이 2024년 5월 경제전망보고서를 발간하였다.",
+   "doc": "doc04"
+  },
+  {
+   "source": "글로벌 금융위기",
+   "type": "CAUSED",
+   "target": "총요소생산성",
+   "description": "글로벌 금융위기 이후 우리나라를 포함한 다수 국가에서 총요소생산성 증가세가 낮아졌다.",
+   "doc": "doc04"
+  },
+  {
+   "source": "혁신기업",
+   "type": "ACCOUNTS_FOR",
+   "target": "R&D 지출",
+   "description": "혁신기업은 전체 기업 R&D 지출의 72% 내외(2011~20년 평균)를 담당하였다.",
+   "doc": "doc04"
+  },
+  {
+   "source": "대기업",
+   "type": "LEADS",
+   "target": "R&D 지출",
+   "description": "대기업은 전체 R&D 지출 증가를 주도하였다.",
+   "doc": "doc04"
+  },
+  {
+   "source": "대기업",
+   "type": "HAS_STAGNANT",
+   "target": "총요소생산성",
+   "description": "대기업은 R&D 지출 증가를 주도했으나 생산성 성장세는 정체되었다.",
+   "doc": "doc04"
+  },
+  {
+   "source": "특허출원건수",
+   "type": "MEASURES",
+   "target": "혁신기업",
+   "description": "특허출원건수는 혁신기업의 혁신실적 양을 측정하는 지표이다.",
+   "doc": "doc04"
+  },
+  {
+   "source": "특허피인용건수",
+   "type": "MEASURES",
+   "target": "혁신기업",
+   "description": "특허피인용건수는 혁신기업의 혁신실적 질을 측정하는 지표이다.",
+   "doc": "doc04"
+  },
+  {
+   "source": "기초연구",
+   "type": "AFFECTS",
+   "target": "특허피인용건수",
+   "description": "기초연구는 선도적 기술개발의 기반인 혁신의 질(특허피인용건수 등)과 밀접한 것으로 분석되었다.",
+   "doc": "doc04"
+  },
+  {
+   "source": "응용연구",
+   "type": "AFFECTS",
+   "target": "특허출원건수",
+   "description": "응용연구는 혁신실적의 양(특허출원건수)을 늘리는 데 효과적인 것으로 분석되었다.",
+   "doc": "doc04"
+  },
+  {
+   "source": "벤처캐피탈",
+   "type": "IMPROVES",
+   "target": "혁신기업",
+   "description": "벤처캐피탈 접근성이 높을수록 혁신실적이 개선되는 것으로 실증분석 결과 나타났다.",
+   "doc": "doc04"
+  },
+  {
+   "source": "투자회수시장",
+   "type": "ENABLES",
+   "target": "벤처캐피탈",
+   "description": "벤처캐피탈의 혁신실적 제고 효과는 투자회수시장(M&A, IPO)이 발전되어야 거둘 수 있었다.",
+   "doc": "doc04"
+  },
+  {
+   "source": "민간벤처캐피탈",
+   "type": "OUTPERFORMS",
+   "target": "벤처캐피탈",
+   "description": "민간 벤처캐피탈의 혁신실적 제고 효과가 공공 벤처캐피탈보다 보다 뚜렷하였다.",
+   "doc": "doc04"
+  },
+  {
+   "source": "M&A 시장",
+   "type": "PART_OF",
+   "target": "투자회수시장",
+   "description": "M&A 시장은 투자회수시장의 구성요소 중 하나이다.",
+   "doc": "doc04"
+  },
+  {
+   "source": "혁신창업가",
+   "type": "CHARACTERIZED_AS",
+   "target": "똑똑한 이단아",
+   "description": "미국의 경우 혁신창업가는 주로 학창시절 인지능력이 우수하고 틀에 얽매이기를 싫어하는 '똑똑한 이단아'였던 것으로 분석되었다.",
+   "doc": "doc04"
+  },
+  {
+   "source": "일반균형 구조모형",
+   "type": "USED_FOR",
+   "target": "경제전망보고서(2024.5)",
+   "description": "일반균형 구조모형을 이용한 시나리오 분석을 통해 주요 혁신정책이 경제성장률 및 사회후생에 미치는 영향을 추정하였다.",
+   "doc": "doc04"
+  },
+  {
+   "source": "최창호·이종호·함건 2018",
+   "type": "CITED_IN",
+   "target": "경제전망보고서(2024.5)",
+   "description": "기업 생산성 둔화 요인을 분석한 선행연구로 본고에 인용되었다.",
+   "doc": "doc04"
+  },
+  {
+   "source": "남충현·송상윤 2020",
+   "type": "CITED_IN",
+   "target": "경제전망보고서(2024.5)",
+   "description": "기업 생산성 둔화 요인을 분석한 선행연구로 본고에 인용되었다.",
+   "doc": "doc04"
+  },
+  {
+   "source": "정선영 2021",
+   "type": "CITED_IN",
+   "target": "경제전망보고서(2024.5)",
+   "description": "기업 생산성 둔화 요인을 분석한 선행연구로 본고에 인용되었다.",
+   "doc": "doc04"
+  },
+  {
+   "source": "중소기업",
+   "type": "EXPERIENCED",
+   "target": "총요소생산성",
+   "description": "업력 하위 20% 중소기업은 2010년대 이전 생산성 증가세가 가팔랐으나 이후 크게 둔화되었다.",
+   "doc": "doc04"
+  },
+  {
+   "source": "혁신기업",
+   "type": "EXPERIENCED",
+   "target": "총요소생산성",
+   "description": "혁신기업의 생산성 증가율은 2001~10년 연평균 8.2%에서 2011~20년 1.3%로 크게 둔화되었다.",
+   "doc": "doc04"
+  },
+  {
+   "source": "한국은행",
+   "type": "PUBLISHED",
+   "target": "기업 혁신활동",
+   "description": "한국은행은 경제전망보고서(2024.5)를 통해 기업 혁신활동 분석 및 평가 연구를 발표함",
+   "doc": "doc05"
+  },
+  {
+   "source": "기업 혁신활동",
+   "type": "CONSISTS_OF",
+   "target": "혁신추진결정",
+   "description": "기업 혁신활동은 혁신추진결정을 첫 번째 단계로 포함함",
+   "doc": "doc05"
+  },
+  {
+   "source": "기업 혁신활동",
+   "type": "CONSISTS_OF",
+   "target": "혁신투입",
+   "description": "기업 혁신활동은 혁신투입(R&D 수행)을 두 번째 단계로 포함함",
+   "doc": "doc05"
+  },
+  {
+   "source": "기업 혁신활동",
+   "type": "CONSISTS_OF",
+   "target": "지식자본스톡 축적",
+   "description": "기업 혁신활동은 지식자본스톡 축적을 세 번째 단계로 포함함",
+   "doc": "doc05"
+  },
+  {
+   "source": "기업 혁신활동",
+   "type": "CONSISTS_OF",
+   "target": "혁신산출물생산",
+   "description": "기업 혁신활동은 혁신산출물생산을 네 번째 단계로 포함함",
+   "doc": "doc05"
+  },
+  {
+   "source": "기업 혁신활동",
+   "type": "CONSISTS_OF",
+   "target": "생산성향상",
+   "description": "기업 혁신활동은 생산성향상을 다섯 번째 단계로 포함함",
+   "doc": "doc05"
+  },
+  {
+   "source": "기존기업",
+   "type": "PURSUES",
+   "target": "혁신추진결정",
+   "description": "기존기업은 시장주도권을 유지하기 위해 점진적 혁신을 추구하며 혁신추진결정에 참여함",
+   "doc": "doc05"
+  },
+  {
+   "source": "혁신창업가",
+   "type": "PURSUES",
+   "target": "혁신추진결정",
+   "description": "혁신창업가는 파괴적 혁신을 추구하며 혁신추진결정에 참여함",
+   "doc": "doc05"
+  },
+  {
+   "source": "혁신투입",
+   "type": "INCLUDES",
+   "target": "기초연구",
+   "description": "혁신투입 단계는 기초연구를 포함함",
+   "doc": "doc05"
+  },
+  {
+   "source": "혁신투입",
+   "type": "INCLUDES",
+   "target": "응용연구",
+   "description": "혁신투입 단계는 응용연구를 포함함",
+   "doc": "doc05"
+  },
+  {
+   "source": "미국국립과학재단",
+   "type": "DEFINES",
+   "target": "기초연구",
+   "description": "미국국립과학재단은 기초연구를 활용처를 고려하지 않고 지식을 축적하는 체계적 학습으로 정의함",
+   "doc": "doc05"
+  },
+  {
+   "source": "미국국립과학재단",
+   "type": "DEFINES",
+   "target": "응용연구",
+   "description": "미국국립과학재단은 응용연구를 특정 수요를 충족시키기 위해 지식을 축적하는 체계적 학습으로 정의함",
+   "doc": "doc05"
+  },
+  {
+   "source": "혁신산출물생산",
+   "type": "MEASURED_BY",
+   "target": "특허출원건수",
+   "description": "혁신산출의 양적 실적은 특허출원건수로 측정됨",
+   "doc": "doc05"
+  },
+  {
+   "source": "혁신산출물생산",
+   "type": "MEASURED_BY",
+   "target": "특허피인용건수",
+   "description": "혁신산출의 질적 실적은 특허피인용건수로 측정됨",
+   "doc": "doc05"
+  },
+  {
+   "source": "벤처캐피탈",
+   "type": "SUPPORTS",
+   "target": "기업 혁신활동",
+   "description": "벤처캐피탈은 혁신자금을 공급하여 기업의 혁신추진 전반에 영향을 미침",
+   "doc": "doc05"
+  },
+  {
+   "source": "Akcigit·Kerr 2018",
+   "type": "SUPPORTS",
+   "target": "혁신창업가",
+   "description": "Akcigit·Kerr 2018 연구는 혁신창업가의 파괴적 혁신 추구 성향을 뒷받침함",
+   "doc": "doc05"
+  },
+  {
+   "source": "기업 혁신활동",
+   "type": "DETERMINES",
+   "target": "생산성향상",
+   "description": "기업의 혁신활동은 생산성을 결정하는 직접적인 요인임",
+   "doc": "doc05"
+  },
+  {
+   "source": "한국은행",
+   "type": "PUBLISHED",
+   "target": "경제전망보고서(2024.5)",
+   "description": "한국은행이 2024년 5월 경제전망보고서를 발간하였다.",
+   "doc": "doc06"
+  },
+  {
+   "source": "OECD",
+   "type": "PUBLISHED",
+   "target": "Oslo Manual",
+   "description": "OECD가 혁신통계 작성에 관한 Oslo Manual을 발간하였다.",
+   "doc": "doc06"
+  },
+  {
+   "source": "Oslo Manual",
+   "type": "DEFINES",
+   "target": "혁신기업",
+   "description": "Oslo Manual은 혁신기업을 제품혁신, 공정혁신 등 혁신실적을 한 건 이상 달성한 기업으로 정의한다.",
+   "doc": "doc06"
+  },
+  {
+   "source": "경제전망보고서(2024.5)",
+   "type": "CLASSIFIES",
+   "target": "혁신기업",
+   "description": "경제전망보고서는 미국 내 출원특허 보유 여부를 기준으로 혁신기업을 분류하였다.",
+   "doc": "doc06"
+  },
+  {
+   "source": "미국 특허청",
+   "type": "PROVIDES_DATA_FOR",
+   "target": "경제전망보고서(2024.5)",
+   "description": "미국 특허청의 특허 데이터가 기업 혁신실적 분석을 위한 통계자료로 활용되었다.",
+   "doc": "doc06"
+  },
+  {
+   "source": "KoPDP",
+   "type": "PROVIDES_DATA_FOR",
+   "target": "경제전망보고서(2024.5)",
+   "description": "KoPDP 데이터베이스가 기업 분석을 위한 통계자료 수집에 활용되었다.",
+   "doc": "doc06"
+  },
+  {
+   "source": "KoDATA",
+   "type": "PROVIDES_DATA_FOR",
+   "target": "경제전망보고서(2024.5)",
+   "description": "KoDATA가 기업 분석을 위한 통계자료 수집에 활용되었다.",
+   "doc": "doc06"
+  },
+  {
+   "source": "ValueSearch",
+   "type": "PROVIDES_DATA_FOR",
+   "target": "경제전망보고서(2024.5)",
+   "description": "ValueSearch가 기업 분석을 위한 통계자료 수집에 활용되었다.",
+   "doc": "doc06"
+  },
+  {
+   "source": "Ackerberg et al.(2015)",
+   "type": "USED_FOR",
+   "target": "총요소생산성",
+   "description": "Ackerberg et al.(2015)의 방법이 기업의 총요소생산성 추정에 활용되었다.",
+   "doc": "doc06"
+  },
+  {
+   "source": "혁신기업",
+   "type": "COMPARED_WITH",
+   "target": "일반기업",
+   "description": "혁신기업과 일반기업의 생산성을 비교 분석하였다.",
+   "doc": "doc06"
+  },
+  {
+   "source": "글로벌 금융위기",
+   "type": "CAUSED_SLOWDOWN_IN",
+   "target": "총요소생산성",
+   "description": "글로벌 금융위기 이후 혁신기업의 생산성 증가세가 상대적으로 더 크게 둔화되었다.",
+   "doc": "doc06"
+  },
+  {
+   "source": "혁신기업",
+   "type": "DOMINATES",
+   "target": "R&D 지출",
+   "description": "혁신기업이 전체 기업 R&D 지출의 72% 내외를 담당하고 있다.",
+   "doc": "doc06"
+  },
+  {
+   "source": "혁신기업",
+   "type": "CONCENTRATED_IN",
+   "target": "제조업",
+   "description": "혁신기업 중 제조업이 차지하는 비중이 상대적으로 크게 높다.",
+   "doc": "doc06"
+  },
+  {
+   "source": "혁신기업",
+   "type": "CONCENTRATED_IN",
+   "target": "ICT산업",
+   "description": "혁신기업 중 ICT산업이 차지하는 비중이 상대적으로 크게 높다.",
+   "doc": "doc06"
+  },
+  {
+   "source": "한국은행",
+   "type": "PUBLISHED",
+   "target": "경제전망보고서(2024.5)",
+   "description": "한국은행이 2024년 5월 경제전망보고서를 발간하여 혁신과 경제성장에 관한 심층연구를 수록함",
+   "doc": "doc07"
+  },
+  {
+   "source": "혁신기업",
+   "type": "CLASSIFIED_INTO",
+   "target": "대기업",
+   "description": "혁신기업은 규모 및 업력에 따라 대기업으로 구분되며, 매년 종업원수 기준 상위 5% 기업이 해당됨",
+   "doc": "doc07"
+  },
+  {
+   "source": "혁신기업",
+   "type": "CLASSIFIED_INTO",
+   "target": "고업력 중소기업",
+   "description": "혁신기업은 규모 및 업력에 따라 고업력 중소기업으로 구분되며, 중소기업 중 업력 기준 하위 20%를 제외한 기업이 해당됨",
+   "doc": "doc07"
+  },
+  {
+   "source": "혁신기업",
+   "type": "CLASSIFIED_INTO",
+   "target": "저업력 중소기업",
+   "description": "혁신기업은 규모 및 업력에 따라 저업력 중소기업으로 구분되며, 중소기업 중 매년 업력 기준 하위 20% 기업이 해당됨",
+   "doc": "doc07"
+  },
+  {
+   "source": "대기업",
+   "type": "LEADS",
+   "target": "R&D 지출",
+   "description": "대기업은 2010년대 이후 전체 혁신기업 R&D 지출 증가를 주도하며 전체의 88% 내외를 담당함",
+   "doc": "doc07"
+  },
+  {
+   "source": "저업력 중소기업",
+   "type": "PURSUES",
+   "target": "파괴적 혁신",
+   "description": "업력이 짧은 저업력 중소기업은 공정 개선보다 신제품 개발과 같은 파괴적 혁신을 추구하는 성향이 강함",
+   "doc": "doc07"
+  },
+  {
+   "source": "대기업",
+   "type": "SHOWS",
+   "target": "기업생산성",
+   "description": "대기업은 2010년대 이후 전체 R&D 지출 증가를 주도했으나 생산성이 정체된 상황임",
+   "doc": "doc07"
+  },
+  {
+   "source": "저업력 중소기업",
+   "type": "SHOWS",
+   "target": "기업생산성",
+   "description": "저업력 중소기업은 2010년대 이전에는 생산성 증가세가 가팔랐으나 이후 크게 둔화됨",
+   "doc": "doc07"
+  },
+  {
+   "source": "Cohen·Klepper 1992",
+   "type": "SUPPORTS",
+   "target": "대기업",
+   "description": "기업 규모가 클수록 R&D 고정비용 및 투자위험 부담능력 등에서 유리하여 R&D 투자를 많이 한다는 근거를 제시함",
+   "doc": "doc07"
+  },
+  {
+   "source": "Akcigit·Kerr 2018",
+   "type": "SUPPORTS",
+   "target": "대기업",
+   "description": "기업 규모가 클수록 다양한 상품군을 통한 혁신실적 활용도 등에서 유리하다는 분석을 제시함",
+   "doc": "doc07"
+  },
+  {
+   "source": "Acemoglu·Cao 2015",
+   "type": "SUPPORTS",
+   "target": "저업력 중소기업",
+   "description": "업력이 짧은 기업일수록 파괴적 혁신을 추구하여 생산성이 높다는 분석을 제시함",
+   "doc": "doc07"
+  },
+  {
+   "source": "Acemoglu et al. 2018",
+   "type": "SUPPORTS",
+   "target": "저업력 중소기업",
+   "description": "업력이 짧은 기업의 혁신 성향과 생산성에 관한 분석을 통해 저업력 중소기업의 특성을 뒷받침함",
+   "doc": "doc07"
+  },
+  {
+   "source": "경제전망보고서(2024.5)",
+   "type": "ANALYZES",
+   "target": "혁신기업",
+   "description": "경제전망보고서는 우리나라 혁신기업의 혁신활동을 분석하고 규모 및 업력에 따라 분류하여 생산성을 평가함",
+   "doc": "doc07"
+  },
+  {
+   "source": "한국은행",
+   "type": "PUBLISHED",
+   "target": "경제전망보고서(2024.5)",
+   "description": "한국은행이 2024년 5월 경제전망보고서를 발간하였음",
+   "doc": "doc08"
+  },
+  {
+   "source": "대기업",
+   "type": "CONTRIBUTES_TO",
+   "target": "미국 특허청",
+   "description": "대기업은 우리나라가 미국 특허청에 출원한 특허건수의 95% 내외를 기여함",
+   "doc": "doc08"
+  },
+  {
+   "source": "대기업",
+   "type": "INVESTS_IN",
+   "target": "R&D 투자",
+   "description": "대기업은 적극적인 R&D 투자를 통해 양적 혁신실적 증가세를 주도함",
+   "doc": "doc08"
+  },
+  {
+   "source": "R&D 투자",
+   "type": "INCREASES",
+   "target": "특허피인용건수",
+   "description": "R&D 투자는 양적 혁신실적을 늘렸으나 특허피인용건수로 측정되는 질적 혁신실적은 개선하지 못함",
+   "doc": "doc08"
+  },
+  {
+   "source": "특허피인용건수",
+   "type": "MEASURES",
+   "target": "총요소생산성",
+   "description": "특허피인용건수는 특허출원건수보다 총요소생산성 증가율과 밀접한 관계를 가짐",
+   "doc": "doc08"
+  },
+  {
+   "source": "Hall et al. 2001",
+   "type": "DEFINES",
+   "target": "특허피인용건수",
+   "description": "Hall et al. 2001은 특허피인용건수를 혁신실적의 질을 나타내는 지표로 제시함",
+   "doc": "doc08"
+  },
+  {
+   "source": "Hall et al. 2005",
+   "type": "ANALYZES",
+   "target": "특허피인용건수",
+   "description": "Hall et al. 2005는 특허피인용건수가 높은 기업일수록 지식자본스톡이 늘어나 기업가치가 상승함을 실증 분석함",
+   "doc": "doc08"
+  },
+  {
+   "source": "Akcigit et al. 2021",
+   "type": "USES",
+   "target": "특허피인용건수",
+   "description": "Akcigit et al. 2021은 특허피인용건수를 기업생산성 증가폭의 대리변수로 활용하여 거시경제적 영향을 추정함",
+   "doc": "doc08"
+  },
+  {
+   "source": "글로벌 금융위기",
+   "type": "AFFECTS",
+   "target": "대기업",
+   "description": "글로벌금융위기 이후 대기업의 생산성 성장세가 둔화되었을 가능성이 있음",
+   "doc": "doc08"
+  },
+  {
+   "source": "우리나라",
+   "type": "COMPARED_WITH",
+   "target": "미국",
+   "description": "우리나라의 특허 건당 피인용건수(1.4건)는 미국(5.0건)보다 낮음",
+   "doc": "doc08"
+  },
+  {
+   "source": "우리나라",
+   "type": "COMPARED_WITH",
+   "target": "네덜란드",
+   "description": "우리나라의 특허 건당 피인용건수(1.4건)는 네덜란드(3.7건)보다 낮음",
+   "doc": "doc08"
+  },
+  {
+   "source": "우리나라",
+   "type": "COMPARED_WITH",
+   "target": "스위스",
+   "description": "우리나라의 특허 건당 피인용건수(1.4건)는 스위스(2.8건)보다 낮음",
+   "doc": "doc08"
+  },
+  {
+   "source": "대기업",
+   "type": "LAGS_BEHIND",
+   "target": "중소기업",
+   "description": "대기업의 특허피인용건수는 중소기업과 크게 차이가 없어 질적 혁신실적에서 우위를 보이지 못함",
+   "doc": "doc08"
+  },
+  {
+   "source": "경제전망보고서(2024.5)",
+   "type": "ANALYZES",
+   "target": "대기업",
+   "description": "경제전망보고서는 대기업의 혁신활동과 생산성 관계를 분석함",
+   "doc": "doc08"
+  },
+  {
+   "source": "한국은행",
+   "type": "PUBLISHES",
+   "target": "경제전망보고서(2024.5)",
+   "description": "한국은행이 2024년 5월 경제전망보고서를 발간하여 기업 혁신활동 분석 결과를 수록",
+   "doc": "doc09"
+  },
+  {
+   "source": "한국기업혁신조사",
+   "type": "PROVIDES_DATA_ON",
+   "target": "저업력 중소기업",
+   "description": "한국기업혁신조사 원시자료를 통해 저업력 중소기업의 혁신저해요인 응답 비중을 파악",
+   "doc": "doc09"
+  },
+  {
+   "source": "연구활동조사",
+   "type": "PROVIDES_DATA_ON",
+   "target": "R&D 지출",
+   "description": "연구활동조사를 통해 기업 규모별 R&D 지출 현황 및 추이를 파악",
+   "doc": "doc09"
+  },
+  {
+   "source": "저업력 중소기업",
+   "type": "FACES",
+   "target": "외부자금 부족",
+   "description": "저업력 중소기업 중 외부자금 부족을 혁신저해요인으로 응답한 비중이 제조업 기준 2007년 9.9%에서 2021년 45.4%로 증가",
+   "doc": "doc09"
+  },
+  {
+   "source": "저업력 중소기업",
+   "type": "FACES",
+   "target": "내부자금 부족",
+   "description": "저업력 중소기업 중 내부자금 부족을 혁신저해요인으로 응답한 비중이 제조업 기준 2007년 12.8%에서 2021년 77.6%로 증가",
+   "doc": "doc09"
+  },
+  {
+   "source": "저업력 중소기업",
+   "type": "HAS_LOWER_GROWTH_IN",
+   "target": "R&D 지출",
+   "description": "혁신자금 조달 어려움으로 인해 중소기업의 R&D 지출은 대기업보다 낮은 증가세를 보임",
+   "doc": "doc09"
+  },
+  {
+   "source": "대기업",
+   "type": "HAS_HIGHER_GROWTH_IN",
+   "target": "R&D 지출",
+   "description": "종업원수 1000명 이상 대기업의 R&D 지출은 꾸준한 증가세를 지속",
+   "doc": "doc09"
+  },
+  {
+   "source": "신생기업",
+   "type": "SUBSET_OF",
+   "target": "저업력 중소기업",
+   "description": "설립 후 8년 내 미국특허를 출원한 신생기업은 저업력 중소기업의 일부로 분류",
+   "doc": "doc09"
+  },
+  {
+   "source": "신생기업",
+   "type": "APPLIES_FOR",
+   "target": "미국특허",
+   "description": "혁신잠재력을 갖춘 신생기업은 설립 후 8년 내에 미국특허를 출원하는 것으로 정의",
+   "doc": "doc09"
+  },
+  {
+   "source": "혁신기업",
+   "type": "APPLIES_FOR",
+   "target": "미국특허",
+   "description": "혁신기업은 미국 내 특허를 출원할 정도로 혁신활동에 적극적인 기업으로 정의",
+   "doc": "doc09"
+  },
+  {
+   "source": "벤처기업육성에 관한 특별조치법",
+   "type": "CLASSIFIES",
+   "target": "혁신기업",
+   "description": "벤처기업육성에 관한 특별조치법의 기준을 충족하는 기업이 혁신기업 중 저업력 중소기업으로 분류",
+   "doc": "doc09"
+  },
+  {
+   "source": "경제전망보고서(2024.5)",
+   "type": "ANALYZES",
+   "target": "혁신기업",
+   "description": "경제전망보고서는 혁신기업의 생산성이 2010년대 이전 빠르게 높아졌다가 이후 정체됨을 분석",
+   "doc": "doc09"
+  },
+  {
+   "source": "신생기업",
+   "type": "CONTRIBUTES_TO",
+   "target": "저업력 중소기업",
+   "description": "혁신잠재력을 갖춘 신생기업의 진입 감소가 저업력 중소기업의 고령화와 생산성 정체로 이어짐",
+   "doc": "doc09"
+  },
+  {
+   "source": "한국은행",
+   "type": "PUBLISHED",
+   "target": "경제전망보고서(2024.5)",
+   "description": "한국은행이 2024년 5월 경제전망보고서를 발간하였으며, 해당 보고서에 혁신과 경제성장에 관한 심층연구가 포함됨",
+   "doc": "doc10"
+  },
+  {
+   "source": "기초연구",
+   "type": "PROVIDES",
+   "target": "R&D 지출",
+   "description": "기초연구는 전체 R&D 지출의 구성 요소로서 혁신실적의 질을 높이는 역할을 함",
+   "doc": "doc10"
+  },
+  {
+   "source": "기초연구",
+   "type": "SUPPORTS",
+   "target": "혁신창업가",
+   "description": "기초연구는 유능한 연구자 유치와 신기술 선도를 통해 혁신창업가 육성에 기여함",
+   "doc": "doc10"
+  },
+  {
+   "source": "글로벌 금융위기",
+   "type": "CAUSED",
+   "target": "응용연구",
+   "description": "글로벌 금융위기 이후 기업 간 글로벌 기술경쟁 격화와 단기성과 추구 성향 확대로 기업들이 응용연구에 집중하게 됨",
+   "doc": "doc10"
+  },
+  {
+   "source": "글로벌 금융위기",
+   "type": "REDUCED",
+   "target": "기초연구",
+   "description": "글로벌 금융위기 이후 우리나라 기업들이 기초연구 비중을 줄이는 추세가 나타남",
+   "doc": "doc10"
+  },
+  {
+   "source": "Nelson 1959",
+   "type": "SUPPORTS",
+   "target": "기초연구",
+   "description": "기초연구가 기업이 신기술 분야의 선도자로 도약하기 위한 학술기반을 제공한다는 근거를 제시함",
+   "doc": "doc10"
+  },
+  {
+   "source": "Fabrizio 2009",
+   "type": "SUPPORTS",
+   "target": "기초연구",
+   "description": "기초연구가 외부기관의 기술·지식을 습득하는 수용력을 높여준다는 근거를 제시함",
+   "doc": "doc10"
+  },
+  {
+   "source": "Hicks 1995",
+   "type": "SUPPORTS",
+   "target": "기초연구",
+   "description": "기초연구가 유능한 연구자 유치에 도움을 준다는 근거를 제시함",
+   "doc": "doc10"
+  },
+  {
+   "source": "Mansfield 1980",
+   "type": "SUPPORTS",
+   "target": "기초연구",
+   "description": "기초연구가 혁신실적의 질을 제고하고 기업 생산성을 높인다는 실증 근거를 제시함",
+   "doc": "doc10"
+  },
+  {
+   "source": "Griliches 1986",
+   "type": "SUPPORTS",
+   "target": "기초연구",
+   "description": "기초연구가 혁신실적의 질을 제고하고 기업 생산성을 높인다는 실증 근거를 제시함",
+   "doc": "doc10"
+  },
+  {
+   "source": "Arora et al. 2017",
+   "type": "EXPLAINS",
+   "target": "응용연구",
+   "description": "글로벌 금융위기 이후 기업들이 응용연구에 집중하게 된 R&D 구성 변화를 설명하는 선행연구",
+   "doc": "doc10"
+  },
+  {
+   "source": "Mezzanotti·Simcoe 2023",
+   "type": "EXPLAINS",
+   "target": "응용연구",
+   "description": "글로벌 금융위기 이후 기업들이 응용연구에 집중하게 된 R&D 구성 변화를 설명하는 선행연구",
+   "doc": "doc10"
+  },
+  {
+   "source": "Jones·Summers 2022",
+   "type": "ANALYZES",
+   "target": "기초연구",
+   "description": "기초연구의 양의 외부효과로 인해 사회 전체 후생 측면의 가치가 개별기업 입장의 가치보다 높다는 것을 분석함",
+   "doc": "doc10"
+  },
+  {
+   "source": "벤처캐피탈",
+   "type": "SUPPLIES",
+   "target": "중소기업",
+   "description": "벤처캐피탈은 중소기업 등 혁신기업에 혁신자금을 공급하는 기능을 담당하나 기능이 부족한 것으로 분석됨",
+   "doc": "doc10"
+  },
+  {
+   "source": "모태펀드",
+   "type": "TYPE_OF",
+   "target": "벤처캐피탈",
+   "description": "모태펀드는 정부 벤처캐피탈의 일환으로 분류됨",
+   "doc": "doc10"
+  },
+  {
+   "source": "산업은행",
+   "type": "TYPE_OF",
+   "target": "벤처캐피탈",
+   "description": "산업은행은 정부 벤처캐피탈의 일환으로 분류됨",
+   "doc": "doc10"
+  },
+  {
+   "source": "기초연구",
+   "type": "AFFECTS",
+   "target": "대기업",
+   "description": "기초연구 지출비중 축소는 다양한 산업에 종사하는 대기업에게 보다 부정적 영향을 미쳤을 가능성이 있음",
+   "doc": "doc10"
+  },
+  {
+   "source": "대기업",
+   "type": "LEADS",
+   "target": "R&D 지출",
+   "description": "R&D 지출이 대기업을 중심으로 크게 늘어나면서 혁신실적의 양이 증가하였음",
+   "doc": "doc10"
+  },
+  {
+   "source": "한국은행",
+   "type": "PUBLISHED",
+   "target": "경제전망보고서(2024.5)",
+   "description": "한국은행이 2024년 5월 경제전망보고서를 발간하였으며, 해당 보고서에 혁신과 경제성장 관련 심층연구가 포함됨",
+   "doc": "doc11"
+  },
+  {
+   "source": "세계경제포럼",
+   "type": "PRODUCES",
+   "target": "벤처캐피탈 접근성 지표",
+   "description": "세계경제포럼이 기업가 대상 설문조사를 통해 벤처캐피탈 접근성 지표를 산출함",
+   "doc": "doc11"
+  },
+  {
+   "source": "정부 벤처캐피탈",
+   "type": "COMPARED_TO",
+   "target": "민간벤처캐피탈",
+   "description": "정부 벤처캐피탈은 마중물 역할을 하지만, 민간 벤처캐피탈이 혁신기술 분석·경영 전수·모니터링 측면에서 더 뛰어난 전문성을 가짐",
+   "doc": "doc11"
+  },
+  {
+   "source": "글로벌 금융위기",
+   "type": "CAUSED_DECLINE_IN",
+   "target": "벤처캐피탈 접근성 지표",
+   "description": "글로벌금융위기 당시 우리나라의 벤처캐피탈 접근성 지표가 크게 하락하였으며 이후 회복이 지연됨",
+   "doc": "doc11"
+  },
+  {
+   "source": "Jeff Bezos",
+   "type": "FOUNDED",
+   "target": "Amazon",
+   "description": "Jeff Bezos가 1990년대 이후 Amazon을 창업함",
+   "doc": "doc11"
+  },
+  {
+   "source": "Larry Page",
+   "type": "FOUNDED",
+   "target": "Google",
+   "description": "Larry Page가 Sergey Brin과 함께 Google을 창업함",
+   "doc": "doc11"
+  },
+  {
+   "source": "Sergey Brin",
+   "type": "FOUNDED",
+   "target": "Google",
+   "description": "Sergey Brin이 Larry Page와 함께 Google을 창업함",
+   "doc": "doc11"
+  },
+  {
+   "source": "Elon Musk",
+   "type": "FOUNDED",
+   "target": "Tesla",
+   "description": "Elon Musk가 1990년대 이후 Tesla를 창업함",
+   "doc": "doc11"
+  },
+  {
+   "source": "BCG",
+   "type": "SELECTS",
+   "target": "혁신창업가",
+   "description": "BCG는 경영진 설문조사 결과와 주가수익률 등을 기준으로 글로벌 혁신기업 및 혁신창업가를 선정함",
+   "doc": "doc11"
+  },
+  {
+   "source": "Levine·Rubinstein(2017)",
+   "type": "ANALYZES",
+   "target": "혁신창업가",
+   "description": "Levine·Rubinstein(2017) 연구는 미국의 대규모 사업체 창업가가 학창시절 인지능력이 우수하고 이단아 기질이 강했다고 분석함",
+   "doc": "doc11"
+  },
+  {
+   "source": "박용린외 2017",
+   "type": "ANALYZES",
+   "target": "민간벤처캐피탈",
+   "description": "박용린 외(2017) 연구는 민간 벤처캐피탈이 혁신기술 잠재력 분석 및 경영 전수 등에서 뛰어난 전문성을 갖는다고 평가함",
+   "doc": "doc11"
+  },
+  {
+   "source": "박용린외 2017",
+   "type": "ANALYZES",
+   "target": "정부 벤처캐피탈",
+   "description": "박용린 외(2017) 연구는 정부 벤처캐피탈이 투자촉진을 위한 마중물 역할을 수행한다고 분석함",
+   "doc": "doc11"
+  },
+  {
+   "source": "한국은행",
+   "type": "PUBLISHED",
+   "target": "기업패널분석",
+   "description": "한국은행은 경제전망보고서(2024.5)를 통해 기업의 R&D 유형별 혁신실적 영향을 분석한 기업패널분석 결과를 발표하였다",
+   "doc": "doc12"
+  },
+  {
+   "source": "기초연구",
+   "type": "INCREASES",
+   "target": "특허피인용건수",
+   "description": "기초연구 지식스톡이 늘어날수록 특허의 피인용건수가 제고되는 것으로 나타났다",
+   "doc": "doc12"
+  },
+  {
+   "source": "기초연구",
+   "type": "INCREASES",
+   "target": "특허범용성",
+   "description": "기초연구 지식스톡이 늘어날수록 특허의 범용성이 제고되는 것으로 나타났다",
+   "doc": "doc12"
+  },
+  {
+   "source": "기초연구",
+   "type": "INCREASES",
+   "target": "특허독창성",
+   "description": "기초연구 지식스톡이 늘어날수록 특허의 독창성이 제고되는 것으로 나타났다",
+   "doc": "doc12"
+  },
+  {
+   "source": "기초연구",
+   "type": "INCREASES",
+   "target": "특허출원건수",
+   "description": "기초연구 지식스톡이 늘어날수록 기업의 특허출원건수가 증가하는 것으로 추정되었다",
+   "doc": "doc12"
+  },
+  {
+   "source": "응용연구",
+   "type": "INCREASES",
+   "target": "특허출원건수",
+   "description": "응용연구 지식스톡이 늘어날수록 기업의 특허출원건수가 증가하며, 그 효과가 기초연구보다 더 뚜렷하였다",
+   "doc": "doc12"
+  },
+  {
+   "source": "응용연구",
+   "type": "DECREASES",
+   "target": "특허피인용건수",
+   "description": "응용연구 지식스톡이 늘어날수록 특허의 피인용건수는 오히려 낮아지는 것으로 추정되었다",
+   "doc": "doc12"
+  },
+  {
+   "source": "응용연구",
+   "type": "DECREASES",
+   "target": "특허독창성",
+   "description": "응용연구 지식스톡이 늘어날수록 특허의 독창성은 오히려 낮아지는 것으로 추정되었다",
+   "doc": "doc12"
+  },
+  {
+   "source": "기초연구 지식스톡",
+   "type": "MEASURED_BY",
+   "target": "기초연구",
+   "description": "기초연구 지식스톡은 기업이 논문발간건수를 통해 기초연구로 축적한 지식의 규모를 나타내는 설명변수이다",
+   "doc": "doc12"
+  },
+  {
+   "source": "응용연구 지식스톡",
+   "type": "MEASURED_BY",
+   "target": "응용연구",
+   "description": "응용연구 지식스톡은 기업이 특허출원건수를 통해 응용연구로 축적한 지식의 규모를 나타내는 설명변수이다",
+   "doc": "doc12"
+  },
+  {
+   "source": "기업패널분석",
+   "type": "USES_DATA_FROM",
+   "target": "미국 특허청",
+   "description": "기업패널분석은 미국특허청 출원특허 데이터를 분석자료로 활용하였다",
+   "doc": "doc12"
+  },
+  {
+   "source": "기업패널분석",
+   "type": "USES_DATA_FROM",
+   "target": "OpenAlex",
+   "description": "기업패널분석은 OpenAlex 데이터를 분석자료로 활용하였다",
+   "doc": "doc12"
+  },
+  {
+   "source": "기업패널분석",
+   "type": "USES_DATA_FROM",
+   "target": "ValueSearch",
+   "description": "기업패널분석은 ValueSearch 데이터를 분석자료로 활용하였다",
+   "doc": "doc12"
+  },
+  {
+   "source": "기업패널분석",
+   "type": "USES_DATA_FROM",
+   "target": "KoPDP",
+   "description": "기업패널분석은 KoPDP 데이터를 분석자료로 활용하였다",
+   "doc": "doc12"
+  },
+  {
+   "source": "기업패널분석",
+   "type": "REFERENCES",
+   "target": "Fabrizio 2009",
+   "description": "기업패널분석 설계 시 Fabrizio 2009 선행연구를 참고하였다",
+   "doc": "doc12"
+  },
+  {
+   "source": "기업패널분석",
+   "type": "REFERENCES",
+   "target": "Roper·Hewitt-Dundas 2015",
+   "description": "기업패널분석 설계 시 Roper·Hewitt-Dundas 2015 선행연구를 참고하였다",
+   "doc": "doc12"
+  },
+  {
+   "source": "기업패널분석",
+   "type": "REFERENCES",
+   "target": "Akcigit et al. 2021",
+   "description": "기업규모별 분석 실시의 근거로 Akcigit et al. 2021을 참고하였다",
+   "doc": "doc12"
+  },
+  {
+   "source": "기업패널분석",
+   "type": "REFERENCES",
+   "target": "Adams·Clemmons 2008",
+   "description": "지식스톡 산출 방식의 근거로 Adams·Clemmons 2008을 참고하였다",
+   "doc": "doc12"
+  },
+  {
+   "source": "기업패널분석",
+   "type": "REFERENCES",
+   "target": "Munari et al. 2022",
+   "description": "3년의 시차 적용 근거로 Munari et al. 2022를 참고하였다",
+   "doc": "doc12"
+  },
+  {
+   "source": "대기업",
+   "type": "BENEFITS_MORE_FROM",
+   "target": "기초연구",
+   "description": "기초연구가 혁신실적의 질을 제고시키는 효과는 대기업에서 보다 뚜렷하게 나타났다",
+   "doc": "doc12"
+  },
+  {
+   "source": "중소기업",
+   "type": "NEGATIVELY_AFFECTED_BY",
+   "target": "응용연구 지식스톡",
+   "description": "중소기업의 경우 응용연구 지식스톡이 늘어날수록 특허의 피인용건수, 범용성, 독창성 등이 낮아지는 것으로 나타났다",
+   "doc": "doc12"
+  },
+  {
+   "source": "기초연구",
+   "type": "SUPPORTS",
+   "target": "응용연구",
+   "description": "기초연구로 축적한 지식이 응용연구를 수행하는 바탕으로 작용하며, 기초연구 지식스톡이 많은 기업일수록 응용연구 지식스톡 증가에 따라 혁신실적 양적지표가 더욱 크게 늘어난다",
+   "doc": "doc12"
+  },
+  {
+   "source": "혁신실적",
+   "type": "MEASURED_BY",
+   "target": "특허출원건수",
+   "description": "혁신실적의 양적 지표로 특허출원건수가 사용되었다",
+   "doc": "doc12"
+  },
+  {
+   "source": "혁신실적",
+   "type": "MEASURED_BY",
+   "target": "특허피인용건수",
+   "description": "혁신실적의 질적 지표로 특허피인용건수가 사용되었다",
+   "doc": "doc12"
+  },
+  {
+   "source": "혁신실적",
+   "type": "MEASURED_BY",
+   "target": "특허범용성",
+   "description": "혁신실적의 질적 지표로 특허범용성이 사용되었다",
+   "doc": "doc12"
+  },
+  {
+   "source": "혁신실적",
+   "type": "MEASURED_BY",
+   "target": "특허독창성",
+   "description": "혁신실적의 질적 지표로 특허독창성이 사용되었다",
+   "doc": "doc12"
+  },
+  {
+   "source": "한국은행",
+   "type": "PUBLISHED",
+   "target": "경제전망보고서(2024.5)",
+   "description": "한국은행이 2024년 5월 경제전망보고서를 발간하였으며, 해당 보고서에 혁신과 경제성장 관련 심층연구가 수록됨",
+   "doc": "doc13"
+  },
+  {
+   "source": "세계경제포럼",
+   "type": "PRODUCES",
+   "target": "벤처캐피탈 접근성 지표",
+   "description": "세계경제포럼이 혁신적 프로젝트에 대한 벤처캐피탈 투자 접근 용이성을 설문 조사하여 벤처캐피탈 접근성 지표를 작성",
+   "doc": "doc13"
+  },
+  {
+   "source": "국가패널분석",
+   "type": "USES",
+   "target": "벤처캐피탈 접근성 지표",
+   "description": "국가패널분석에서 벤처캐피탈 접근성 지표를 설명변수로 사용",
+   "doc": "doc13"
+  },
+  {
+   "source": "국가패널분석",
+   "type": "USES",
+   "target": "특허출원건수",
+   "description": "국가패널분석에서 특허출원건수를 혁신실적 양적지표(종속변수)로 사용",
+   "doc": "doc13"
+  },
+  {
+   "source": "국가패널분석",
+   "type": "USES",
+   "target": "특허피인용건수",
+   "description": "국가패널분석에서 특허피인용건수를 혁신실적 질적지표(종속변수)로 사용",
+   "doc": "doc13"
+  },
+  {
+   "source": "벤처캐피탈 접근성 지표",
+   "type": "AFFECTS",
+   "target": "특허출원건수",
+   "description": "벤처캐피탈 접근성 지표가 1% 상승할 경우 특허출원건수가 0.007% 증가하는 것으로 분석됨",
+   "doc": "doc13"
+  },
+  {
+   "source": "벤처캐피탈 접근성 지표",
+   "type": "AFFECTS",
+   "target": "특허피인용건수",
+   "description": "벤처캐피탈 접근성 지표가 1% 상승할 경우 특허피인용건수가 0.007% 증가하는 것으로 분석됨",
+   "doc": "doc13"
+  },
+  {
+   "source": "투자회수시장",
+   "type": "ENABLES",
+   "target": "벤처캐피탈",
+   "description": "투자회수시장이 활성화될 경우 벤처투자자가 고수익·고위험 혁신기술에 투자할 유인이 높아져 벤처캐피탈 접근성이 확대됨",
+   "doc": "doc13"
+  },
+  {
+   "source": "M&A",
+   "type": "IS_PART_OF",
+   "target": "투자회수시장",
+   "description": "M&A는 벤처캐피탈 투자자가 차익을 실현하는 투자회수시장의 주요 경로 중 하나",
+   "doc": "doc13"
+  },
+  {
+   "source": "IPO",
+   "type": "IS_PART_OF",
+   "target": "투자회수시장",
+   "description": "IPO는 벤처캐피탈 투자자가 차익을 실현하는 투자회수시장의 주요 경로 중 하나",
+   "doc": "doc13"
+  },
+  {
+   "source": "대한민국",
+   "type": "HAS_RANKING",
+   "target": "IPO",
+   "description": "우리나라의 IPO 시장규모는 분석 대상 32개국 중 12위로 상위그룹에 속함",
+   "doc": "doc13"
+  },
+  {
+   "source": "대한민국",
+   "type": "HAS_RANKING",
+   "target": "M&A",
+   "description": "우리나라의 M&A 시장규모는 분석 대상 32개국 중 17위로 하위그룹에 속함",
+   "doc": "doc13"
+  },
+  {
+   "source": "미국",
+   "type": "HAS_HIGHEST",
+   "target": "벤처캐피탈 접근성 지표",
+   "description": "미국은 OECD 회원국 중 벤처캐피탈 접근성 지표가 5.2점으로 최고 수준",
+   "doc": "doc13"
+  },
+  {
+   "source": "경제전망보고서(2024.5)",
+   "type": "REFERENCES",
+   "target": "Schnitzer·Watzinger 2022",
+   "description": "경제전망보고서는 벤처캐피탈 투자 기업의 혁신 파급효과를 분석한 Schnitzer·Watzinger 2022 선행연구를 인용",
+   "doc": "doc13"
+  },
+  {
+   "source": "벤처캐피탈",
+   "type": "FUNDS",
+   "target": "대한민국",
+   "description": "우리나라 혁신신생기업에 대해 벤처캐피탈이 중요한 자금공급원 역할을 하며, 낮은 접근성이 혁신활동과 연관됨",
+   "doc": "doc13"
+  },
+  {
+   "source": "한국은행",
+   "type": "PUBLISHED",
+   "target": "기업패널분석",
+   "description": "한국은행은 2024년 5월 경제전망보고서에서 벤처캐피탈 투자와 기업 혁신실적 간 관계를 분석한 기업패널분석 결과를 발표함",
+   "doc": "doc14"
+  },
+  {
+   "source": "민간벤처캐피탈",
+   "type": "IMPROVES",
+   "target": "특허출원건수",
+   "description": "민간 벤처캐피탈 투자를 많이 받을수록 기업의 특허출원건수가 유의하게 증가하는 것으로 분석됨",
+   "doc": "doc14"
+  },
+  {
+   "source": "민간벤처캐피탈",
+   "type": "IMPROVES",
+   "target": "특허피인용건수",
+   "description": "민간 벤처캐피탈 투자를 많이 받을수록 기업의 특허피인용건수가 유의하게 증가하는 것으로 분석됨",
+   "doc": "doc14"
+  },
+  {
+   "source": "정부 벤처캐피탈",
+   "type": "NO_SIGNIFICANT_EFFECT_ON",
+   "target": "특허출원건수",
+   "description": "정부 벤처캐피탈 투자는 기업의 특허출원건수에 유의한 영향을 미치지 못하는 것으로 분석됨",
+   "doc": "doc14"
+  },
+  {
+   "source": "정부 벤처캐피탈",
+   "type": "NO_SIGNIFICANT_EFFECT_ON",
+   "target": "특허피인용건수",
+   "description": "정부 벤처캐피탈 투자는 기업의 특허피인용건수에 유의한 영향을 미치지 못하는 것으로 분석됨",
+   "doc": "doc14"
+  },
+  {
+   "source": "독립 벤처캐피탈",
+   "type": "CLASSIFIED_AS",
+   "target": "민간벤처캐피탈",
+   "description": "독립 벤처캐피탈은 민간 벤처캐피탈의 한 유형으로 펀드조성 주체에 따라 구분됨",
+   "doc": "doc14"
+  },
+  {
+   "source": "기업 벤처캐피탈",
+   "type": "CLASSIFIED_AS",
+   "target": "민간벤처캐피탈",
+   "description": "기업 벤처캐피탈은 민간 벤처캐피탈의 한 유형으로 펀드조성 주체에 따라 구분됨",
+   "doc": "doc14"
+  },
+  {
+   "source": "은행 벤처캐피탈",
+   "type": "CLASSIFIED_AS",
+   "target": "민간벤처캐피탈",
+   "description": "은행 벤처캐피탈은 민간 벤처캐피탈의 한 유형으로 펀드조성 주체에 따라 구분됨",
+   "doc": "doc14"
+  },
+  {
+   "source": "독립 벤처캐피탈",
+   "type": "IMPROVES",
+   "target": "특허출원건수",
+   "description": "독립 벤처캐피탈 투자는 기업의 특허출원건수를 유의하게 제고시키는 효과가 있는 것으로 분석됨",
+   "doc": "doc14"
+  },
+  {
+   "source": "독립 벤처캐피탈",
+   "type": "IMPROVES",
+   "target": "특허피인용건수",
+   "description": "독립 벤처캐피탈 투자는 기업의 특허피인용건수를 유의하게 제고시키는 효과가 있는 것으로 분석됨",
+   "doc": "doc14"
+  },
+  {
+   "source": "기업 벤처캐피탈",
+   "type": "IMPROVES",
+   "target": "특허출원건수",
+   "description": "기업 벤처캐피탈 투자는 기업의 특허출원건수를 유의하게 제고시키는 효과가 있는 것으로 분석됨",
+   "doc": "doc14"
+  },
+  {
+   "source": "기업 벤처캐피탈",
+   "type": "IMPROVES",
+   "target": "특허피인용건수",
+   "description": "기업 벤처캐피탈 투자는 기업의 특허피인용건수를 유의하게 제고시키는 효과가 있는 것으로 분석됨",
+   "doc": "doc14"
+  },
+  {
+   "source": "은행 벤처캐피탈",
+   "type": "DECREASES",
+   "target": "특허출원건수",
+   "description": "은행 벤처캐피탈 투자는 기업의 특허출원건수를 오히려 하락시키는 것으로 분석됨",
+   "doc": "doc14"
+  },
+  {
+   "source": "은행 벤처캐피탈",
+   "type": "DECREASES",
+   "target": "특허피인용건수",
+   "description": "은행 벤처캐피탈 투자는 기업의 특허피인용건수를 오히려 하락시키는 것으로 분석됨",
+   "doc": "doc14"
+  },
+  {
+   "source": "기업패널분석",
+   "type": "USES_DATA_FROM",
+   "target": "미국 특허청",
+   "description": "기업패널분석은 미국 특허청의 출원특허 데이터를 분석자료로 활용함",
+   "doc": "doc14"
+  },
+  {
+   "source": "기업패널분석",
+   "type": "USES_DATA_FROM",
+   "target": "KoPDP",
+   "description": "기업패널분석은 KoPDP 데이터베이스를 분석자료로 활용함",
+   "doc": "doc14"
+  },
+  {
+   "source": "기업패널분석",
+   "type": "USES_DATA_FROM",
+   "target": "KoDATA",
+   "description": "기업패널분석은 KoDATA 데이터를 분석자료로 활용함",
+   "doc": "doc14"
+  },
+  {
+   "source": "기업패널분석",
+   "type": "USES_DATA_FROM",
+   "target": "ValueSearch",
+   "description": "기업패널분석은 ValueSearch 데이터를 분석자료로 활용함",
+   "doc": "doc14"
+  },
+  {
+   "source": "Grilli·Murtinu 2014",
+   "type": "SUPPORTS",
+   "target": "정부 벤처캐피탈",
+   "description": "Grilli·Murtinu 2014 선행연구는 정부 벤처투자자의 투자가 기업 혁신실적에 유의한 영향을 미치지 못한다는 결론을 지지함",
+   "doc": "doc14"
+  },
+  {
+   "source": "Bertoni·Tykvova 2015",
+   "type": "SUPPORTS",
+   "target": "정부 벤처캐피탈",
+   "description": "Bertoni·Tykvova 2015 선행연구는 정부 벤처투자자의 투자가 기업 혁신실적에 유의한 영향을 미치지 못한다는 결론을 지지함",
+   "doc": "doc14"
+  },
+  {
+   "source": "Alperovych et al. 2015",
+   "type": "SUPPORTS",
+   "target": "정부 벤처캐피탈",
+   "description": "Alperovych et al. 2015 선행연구는 정부 벤처투자자의 투자가 기업 혁신실적에 유의한 영향을 미치지 못한다는 결론을 지지함",
+   "doc": "doc14"
+  },
+  {
+   "source": "한국은행",
+   "type": "PUBLISHED",
+   "target": "경제전망보고서(2024.5)",
+   "description": "한국은행이 2024년 5월 경제전망보고서를 발간하여 혁신과 경제성장에 관한 심층연구를 수록함",
+   "doc": "doc15"
+  },
+  {
+   "source": "경제전망보고서(2024.5)",
+   "type": "ANALYZES",
+   "target": "똑똑한 이단아",
+   "description": "경제전망보고서는 똑똑한 이단아의 진로 선택을 실증분석하여 창업 성향을 검토함",
+   "doc": "doc15"
+  },
+  {
+   "source": "한국교육종단연구2005",
+   "type": "USED_FOR",
+   "target": "똑똑한 이단아",
+   "description": "한국교육종단연구2005 원시자료를 활용하여 똑똑한 이단아를 식별하고 진로를 분석함",
+   "doc": "doc15"
+  },
+  {
+   "source": "비동조 지수",
+   "type": "MEASURES",
+   "target": "똑똑한 이단아",
+   "description": "비동조 지수는 이단아 기질의 대리변수로 사용되어 똑똑한 이단아를 분류하는 데 활용됨",
+   "doc": "doc15"
+  },
+  {
+   "source": "수학성취도 검사점수",
+   "type": "MEASURES",
+   "target": "똑똑한 이단아",
+   "description": "중1 수학성취도 검사점수는 인지능력의 대리변수로 사용되어 똑똑한 이단아를 식별하는 데 활용됨",
+   "doc": "doc15"
+  },
+  {
+   "source": "다항로짓모형",
+   "type": "ANALYZES",
+   "target": "혁신창업가",
+   "description": "다항로짓모형을 통해 인지능력과 비동조 성향이 창업 여부 및 의향에 미치는 영향을 추정함",
+   "doc": "doc15"
+  },
+  {
+   "source": "비동조 지수",
+   "type": "POSITIVELY_AFFECTS",
+   "target": "혁신창업가",
+   "description": "비동조 성향이 강할수록 창업 성향이 확대되는 것으로 분석됨",
+   "doc": "doc15"
+  },
+  {
+   "source": "수학성취도 검사점수",
+   "type": "NEGATIVELY_AFFECTS",
+   "target": "혁신창업가",
+   "description": "인지능력을 나타내는 수학점수가 높을수록 창업 성향이 낮아지는 것으로 분석됨",
+   "doc": "doc15"
+  },
+  {
+   "source": "OECD",
+   "type": "DEFINED",
+   "target": "황금티켓증후군",
+   "description": "OECD(2022)는 우리나라 청년이 좋은 일자리에 안착하기 위해 치열하게 경쟁하는 현상을 황금티켓증후군으로 묘사함",
+   "doc": "doc15"
+  },
+  {
+   "source": "황금티켓증후군",
+   "type": "CAUSED_BY",
+   "target": "단일기회방식",
+   "description": "OECD는 황금티켓증후군의 원인으로 사회경력 초반 성과가 인생 전체를 결정하는 단일기회방식 사회구조를 지목함",
+   "doc": "doc15"
+  },
+  {
+   "source": "황금티켓증후군",
+   "type": "INHIBITS",
+   "target": "혁신창업가",
+   "description": "황금티켓증후군으로 인해 똑똑한 이단아가 혁신창업가보다 취업 등 여타 진로를 선택할 가능성이 높아짐",
+   "doc": "doc15"
+  },
+  {
+   "source": "트렌드모니터",
+   "type": "SURVEYED",
+   "target": "혁신창업가",
+   "description": "트렌드모니터(2019)의 창업 관련 설문조사에서 실패에 대한 부정적 인식이 창업 도전을 막고 있음을 확인함",
+   "doc": "doc15"
+  },
+  {
+   "source": "똑똑한 이단아",
+   "type": "POTENTIAL_FOR",
+   "target": "혁신창업가",
+   "description": "똑똑한 이단아는 혁신창업가로 성장할 가능성이 높은 집단으로 분류됨",
+   "doc": "doc15"
+  },
+  {
+   "source": "한국은행",
+   "type": "PUBLISHED",
+   "target": "경제전망보고서(2024.5)",
+   "description": "한국은행이 2024년 5월 경제전망보고서를 발간하였다",
+   "doc": "doc16"
+  },
+  {
+   "source": "경제전망보고서(2024.5)",
+   "type": "CONTAINS_RESEARCH",
+   "target": "구조모형",
+   "description": "경제전망보고서는 혁신정책 효과 분석을 위해 구조모형을 활용한 연구를 포함한다",
+   "doc": "doc16"
+  },
+  {
+   "source": "구조모형",
+   "type": "BASED_ON",
+   "target": "Akcigit et al. 2021",
+   "description": "혁신정책 효과 분석에 사용된 구조모형은 Akcigit et al.(2021)의 모형을 우리나라에 추정한 것이다",
+   "doc": "doc16"
+  },
+  {
+   "source": "Akcigit et al. 2021",
+   "type": "BASED_ON",
+   "target": "내생적 성장이론",
+   "description": "Akcigit et al.(2021)의 모형은 혁신을 장기적 생산성 결정요인으로 보는 내생적 성장이론에 기반한다",
+   "doc": "doc16"
+  },
+  {
+   "source": "Akcigit et al. 2021",
+   "type": "DISTINGUISHES",
+   "target": "기초연구",
+   "description": "Akcigit et al.(2021)은 기업의 혁신활동을 기초연구와 응용연구로 구분하여 모형화하였다",
+   "doc": "doc16"
+  },
+  {
+   "source": "Akcigit et al. 2021",
+   "type": "DISTINGUISHES",
+   "target": "응용연구",
+   "description": "Akcigit et al.(2021)은 기업의 혁신활동을 기초연구와 응용연구로 구분하여 모형화하였다",
+   "doc": "doc16"
+  },
+  {
+   "source": "기초연구",
+   "type": "CONTRIBUTES_TO",
+   "target": "내생적 성장이론",
+   "description": "기초연구는 지식자본 축적을 통해 내생적 성장이론에서 말하는 장기 생산성 향상에 기여한다",
+   "doc": "doc16"
+  },
+  {
+   "source": "창조적 파괴",
+   "type": "DRIVES",
+   "target": "내생적 성장이론",
+   "description": "선행연구에서 창조적 파괴는 내생적 성장이론 관점에서 경제성장의 주된 동인으로 인식된다",
+   "doc": "doc16"
+  },
+  {
+   "source": "시나리오 ①",
+   "type": "INCREASES_GROWTH_BY",
+   "target": "경제전망보고서(2024.5)",
+   "description": "시나리오 ①은 경제성장률을 0.20%p, 사회후생을 0.4% 높이는 것으로 분석되었다",
+   "doc": "doc16"
+  },
+  {
+   "source": "시나리오 ②",
+   "type": "INCREASES_GROWTH_BY",
+   "target": "경제전망보고서(2024.5)",
+   "description": "시나리오 ②는 경제성장률을 0.22%p, 사회후생을 2.1% 높이는 것으로 분석되었다",
+   "doc": "doc16"
+  },
+  {
+   "source": "시나리오 ③",
+   "type": "INCREASES_GROWTH_BY",
+   "target": "경제전망보고서(2024.5)",
+   "description": "시나리오 ③은 경제성장률을 0.11%p, 사회후생을 0.3% 높이는 데 그치는 것으로 분석되었다",
+   "doc": "doc16"
+  },
+  {
+   "source": "시나리오 ④",
+   "type": "INCREASES_GROWTH_BY",
+   "target": "경제전망보고서(2024.5)",
+   "description": "시나리오 ④는 경제성장률을 0.18%p, 사회후생을 1.3% 높이는 것으로 분석되었다",
+   "doc": "doc16"
+  },
+  {
+   "source": "시나리오 ④",
+   "type": "EXTENDS",
+   "target": "시나리오 ③",
+   "description": "시나리오 ④는 시나리오 ③에 기업과 공공연구기관 간 연구협력 강화를 추가한 정책이다",
+   "doc": "doc16"
+  },
+  {
+   "source": "시나리오 ③",
+   "type": "SUPPORTS",
+   "target": "공공연구기관",
+   "description": "시나리오 ③은 공공연구기관의 기초연구에 대한 직접 자금지원을 1.5배 확대하는 내용을 포함한다",
+   "doc": "doc16"
+  },
+  {
+   "source": "공공연구기관",
+   "type": "SUBJECT_TO",
+   "target": "상아탑 효과",
+   "description": "공공연구기관의 기초연구 성과가 상용화되기까지 일정 시간이 소요되는 상아탑 효과가 가정되었다",
+   "doc": "doc16"
+  },
+  {
+   "source": "Akcigit et al. 2021",
+   "type": "ANALYZED",
+   "target": "프랑스",
+   "description": "Akcigit et al.(2021)은 프랑스를 분석 대상으로 하였으며, 우리나라 모형 추정 시 프랑스의 기초연구 현황을 준용하였다",
+   "doc": "doc16"
+  },
+  {
+   "source": "벤처캐피탈",
+   "type": "SUPPORTS",
+   "target": "혁신창업가",
+   "description": "벤처캐피탈의 기능 개선을 통한 혁신자금 공급여건 확충은 혁신창업가 육성 및 혁신기업 신생률 확대에 기여한다",
+   "doc": "doc16"
+  },
+  {
+   "source": "시나리오 ②",
+   "type": "SELECTIVELY_SUPPORTS",
+   "target": "기초연구",
+   "description": "시나리오 ②는 기업의 기초연구에 대해서만 보조금 지급률을 3배 인상하는 선별 지원 방식이다",
+   "doc": "doc16"
+  },
+  {
+   "source": "시나리오 ④",
+   "type": "APPROXIMATES",
+   "target": "시나리오 ②",
+   "description": "시나리오 ④의 정책효과는 기업의 기초연구만 선별 지원하는 시나리오 ②에 상당폭 근접하는 것으로 나타났다",
+   "doc": "doc16"
+  },
+  {
+   "source": "한국은행",
+   "type": "PUBLISHED",
+   "target": "경제전망보고서(2024.5)",
+   "description": "한국은행이 2024년 5월 경제전망보고서를 발간하였다.",
+   "doc": "doc17"
+  },
+  {
+   "source": "경제전망보고서(2024.5)",
+   "type": "CONTAINS",
+   "target": "혁신신생기업 육성 정책",
+   "description": "경제전망보고서는 혁신신생기업 육성 정책에 대한 시나리오 분석을 포함한다.",
+   "doc": "doc17"
+  },
+  {
+   "source": "경제전망보고서(2024.5)",
+   "type": "CONTAINS",
+   "target": "그림 4.2",
+   "description": "경제전망보고서에 혁신신생기업 육성정책의 효과를 나타낸 그림 4.2가 수록되어 있다.",
+   "doc": "doc17"
+  },
+  {
+   "source": "혁신신생기업 육성 정책",
+   "type": "INCLUDES",
+   "target": "시나리오 ①",
+   "description": "혁신신생기업 육성 정책 분석은 경영권 거래율 2배 상승 시나리오 ①을 포함한다.",
+   "doc": "doc17"
+  },
+  {
+   "source": "혁신신생기업 육성 정책",
+   "type": "INCLUDES",
+   "target": "시나리오 ②",
+   "description": "혁신신생기업 육성 정책 분석은 혁신기업 신생률 2배 상승 시나리오 ②를 포함한다.",
+   "doc": "doc17"
+  },
+  {
+   "source": "혁신신생기업 육성 정책",
+   "type": "INCLUDES",
+   "target": "시나리오 ③",
+   "description": "혁신신생기업 육성 정책 분석은 시나리오 ①과 ②가 동시에 발생하는 시나리오 ③을 포함한다.",
+   "doc": "doc17"
+  },
+  {
+   "source": "시나리오 ③",
+   "type": "COMBINES",
+   "target": "시나리오 ①",
+   "description": "시나리오 ③은 시나리오 ①의 경영권 거래율 2배 상승을 포함한다.",
+   "doc": "doc17"
+  },
+  {
+   "source": "시나리오 ③",
+   "type": "COMBINES",
+   "target": "시나리오 ②",
+   "description": "시나리오 ③은 시나리오 ②의 혁신기업 신생률 2배 상승을 포함한다.",
+   "doc": "doc17"
+  },
+  {
+   "source": "벤처캐피탈",
+   "type": "CONTRIBUTES_TO",
+   "target": "시나리오 ①",
+   "description": "벤처캐피탈의 기능 개선이 시나리오 ①의 경영권 거래율 상승에 기여하는 요인으로 제시된다.",
+   "doc": "doc17"
+  },
+  {
+   "source": "M&A",
+   "type": "CONTRIBUTES_TO",
+   "target": "시나리오 ①",
+   "description": "M&A 등 투자회수시장 활성화가 시나리오 ①의 경영권 거래율 상승에 기여하는 요인으로 제시된다.",
+   "doc": "doc17"
+  },
+  {
+   "source": "창조적 파괴",
+   "type": "MECHANISM_OF",
+   "target": "혁신신생기업 육성 정책",
+   "description": "창조적 파괴(기존 제품 대체)는 혁신신생기업 육성 정책이 경제적 효과를 증대시키는 주요 메커니즘으로 언급된다.",
+   "doc": "doc17"
+  },
+  {
+   "source": "시나리오 ①",
+   "type": "VISUALIZED_IN",
+   "target": "그림 4.2",
+   "description": "시나리오 ①의 분석 결과가 그림 4.2에 시각화되어 있다.",
+   "doc": "doc17"
+  },
+  {
+   "source": "시나리오 ②",
+   "type": "VISUALIZED_IN",
+   "target": "그림 4.2",
+   "description": "시나리오 ②의 분석 결과가 그림 4.2에 시각화되어 있다.",
+   "doc": "doc17"
+  },
+  {
+   "source": "시나리오 ③",
+   "type": "VISUALIZED_IN",
+   "target": "그림 4.2",
+   "description": "시나리오 ③의 분석 결과가 그림 4.2에 시각화되어 있다.",
+   "doc": "doc17"
+  },
+  {
+   "source": "한국은행",
+   "type": "PUBLISHED",
+   "target": "경제전망보고서(2024.5)",
+   "description": "한국은행이 2024년 5월 경제전망보고서를 발간하였다.",
+   "doc": "doc18"
+  },
+  {
+   "source": "글로벌 금융위기",
+   "type": "CAUSED",
+   "target": "혁신기업",
+   "description": "글로벌 금융위기 이후 혁신기업의 생산성 성장세가 둔화되었다.",
+   "doc": "doc18"
+  },
+  {
+   "source": "R&D 투자",
+   "type": "CONCENTRATED_IN",
+   "target": "대기업",
+   "description": "R&D 투자 증가는 대기업을 중심으로 이루어졌으나 혁신실적의 질은 개선되지 못하였다.",
+   "doc": "doc18"
+  },
+  {
+   "source": "중소기업",
+   "type": "LACKS",
+   "target": "기초연구",
+   "description": "중소기업은 내부기초연구를 수행할 역량이 부족한 것으로 분석되었다.",
+   "doc": "doc18"
+  },
+  {
+   "source": "대기업",
+   "type": "SHOULD_INVEST_IN",
+   "target": "기초연구",
+   "description": "대기업은 내부기초연구에 대한 인센티브를 제공받아 기초연구를 강화해야 한다고 제시되었다.",
+   "doc": "doc18"
+  },
+  {
+   "source": "산학협력",
+   "type": "SUPPORTS",
+   "target": "중소기업",
+   "description": "산학협력 확대를 통해 중소기업이 기초연구 성과를 흡수·활용할 수 있는 여건을 제공해야 한다.",
+   "doc": "doc18"
+  },
+  {
+   "source": "혁신클러스터",
+   "type": "SUPPORTS",
+   "target": "중소기업",
+   "description": "혁신클러스터 활성화를 통해 중소기업이 기초연구 성과를 흡수·활용할 수 있도록 지원한다.",
+   "doc": "doc18"
+  },
+  {
+   "source": "벤처캐피탈",
+   "type": "FUNDS",
+   "target": "중소기업",
+   "description": "벤처캐피탈은 혁신역량을 갖춘 중소기업이 투자자금을 조달할 수 있도록 혁신자금을 공급한다.",
+   "doc": "doc18"
+  },
+  {
+   "source": "M&A 시장",
+   "type": "ENABLES",
+   "target": "벤처캐피탈",
+   "description": "M&A 시장 활성화를 통해 투자자금의 중간 회수가 원활해져 벤처캐피탈의 고수익·고위험 기술혁신 투자유인이 늘어난다.",
+   "doc": "doc18"
+  },
+  {
+   "source": "독립 벤처캐피탈",
+   "type": "IS_TYPE_OF",
+   "target": "벤처캐피탈",
+   "description": "독립 벤처캐피탈은 혁신기술투자 전문성이 우수한 민간 벤처캐피탈의 한 유형이다.",
+   "doc": "doc18"
+  },
+  {
+   "source": "기업 벤처캐피탈",
+   "type": "IS_TYPE_OF",
+   "target": "벤처캐피탈",
+   "description": "기업 벤처캐피탈은 혁신기술투자 전문성이 우수한 민간 벤처캐피탈의 한 유형이다.",
+   "doc": "doc18"
+  },
+  {
+   "source": "독립 벤처캐피탈",
+   "type": "FUNDS",
+   "target": "혁신신생기업",
+   "description": "독립 벤처캐피탈은 혁신신생기업에 자금을 제공하고 사업 전반을 지원한다.",
+   "doc": "doc18"
+  },
+  {
+   "source": "기업 벤처캐피탈",
+   "type": "FUNDS",
+   "target": "혁신신생기업",
+   "description": "기업 벤처캐피탈은 혁신신생기업에 자금을 제공하고 경영·생산 노하우 전수 등을 지원한다.",
+   "doc": "doc18"
+  },
+  {
+   "source": "혁신창업가",
+   "type": "LEADS",
+   "target": "혁신신생기업",
+   "description": "혁신창업가는 혁신신생기업을 창업하고 이끄는 주체이다.",
+   "doc": "doc18"
+  },
+  {
+   "source": "STEM",
+   "type": "SUPPORTS",
+   "target": "혁신창업가",
+   "description": "STEM 인재 양성은 혁신창업가와 함께 우리나라 혁신을 이끌어갈 인력을 공급한다.",
+   "doc": "doc18"
+  },
+  {
+   "source": "노동시장 유연성",
+   "type": "ENCOURAGES",
+   "target": "혁신창업가",
+   "description": "노동시장 유연성 확대는 실패에 따른 리스크를 줄여 혁신창업가의 도전을 장려한다.",
+   "doc": "doc18"
+  },
+  {
+   "source": "기초연구",
+   "type": "IMPROVES",
+   "target": "혁신기업",
+   "description": "기초연구 강화는 후속혁신 파급력, 범용성, 독창성 등 혁신실적의 질을 높여 혁신기업의 생산성 향상에 기여한다.",
+   "doc": "doc18"
+  },
+  {
+   "source": "한국은행",
+   "type": "PUBLISHED",
+   "target": "경제전망보고서(2024.5)",
+   "description": "한국은행은 2024년 5월 경제전망보고서를 발간하였다.",
+   "doc": "doc19"
+  },
+  {
+   "source": "경제전망보고서(2024.5)",
+   "type": "CONTAINS",
+   "target": "여성의 STEM 전공 선호 결정요인 분석",
+   "description": "경제전망보고서(2024.5)의 BOX 2에 여성의 STEM 전공 선호 결정요인 분석이 포함되어 있다.",
+   "doc": "doc19"
+  },
+  {
+   "source": "여성의 STEM 전공 선호 결정요인 분석",
+   "type": "USES",
+   "target": "한국교육종단연구2013",
+   "description": "분석에 2013년 초5 학생을 추적 조사한 한국교육종단연구2013의 원시자료를 활용하였다.",
+   "doc": "doc19"
+  },
+  {
+   "source": "여성의 STEM 전공 선호 결정요인 분석",
+   "type": "USES",
+   "target": "선형확률모형",
+   "description": "STEM 전공 선호 결정요인을 추정하기 위해 선형확률모형을 사용하였다.",
+   "doc": "doc19"
+  },
+  {
+   "source": "여성의 STEM 전공 선호 결정요인 분석",
+   "type": "ANALYZES",
+   "target": "STEM 직업노출도",
+   "description": "STEM 직업노출도가 여성의 STEM 전공 선호에 미치는 영향을 분석하였다.",
+   "doc": "doc19"
+  },
+  {
+   "source": "여성의 STEM 전공 선호 결정요인 분석",
+   "type": "ANALYZES",
+   "target": "인지능력",
+   "description": "인지능력이 STEM 전공 선호에 미치는 영향을 분석하였다.",
+   "doc": "doc19"
+  },
+  {
+   "source": "STEM 직업노출도",
+   "type": "INFLUENCES",
+   "target": "STEM",
+   "description": "STEM 직업노출도가 높을수록 여성의 STEM 전공 선호 확률이 높아지는 것으로 분석되었다.",
+   "doc": "doc19"
+  },
+  {
+   "source": "인지능력",
+   "type": "INFLUENCES",
+   "target": "STEM",
+   "description": "인지능력이 우수할수록 STEM 전공 선호가 높아지는 것으로 분석되었다.",
+   "doc": "doc19"
+  },
+  {
+   "source": "한국",
+   "type": "COMPARED_WITH",
+   "target": "OECD",
+   "description": "한국은 OECD 회원국 중 STEM 분야 여성 비중이 4번째로 낮은 국가로 비교되었다.",
+   "doc": "doc19"
+  },
+  {
+   "source": "일본",
+   "type": "COMPARED_WITH",
+   "target": "OECD",
+   "description": "일본은 OECD 회원국 중 연구개발인력 내 여성 비중이 가장 낮은 국가로 비교되었다.",
+   "doc": "doc19"
+  },
+  {
+   "source": "한국",
+   "type": "RANKED_BELOW",
+   "target": "일본",
+   "description": "한국의 전체 연구개발인력 중 여성 비중(22.2%)은 OECD 회원국 중 일본에 이어 2번째로 낮다.",
+   "doc": "doc19"
+  }
+ ]
+}

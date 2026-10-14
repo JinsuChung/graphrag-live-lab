@@ -1,0 +1,16 @@
+# 실습 07 용 Neo4j (로컬 전용). 실행: docker compose up -d  /  종료: docker compose down
+services:
+  neo4j:
+    image: neo4j:5
+    ports:
+      - "7474:7474"   # Neo4j Browser  → http://localhost:7474
+      - "7687:7687"   # Bolt (파이썬 드라이버)
+    environment:
+      NEO4J_AUTH: neo4j/graphrag-lab-local
+      # langchain-neo4j 의 Neo4jGraph 는 스키마를 읽을 때 APOC(apoc.meta.data)를 쓴다.
+      # AuraDB 에는 APOC Core 가 기본 포함되어 있고, 로컬 Docker 는 이렇게 켜 줘야 한다.
+      NEO4J_PLUGINS: '["apoc"]'
+    volumes:
+      - neo4j_data:/data
+volumes:
+  neo4j_data:

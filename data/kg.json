@@ -1,0 +1,974 @@
+{
+ "source": "한국은행 경제전망보고서(2024.5) III. 중장기 심층연구 「혁신과 경제성장」",
+ "nodes": [
+  {
+   "id": "한국 경제",
+   "type": "Economy",
+   "description": "초저출산·초고령화로 성장잠재력이 약화되고 있는 우리 경제.",
+   "aliases": [
+    "우리 경제"
+   ],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "초저출산·초고령화",
+   "type": "Trend",
+   "description": "총인구 2020년 5,184만명 정점 후 2070년 3,718만명으로 감소 전망.",
+   "aliases": [
+    "저출산",
+    "고령화",
+    "인구 감소",
+    "인구감소"
+   ],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "2040년대 마이너스 성장",
+   "type": "Risk",
+   "description": "획기적 변화가 없으면 노동공급 감소 등으로 2040년대 마이너스 성장국면 진입 전망.",
+   "aliases": [
+    "마이너스 성장",
+    "성장잠재력"
+   ],
+   "docs": [
+    "doc02"
+   ]
+  },
+  {
+   "id": "혁신(개념)",
+   "type": "Concept",
+   "description": "R&D로 지식을 축적하고 새 아이디어를 실현해 경제적 가치를 창출하는 활동. 장기 성장의 주된 동력.",
+   "aliases": [
+    "창조적 파괴"
+   ],
+   "docs": [
+    "doc02",
+    "doc05"
+   ]
+  },
+  {
+   "id": "기업 생산성",
+   "type": "Indicator",
+   "description": "기업 총요소생산성. 증가율이 2001~10년 연평균 6.1%에서 2011~20년 0.5%로 둔화.",
+   "aliases": [
+    "생산성",
+    "총요소생산성"
+   ],
+   "docs": [
+    "doc01",
+    "doc04"
+   ]
+  },
+  {
+   "id": "R&D 지출",
+   "type": "Indicator",
+   "description": "2022년 GDP 대비 5.2%(OECD 2위). 기업 R&D는 GDP 대비 4.1%로 OECD 2위, 국가 전체의 79% 담당.",
+   "aliases": [
+    "R&D",
+    "연구개발"
+   ],
+   "docs": [
+    "doc03"
+   ]
+  },
+  {
+   "id": "특허출원건수",
+   "type": "Indicator",
+   "description": "혁신실적의 양. 한국의 미국 내 특허출원은 2020년 세계 4위(비중 7.6%).",
+   "aliases": [
+    "특허출원",
+    "미국 특허",
+    "미국 내 특허",
+    "혁신실적의 양",
+    "양적 실적"
+   ],
+   "docs": [
+    "doc03",
+    "doc05"
+   ]
+  },
+  {
+   "id": "특허피인용건수",
+   "type": "Indicator",
+   "description": "혁신실적의 질. 2011~15년 한국 특허 건당 피인용 1.4건으로 미국(5.0건) 등보다 낮음.",
+   "aliases": [
+    "피인용",
+    "혁신실적의 질",
+    "질적 실적"
+   ],
+   "docs": [
+    "doc05",
+    "doc08"
+   ]
+  },
+  {
+   "id": "혁신기업",
+   "type": "FirmGroup",
+   "description": "미국 내 출원특허를 보유한 기업. 기업수 6%, 종업원 28%, 기업 R&D의 72% 담당. 생산성 증가율 8.2%→1.3%.",
+   "aliases": [
+    "innovative firm"
+   ],
+   "docs": [
+    "doc06"
+   ]
+  },
+  {
+   "id": "일반기업",
+   "type": "FirmGroup",
+   "description": "미국 내 출원특허가 없는 기업.",
+   "aliases": [],
+   "docs": [
+    "doc06"
+   ]
+  },
+  {
+   "id": "대기업",
+   "type": "FirmGroup",
+   "description": "혁신기업 중 종업원수 상위 5%. 혁신기업 종업원의 69%, R&D 지출의 88% 담당.",
+   "aliases": [],
+   "docs": [
+    "doc07",
+    "doc08"
+   ]
+  },
+  {
+   "id": "고업력 중소기업",
+   "type": "FirmGroup",
+   "description": "혁신기업 중소기업 가운데 업력 상위 80%. 기업수 76%, R&D 10%.",
+   "aliases": [],
+   "docs": [
+    "doc07"
+   ]
+  },
+  {
+   "id": "저업력 중소기업",
+   "type": "FirmGroup",
+   "description": "혁신기업 중소기업 가운데 업력 하위 20%. 2010년대 이전 생산성 증가세가 가팔랐으나 이후 크게 둔화.",
+   "aliases": [
+    "업력이 짧은 중소기업",
+    "중소기업"
+   ],
+   "docs": [
+    "doc07",
+    "doc09"
+   ]
+  },
+  {
+   "id": "혁신신생기업",
+   "type": "FirmGroup",
+   "description": "혁신역량을 갖춘 신생기업. 설립 후 8년 내 미국특허 출원 비중이 2010년대 10% 하회.",
+   "aliases": [
+    "신생기업",
+    "스타트업"
+   ],
+   "docs": [
+    "doc09",
+    "doc17"
+   ]
+  },
+  {
+   "id": "혁신자금조달 어려움",
+   "type": "Problem",
+   "description": "저업력 중소기업 중 외부자금 부족 응답 제조업 9.9%(2007)→45.4%(2021), 내부자금 12.8%→77.6%.",
+   "aliases": [
+    "자금조달",
+    "자금 조달"
+   ],
+   "docs": [
+    "doc09"
+   ]
+  },
+  {
+   "id": "신생기업 진입 감소",
+   "type": "Problem",
+   "description": "혁신역량 신생기업 진입이 줄어 중소기업 업력이 1.6세(2001)→12.5세(2020)로 고령화.",
+   "aliases": [
+    "진입 감소",
+    "기업 고령화"
+   ],
+   "docs": [
+    "doc09"
+   ]
+  },
+  {
+   "id": "혁신실적의 질 정체",
+   "type": "Problem",
+   "description": "대기업 특허피인용이 2000년대 중반 하락 후 개선되지 못함.",
+   "aliases": [
+    "질 정체",
+    "질이 개선되지"
+   ],
+   "docs": [
+    "doc08"
+   ]
+  },
+  {
+   "id": "기초연구",
+   "type": "ResearchType",
+   "description": "활용처를 고려하지 않는 지식 축적. 혁신실적의 질(피인용·범용성·독창성)과 밀접.",
+   "aliases": [
+    "기초 연구"
+   ],
+   "docs": [
+    "doc05",
+    "doc10",
+    "doc12"
+   ]
+  },
+  {
+   "id": "응용연구",
+   "type": "ResearchType",
+   "description": "특정 수요를 위한 지식 축적. 혁신실적의 양을 늘리는 데 효과적.",
+   "aliases": [
+    "응용 연구"
+   ],
+   "docs": [
+    "doc05",
+    "doc12"
+   ]
+  },
+  {
+   "id": "기초연구 지출비중 축소",
+   "type": "Problem",
+   "description": "기업 R&D 중 기초연구 비중 2010년 14%→2021년 11%.",
+   "aliases": [
+    "기초연구 비중",
+    "기초연구 지출비중"
+   ],
+   "docs": [
+    "doc01",
+    "doc04",
+    "doc10"
+   ]
+  },
+  {
+   "id": "벤처캐피탈",
+   "type": "Finance",
+   "description": "혁신신생기업의 중요한 자금 공급원. 2020년 투자규모 GDP 대비 0.16%로 OECD 5위.",
+   "aliases": [
+    "VC",
+    "벤처투자"
+   ],
+   "docs": [
+    "doc11",
+    "doc13"
+   ]
+  },
+  {
+   "id": "벤처캐피탈 접근성",
+   "type": "Indicator",
+   "description": "세계경제포럼 지표. 한국은 2020년 3.4점, OECD 24위. 미국은 5.2점으로 최고.",
+   "aliases": [
+    "접근성"
+   ],
+   "docs": [
+    "doc11",
+    "doc13"
+   ]
+  },
+  {
+   "id": "투자회수시장",
+   "type": "Market",
+   "description": "M&A·IPO 등 투자자금 회수 시장. 발전한 국가에서만 VC 접근성의 혁신 제고 효과가 유의.",
+   "aliases": [
+    "M&A",
+    "IPO",
+    "회수시장"
+   ],
+   "docs": [
+    "doc13"
+   ]
+  },
+  {
+   "id": "민간 벤처캐피탈",
+   "type": "Finance",
+   "description": "투자를 많이 받을수록 혁신실적의 양과 질이 유의하게 제고.",
+   "aliases": [
+    "민간 VC"
+   ],
+   "docs": [
+    "doc14"
+   ]
+  },
+  {
+   "id": "정부 벤처캐피탈",
+   "type": "Finance",
+   "description": "모태펀드·정책기관·산업은행 등. 2010년대 중반 이후 VC 투자 증가를 주도했으나 혁신실적 효과는 유의하지 않음.",
+   "aliases": [
+    "정부 VC",
+    "모태펀드"
+   ],
+   "docs": [
+    "doc11",
+    "doc14"
+   ]
+  },
+  {
+   "id": "독립 벤처캐피탈",
+   "type": "Finance",
+   "description": "전문 개인·기관 투자자가 출자. 혁신실적 제고 효과 유의.",
+   "aliases": [
+    "독립 VC"
+   ],
+   "docs": [
+    "doc14",
+    "doc18"
+   ]
+  },
+  {
+   "id": "기업 벤처캐피탈",
+   "type": "Finance",
+   "description": "모기업이 출자(CVC). 혁신실적 제고 효과 유의.",
+   "aliases": [
+    "기업 VC",
+    "CVC"
+   ],
+   "docs": [
+    "doc14",
+    "doc18"
+   ]
+  },
+  {
+   "id": "은행 벤처캐피탈",
+   "type": "Finance",
+   "description": "은행이 출자. 위험회피 성향이 높고, 특허출원·피인용을 오히려 하락시킴.",
+   "aliases": [
+    "은행 VC"
+   ],
+   "docs": [
+    "doc14"
+   ]
+  },
+  {
+   "id": "혁신창업가",
+   "type": "Actor",
+   "description": "새 아이디어로 파괴적 혁신을 추구하는 창업가. 한국은 육성여건 미비.",
+   "aliases": [
+    "창업가",
+    "창업"
+   ],
+   "docs": [
+    "doc05",
+    "doc11",
+    "doc15"
+   ]
+  },
+  {
+   "id": "똑똑한 이단아",
+   "type": "Actor",
+   "description": "인지능력이 우수하면서 틀에 얽매이기 싫어하는 집단(표본의 1.6%). 한국에서는 창업보다 취업을 선호.",
+   "aliases": [
+    "이단아",
+    "smart maverick"
+   ],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "황금티켓증후군",
+   "type": "Phenomenon",
+   "description": "OECD가 묘사한, 청년이 전문직·대기업·공공부문 일자리에 몰리는 현상.",
+   "aliases": [
+    "황금티켓"
+   ],
+   "docs": [
+    "doc15"
+   ]
+  },
+  {
+   "id": "실패에 대한 부정적 인식",
+   "type": "Phenomenon",
+   "description": "'실패해도 괜찮다' 응답 17.7%, '실패가 두렵다' 61.0%.",
+   "aliases": [
+    "실패"
+   ],
+   "docs": [
+    "doc15",
+    "doc18"
+   ]
+  },
+  {
+   "id": "공공연구기관",
+   "type": "Organization",
+   "description": "대학 등 공공연구기관. 기초연구 성과가 상용화되기까지 시간이 걸림(상아탑 효과).",
+   "aliases": [
+    "대학",
+    "산학"
+   ],
+   "docs": [
+    "doc16",
+    "doc18"
+   ]
+  },
+  {
+   "id": "기초연구 선별 지원",
+   "type": "Policy",
+   "description": "기업 기초연구 보조금만 3배 인상. 성장률 +0.22%p, 사회후생 +2.1%. 현실적으로 구분이 어려움.",
+   "aliases": [
+    "선별 지원",
+    "선별지원"
+   ],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "기초·응용연구 동일 지원",
+   "type": "Policy",
+   "description": "기초·응용연구 보조금 2배 인상. 성장률 +0.20%p, 사회후생 +0.4%.",
+   "aliases": [
+    "동일 지원"
+   ],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "산학 연구협력 강화",
+   "type": "Policy",
+   "description": "보조금 1.5배 + 공공연구기관 지원 1.5배 + 기업·공공연구기관 협력. 성장률 +0.18%p, 사회후생 +1.3%.",
+   "aliases": [
+    "연구협력",
+    "산학협력"
+   ],
+   "docs": [
+    "doc16",
+    "doc18"
+   ]
+  },
+  {
+   "id": "경영권 거래 확대",
+   "type": "Policy",
+   "description": "혁신신생기업 경영권 거래율 2배. 성장률 +0.04%p, 사회후생 +0.6%.",
+   "aliases": [
+    "경영권 거래",
+    "buyout"
+   ],
+   "docs": [
+    "doc17"
+   ]
+  },
+  {
+   "id": "혁신기업 신생률 확대",
+   "type": "Policy",
+   "description": "혁신기업 신생률 2배. 성장률 +0.03%p, 사회후생 +1.0%. 경영권 거래와 함께면 +0.07%p, +1.4%.",
+   "aliases": [
+    "신생률"
+   ],
+   "docs": [
+    "doc17"
+   ]
+  },
+  {
+   "id": "M&A 시장 활성화",
+   "type": "Policy",
+   "description": "M&A 시장이 상위그룹으로 발전하고 VC 접근성을 미국 수준으로 높이면 특허출원 +0.74%, 피인용 +0.58%.",
+   "aliases": [
+    "M&A 시장"
+   ],
+   "docs": [
+    "doc13",
+    "doc18"
+   ]
+  },
+  {
+   "id": "혁신창업 환경 조성",
+   "type": "Policy",
+   "description": "다원기회방식 사회구조, 노동시장 유연성 확대 등으로 실패 리스크를 줄이는 방향.",
+   "aliases": [
+    "창업 환경",
+    "창업도전"
+   ],
+   "docs": [
+    "doc18"
+   ]
+  },
+  {
+   "id": "STEM 인재 양성",
+   "type": "Policy",
+   "description": "청소년의 STEM 직업 경험 확대. 여성 STEM 대졸자 비중 26.5%로 OECD 하위권.",
+   "aliases": [
+    "STEM",
+    "여성"
+   ],
+   "docs": [
+    "doc18",
+    "doc19"
+   ]
+  },
+  {
+   "id": "경제성장률",
+   "type": "Outcome",
+   "description": "시나리오 분석의 성과 지표.",
+   "aliases": [
+    "성장률"
+   ],
+   "docs": [
+    "doc16",
+    "doc17"
+   ]
+  },
+  {
+   "id": "사회후생",
+   "type": "Outcome",
+   "description": "시나리오 분석의 성과 지표.",
+   "aliases": [
+    "후생"
+   ],
+   "docs": [
+    "doc16",
+    "doc17"
+   ]
+  },
+  {
+   "id": "Akcigit et al.(2021) 구조모형",
+   "type": "Method",
+   "description": "기초·응용연구와 창조적 파괴를 모형화한 내생적 성장 구조모형. 정책 시나리오 분석에 사용.",
+   "aliases": [
+    "구조모형",
+    "시나리오 분석"
+   ],
+   "docs": [
+    "doc16"
+   ]
+  },
+  {
+   "id": "한국교육종단연구2005",
+   "type": "Dataset",
+   "description": "2005년 중1 학생을 추적한 조사. 똑똑한 이단아 분석에 사용.",
+   "aliases": [
+    "교육종단연구"
+   ],
+   "docs": [
+    "doc15"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "source": "초저출산·초고령화",
+   "type": "CAUSES",
+   "target": "2040년대 마이너스 성장",
+   "description": "노동공급 감소로 성장잠재력 약화",
+   "doc": "doc02"
+  },
+  {
+   "source": "2040년대 마이너스 성장",
+   "type": "THREATENS",
+   "target": "한국 경제",
+   "description": "획기적 변화가 없을 경우",
+   "doc": "doc02"
+  },
+  {
+   "source": "혁신(개념)",
+   "type": "DRIVES",
+   "target": "기업 생산성",
+   "description": "신제품 개발·공정 개선으로 생산성 제고, 장기 성장의 주된 동력",
+   "doc": "doc02"
+  },
+  {
+   "source": "혁신(개념)",
+   "type": "COUNTERS",
+   "target": "2040년대 마이너스 성장",
+   "description": "성장잠재력 약화에 대응하려면 혁신 촉진 필요",
+   "doc": "doc02"
+  },
+  {
+   "source": "R&D 지출",
+   "type": "INCREASED_IN",
+   "target": "한국 경제",
+   "description": "GDP 대비 2.3%(2001)→5.2%(2022), OECD 2위",
+   "doc": "doc03"
+  },
+  {
+   "source": "특허출원건수",
+   "type": "RANKED_IN",
+   "target": "한국 경제",
+   "description": "미국 내 특허출원 2020년 세계 4위",
+   "doc": "doc03"
+  },
+  {
+   "source": "기업 생산성",
+   "type": "SLOWED_IN",
+   "target": "한국 경제",
+   "description": "연평균 6.1%(2001~10)→0.5%(2011~20)",
+   "doc": "doc01"
+  },
+  {
+   "source": "혁신기업",
+   "type": "HAS_INDICATOR",
+   "target": "기업 생산성",
+   "description": "혁신기업 생산성 증가율 8.2%→1.3%로 크게 둔화",
+   "doc": "doc06"
+  },
+  {
+   "source": "혁신기업",
+   "type": "ACCOUNTS_FOR",
+   "target": "R&D 지출",
+   "description": "전체 기업 R&D의 72% 내외 담당",
+   "doc": "doc06"
+  },
+  {
+   "source": "혁신기업",
+   "type": "COMPARED_WITH",
+   "target": "일반기업",
+   "description": "2010년대 혁신기업 생산성이 더 크게 둔화",
+   "doc": "doc06"
+  },
+  {
+   "source": "대기업",
+   "type": "SUBGROUP_OF",
+   "target": "혁신기업",
+   "description": "종업원수 상위 5%",
+   "doc": "doc07"
+  },
+  {
+   "source": "고업력 중소기업",
+   "type": "SUBGROUP_OF",
+   "target": "혁신기업",
+   "description": "중소기업 중 업력 상위 80%",
+   "doc": "doc07"
+  },
+  {
+   "source": "저업력 중소기업",
+   "type": "SUBGROUP_OF",
+   "target": "혁신기업",
+   "description": "중소기업 중 업력 하위 20%",
+   "doc": "doc07"
+  },
+  {
+   "source": "대기업",
+   "type": "ACCOUNTS_FOR",
+   "target": "R&D 지출",
+   "description": "혁신기업 R&D 지출의 88% 담당",
+   "doc": "doc07"
+  },
+  {
+   "source": "대기업",
+   "type": "ACCOUNTS_FOR",
+   "target": "특허출원건수",
+   "description": "한국의 미국 특허출원 중 95% 내외",
+   "doc": "doc08"
+  },
+  {
+   "source": "대기업",
+   "type": "SUFFERS",
+   "target": "혁신실적의 질 정체",
+   "description": "양은 늘었으나 피인용 등 질은 개선되지 못함",
+   "doc": "doc08"
+  },
+  {
+   "source": "혁신실적의 질 정체",
+   "type": "MEASURED_BY",
+   "target": "특허피인용건수",
+   "description": "건당 피인용 1.4건(미국 5.0건)",
+   "doc": "doc08"
+  },
+  {
+   "source": "특허피인용건수",
+   "type": "RELATED_TO",
+   "target": "기업 생산성",
+   "description": "출원건수보다 피인용건수가 생산성 증가율과 밀접",
+   "doc": "doc08"
+  },
+  {
+   "source": "저업력 중소기업",
+   "type": "SUFFERS",
+   "target": "혁신자금조달 어려움",
+   "description": "외부·내부 자금 부족 응답 급증",
+   "doc": "doc09"
+  },
+  {
+   "source": "저업력 중소기업",
+   "type": "SUFFERS",
+   "target": "신생기업 진입 감소",
+   "description": "업력 1.6세→12.5세로 고령화",
+   "doc": "doc09"
+  },
+  {
+   "source": "신생기업 진입 감소",
+   "type": "INVOLVES",
+   "target": "혁신신생기업",
+   "description": "설립 8년 내 특허출원 신생기업 비중 10% 하회",
+   "doc": "doc09"
+  },
+  {
+   "source": "기초연구 지출비중 축소",
+   "type": "CAUSES",
+   "target": "혁신실적의 질 정체",
+   "description": "기초연구 비중 14%→11%, 질적 혁신실적 저하 요인",
+   "doc": "doc10"
+  },
+  {
+   "source": "벤처캐피탈",
+   "type": "WEAKNESS_LEADS_TO",
+   "target": "혁신자금조달 어려움",
+   "description": "VC의 혁신자금 공급기능 부족",
+   "doc": "doc10"
+  },
+  {
+   "source": "혁신창업가",
+   "type": "SHORTAGE_LEADS_TO",
+   "target": "신생기업 진입 감소",
+   "description": "혁신창업가 육성여건 미비",
+   "doc": "doc10"
+  },
+  {
+   "source": "벤처캐피탈 접근성",
+   "type": "MEASURES",
+   "target": "벤처캐피탈",
+   "description": "한국 2020년 OECD 24위(하위권), 투자규모는 GDP 0.16%로 5위",
+   "doc": "doc11"
+  },
+  {
+   "source": "정부 벤처캐피탈",
+   "type": "LED",
+   "target": "벤처캐피탈",
+   "description": "2010년대 중반 이후 VC 투자 증가를 정부가 주도",
+   "doc": "doc11"
+  },
+  {
+   "source": "기초연구",
+   "type": "IMPROVES",
+   "target": "특허피인용건수",
+   "description": "피인용·범용성·독창성 제고, 대기업에서 더 뚜렷",
+   "doc": "doc12"
+  },
+  {
+   "source": "응용연구",
+   "type": "IMPROVES",
+   "target": "특허출원건수",
+   "description": "양적 혁신실적 증가 효과가 더 뚜렷",
+   "doc": "doc12"
+  },
+  {
+   "source": "응용연구",
+   "type": "LOWERS",
+   "target": "특허피인용건수",
+   "description": "응용연구 지식스톡 증가 시 피인용·독창성 오히려 하락",
+   "doc": "doc12"
+  },
+  {
+   "source": "기초연구",
+   "type": "MORE_EFFECTIVE_FOR",
+   "target": "대기업",
+   "description": "다양한 산업에 종사해 기초연구 성과를 폭넓게 활용",
+   "doc": "doc12"
+  },
+  {
+   "source": "벤처캐피탈 접근성",
+   "type": "IMPROVES",
+   "target": "특허출원건수",
+   "description": "접근성 1% 상승 시 출원·피인용 각 0.007% 증가",
+   "doc": "doc13"
+  },
+  {
+   "source": "벤처캐피탈 접근성",
+   "type": "IMPROVES",
+   "target": "특허피인용건수",
+   "description": "미국 수준(5.2점)으로 높이면 각 0.37% 증가",
+   "doc": "doc13"
+  },
+  {
+   "source": "투자회수시장",
+   "type": "ENABLES",
+   "target": "벤처캐피탈 접근성",
+   "description": "회수시장이 발전한 국가에서만 효과가 유의",
+   "doc": "doc13"
+  },
+  {
+   "source": "M&A 시장 활성화",
+   "type": "BOOSTS",
+   "target": "벤처캐피탈 접근성",
+   "description": "M&A 발전 시 출원 +0.74%, 피인용 +0.58%",
+   "doc": "doc13"
+  },
+  {
+   "source": "민간 벤처캐피탈",
+   "type": "IMPROVES",
+   "target": "특허출원건수",
+   "description": "민간 VC 투자만 혁신실적 유의하게 제고",
+   "doc": "doc14"
+  },
+  {
+   "source": "정부 벤처캐피탈",
+   "type": "NO_EFFECT_ON",
+   "target": "특허출원건수",
+   "description": "정부 VC 투자는 효과가 유의하지 않음",
+   "doc": "doc14"
+  },
+  {
+   "source": "독립 벤처캐피탈",
+   "type": "TYPE_OF",
+   "target": "민간 벤처캐피탈",
+   "description": "펀드조성 주체별 분류",
+   "doc": "doc14"
+  },
+  {
+   "source": "기업 벤처캐피탈",
+   "type": "TYPE_OF",
+   "target": "민간 벤처캐피탈",
+   "description": "펀드조성 주체별 분류",
+   "doc": "doc14"
+  },
+  {
+   "source": "은행 벤처캐피탈",
+   "type": "TYPE_OF",
+   "target": "민간 벤처캐피탈",
+   "description": "펀드조성 주체별 분류",
+   "doc": "doc14"
+  },
+  {
+   "source": "은행 벤처캐피탈",
+   "type": "LOWERS",
+   "target": "특허피인용건수",
+   "description": "특허출원·피인용을 오히려 하락시킴",
+   "doc": "doc14"
+  },
+  {
+   "source": "똑똑한 이단아",
+   "type": "POTENTIAL",
+   "target": "혁신창업가",
+   "description": "미국에서는 대규모 창업가가 청소년기 똑똑한 이단아였음",
+   "doc": "doc15"
+  },
+  {
+   "source": "똑똑한 이단아",
+   "type": "MEASURED_IN",
+   "target": "한국교육종단연구2005",
+   "description": "중1 수학점수와 비동조지수로 식별",
+   "doc": "doc15"
+  },
+  {
+   "source": "황금티켓증후군",
+   "type": "DISCOURAGES",
+   "target": "똑똑한 이단아",
+   "description": "창업 3.0%로 일반학생(2.5%)과 비슷, 취업 선호",
+   "doc": "doc15"
+  },
+  {
+   "source": "실패에 대한 부정적 인식",
+   "type": "DISCOURAGES",
+   "target": "똑똑한 이단아",
+   "description": "실패 두려움 61.0%",
+   "doc": "doc15"
+  },
+  {
+   "source": "기초연구 선별 지원",
+   "type": "SUPPORTS",
+   "target": "기초연구",
+   "description": "기초연구 보조금만 3배",
+   "doc": "doc16"
+  },
+  {
+   "source": "기초연구 선별 지원",
+   "type": "RAISES",
+   "target": "사회후생",
+   "description": "성장률 +0.22%p, 사회후생 +2.1%(가장 효과적)",
+   "doc": "doc16"
+  },
+  {
+   "source": "기초·응용연구 동일 지원",
+   "type": "RAISES",
+   "target": "경제성장률",
+   "description": "성장률 +0.20%p, 사회후생 +0.4%",
+   "doc": "doc16"
+  },
+  {
+   "source": "산학 연구협력 강화",
+   "type": "ALTERNATIVE_TO",
+   "target": "기초연구 선별 지원",
+   "description": "선별 지원이 불가능할 때의 현실적 대안",
+   "doc": "doc16"
+  },
+  {
+   "source": "산학 연구협력 강화",
+   "type": "INVOLVES",
+   "target": "공공연구기관",
+   "description": "공공연구기관 기초연구 지원 1.5배 + 기업 협력",
+   "doc": "doc16"
+  },
+  {
+   "source": "산학 연구협력 강화",
+   "type": "RAISES",
+   "target": "경제성장률",
+   "description": "성장률 +0.18%p, 사회후생 +1.3%",
+   "doc": "doc16"
+  },
+  {
+   "source": "Akcigit et al.(2021) 구조모형",
+   "type": "EVALUATES",
+   "target": "산학 연구협력 강화",
+   "description": "일반균형 구조모형 시나리오 분석",
+   "doc": "doc16"
+  },
+  {
+   "source": "경영권 거래 확대",
+   "type": "RAISES",
+   "target": "사회후생",
+   "description": "성장률 +0.04%p, 사회후생 +0.6%",
+   "doc": "doc17"
+  },
+  {
+   "source": "혁신기업 신생률 확대",
+   "type": "RAISES",
+   "target": "사회후생",
+   "description": "성장률 +0.03%p, 사회후생 +1.0%",
+   "doc": "doc17"
+  },
+  {
+   "source": "혁신기업 신생률 확대",
+   "type": "TARGETS",
+   "target": "혁신신생기업",
+   "description": "혁신자금 공급여건 개선, 혁신창업가 증가",
+   "doc": "doc17"
+  },
+  {
+   "source": "경영권 거래 확대",
+   "type": "TARGETS",
+   "target": "혁신신생기업",
+   "description": "VC 기능 개선·M&A 활성화로 거래율 2배",
+   "doc": "doc17"
+  },
+  {
+   "source": "기초연구",
+   "type": "PRESCRIBED_FOR",
+   "target": "혁신실적의 질 정체",
+   "description": "결론: 기초연구 강화, 대기업 내부기초연구 인센티브",
+   "doc": "doc18"
+  },
+  {
+   "source": "M&A 시장 활성화",
+   "type": "PRESCRIBED_FOR",
+   "target": "혁신자금조달 어려움",
+   "description": "결론: VC 접근성 제고, 독립·기업 VC 역할 확대",
+   "doc": "doc18"
+  },
+  {
+   "source": "혁신창업 환경 조성",
+   "type": "PRESCRIBED_FOR",
+   "target": "신생기업 진입 감소",
+   "description": "결론: 실패 리스크 완화, 다원기회방식 사회구조",
+   "doc": "doc18"
+  },
+  {
+   "source": "혁신창업 환경 조성",
+   "type": "ADDRESSES",
+   "target": "실패에 대한 부정적 인식",
+   "description": "실패에 따른 리스크를 줄이는 사회여건",
+   "doc": "doc18"
+  },
+  {
+   "source": "STEM 인재 양성",
+   "type": "SUPPORTS",
+   "target": "혁신(개념)",
+   "description": "혁신을 이끌 STEM 인재, 청소년 STEM 직업 경험 확대",
+   "doc": "doc19"
+  }
+ ]
+}

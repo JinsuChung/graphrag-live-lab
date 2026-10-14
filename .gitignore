@@ -1,0 +1,14 @@
+# 환경·비밀값
+.venv/
+.env
+__pycache__/
+.DS_Store
+.claude/
+
+# 한국은행 보고서 원문 (저작권: 한국은행) — 실행 시 공식 링크에서 내려받아 생성
+data/source/*.pdf
+data/docs/
+
+# 실행 중 생성되는 파일
+data/kg_extracted.json
+data/eval_results_*.json
